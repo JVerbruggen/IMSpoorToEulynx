@@ -1,10 +1,15 @@
-﻿using System;
+﻿using Logic.Managers;
+using Models.Translation;
+using Services.TopoModels;
+using System;
 using System.Windows.Forms;
 
 namespace IMSpoorToRTM
 {
     public partial class Form1 : Form
     {
+        private ITranslationService<IMSpoor, RailTopoModel> translationService = new TranslationService();
+
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +29,7 @@ namespace IMSpoorToRTM
 
         private void button_startConversion_Click(object sender, EventArgs e)
         {
-
+            RailTopoModel rtm = translationService.Translate(imSpoorModel);
         }
     }
 }

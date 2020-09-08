@@ -15,20 +15,6 @@
           "bin/placeholder/Data.dll": {}
         }
       },
-      "Logic/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Data": "1.0.0",
-          "Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Logic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Logic.dll": {}
-        }
-      },
       "Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -37,6 +23,20 @@
         },
         "runtime": {
           "bin/placeholder/Models.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Data": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
         }
       }
     }
@@ -47,21 +47,21 @@
       "path": "../Data/Data.csproj",
       "msbuildProject": "../Data/Data.csproj"
     },
-    "Logic/1.0.0": {
-      "type": "project",
-      "path": "../Logic/Logic.csproj",
-      "msbuildProject": "../Logic/Logic.csproj"
-    },
     "Models/1.0.0": {
       "type": "project",
       "path": "../Models/Models.csproj",
       "msbuildProject": "../Models/Models.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Logic/Services.csproj",
+      "msbuildProject": "../Logic/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Logic >= 1.0.0",
-      "Models >= 1.0.0"
+      "Models >= 1.0.0",
+      "Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -94,8 +94,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Logic.csproj": {
-              "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Logic.csproj"
+            "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Services.csproj": {
+              "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Services.csproj"
             },
             "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Models\\Models.csproj": {
               "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Models\\Models.csproj"

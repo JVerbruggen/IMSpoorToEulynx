@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OCXL4ZbdDtQosjXQ9uW+OubvNZdNbNPcvQ4DzqQBpvxw6ZBtVSv4McEs+qbYGR/ulpAJx/MyxATYI3BxlXFUcQ==",
+  "dgSpecHash": "J0qIOBWMylrm6qJMZSIAieXuyzmUwXBskpbp2gH2muBX+Q7MAGDqnAecZmMsS86AjimdkEURZdHq1xJ6IlxMhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Logic.csproj",
+  "projectFilePath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Services.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -89,8 +89,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Logic.csproj": {
-                "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Logic.csproj"
+              "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Services.csproj": {
+                "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Services.csproj"
               },
               "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Models\\Models.csproj": {
                 "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Models\\Models.csproj"
@@ -128,12 +128,12 @@
         }
       }
     },
-    "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Logic.csproj": {
+    "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Logic.csproj",
-        "projectName": "Logic",
-        "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Logic.csproj",
+        "projectUniqueName": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\Services.csproj",
         "packagesPath": "C:\\Users\\jurje\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Logic\\obj\\",
         "projectStyle": "PackageReference",
