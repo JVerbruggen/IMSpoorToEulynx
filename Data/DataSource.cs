@@ -22,6 +22,7 @@ namespace Data
             var filePath = Path.Combine(currentDirectory, "Storage", this.FileName);
 
             XElement file = XElement.Load(filePath);
+
             return file;
         }
 

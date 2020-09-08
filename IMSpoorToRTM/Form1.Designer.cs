@@ -42,7 +42,7 @@
             // 
             this.openFileDialog_IMSpoorXML.AddExtension = false;
             this.openFileDialog_IMSpoorXML.DefaultExt = "xml";
-            this.openFileDialog_IMSpoorXML.FileName = "IMSpoor.xml";
+            this.openFileDialog_IMSpoorXML.FileName = "IMSpoor-1.3.0-actual.xml";
             this.openFileDialog_IMSpoorXML.Filter = "XML files (*.xml)|*.xml";
             this.openFileDialog_IMSpoorXML.InitialDirectory = "C:\\";
             this.openFileDialog_IMSpoorXML.RestoreDirectory = true;
