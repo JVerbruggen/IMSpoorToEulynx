@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemConfiguration xmlns="http://www.prorail.nl/IMSpoor" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.prorail.nl/IMSpoor IMSpoor-1.3.0-ExampleERTMS.xsd">
+	<CentralSafetySystemAreas>
+		<CentralSafetySystemArea puic="cf179da3-0010-47bb-9bfc-ba949bf98c82" restartTimer="120" centralSafetySystemRef="c914ab9c-97c2-41cd-8ba8-cc1708fdc904">
+			<TrackFragments>
+				<TrackFragment trackFunctionalViewRef="4c61f54d-bfe3-4c09-a362-d8125428af84" fromMeasure="123" toMeasure="512"/>
+			</TrackFragments>
+			<DemarcationMarkers>
+				<DemarcationMarker trackFunctionalViewRef="4c61f54d-bfe3-4c09-a362-d8125428af84" direction="Downstream" atMeasure="123"/>
+				<DemarcationMarker trackFunctionalViewRef="4c61f54d-bfe3-4c09-a362-d8125428af84" direction="Upstream" atMeasure="512"/>
+			</DemarcationMarkers>
+		</CentralSafetySystemArea>
+	</CentralSafetySystemAreas>
+	<CentralSafetySystems>
+		<CentralSafetySystem puic="c914ab9c-97c2-41cd-8ba8-cc1708fdc904" restartTimer="30" trainControlSystemRef="5588bdaa-e048-4753-b0f2-46affd9275c3">
+			<Location>
+				<GeographicLocation dataAcquisitionMethod="DGPS">
+					<gml:Point>
+						<gml:coordinates>80502.232,431958.462</gml:coordinates>
+					</gml:Point>
+				</GeographicLocation>
+			</Location>
+			<RadioBlockCenterRefs>0853830a-abfa-4f20-a906-371c66ea58ce</RadioBlockCenterRefs>
+			<InterlockingUnitRefs>a2a2721c-897f-4d73-82ef-b6db5c07d9dd</InterlockingUnitRefs>
+		</CentralSafetySystem>
+	</CentralSafetySystems>
+	<RadioBlockCenterAreas>
+		<RadioBlockCenterArea puic="c7583ff5-825a-486a-862b-f332edacd02e" radioBlockCenterRef="0853830a-abfa-4f20-a906-371c66ea58ce">
+			<DemarcationMarkers>
+				<DemarcationMarker trackFunctionalViewRef="4c61f54d-bfe3-4c09-a362-d8125428af84" direction="Downstream" atMeasure="123"/>
+				<DemarcationMarker trackFunctionalViewRef="4c61f54d-bfe3-4c09-a362-d8125428af84" direction="Upstream" atMeasure="512"/>
+			</DemarcationMarkers>
+		</RadioBlockCenterArea>
+	</RadioBlockCenterAreas>
+	<RadioBlockCenters>
+		<RadioBlockCenter puic="0853830a-abfa-4f20-a906-371c66ea58ce" acknowledgementTimer="55" generalMessageIntervalTimer="5" minimalUserDataRate="1024" permissionToShuntTimer="45" stopInShuntingSuppressionTimer="40">
+			<Location>
+				<GeographicLocation dataAcquisitionMethod="DGPS">
+					<gml:Point>
+						<gml:coordinates>80502.232,431958.462</gml:coordinates>
+					</gml:Point>
+				</GeographicLocation>
+			</Location>
+			<RBC-RBCCommunication radioBlockCenterRef="cb82394f-5d84-4a45-ad13-166d71affa59" lifeSignTimer="60"/>
+			<NID_C>3</NID_C>
+			<NID_RBC>6</NID_RBC>
+			<NID_RADIO>1</NID_RADIO>
+		</RadioBlockCenter>
+	</RadioBlockCenters>
+	<InterlockingAreas>
+		<InterlockingArea puic="a2a2721c-897f-4d73-82ef-b6db5c07d9dd" interlockingUnitRef="a2a2721c-897f-4d73-82ef-b6db5c07d9dd">
+			<DemarcationMarkers>
+				<DemarcationMarker trackFunctionalViewRef="4c61f54d-bfe3-4c09-a362-d8125428af84" direction="Downstream" atMeasure="123"/>
+				<DemarcationMarker trackFunctionalViewRef="4c61f54d-bfe3-4c09-a362-d8125428af84" direction="Upstream" atMeasure="512"/>
+			</DemarcationMarkers>
+		</InterlockingArea>
+	</InterlockingAreas>
+	<InterlockingUnits>
+		<InterlockingUnit puic="a2a2721c-897f-4d73-82ef-b6db5c07d9dd">
+			<Location>
+				<GeographicLocation dataAcquisitionMethod="DGPS">
+					<gml:Point>
+						<gml:coordinates>80502.232,431958.462</gml:coordinates>
+					</gml:Point>
+				</GeographicLocation>
+			</Location>
+		</InterlockingUnit>
+	</InterlockingUnits>
+	<OpenLineTracks>
+		<OpenLineTrack puic="86f8ee02-ea86-4611-8fd4-a17024092119" openLineSafetySystemRef="04e9b18c-ea50-40a1-9b2b-07c4545c54a4">
+			<BoundarySignRefs>93225b78-1a21-44f1-813b-386850063c51 5f98b0ef-3d38-4dbf-8acc-b270b80c5179</BoundarySignRefs>
+		</OpenLineTrack>
+	</OpenLineTracks>
+	<OpenLineSafetySystems>
+		<OpenLineSafetySystem puic="04e9b18c-ea50-40a1-9b2b-07c4545c54a4" openLineSafetySystemType="RRK" controlledOperationalPointRef="cbe5bff6-7514-42be-8d23-39781dca528d">
+			<Location>
+				<GeographicLocation dataAcquisitionMethod="DGPS">
+					<gml:Point>
+						<gml:coordinates>80502.232,431958.462</gml:coordinates>
+					</gml:Point>
+				</GeographicLocation>
+			</Location>
+		</OpenLineSafetySystem>
+	</OpenLineSafetySystems>
+	<TrainControlSystems>
+		<TrainControlSystem puic="5588bdaa-e048-4753-b0f2-46affd9275c3" name="TCS1">
+			<Location>
+				<GeographicLocation dataAcquisitionMethod="DGPS">
+					<gml:Point>
+						<gml:coordinates>80502.232,431958.462</gml:coordinates>
+					</gml:Point>
+				</GeographicLocation>
+			</Location>
+		</TrainControlSystem>
+	</TrainControlSystems>
+	<TechnicalSystems>
+		<TechnicalSystem puic="62aa9eab-171f-4dc5-b35c-c48eaa045762" name="Bijzondere apparatuur">
+			<Location>
+				<GeographicLocation dataAcquisitionMethod="DGPS">
+					<gml:Point>
+						<gml:coordinates>80502.232,431958.462</gml:coordinates>
+					</gml:Point>
+				</GeographicLocation>
+			</Location>
+		</TechnicalSystem>
+	</TechnicalSystems>
+	<ConditionNotifications>
+		<ConditionNotification receivingSystemRef="5588bdaa-e048-4753-b0f2-46affd9275c3" objectRef="62aa9eab-171f-4dc5-b35c-c48eaa045762" isInverted="False" isSuppressed="False"/>
+	</ConditionNotifications>
+</SystemConfiguration>

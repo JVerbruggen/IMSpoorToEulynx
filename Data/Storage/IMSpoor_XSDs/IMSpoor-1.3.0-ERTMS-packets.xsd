@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 sp1 (http://www.altova.com) by XMLSpy 2011 Professional Ed. Release 3, Installed for 50 users (with SMP from 2011-10-18 to 2013-10-18) (Movares Group B.V.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.prorail.nl/IMSpoor" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified">
+	<xs:include schemaLocation="IMSpoor-1.3.0-ERTMS-variables.xsd"/>
+	<xs:element name="Packets">
+		<xs:annotation>
+			<xs:documentation>packet (root element)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="Packet_0"/>
+				<xs:element ref="Packet_2"/>
+				<xs:element ref="Packet_3"/>
+				<xs:element ref="Packet_5"/>
+				<xs:element ref="Packet_6"/>
+				<xs:element ref="Packet_12"/>
+				<xs:element ref="Packet_13"/>
+				<xs:element ref="Packet_15"/>
+				<xs:element ref="Packet_16"/>
+				<xs:element ref="Packet_21"/>
+				<xs:element ref="Packet_27"/>
+				<xs:element ref="Packet_39"/>
+				<xs:element ref="Packet_40"/>
+				<xs:element ref="Packet_41"/>
+				<xs:element ref="Packet_42"/>
+				<xs:element ref="Packet_44"/>
+				<xs:element ref="Packet_45"/>
+				<xs:element ref="Packet_46"/>
+				<xs:element ref="Packet_49"/>
+				<xs:element ref="Packet_51"/>
+				<xs:element ref="Packet_52"/>
+				<xs:element ref="Packet_57"/>
+				<xs:element ref="Packet_58"/>
+				<xs:element ref="Packet_63"/>
+				<xs:element ref="Packet_64"/>
+				<xs:element ref="Packet_65"/>
+				<xs:element ref="Packet_66"/>
+				<xs:element ref="Packet_67"/>
+				<xs:element ref="Packet_68"/>
+				<xs:element ref="Packet_69"/>
+				<xs:element ref="Packet_70"/>
+				<xs:element ref="Packet_71"/>
+				<xs:element ref="Packet_72"/>
+				<xs:element ref="Packet_76"/>
+				<xs:element ref="Packet_79"/>
+				<xs:element ref="Packet_80"/>
+				<xs:element ref="Packet_88"/>
+				<xs:element ref="Packet_90"/>
+				<xs:element ref="Packet_131"/>
+				<xs:element ref="Packet_132"/>
+				<xs:element ref="Packet_133"/>
+				<xs:element ref="Packet_134"/>
+				<xs:element ref="Packet_135"/>
+				<xs:element ref="Packet_136"/>
+				<xs:element ref="Packet_137"/>
+				<xs:element ref="Packet_138"/>
+				<xs:element ref="Packet_139"/>
+				<xs:element ref="Packet_140"/>
+				<xs:element ref="Packet_141"/>
+				<xs:element ref="Packet_143"/>
+				<xs:element ref="Packet_145"/>
+				<xs:element ref="Packet_180"/>
+				<xs:element ref="Packet_181"/>
+				<xs:element ref="Packet_254"/>
+				<xs:element ref="Packet_255"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="Resolution" type="xs:string"/>
+	<xs:attribute name="Length" type="xs:integer"/>
+	<xs:attribute name="Name" type="xs:string"/>
+	<xs:attribute name="Description" type="xs:string"/>
+	<xs:attribute name="Unit" type="xs:string"/>
+	<xs:group name="PacketHeader_1">
+		<xs:annotation>
+			<xs:documentation>Generiek packet onderdeel enkel bestaande uit een variabele: NID_PACKET</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="NID_PACKET"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketHeader_3">
+		<xs:annotation>
+			<xs:documentation>Generiek packet onderdeel enkel bestaande uit drie variabelen: NID_PACKET, Q_DIR en L_PACKET.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="NID_PACKET"/>
+			<xs:element ref="Q_DIR"/>
+			<xs:element ref="L_PACKET"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketHeader_4">
+		<xs:annotation>
+			<xs:documentation>Generiek packet onderdeel enkel bestaande uit vier variabelen: NID_PACKET, QDIR, L_PACKET en Q_SCALE</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="NID_PACKET"/>
+			<xs:element ref="Q_DIR"/>
+			<xs:element ref="L_PACKET"/>
+			<xs:element ref="Q_SCALE"/>
+		</xs:sequence>
+	</xs:group>
+	<!-- packet elements -->
+	<xs:element name="Packet_0">
+		<xs:annotation>
+			<xs:documentation>Indication to on-board that the telegram can be ignored
+                     according to a VBC</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_1"/>
+				<xs:element ref="NID_VBCMK"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_2">
+		<xs:annotation>
+			<xs:documentation>This packet is used to tell the on-board which is the
+                     operated system version.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="M_VERSION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_3">
+		<xs:annotation>
+			<xs:documentation>Downloads a set of National Values to the train.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="D_VALIDNV"/>
+				<xs:element ref="NID_C" maxOccurs="unbounded"/>
+				<xs:element ref="V_NVSHUNT"/>
+				<xs:element ref="V_NVSTFF"/>
+				<xs:element ref="V_NVONSIGHT"/>
+				<xs:element ref="V_NVLIMSUPERV"/>
+				<xs:element ref="V_NVUNFIT"/>
+				<xs:element ref="V_NVREL"/>
+				<xs:element ref="D_NVROLL"/>
+				<xs:element ref="Q_NVSBTSMPERM"/>
+				<xs:element ref="Q_NVEMRRLS"/>
+				<xs:element ref="Q_NVGUIPERM"/>
+				<xs:element ref="Q_NVSBFBPERM"/>
+				<xs:element ref="Q_NVINHSMICPERM"/>
+				<xs:element ref="V_NVALLOWOVTRP"/>
+				<xs:element ref="V_NVSUPOVTRP"/>
+				<xs:element ref="D_NVOVTRP"/>
+				<xs:element ref="T_NVOVTRP"/>
+				<xs:element ref="D_NVPOTRP"/>
+				<xs:element ref="M_NVCONTACT"/>
+				<xs:element ref="T_NVCONTACT"/>
+				<xs:element ref="M_NVDERUN"/>
+				<xs:element ref="D_NVSTFF"/>
+				<xs:element ref="Q_NVDRIVER_ADHES"/>
+				<xs:element ref="A_NVMAXREDADH1"/>
+				<xs:element ref="A_NVMAXREDADH2"/>
+				<xs:element ref="A_NVMAXREDADH3"/>
+				<xs:element ref="Q_NVLOCACC"/>
+				<xs:element ref="M_NVAVADH"/>
+				<xs:element ref="M_NVEBCL"/>
+				<xs:element ref="Q_NVKINT"/>
+				<xs:group ref="NVKVINTSET" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_5">
+		<xs:annotation>
+			<xs:documentation>Linking Information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:group ref="Link" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_6">
+		<xs:annotation>
+			<xs:documentation>The packet sets/removes a Virtual Balise Cover.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_VBCO"/>
+				<xs:element ref="NID_VBCMK"/>
+				<xs:element ref="NID_C"/>
+				<xs:element ref="T_VBC" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_12">
+		<xs:annotation>
+			<xs:documentation>Transmission of a movement authority for level 1.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="V_MAIN"/>
+				<xs:element ref="V_EMA"/>
+				<xs:element ref="T_EMA"/>
+				<xs:group ref="Section" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="L_ENDSECTION"/>
+				<xs:element ref="Q_SECTIONTIMER"/>
+				<xs:element ref="T_SECTIONTIMER"/>
+				<xs:element ref="D_SECTIONTIMERSTOPLOC"/>
+				<xs:element ref="Q_ENDTIMER"/>
+				<xs:element ref="T_ENDTIMER"/>
+				<xs:element ref="D_ENDTIMERSTARTLOC"/>
+				<xs:element ref="Q_DANGERPOINT"/>
+				<xs:element ref="D_DP"/>
+				<xs:element ref="V_RELEASEDP"/>
+				<xs:element ref="Q_OVERLAP"/>
+				<xs:element ref="D_STARTOL"/>
+				<xs:element ref="T_OL"/>
+				<xs:element ref="D_OL"/>
+				<xs:element ref="V_RELEASEOL"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_13">
+		<xs:annotation>
+			<xs:documentation>Information for trains in staff responsible mode.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_NEWCOUNTRY"/>
+				<xs:element ref="NID_C" minOccurs="0"/>
+				<xs:element ref="NID_BG"/>
+				<xs:group ref="BGDistance" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_15">
+		<xs:annotation>
+			<xs:documentation>Transmission of a movement authority for levels 2/3.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="V_EMA"/>
+				<xs:element ref="T_EMA"/>
+				<xs:group ref="Section" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="L_ENDSECTION"/>
+				<xs:element ref="Q_SECTIONTIMER"/>
+				<xs:element ref="T_SECTIONTIMER"/>
+				<xs:element ref="D_SECTIONTIMERSTOPLOC"/>
+				<xs:element ref="Q_ENDTIMER"/>
+				<xs:element ref="T_ENDTIMER"/>
+				<xs:element ref="D_ENDTIMERSTARTLOC"/>
+				<xs:element ref="Q_DANGERPOINT"/>
+				<xs:element ref="D_DP"/>
+				<xs:element ref="V_RELEASEDP"/>
+				<xs:element ref="Q_OVERLAP"/>
+				<xs:element ref="D_STARTOL"/>
+				<xs:element ref="T_OL"/>
+				<xs:element ref="D_OL"/>
+				<xs:element ref="V_RELEASEOL"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_16">
+		<xs:annotation>
+			<xs:documentation>Transmission of the update of an MA section.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="L_SECTION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_21">
+		<xs:annotation>
+			<xs:documentation>Transmission of the gradient.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:group ref="GradientSegment" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_27">
+		<xs:annotation>
+			<xs:documentation>Static speed profile and optionally speed limits depending
+                     on the international train category.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:group ref="SSPPart" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_39">
+		<xs:annotation>
+			<xs:documentation>The packet gives information about change of the traction system.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="D_TRACTION"/>
+				<xs:element ref="M_VOLTAGE"/>
+				<xs:element ref="NID_CTRACTION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_40">
+		<xs:annotation>
+			<xs:documentation>The packet gives information about change of the allowed current consumption.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="D_CURRENT"/>
+				<xs:element ref="M_CURRENT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_41">
+		<xs:annotation>
+			<xs:documentation>Packet to identify where a level transition shall take place. In case of mixed levels, the successive M_LEVELTR’s go from the highest priority level to the lowest one.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="D_LEVELTR"/>
+				<xs:group ref="Packet41_Level" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_42">
+		<xs:annotation>
+			<xs:documentation>Packet to give the identity and telephone number of the RBC with which a session shall be established or terminated.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_RBC"/>
+				<xs:element ref="NID_C"/>
+				<xs:element ref="NID_RBC"/>
+				<xs:element ref="NID_RADIO"/>
+				<xs:element ref="Q_SLEEPSESSION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_44">
+		<xs:annotation>
+			<xs:documentation>Messages between trackside and on-board devices, which contain information used by applications outside the ERTMS/ETCS system.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="NID_XUSER"/>
+				<xs:element ref="NID_NTC" minOccurs="0"/>
+				<xs:element ref="OTHER_DATA"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_45">
+		<xs:annotation>
+			<xs:documentation>Packet to give the identity of the Radio Network to which a registration shall be enforced.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="NID_MN"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_46">
+		<xs:annotation>
+			<xs:documentation>Packet for a conditional level transition. The successive M_LEVELTR’s go from the highest priority level to the lowest one.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:group ref="Packet46_Level" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_49">
+		<xs:annotation>
+			<xs:documentation>Used to list balise group(s) which the train can pass over in SH mode.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:group ref="BaliseGroup" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_51">
+		<xs:annotation>
+			<xs:documentation>This packet gives the speed restrictions for trains with axle load category higher than or equal to the specified value for the speed restriction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_TRACKINIT"/>
+				<xs:choice>
+					<xs:element ref="D_TRACKINIT"/>
+					<xs:group ref="AxleLoad" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_52">
+		<xs:annotation>
+			<xs:documentation>This packet requests the on-board calculation of speed restrictions which ensure a given permitted brake distance in case of an EB, or SB, intervention.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_TRACKINIT"/>
+				<xs:choice>
+					<xs:element ref="D_TRACKINIT"/>
+					<xs:group ref="PBD" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_57">
+		<xs:annotation>
+			<xs:documentation>This packet is intended to give parameters telling when and how often the train has to ask for a movement authority.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="T_MAR"/>
+				<xs:element ref="T_TIMEOUTRQST"/>
+				<xs:element ref="T_CYCRQST"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_58">
+		<xs:annotation>
+			<xs:documentation>This packet is intended to give parameters telling when and how often the position has to be reported.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="T_CYCLOC"/>
+				<xs:element ref="D_CYCLOC"/>
+				<xs:element ref="M_LOC"/>
+				<xs:group ref="Location" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_63">
+		<xs:annotation>
+			<xs:documentation>Used to list balise group(s) which the train can pass over in SR mode.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:group ref="BaliseGroup" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_64">
+		<xs:annotation>
+			<xs:documentation>This packet is used to inhibit revocable TSRs from balises in level 2 or 3.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_65">
+		<xs:annotation>
+			<xs:documentation>Transmission of temporary speed restriction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="NID_TSR"/>
+				<xs:element ref="D_TSR"/>
+				<xs:element ref="L_TSR"/>
+				<xs:element ref="Q_FRONT"/>
+				<xs:element ref="V_TSR"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_66">
+		<xs:annotation>
+			<xs:documentation>Transmission of temporary speed restriction revocation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="NID_TSR"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_67">
+		<xs:annotation>
+			<xs:documentation>The packet gives details concerning where to ignore integrity check alarms of balise transmission due to big metal masses trackside.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:group ref="Packet67_TrackCondition" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_68">
+		<xs:annotation>
+			<xs:documentation>The packet gives details concerning the track ahead to support the driver when e.g. lower pantograph.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_TRACKINIT"/>
+				<xs:choice>
+					<xs:element ref="D_TRACKINIT"/>
+					<xs:group ref="Packet68_TrackCondition" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_69">
+		<xs:annotation>
+			<xs:documentation>The packet gives details concerning the location and height of station platforms for use by the train’s door control system.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_TRACKINIT"/>
+				<xs:choice>
+					<xs:element ref="D_TRACKINIT"/>
+					<xs:group ref="TrackConditionAndPlatform" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_70">
+		<xs:annotation>
+			<xs:documentation>The packet gives the characteristics needed to enter a route.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_TRACKINIT"/>
+				<xs:choice>
+					<xs:element ref="D_TRACKINIT"/>
+					<xs:group ref="Suitability" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_71">
+		<xs:annotation>
+			<xs:documentation>This packet is used when the trackside requests a change of the adhesion factor to be used in the brake model.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="D_ADHESION"/>
+				<xs:element ref="L_ADHESION"/>
+				<xs:element ref="M_ADHESION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_72">
+		<xs:annotation>
+			<xs:documentation>Packet for sending plain text messages.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_TEXTCLASS"/>
+				<xs:element ref="Q_TEXTDISPLAY"/>
+				<xs:element ref="D_TEXTDISPLAY"/>
+				<xs:element ref="M_MODETEXTDISPLAY"/>
+				<xs:element ref="M_LEVELTEXTDISPLAY"/>
+				<xs:element ref="NID_NTC" minOccurs="0"/>
+				<xs:element ref="L_TEXTDISPLAY"/>
+				<xs:element ref="T_TEXTDISPLAY"/>
+				<xs:element ref="M_LEVELTEXTDISPLAY"/>
+				<xs:element ref="NID_NTC" minOccurs="0"/>
+				<xs:element ref="Q_TEXTCONFIRM"/>
+				<xs:group ref="TextConfirm" minOccurs="0"/>
+				<xs:element ref="L_TEXT"/>
+				<xs:element ref="X_TEXT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_76">
+		<xs:annotation>
+			<xs:documentation>Packet for sending fixed text messages.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_TEXTCLASS"/>
+				<xs:element ref="Q_TEXTDISPLAY"/>
+				<xs:element ref="D_TEXTDISPLAY"/>
+				<xs:element ref="M_MODETEXTDISPLAY"/>
+				<xs:element ref="M_LEVELTEXTDISPLAY"/>
+				<xs:element ref="NID_NTC" minOccurs="0"/>
+				<xs:element ref="L_TEXTDISPLAY"/>
+				<xs:element ref="T_TEXTDISPLAY"/>
+				<xs:element ref="M_MODETEXTDISPLAY"/>
+				<xs:element ref="M_LEVELTEXTDISPLAY"/>
+				<xs:element ref="NID_NTC" minOccurs="0"/>
+				<xs:element ref="Q_TEXTCONFIRM"/>
+				<xs:group ref="TextConfirm" minOccurs="0"/>
+				<xs:element ref="Q_TEXT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_79">
+		<xs:annotation>
+			<xs:documentation>This packet gives geographical location information for one or multiple references to the train.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:group ref="GeographicalPosition" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_80">
+		<xs:annotation>
+			<xs:documentation>Mode profile associated to an MA.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:group ref="ModeProfile" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_88">
+		<xs:annotation>
+			<xs:documentation>Level Crossing information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="NID_LX"/>
+				<xs:element ref="D_LX"/>
+				<xs:element ref="L_LX"/>
+				<xs:element ref="Q_LXSTATUS"/>
+				<xs:group ref="UnprotectedLevelCrossing" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_90">
+		<xs:annotation>
+			<xs:documentation>Notification to on-board that track ahead is free from the balise group transmitting this information up to the level 2/3 transition location.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_NEWCOUNTRY"/>
+				<xs:element ref="NID_C" minOccurs="0"/>
+				<xs:element ref="NID_BG"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_131">
+		<xs:annotation>
+			<xs:documentation>Packet to order an RBC transition.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="D_RBCTR"/>
+				<xs:element ref="NID_C"/>
+				<xs:element ref="NID_RBC"/>
+				<xs:element ref="NID_RADIO"/>
+				<xs:element ref="Q_SLEEPSESSION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_132">
+		<xs:annotation>
+			<xs:documentation>Packet to order an RBC transition.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_ASPECT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_133">
+		<xs:annotation>
+			<xs:documentation>Radio infill area information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="Q_RIU"/>
+				<xs:element ref="NID_C"/>
+				<xs:element ref="NID_RIU"/>
+				<xs:element ref="NID_RADIO"/>
+				<xs:element ref="D_INFILL"/>
+				<xs:element ref="NID_C"/>
+				<xs:element ref="NID_BG"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_134">
+		<xs:annotation>
+			<xs:documentation>This packet announces a loop.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="NID_LOOP"/>
+				<xs:element ref="D_LOOP"/>
+				<xs:element ref="L_LOOP"/>
+				<xs:element ref="Q_LOOPDIR"/>
+				<xs:element ref="Q_SSCODE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_135">
+		<xs:annotation>
+			<xs:documentation>Packet to stop Shunting on desk opening.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_136">
+		<xs:annotation>
+			<xs:documentation>Defines location reference for all data contained in the same radio message or balise/loop telegram respectively, following this packet.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_NEWCOUNTRY"/>
+				<xs:element ref="NID_C" minOccurs="0"/>
+				<xs:element ref="NID_BG"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_137">
+		<xs:annotation>
+			<xs:documentation>Information to stop a train in staff responsible.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_SRSTOP"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_138">
+		<xs:annotation>
+			<xs:documentation>Used to send start and length of reversing area to the on-board.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="D_STARTREVERSE"/>
+				<xs:element ref="L_REVERSEAREA"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_139">
+		<xs:annotation>
+			<xs:documentation>Used to send supervision parameters (distance to run, speed) of reversing area to the on-board.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_4"/>
+				<xs:element ref="D_REVERSE"/>
+				<xs:element ref="V_REVERSE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_140">
+		<xs:annotation>
+			<xs:documentation>Train running number from RBC.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="NID_OPERATIONAL"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_141">
+		<xs:annotation>
+			<xs:documentation>It defines a default gradient to be used for TSR supervision when no gradient profile (packet 21) is available.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_GDIR"/>
+				<xs:element ref="G_TSR"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_143">
+		<xs:annotation>
+			<xs:documentation>Packet to give the identity and telephone number of the neighbouring Radio Infill Unit with which a session shall be established or terminated.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_RIU" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="NID_C" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="NID_RIU" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="NID_RADIO" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_145">
+		<xs:annotation>
+			<xs:documentation>Indication to on-board that the balise group message consistency reaction (service brake command) can be inhibited for this balise group message only, in case one or more balise telegram(s) of the group is/are missed or is/are detected but not decoded.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_180">
+		<xs:annotation>
+			<xs:documentation>Used to toggle on/off the display of the Lowest Supervised Speed within the MA.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+				<xs:element ref="Q_LSSMA"/>
+				<xs:element ref="T_LSSMA" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_181">
+		<xs:annotation>
+			<xs:documentation>Used to enable the generic toggling on/off of the display of the Lowest Supervised Speed within the MA.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_254">
+		<xs:annotation>
+			<xs:documentation>Indication to on-board that balise telegram, loop message or RIU information contains default information due to a fault of the trackside equipment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_3"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Packet_255">
+		<xs:annotation>
+			<xs:documentation>This packet consists only of NID_PACKET containing 8 bit 1s
+It acts as a finish flag; the receiver will stop reading the remaining part of the message/telegram when receiving eight bits set to one in the NID_PACKET field.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="PacketHeader_1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- packet sub groups -->
+	<xs:group name="NVKVINTSET">
+		<xs:sequence>
+			<xs:element ref="Q_NVKVINTSET"/>
+			<xs:group ref="A_NVP" minOccurs="0"/>
+			<xs:group ref="NVKVINT" maxOccurs="unbounded"/>
+			<xs:group ref="NVKRINT" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="A_NVP">
+		<xs:sequence>
+			<xs:element ref="A_NVP12"/>
+			<xs:element ref="A_NVP23"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="NVKVINT">
+		<xs:sequence>
+			<xs:element ref="V_NVKVINT"/>
+			<xs:element ref="M_NVKVINT"/>
+			<xs:element ref="M_NVKVINT" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="NVKRINT">
+		<xs:sequence>
+			<xs:element ref="L_NVKRINT"/>
+			<xs:element ref="M_NVKRINT"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Link">
+		<xs:sequence>
+			<xs:element ref="D_LINK"/>
+			<xs:element ref="Q_NEWCOUNTRY"/>
+			<xs:element ref="NID_C" minOccurs="0"/>
+			<xs:element ref="NID_BG"/>
+			<xs:element ref="Q_LINKORIENTATION"/>
+			<xs:element ref="Q_LINKREACTION"/>
+			<xs:element ref="Q_LOCACC"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Section">
+		<xs:sequence>
+			<xs:element ref="L_SECTION"/>
+			<xs:element ref="Q_SECTIONTIMER"/>
+			<xs:element ref="T_SECTIONTIMER"/>
+			<xs:element ref="D_SECTIONTIMERSTOPLOC"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="BGDistance">
+		<xs:sequence>
+			<xs:element ref="Q_NEWCOUNTRY"/>
+			<xs:element ref="NID_C" minOccurs="0"/>
+			<xs:element ref="NID_BG"/>
+			<xs:element ref="D_SR"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="GradientSegment">
+		<xs:sequence>
+			<xs:element ref="D_GRADIENT"/>
+			<xs:element ref="Q_GDIR"/>
+			<xs:element ref="G_A"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="SSPPart">
+		<xs:sequence>
+			<xs:element ref="D_STATIC"/>
+			<xs:element ref="V_STATIC"/>
+			<xs:element ref="Q_FRONT"/>
+			<xs:group ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Category">
+		<xs:sequence>
+			<xs:element ref="Q_DIFF"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="NC_CDDIFF"/>
+				<xs:element ref="NC_DIFF"/>
+			</xs:choice>
+			<xs:element ref="V_DIFF"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet41_Level">
+		<xs:sequence>
+			<xs:element ref="M_LEVELTR"/>
+			<xs:element ref="NID_NTC" minOccurs="0"/>
+			<xs:element ref="L_ACKLEVELTR"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet46_Level">
+		<xs:sequence>
+			<xs:element ref="M_LEVELTR"/>
+			<xs:element ref="NID_NTC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="BaliseGroup">
+		<xs:sequence>
+			<xs:element ref="Q_NEWCOUNTRY"/>
+			<xs:element ref="NID_C" minOccurs="0"/>
+			<xs:element ref="NID_BG"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="AxleLoad">
+		<xs:sequence>
+			<xs:element ref="D_AXLELOAD"/>
+			<xs:element ref="L_AXLELOAD"/>
+			<xs:element ref="Q_FRONT"/>
+			<xs:group ref="AxleLoad_CATandV" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="AxleLoad_CATandV">
+		<xs:sequence>
+			<xs:element ref="M_AXLELOADCAT"/>
+			<xs:element ref="V_AXLELOAD"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PBD">
+		<xs:sequence>
+			<xs:element ref="D_PBD"/>
+			<xs:element ref="Q_GDIR"/>
+			<xs:element ref="G_PBDSR"/>
+			<xs:element ref="Q_PBDSR"/>
+			<xs:element ref="D_PBDSR"/>
+			<xs:element ref="L_PBDSR"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Location">
+		<xs:sequence>
+			<xs:element ref="D_LOC"/>
+			<xs:element ref="Q_LGTLOC"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet67_TrackCondition">
+		<xs:sequence>
+			<xs:element ref="D_TRACKCOND"/>
+			<xs:element ref="L_TRACKCOND"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet68_TrackCondition">
+		<xs:sequence>
+			<xs:element ref="D_TRACKCOND"/>
+			<xs:element ref="L_TRACKCOND"/>
+			<xs:element ref="M_TRACKCOND"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="TrackConditionAndPlatform">
+		<xs:sequence>
+			<xs:element ref="D_TRACKCOND"/>
+			<xs:element ref="L_TRACKCOND"/>
+			<xs:element ref="M_PLATFORM"/>
+			<xs:element ref="Q_PLATFORM"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Suitability">
+		<xs:sequence>
+			<xs:element ref="D_SUITABILITY"/>
+			<xs:element ref="Q_SUITABILITY"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="M_LINEGAUGE"/>
+				<xs:element ref="M_AXLELOADCAT"/>
+				<xs:group ref="TractionSystem"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="TractionSystem">
+		<xs:sequence>
+			<xs:element ref="M_VOLTAGE"/>
+			<xs:element ref="NID_CTRACTION" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="TextConfirm">
+		<xs:sequence>
+			<xs:element ref="Q_CONFTEXTDISPLAY"/>
+			<xs:element ref="Q_TEXTREPORT"/>
+			<xs:group ref="TextReport"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="TextReport">
+		<xs:sequence>
+			<xs:element ref="NID_TEXTMESSAGE"/>
+			<xs:element ref="NID_C"/>
+			<xs:element ref="NID_RBC"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="GeographicalPosition">
+		<xs:sequence>
+			<xs:element ref="Q_NEWCOUNTRY"/>
+			<xs:element ref="NID_C" minOccurs="0"/>
+			<xs:element ref="NID_BG"/>
+			<xs:element ref="D_POSOFF"/>
+			<xs:element ref="Q_MPOSITION"/>
+			<xs:element ref="M_POSITION"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ModeProfile">
+		<xs:sequence>
+			<xs:element ref="D_MAMODE"/>
+			<xs:element ref="M_MAMODE"/>
+			<xs:element ref="V_MAMODE"/>
+			<xs:element ref="L_MAMODE"/>
+			<xs:element ref="L_ACKMAMODE"/>
+			<xs:element ref="Q_MAMODE"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="UnprotectedLevelCrossing">
+		<xs:sequence>
+			<xs:element ref="V_LX"/>
+			<xs:element ref="Q_STOPLX"/>
+			<xs:element ref="L_STOPLX" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<!-- special elements -->
+	<xs:element name="OTHER_DATA">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

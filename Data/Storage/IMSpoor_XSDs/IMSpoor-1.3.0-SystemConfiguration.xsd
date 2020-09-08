@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.3.0-ERTMS-variables.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.3.0-Groupings.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:element name="SystemConfiguration">
+		<xs:annotation>
+			<xs:documentation>Een verzameling systemen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CentralSafetySystemAreas" minOccurs="0"/>
+				<xs:element ref="CentralSafetySystems" minOccurs="0"/>
+				<xs:element ref="RadioBlockCenterAreas" minOccurs="0"/>
+				<xs:element ref="RadioBlockCenters" minOccurs="0"/>
+				<xs:element ref="InterlockingAreas" minOccurs="0"/>
+				<xs:element ref="InterlockingUnits" minOccurs="0"/>
+				<xs:element ref="OpenLineTracks" minOccurs="0"/>
+				<xs:element ref="OpenLineSafetySystems" minOccurs="0"/>
+				<xs:element ref="TrainControlSystems" minOccurs="0"/>
+				<xs:element ref="TechnicalSystems" minOccurs="0"/>
+				<xs:element ref="ConditionNotifications" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CentralSafetySystemAreas">
+		<xs:annotation>
+			<xs:documentation>Een lijst van CentralSafetySystemAreas</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CentralSafetySystemArea" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CentralSafetySystemArea">
+		<xs:annotation>
+			<xs:documentation>Central Safety System (CSS) Area</xs:documentation>
+			<xs:documentation xml:lang="NL">Central Safety System Area</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointDemarcation">
+					<xs:attribute name="restartTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De tijdvertraging die benodigd is om het  Central-Safety-System-Gebied weer veilig op te starten na uitvallen. Tijd in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="centralSafetySystemRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de CSS die het treinverkeer in het CSS gebied regelt.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>CentralSafetySystem</ObjectTypeRef>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CentralSafetySystems">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Central Safety Systems (CSS's)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CentralSafetySystem" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CentralSafetySystem">
+		<xs:annotation>
+			<xs:documentation>Een Central Safety System</xs:documentation>
+			<xs:documentation xml:lang="NL">Central Safety System</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject">
+					<xs:sequence>
+						<xs:element name="RadioBlockCenterRefs" type="tUUIDRefList" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Een PUIC verwijzing naar een of meer RBC's</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="InterlockingUnitRefs" type="tUUIDRefList" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Een PUIC verwijzing naar een of meer InterlockingUnits</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="restartTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De tijdsvertraging die benodigd is om de CSS weer veilig op te starten nadat deze uitvalt.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="trainControlSystemRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de TCS waar de CSS toestandsmeldingen aan rapporteert..</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>TrainControlSystem</ObjectTypeRef>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RadioBlockCenterAreas">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Radio Block Center gebieden</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RadioBlockCenterArea" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RadioBlockCenterArea">
+		<xs:annotation>
+			<xs:documentation>Een door punten op Het spoor afgebakend gebied waarbinnen de treinbewegingen door een daartoe aangewezen RBC worden gecoördineerd.</xs:documentation>
+			<xs:documentation xml:lang="NL">Radio Block Center Gebied</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointDemarcation">
+					<xs:attribute name="radioBlockCenterRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de RBC die de infra objecten in het RBC gebied beheren.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>RadioBlockCenter</ObjectTypeRef>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RadioBlockCenters">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Radio Block Centers (RBC's)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RadioBlockCenter" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RadioBlockCenter">
+		<xs:annotation>
+			<xs:documentation>Een Radio Block Center.</xs:documentation>
+			<xs:documentation xml:lang="NL">Radio Block Center</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject">
+					<xs:sequence>
+						<xs:element ref="RBC-RBCCommunication" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="NID_C"/>
+						<xs:element ref="NID_RBC"/>
+						<xs:element ref="NID_RADIO"/>
+					</xs:sequence>
+					<xs:attribute name="acknowledgementTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De waarde van de Acknowledgement-Timer in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="generalMessageIntervalTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De waarde van de General-Message-Interval-Timer in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="permissionToShuntTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De waarde van de Permission-To-Shunt-Timer in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="stopInShuntingSuppressionTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De waarde van de Stop-In-Shunting-Suppression-Timer in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="minimalUserDataRate" type="xs:int" use="required">
+						<xs:annotation>
+							<xs:documentation>De waarde van de Minimal-User-Data-Rate in bytes per seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RBC-RBCCommunication">
+		<xs:annotation>
+			<xs:documentation>De koppeling tussen 2 RBC's die systeeminformatie met elkaar uitwisselen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="radioBlockCenterRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar de aangrenzende RBC waar mee gecommuniceerd wordt.</xs:documentation>
+					<xs:appinfo>
+						<ObjectTypeRef>RadioBlockCenter</ObjectTypeRef>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="lifeSignTimer" type="tTimerValue">
+				<xs:annotation>
+					<xs:documentation>De interval waarde in seconden waarmee de twee RBC's communiceren.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InterlockingAreas">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Interlocking gebieden</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Een lijst van Interlocking gebieden</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="InterlockingArea" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InterlockingArea">
+		<xs:annotation>
+			<xs:documentation>Interlocking Gebied een gebied waarbinnen een interlocking systeem de spoorse infrastructuur controleert ter voorkoming van conflicteren treinbewegingen.</xs:documentation>
+			<xs:documentation xml:lang="NL">Interlocking Gebied</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointDemarcation">
+					<xs:attribute name="interlockingUnitRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de Interlocking Unit.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>InterlockingUnit</ObjectTypeRef>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InterlockingUnits">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Interlocking units</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Een lijst van Interlocking Units</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="InterlockingUnit" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InterlockingUnit">
+		<xs:annotation>
+			<xs:documentation>Een Interlocking Unit.</xs:documentation>
+			<xs:documentation xml:lang="NL">Interlocking Unit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OpenLineTracks">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Vrijebaansporen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Een lijst van Vrijebaan Sporen.</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="OpenLineTrack" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OpenLineTrack">
+		<xs:annotation>
+			<xs:documentation>Een Vrijebaanspoor.</xs:documentation>
+			<xs:documentation xml:lang="NL">Vrijebaanspoor</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tObjectDemarcation">
+					<xs:sequence>
+						<xs:element name="BoundarySignRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst met PUIC verwijzingen naar de bediende (inrijd)seinen.</xs:documentation>
+								<xs:appinfo>
+									<ObjectTypeRef>Sign</ObjectTypeRef>
+									<ObjectTypeRef>StopMarkerBoard</ObjectTypeRef>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="openLineSafetySystemRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar het Vrijebaan Beveiligingssysteem die het Vrijebaanspoor beveiligd.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>OpenLineSafetySystem</ObjectTypeRef>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OpenLineSafetySystems">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Vrijebaan Beveiligingsystemen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Een lijst van Vrijebaan Beveiligingssystemen.</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="OpenLineSafetySystem" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OpenLineSafetySystem">
+		<xs:annotation>
+			<xs:documentation>Een Vrijebaan Beveiligingssysteem..</xs:documentation>
+			<xs:documentation xml:lang="NL">Vrijebaan Beveiligingssysteem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject">
+					<xs:attribute name="openLineSafetySystemType" type="tOpenLineSafetySystemEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Het type vrijebaan beveiligingssysteem type. De lijst van opties is voorgedefiniëerd.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="controlledOperationalPointRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar het bediende dienstregelpunt dat de richting bepaalt van de vrije baan die het vrije baan beveiligingssysteem beveiligd..</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>OperationalPoint</ObjectTypeRef>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TrainControlSystems">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Train Control Systems.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TrainControlSystem" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TrainControlSystem">
+		<xs:annotation>
+			<xs:documentation>Een Train Control System (TCS).</xs:documentation>
+			<xs:documentation xml:lang="NL">Train Control System</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TechnicalSystems">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Technische Systemen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TechnicalSystem" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TechnicalSystem">
+		<xs:annotation>
+			<xs:documentation>Een Technisch Systeem.</xs:documentation>
+			<xs:documentation xml:lang="NL">Technisch Systeem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConditionNotifications">
+		<xs:annotation>
+			<xs:documentation>Een lijst van toestandsmeldingen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ConditionNotification" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConditionNotification">
+		<xs:annotation>
+			<xs:documentation>Een Toestandsmelding.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="sendingSystemRef" type="tUUIDRef">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar het systeem dat de toestandsmelding verstuurt.</xs:documentation>
+					<xs:appinfo>
+						<ObjectTypeRef>CentralSafetySystem</ObjectTypeRef>
+						<ObjectTypeRef>RadioBlockCenter</ObjectTypeRef>
+						<ObjectTypeRef>InterlockingUnit</ObjectTypeRef>
+						<ObjectTypeRef>OpenLineSafetySystem</ObjectTypeRef>
+						<ObjectTypeRef>TrainControlSystem</ObjectTypeRef>
+						<ObjectTypeRef>TechnicalSystem</ObjectTypeRef>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="receivingSystemRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar het systeem die de toestandsmelding ontvangt..</xs:documentation>
+					<xs:appinfo>
+						<ObjectTypeRef>CentralSafetySystem</ObjectTypeRef>
+						<ObjectTypeRef>RadioBlockCenter</ObjectTypeRef>
+						<ObjectTypeRef>InterlockingUnit</ObjectTypeRef>
+						<ObjectTypeRef>OpenLineSafetySystem</ObjectTypeRef>
+						<ObjectTypeRef>TrainControlSystem</ObjectTypeRef>
+						<ObjectTypeRef>TechnicalSystem</ObjectTypeRef>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="objectRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar het functioneel object waar de stand van toestand van wordt gemeld.</xs:documentation>
+					<xs:appinfo>
+						<ObjectTypeRef>*</ObjectTypeRef>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isInverted" type="tTrueFalseEnum" use="required">
+				<xs:annotation>
+					<xs:documentation>Indicatie of toestandsmelding geinverteerd is.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isSuppressed" type="tTrueFalseEnum" use="required">
+				<xs:annotation>
+					<xs:documentation>Indicatie of toestandsmelding onderdrukt is.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tOpenLineSafetySystemEnum">
+		<xs:annotation>
+			<xs:documentation>Enumeratie van type vrijebaan beveiligingssysteem typen.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FourWireAPB">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">4-draads APB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EightWireAPB">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">8-draads APB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RRK">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Rijrichtingkering (RRK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DisableLeftTrackDirection">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Uitschakelen linkerspoor-rijrichting.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

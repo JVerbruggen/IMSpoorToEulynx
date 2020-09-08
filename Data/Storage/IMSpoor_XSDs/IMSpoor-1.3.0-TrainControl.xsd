@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.3.0-Groupings.xsd"/>
+	<xs:element name="TrainControl">
+		<xs:annotation>
+			<xs:documentation>Een verzameling van (configuratie)objecten van trein beheersing</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Routes" minOccurs="0"/>
+				<xs:element ref="MovementPlans" minOccurs="0"/>
+				<xs:element ref="FictitiousSignals" minOccurs="0"/>
+				<xs:element ref="FlankProtectionConfigurations" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MovementPlans">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MovementPlan" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MovementPlan">
+		<xs:annotation>
+			<xs:documentation>Plan met toegedeelde en geprioriteerde routes bij een rijweg.</xs:documentation>
+			<xs:documentation xml:lang="NL">Rijwegplan</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBaseObject">
+					<xs:sequence>
+						<xs:element ref="TrainMovement" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TrainMovement">
+		<xs:annotation>
+			<xs:documentation>Rijweg. Een ontworpen treinbeweging van een trein in het kader van procesleiding</xs:documentation>
+			<xs:documentation xml:lang="NL">Rijweg</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBaseObject">
+					<xs:sequence>
+						<xs:element ref="PrioritizedRoute" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="fromSignalRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Begin-object van de rijweg.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>Signal</ObjectTypeRef>
+							</xs:appinfo>							
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="toSignalRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Eind-object van de rijweg.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>Signal</ObjectTypeRef>
+							</xs:appinfo>							
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="fromPPCTrackRef" type="tUUIDRef" use="optional">
+						<xs:annotation>
+							<xs:documentation>begin-spoor van de rijweg.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>PPCTrack</ObjectTypeRef>
+							</xs:appinfo>							
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="toPPCTrackRef" type="tUUIDRef" use="optional">
+						<xs:annotation>
+							<xs:documentation>eind-spoor van de rijweg.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>PPCTrack</ObjectTypeRef>
+							</xs:appinfo>							
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrioritizedRoute">
+		<xs:annotation>
+			<xs:documentation>Een route met een dwangnummer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="routeRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar een enkelvoudige of samengestelde route.</xs:documentation>
+					<xs:appinfo>
+						<ObjectTypeRef>SingularRoute</ObjectTypeRef>
+						<ObjectTypeRef>CombinedRoute</ObjectTypeRef>
+					</xs:appinfo>					
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="priority" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Het dwangnummer van de route.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Routes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SingularRoute" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CombinedRoute" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CombinedRoute">
+		<xs:annotation>
+			<xs:documentation>Een samengestelde route</xs:documentation>
+			<xs:documentation xml:lang="NL">Samengestelde Route</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBaseObject">
+					<xs:sequence>
+						<xs:element name="RouteRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst van PUIC referentie naar een of meer enkelvoudige routes of samengestelde routes.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SingularRoute">
+		<xs:annotation>
+			<xs:documentation>Een enkelvoudige route zoals ontworpen binnen het domein treinbeheersing</xs:documentation>
+			<xs:documentation xml:lang="NL">EV Route</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTrainControlRoute"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tTrainControlRoute">
+		<xs:complexContent>
+			<xs:extension base="tRoute">
+				<xs:attribute name="startObjectRef" type="tUUIDRef" use="required">
+					<xs:annotation>
+						<xs:documentation>De PUIC verwijzing naar het beginobject van een EV-route. Dit object kan een Bord, Stop Marker Board, Fictief-sein of Lichtsein zijn</xs:documentation>
+						<xs:appinfo>
+							<ObjectTypeRef>Signal</ObjectTypeRef>
+							<ObjectTypeRef>StopMarkerBoard</ObjectTypeRef>
+							<ObjectTypeRef>Sign</ObjectTypeRef>
+							<ObjectTypeRef>FictitiousSignal</ObjectTypeRef>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="endObjectRef" type="tUUIDRef" use="required">
+					<xs:annotation>
+						<xs:documentation>De PUIC verwijzing naar het eindobject van een EV-route. (Bord,Stop Marker Board,Lichtsein,Fictief-sein of Stootjuk)</xs:documentation>
+						<xs:appinfo>
+							<ObjectTypeRef>Signal</ObjectTypeRef>
+							<ObjectTypeRef>StopMarkerBoard</ObjectTypeRef>
+							<ObjectTypeRef>Sign</ObjectTypeRef>
+							<ObjectTypeRef>BufferStop</ObjectTypeRef>
+							<ObjectTypeRef>FictitiousSignal</ObjectTypeRef>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="FictitiousSignals">
+		<xs:annotation>
+			<xs:documentation>Een verzameling fictieve seinen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FictitiousSignal" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FictitiousSignal">
+		<xs:annotation>
+			<xs:documentation>Een Fictief-Sein is een niet werkelijk bestaand sein, wat wel in de beveiliging is opgenomen, bijvoorbeeld softwarematig.</xs:documentation>
+			<xs:documentation xml:lang="NL">Fictief sein</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointTrackAsset">
+					<xs:attribute name="physicalObjectRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Het fysieke sein, bord of stootjuk waaraan het fictieve sein is gekoppeld.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>Signal</ObjectTypeRef>
+								<ObjectTypeRef>Sign</ObjectTypeRef>
+								<ObjectTypeRef>BufferStop</ObjectTypeRef>
+							</xs:appinfo>							
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="rollOnBlockDemarcationRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de las behorende bij  het fictieve sein.</xs:documentation>
+							<xs:appinfo>
+								<ObjectTypeRef>InsulatedJoint</ObjectTypeRef>
+								<ObjectTypeRef>AudioFrequencyJoint</ObjectTypeRef>
+								<ObjectTypeRef>AxleCounterDetectionPoint</ObjectTypeRef>
+							</xs:appinfo>							
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FlankProtectionConfigurations">
+		<xs:annotation>
+			<xs:documentation>Een verzameling eis- en verzoek wissel configuraties.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FlankProtectionConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FlankProtectionConfiguration">
+		<xs:annotation>
+			<xs:documentation>Een eis- en/of verzoek wissel configuratie.</xs:documentation>
+			<xs:documentation xml:lang="NL">Flankbeveiliging Configuratie</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tSwitchMechanismPosition">
+					<xs:sequence>
+						<xs:element ref="MandatoryFlankProtection" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="OptionalFlankProtection" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,14 @@
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\bin\Debug\netcoreapp3.1\Logic.deps.json
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\bin\Debug\netcoreapp3.1\Logic.dll
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\bin\Debug\netcoreapp3.1\Logic.pdb
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\obj\Debug\netcoreapp3.1\Logic.csprojAssemblyReference.cache
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\obj\Debug\netcoreapp3.1\Logic.AssemblyInfoInputs.cache
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\obj\Debug\netcoreapp3.1\Logic.AssemblyInfo.cs
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\obj\Debug\netcoreapp3.1\Logic.csproj.CoreCompileInputs.cache
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\obj\Debug\netcoreapp3.1\Logic.csproj.CopyComplete
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\obj\Debug\netcoreapp3.1\Logic.dll
+C:\Users\jurje\source\repos\IMSpoorToRTM\Logic\obj\Debug\netcoreapp3.1\Logic.pdb
