@@ -7,13 +7,13 @@ using System.Xml.Linq;
 
 namespace Services.TopoModels
 {
-    public class IMSpoor : ITranslatable, IReadableFile
+    public class IMSpoor : ITranslatable
     {
-        public string FilePath { get; }
+        public XElement xElement { get; }
 
-        public IMSpoor(String filepath)
+        public IMSpoor(XElement xElement)
         {
-            this.FilePath = filepath;
+            this.xElement = xElement;
         }
 
     }

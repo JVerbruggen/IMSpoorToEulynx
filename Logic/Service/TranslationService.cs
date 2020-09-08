@@ -1,5 +1,6 @@
 ﻿using Models.Translation;
 using Services.TopoModels;
+using System;
 
 namespace Logic.Managers
 {
@@ -8,7 +9,7 @@ namespace Logic.Managers
 
         public RailTopoModel Translate(IMSpoor imSpoor)
         {
-
+            throw new NotImplementedException();
         }
 
     }

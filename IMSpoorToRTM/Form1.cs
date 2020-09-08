@@ -1,5 +1,7 @@
 ﻿using Logic.Managers;
+using Models.File;
 using Models.Translation;
+using Services.Service;
 using Services.TopoModels;
 using System;
 using System.Windows.Forms;
@@ -9,6 +11,7 @@ namespace IMSpoorToRTM
     public partial class Form1 : Form
     {
         private ITranslationService<IMSpoor, RailTopoModel> translationService = new TranslationService();
+        private IReadFileService<IMSpoor> imSpoorFileReadService = new ReadIMSpoorFileService();
 
         public Form1()
         {
@@ -29,6 +32,10 @@ namespace IMSpoorToRTM
 
         private void button_startConversion_Click(object sender, EventArgs e)
         {
+            String filePath = textBox_IMSpoorXML.Text;
+
+            IReadableFile file = new ReadableFile(filePath);
+            IMSpoor imSpoorModel = imSpoorFileReadService.Read(file);
             RailTopoModel rtm = translationService.Translate(imSpoorModel);
         }
     }

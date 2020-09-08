@@ -5,9 +5,7 @@ C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\IM
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\IMSpoorToRTM.dll
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\IMSpoorToRTM.pdb
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\Data.dll
-C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\Logic.dll
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\Models.dll
-C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\Logic.pdb
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\Models.pdb
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\Data.pdb
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\obj\Debug\netcoreapp3.1\IMSpoorToRTM.csprojAssemblyReference.cache
@@ -20,3 +18,5 @@ C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\obj\Debug\netcoreapp3.1\IM
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\obj\Debug\netcoreapp3.1\IMSpoorToRTM.dll
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\obj\Debug\netcoreapp3.1\IMSpoorToRTM.pdb
 C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\obj\Debug\netcoreapp3.1\IMSpoorToRTM.genruntimeconfig.cache
+C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\Services.dll
+C:\Users\jurje\source\repos\IMSpoorToRTM\IMSpoorToRTM\bin\Debug\netcoreapp3.1\Services.pdb

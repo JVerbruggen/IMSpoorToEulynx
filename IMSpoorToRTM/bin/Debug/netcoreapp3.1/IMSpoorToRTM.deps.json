@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "IMSpoorToRTM/1.0.0": {
         "dependencies": {
-          "Logic": "1.0.0",
-          "Models": "1.0.0"
+          "Models": "1.0.0",
+          "Services": "1.0.0"
         },
         "runtime": {
           "IMSpoorToRTM.dll": {}
@@ -23,18 +23,18 @@
           "Data.dll": {}
         }
       },
-      "Logic/1.0.0": {
+      "Models/1.0.0": {
+        "runtime": {
+          "Models.dll": {}
+        }
+      },
+      "Services/1.0.0": {
         "dependencies": {
           "Data": "1.0.0",
           "Models": "1.0.0"
         },
         "runtime": {
-          "Logic.dll": {}
-        }
-      },
-      "Models/1.0.0": {
-        "runtime": {
-          "Models.dll": {}
+          "Services.dll": {}
         }
       }
     }
@@ -50,12 +50,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Logic/1.0.0": {
+    "Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Models/1.0.0": {
+    "Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

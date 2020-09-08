@@ -9,8 +9,7 @@ namespace Models.File
         /// <summary>
         /// Read a readable file and returns type T model for that file
         /// </summary>
-        /// <param name="file"></param>
-        /// <returns></returns>
+        /// <returns>Read file in type T</returns>
         public T Read(IReadableFile file);
     }
 }
