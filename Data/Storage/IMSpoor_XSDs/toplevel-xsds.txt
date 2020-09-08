@@ -1,0 +1,5 @@
+IMSpoor-1.3.0-BGTObjects.xsd
+IMSpoor-1.3.0-Communication.xsd
+IMSpoor-1.3.0-ERTMS.xsd
+IMSpoor-1.3.0-gml.xsd
+IMSpoor-1.3.0-SystemConfiguration.xsd
