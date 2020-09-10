@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common"
+  xmlns:rtmNE="http://www.railtopomodel.org/schemas/NetEntity" elementFormDefault="qualified"
+  targetNamespace="http://www.railtopomodel.org/schemas/NetEntity">
+  <!--<dc:date>2020-09-05T14:49:48Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
+  <xs:element name="locatedNetEntity" type="rtmNE:LocatedNetEntity"/>
+  <xs:complexType name="LocatedNetEntity">
+    <xs:annotation>
+      <xs:documentation>Parent class for information that can definitely be localised, which is the
+        case of most infrastructure-related objects.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmNE:NetEntity">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="locations"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>A net entity is located in space. This location can be expressed in
+                different location systems, each with its own coordinate system. </xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>rtmCommon:BaseLocation</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="speedLimit" type="rtmNE:SpeedLimit"/>
+  <xs:complexType name="SpeedLimit">
+    <xs:complexContent>
+      <xs:extension base="rtmNE:NetProperty">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="speed" type="xs:double"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="netProperty" type="rtmNE:NetProperty"/>
+  <xs:complexType name="NetProperty">
+    <xs:complexContent>
+      <xs:extension base="rtmCommon:NetworkResource">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="location"
+            type="rtmCommon:BaseLocation"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="slope" type="rtmNE:Slope"/>
+  <xs:complexType name="Slope">
+    <xs:complexContent>
+      <xs:extension base="rtmNE:NetProperty">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="slope" type="xs:double"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="netEntity" type="rtmNE:NetEntity"/>
+  <xs:complexType name="NetEntity">
+    <xs:annotation>
+      <xs:documentation>Anchor point for any infrastructure element that has a topological
+        position</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmCommon:NetworkResource"/>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

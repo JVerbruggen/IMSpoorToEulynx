@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\jurje\\.nuget\\packages\\": {},
+    "C:\\Users\\bob_j\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\Users\\bob_j\\workspace\\IMSpoorToRTM\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Models\\Models.csproj",
-      "packagesPath": "C:\\Users\\jurje\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\Models\\obj\\",
+      "projectPath": "C:\\Users\\bob_j\\workspace\\IMSpoorToRTM\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\bob_j\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bob_j\\workspace\\IMSpoorToRTM\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jurje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bob_j\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -48,21 +48,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:rtmCommon="http://www.railtopomodel.org/schemas/TRV"
+  xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling"
+  elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/TRV">
+  <!--<dc:date>2020-09-05T14:49:48Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling"
+    schemaLocation="EULYNX_Signalling.xsd"/>
+  <xs:element name="atcBalise" type="rtmCommon:AtcBalise"/>
+  <xs:complexType name="AtcBalise">
+    <xs:annotation>
+      <xs:documentation>EBICAB balise.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:Balise"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="movableElement" type="rtmCommon:MovableElement"/>
+  <xs:complexType name="MovableElement">
+    <xs:complexContent>
+      <xs:extension base="signalling:MovableElement">
+        <xs:attribute name="canReportDegradedStatus" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>True: this movable element can report a degraded status which means a
+              loss of full detection.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

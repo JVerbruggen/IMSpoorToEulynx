@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:SNCF="http://www.railtopomodel.org/schemas/SNCF"
+  xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common"
+  xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling"
+  elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/SNCF">
+  <!--<dc:date>2020-09-05T14:49:48Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
+  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling"
+    schemaLocation="EULYNX_Signalling.xsd"/>
+  <xs:element name="ipcsLocking" type="SNCF:IpcsLocking"/>
+  <xs:complexType name="IpcsLocking">
+    <xs:annotation>
+      <xs:documentation>Used in case of IPCS or ITCS installations. fr-FR: Installations Permanentes
+        ou Temporaires de Contresens. IPCS est un enclenchement de sens modifi&amp;#233;. Par
+        d&amp;#233;faut, l'intervalle est orient&amp;#233; dans le sens normal (les signaux de
+        contre-sens sont &amp;#233;teints, sauf celui de sortie de l'intervalle et son signal
+        d'annonce, les crocodiles des signaux de sens contraire sont non aliment&amp;#233;s, les
+        annonces de PN ne fonctionnent que dans le sens normal, etc.). Pour prendre le sens normal,
+        IPCS fonctionne quasiment comme l'enclenchement de sens sauf que l'occupation de
+        l'intervalle n'est pas v&amp;#233;rifi&amp;#233;e. Pour prendre le contre-sens, IPCS
+        fonctionne comme l'enclenchement de sens (donc l'occupation de l'intervalle est
+        v&amp;#233;rifi&amp;#233;e), mais cette prise de sens &amp;#224; des cons&amp;#233;quences
+        sur la signalisation de l'intervalle. A la prise du contre-sens, l'intervalle s'oriente en
+        contre-sens (les signaux de contre-sens s'allument, les crocodiles de sens normal sont non
+        aliment&amp;#233;s, les crocodiles de contre-sens sont aliment&amp;#233;s, les annonces de
+        PN ne fonctionnent que dans le contre-sens, etc.). D&amp;#232;s que l'intervalle n'est plus
+        occup&amp;#233; et qu'il n'y a plus d'itin&amp;#233;raire vers l'intervalle en contre-sens,
+        l'intervalle se r&amp;#233;oriente en sens normal. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:TrackLocking">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="checksState"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>checks that lever or key release instrument is
+                activated.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:CompoundLogicalObjectAndState</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="conflictsWithSetRoutes"
+            type="SNCF:OpposingRouteLabel"/>
+          <xs:element name="hasInterval" type="SNCF:Interval">
+            <xs:annotation>
+              <xs:documentation>fr-Fr: L'enclenchement est associ&amp;#233; &amp;#224; un
+                intervalle. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="identifiesPointPosition"
+            type="SNCF:PointLockedLabel"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SncfDirectionTypes">
+    <xs:annotation>
+      <xs:documentation>Direction types in use with SNCF</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="odd">
+        <xs:annotation>
+          <xs:documentation>fr-FR: impair</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="even">
+        <xs:annotation>
+          <xs:documentation>fr-FR: pair</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="kvbTpsToTargetRelation" type="SNCF:KvbTpsToTargetRelation"/>
+  <xs:complexType name="KvbTpsToTargetRelation">
+    <xs:annotation>
+      <xs:documentation>Gives the distance from a target where speed must be reduced or equal to
+        zero. fr-FR: Renseigne la distance &amp;#224; une cible o&amp;#249; la vitesse doit
+        &amp;#234;tre r&amp;#233;duite ou &amp;#233;gale &amp;#224;
+        z&amp;#233;ro.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:KvbRelation">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasDesignSlope" type="rtmCommon:Gradient">
+            <xs:annotation>
+              <xs:documentation>Slope for which the KVB balises have been engineered. fr-FR:
+                d&amp;#233;clivit&amp;#233; pour laquelle les balises KVB ont &amp;#233;t&amp;#233;
+                dimensionn&amp;#233;es.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasDistanceFromSignalToTarget"
+            type="rtmCommon:Length">
+            <xs:annotation>
+              <xs:documentation>Distance between signal and target. fr-FR: distance entre signal et
+                point but. Utilis&amp;#233;e pour balise prox &amp;#224; distance de glissement
+                entre 100m et 200m.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasDistanceFromTargetToFoulingPoint"
+            type="rtmCommon:Length">
+            <xs:annotation>
+              <xs:documentation>Distance from target to fouling point. fr-FR: distance entre point
+                but et garage franc. Utilis&amp;#233;e pour balise prox &amp;#224; distance de
+                glissement entre 50m et 100m. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="hasDistanceTpsToTarget" type="rtmCommon:Length">
+            <xs:annotation>
+              <xs:documentation>Distance from the TP device to the target. Can be zero. FR: distance
+                but</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="opposingRouteLabel" type="SNCF:OpposingRouteLabel"/>
+  <xs:complexType name="OpposingRouteLabel">
+    <xs:annotation>
+      <xs:documentation>Identifiers of routes in a neighbouring interlocking that are in conflict
+        with the requested routebody.</xs:documentation>
+    </xs:annotation>
+  </xs:complexType>
+  <xs:element name="standoffLocking" type="SNCF:StandoffLocking"/>
+  <xs:complexType name="StandoffLocking">
+    <xs:annotation>
+      <xs:documentation>fr-FR: Enclenchement d'affrontement.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:TrackLocking">
+        <xs:attribute name="manualReleasePossible" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>When true, the route locking may be released by the
+              signaller.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="stationTrackLocking" type="SNCF:StationTrackLocking"/>
+  <xs:complexType name="StationTrackLocking">
+    <xs:annotation>
+      <xs:documentation>Allows shunting movement on track situated between the opposing signals.
+        fr-FR: enclenchement de voie de stationnement (St). Typiquement utilis&amp;#233; pour une
+        voie &amp;#224; quai. Le transit qui donne acc&amp;#232;s &amp;#224; la voie de
+        stationnement en sens contraire est v&amp;#233;rifi&amp;#233;. Permet de manœuvrer (e.g.
+        pour coupler deux rames ou atteler une locomotive). Comme une VU, sauf que l'on peut y
+        manœuvrer (pour coupler deux rames ou pour atteler une locomotive). Au lieu de
+        v&amp;#233;rifier le transit de sens contraire de la VU, est v&amp;#233;rifi&amp;#233; le
+        transit qui donne acc&amp;#232;s &amp;#224; la voie de stationnement en sens contraire.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:TrackLocking">
+        <xs:sequence>
+          <xs:element name="hasInterval" type="SNCF:Interval">
+            <xs:annotation>
+              <xs:documentation>fr-Fr: L'enclenchement est associ&amp;#233; &amp;#224; un
+                intervalle. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="FictitiousSignalFunctionTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="interlockingBorder">
+        <xs:annotation>
+          <xs:documentation>Signal fictif &amp;#224; la limite de poste. Permet de scinder un
+            parcours allant d'un poste vers un autre en deux itin&amp;#233;raires
+            compl&amp;#232;tement distincts, limitant ainsi au maximum les d&amp;#233;pendances
+            entre les deux postes.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="transitAndMovableElementPosition" type="SNCF:TransitAndMovableElementPosition"/>
+  <xs:complexType name="TransitAndMovableElementPosition">
+    <xs:annotation>
+      <xs:documentation>Tuple of a transit plus point and position. fr-FR: paire transit et position
+        de l' aiguille.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="checksIfMovableElementIsInPosition"
+        type="signalling:MovableElementAndPosition">
+        <xs:annotation>
+          <xs:documentation>fr-FR: V&amp;#233;rifie l'&amp;#233;tat du transit si l'aiguille est
+            dans une position donn&amp;#233;e</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="checksTransit" type="rtmCommon:tElementWithIDref">
+        <xs:annotation>
+          <xs:appinfo>
+            <ObjectTypeRef>SNCF:Transit</ObjectTypeRef>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="kvbAnalogBalise" type="SNCF:KvbAnalogBalise"/>
+  <xs:complexType name="KvbAnalogBalise">
+    <xs:complexContent>
+      <xs:extension base="SNCF:KvbBalise">
+        <xs:sequence>
+          <xs:element name="hasFunction" type="SNCF:KvbAnalogBaliseFunctionTypes"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="crocodileSystemProperties" type="SNCF:CrocodileSystemProperties"/>
+  <xs:complexType name="CrocodileSystemProperties">
+    <xs:annotation>
+      <xs:documentation>System behavioural properties of the crocodile
+        installation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:TpsDataTransmissionSystemProperties">
+        <xs:sequence>
+          <xs:element name="hasCrocodileFunction" type="SNCF:CrocodileFunctionTypes">
+            <xs:annotation>
+              <xs:documentation>The crocodile system is designed for one specific
+                function.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="isDesignedForReaction"
+            type="SNCF:CrocodileReactionType">
+            <xs:annotation>
+              <xs:documentation>The crocodile is designed to trigger a train-board reaction. If this
+                is a train recognition crocodile, no reaction is given (Paris suburban trains.)
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="trailable" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>fr-FR: Crocodile talonnable, equip&amp;#233; d'une p&amp;#233;dale
+              pour annuler le crocodile lorsqu'il est franchi en sens inverse.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="pointLockedLabel" type="SNCF:PointLockedLabel"/>
+  <xs:complexType name="PointLockedLabel">
+    <xs:annotation>
+      <xs:documentation>Text identifying that a point is locked in a given position, e.g. "point 5
+        left" and that allows the train to use the given routebody.</xs:documentation>
+    </xs:annotation>
+  </xs:complexType>
+  <xs:element name="kvbRelation" type="SNCF:KvbRelation"/>
+  <xs:complexType name="KvbRelation">
+    <xs:annotation>
+      <xs:documentation>Informs at what distance the KVB balises are placed on approach to the
+        signal. fr-FR: Renseigne &amp;#224; quelle distance les balises KVB sont plac&amp;#233;es
+        &amp;#224; l'approche du signal. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:TpsRelation">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="appliesToFacingTurnout"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>Applies to a facing point (as opposed to fouling
+                point).</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:Turnout</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="appliesToFoulingPoint"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>Applies to fouling point of the turnout. fr-FR: point but
+                vis&amp;#233; est le garage franc de l'aiguille. </xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:Turnout</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="appliesToLocationOfInterest"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>Marks the spot where a speed changes that is the target of a KVB
+                balise group announcing a speed reduction starting at a location of interest. fr-FR:
+                Point but d'une balise KVB annon&amp;#231;ant une vitesse r&amp;#233;duite au point
+                remarquable.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:LocationOfInterest</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="appliesToTurnoutBranch"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>Applies to left or right branch of a point. fr-FR: en talon gauche
+                ou droite d'une aiguille </xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:PointElementAndPosition</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasDistanceFromTpsToFoulingPoint"
+            type="rtmCommon:Length">
+            <xs:annotation>
+              <xs:documentation>fr-FR: distance balise au garage franc, utilis&amp;#233;e pour un
+                point prox avec distance de glissement inf&amp;#233;rieure &amp;#224;
+                50m.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="singleTrackLocking" type="SNCF:SingleTrackLocking"/>
+  <xs:complexType name="SingleTrackLocking">
+    <xs:annotation>
+      <xs:documentation>Used case of single track, i.e. the opposing routes are part of one yard
+        controlled by a single interlocking. fr-FR: Voie Unique (VU) Une voie unique dans le poste
+        est une portion de voie d&amp;#233;limit&amp;#233; par deux signaux de sens contraire dos
+        &amp;#224; dos. Est v&amp;#233;rifi&amp;#233; que le transit de sens contraire de la zone de
+        la VU est lib&amp;#233;r&amp;#233;. Si c'est le cas, le sens de la VU est pris et
+        l'itin&amp;#233;raire s'&amp;#233;tablit. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:TrackLocking">
+        <xs:sequence>
+          <xs:element name="hasInterval" type="SNCF:Interval">
+            <xs:annotation>
+              <xs:documentation>fr-Fr: L'enclenchement est associ&amp;#233; &amp;#224; un
+                intervalle.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="kvbSpeedDesignProperties" type="SNCF:KvbSpeedDesignProperties"/>
+  <xs:complexType name="KvbSpeedDesignProperties">
+    <xs:annotation>
+      <xs:documentation>See SNCF document DES258/IG33258 for details about the properties in this
+        class.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="isDesignedForSpeed" type="rtmCommon:Speed">
+        <xs:annotation>
+          <xs:documentation>speed is not given when the train category is not allowed on the line or
+            when the train speed is lower than the allowed speed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="isDesignedForTrainCategory" type="signalling:KvbTrain"/>
+    </xs:sequence>
+    <xs:attribute name="trainCategoryHasLowerSpeed" type="xs:boolean" use="required">
+      <xs:annotation>
+        <xs:documentation>&lt;ul&gt; &lt;li&gt;True: the train ignores this speed limit because the
+          train category has a max speed lower than the speed given by the balise.&lt;/li&gt;
+          &lt;li&gt;False: the train must respect the speed limit given by the balise.&lt;/li&gt;
+          &lt;/ul&gt; fr-FR: "Vitesse Train" =&amp;gt; VT</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="trainCategoryNotAllowed" type="xs:boolean" use="required">
+      <xs:annotation>
+        <xs:documentation>fr-FR: NCP (Ne Circule Pas) &lt;ul&gt; &lt;li&gt;True: this train category
+          does not exist on this line.&lt;/li&gt; &lt;li&gt;False: this train category is allowed on
+          the line.&lt;/li&gt; &lt;/ul&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="kvbCsspInformationField" type="SNCF:KvbCsspInformationField"/>
+  <xs:complexType name="KvbCsspInformationField">
+    <xs:annotation>
+      <xs:documentation>Information from the CSSP family not linked to speed
+        control.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:KvbInformationField">
+        <xs:sequence>
+          <xs:element name="hasKvbCsspInformationType" type="SNCF:KvbCsspInformationTypes"/>
+        </xs:sequence>
+        <xs:attribute name="value" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Value associated with CR, SR, QTB</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="kvbDigitalBalise" type="SNCF:KvbDigitalBalise"/>
+  <xs:complexType name="KvbDigitalBalise">
+    <xs:complexContent>
+      <xs:extension base="SNCF:KvbBalise"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="KvbAnalogBaliseFunctionTypes">
+    <xs:annotation>
+      <xs:documentation>Values are in SNCF document IG90169 &amp;#167;6.2.2</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="s">
+        <xs:annotation>
+          <xs:documentation>Signal.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="d">
+        <xs:annotation>
+          <xs:documentation>Distance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="p">
+        <xs:annotation>
+          <xs:documentation>Profil (d&amp;#233;clivit&amp;#233;).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dp">
+        <xs:annotation>
+          <xs:documentation>Distance et profil.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="g">
+        <xs:annotation>
+          <xs:documentation>Limitation de vitesse &amp;#171; cat&amp;#233;gorie
+            g&amp;#233;n&amp;#233;rale &amp;#187;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="s1">
+        <xs:annotation>
+          <xs:documentation>Limitation de vitesse &amp;#171; cat&amp;#233;gories sp&amp;#233;ciales
+            &amp;#187;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="s2">
+        <xs:annotation>
+          <xs:documentation>Limitation de vitesse &amp;#171; cat&amp;#233;gories sp&amp;#233;ciales
+            &amp;#187;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="s3">
+        <xs:annotation>
+          <xs:documentation>Limitation de vitesse &amp;#171; cat&amp;#233;gories sp&amp;#233;ciales
+            &amp;#187;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ltv">
+        <xs:annotation>
+          <xs:documentation>Limitation temporaire de vitesse.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="m">
+        <xs:annotation>
+          <xs:documentation>Marqueur.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="f">
+        <xs:annotation>
+          <xs:documentation>Informations diverses.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cssp">
+        <xs:annotation>
+          <xs:documentation>Informations pour Cartes de Sortie S&amp;#233;rie
+            Parall&amp;#232;le.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="kvbSpeedControlInformationField" type="SNCF:KvbSpeedControlInformationField"/>
+  <xs:complexType name="KvbSpeedControlInformationField">
+    <xs:annotation>
+      <xs:documentation>Information linked to speed control.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:KvbInformationField">
+        <xs:sequence>
+          <xs:element name="hasKvbSpeedControlInformationType"
+            type="SNCF:KvbSpeedControlInformationTypes"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="hasSpeedDesignProperties"
+            type="SNCF:KvbSpeedDesignProperties"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="hasTarget"
+            type="SNCF:KvbTpsToTargetRelation"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="kvbBalise" type="SNCF:KvbBalise"/>
+  <xs:complexType name="KvbBalise">
+    <xs:annotation>
+      <xs:documentation>A balise used for Controle de Vitesse par Balise (KVB).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:Balise">
+        <xs:attribute name="positionInGroup" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Position of the balise in the group. Ranges from A to E. A for first,
+              E for fifth in group.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="directionLocking" type="SNCF:DirectionLocking"/>
+  <xs:complexType name="DirectionLocking">
+    <xs:annotation>
+      <xs:documentation>fr-FR: Enclenchement de sens entre postes. Checks to prevent simultaneous
+        opening of opposing signals that are controlled by different interlocking
+        systems.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:TrackLocking">
+        <xs:sequence>
+          <xs:element name="hasInterval" type="SNCF:Interval">
+            <xs:annotation>
+              <xs:documentation>fr-Fr: L'enclenchement est associ&amp;#233; &amp;#224; un
+                intervalle. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="transit" type="SNCF:Transit"/>
+  <xs:complexType name="Transit">
+    <xs:annotation>
+      <xs:documentation>A transit is a TVP section plus a direction. fr-FR: Un transit correspond
+        &amp;#224; une section TVP &amp;#224; laquelle on affecte un sens.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:ConfiguredBaseObject">
+        <xs:sequence>
+          <xs:element name="appliesToTvpSection" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>fr-FR: Zone (section TVP) &amp;#224; laquelle le transit est
+                associ&amp;#233;</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:TvpSection</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="hasDirection" type="SNCF:SncfDirectionTypes">
+            <xs:annotation>
+              <xs:documentation>fr-FR: Le transit est associ&amp;#233; &amp;#224; un
+                sens.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="routeBody" type="SNCF:RouteBody"/>
+  <xs:complexType name="RouteBody">
+    <xs:annotation>
+      <xs:documentation>The SNCF route body is used for opposing route checks.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:RouteBody">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="activatesTransit"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>Transits are activated when the train runs along the route body.
+                fr-FR: Le parcours de l'itin&amp;#233;raire met en action des
+                transits.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>SNCF:Transit</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="checksOpposingRouteLocking"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>A route along this route path is only allowed when the opposing
+                route locking checks succeed. fr-FR: Le parcours de l'itin&amp;#233;raire
+                v&amp;#233;rifie l'&amp;#233;tat des enclenchements entre itin&amp;#233;raires de
+                sens contraire.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>SNCF:OpposingRouteLocking</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="hasDirection" type="SNCF:SncfDirectionTypes">
+            <xs:annotation>
+              <xs:documentation>Odd/even direction of the route body in terms odd/even. This
+                direction has no direct relation with the underlying topological linear elements.
+                fr-FR: Sens de l'itin&amp;#233;raire pair ou impair.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="opposingRouteLocking" type="SNCF:OpposingRouteLocking"/>
+  <xs:complexType abstract="true" name="OpposingRouteLocking">
+    <xs:annotation>
+      <xs:documentation>A signal that provides entry to a route can only be opened when no opposing
+        route is set. This prevents face-to-face movement. For this purpose, the system proves that
+        sections in between opposing signals are not claimed for movement in the opposite
+        direction.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:ConfiguredBaseObject"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CrocodileFunctionTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="speedChecking">
+        <xs:annotation>
+          <xs:documentation>fr-FR: Controle de vitesse DAAT-Avanc&amp;#233;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="trainCategoryDetection">
+        <xs:annotation>
+          <xs:documentation>fr-FR: Reconnaissance de cat&amp;#233;gorie de trains (de banlieue
+            parisienne)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="signal">
+        <xs:annotation>
+          <xs:documentation>Equipement compl&amp;#233;mentaire d'un signal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="fictitiousSignal" type="SNCF:FictitiousSignal"/>
+  <xs:complexType name="FictitiousSignal">
+    <xs:annotation>
+      <xs:documentation>Signal fictif.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:NonPhysicalSignal">
+        <xs:sequence>
+          <xs:element name="hasFunction" type="SNCF:FictitiousSignalFunctionTypes"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="KvbSpeedControlInformationTypes">
+    <xs:annotation>
+      <xs:documentation>Enumeration of values for the information field linked to speed control.
+        fr-FR: Abr&amp;#233;viations de la d&amp;#233;signation des champs li&amp;#233;s au
+        contr&amp;#244;le de vitesse. Source: SNCF document IG90169, paragraph
+        6.3.2</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ae">
+        <xs:annotation>
+          <xs:documentation>Champ cod&amp;#233; AE pour raison technique.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="aativd">
+        <xs:annotation>
+          <xs:documentation>Annulation d’un TIVD en talon d’appareil.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="avra">
+        <xs:annotation>
+          <xs:documentation>Annulation de la vitesse de rappel.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dvl">
+        <xs:annotation>
+          <xs:documentation>D&amp;#233;but de vitesse limit&amp;#233;e.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fvl">
+        <xs:annotation>
+          <xs:documentation>Fin de vitesse limit&amp;#233;e.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fz">
+        <xs:annotation>
+          <xs:documentation>Fin de zone &amp;#233;quip&amp;#233;e.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dzc">
+        <xs:annotation>
+          <xs:documentation>D&amp;#233;but de zone en construction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fzc">
+        <xs:annotation>
+          <xs:documentation>Fin de zone en construction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dzsa">
+        <xs:annotation>
+          <xs:documentation>D&amp;#233;but de zone sans alerte.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fzsa">
+        <xs:annotation>
+          <xs:documentation>Fin de zone sans alerte.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dzhv">
+        <xs:annotation>
+          <xs:documentation>D&amp;#233;but de zone hors visualisation.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fzhv">
+        <xs:annotation>
+          <xs:documentation>Fin de zone hors visualisation.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dtcc">
+        <xs:annotation>
+          <xs:documentation>D&amp;#233;but de zone de transmission continue en
+            construction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ftcc">
+        <xs:annotation>
+          <xs:documentation>Fin de zone de transmission continue en construction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="itc">
+        <xs:annotation>
+          <xs:documentation>Initialisation de la transmission continue.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="iloc">
+        <xs:annotation>
+          <xs:documentation>Initialisation de la localisation.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pfix">
+        <xs:annotation>
+          <xs:documentation>Tableau P fixe.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="vpmob">
+        <xs:annotation>
+          <xs:documentation>Tableau P mobile.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="proxh">
+        <xs:annotation>
+          <xs:documentation>Proximit&amp;#233; de heurtoir.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="rafcc">
+        <xs:annotation>
+          <xs:documentation>Rafra&amp;#238;chissement d’espace pour canton court.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="rafcl">
+        <xs:annotation>
+          <xs:documentation>Rafra&amp;#238;chissement d’espace pour canton long.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="s">
+        <xs:annotation>
+          <xs:documentation>Signal.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sp">
+        <xs:annotation>
+          <xs:documentation>Traitement de proximit&amp;#233;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sreo">
+        <xs:annotation>
+          <xs:documentation>R&amp;#233;ouverture signal.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sf">
+        <xs:annotation>
+          <xs:documentation>Franchissement de signal.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="srev">
+        <xs:annotation>
+          <xs:documentation>R&amp;#233;veil de train.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sur">
+        <xs:annotation>
+          <xs:documentation>Surveillance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tivd">
+        <xs:annotation>
+          <xs:documentation>TIVD fixe.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tive">
+        <xs:annotation>
+          <xs:documentation>Ex&amp;#233;cution d’une limitation de vitesse fixe (par plaque Z ou R,
+            de type "LMTR" par pancarte km ou facilement rep&amp;#233;rable ou pour une
+            entr&amp;#233;e syst&amp;#232;me). </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tive5">
+        <xs:annotation>
+          <xs:documentation>TIVE de heurtoir.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tpaa">
+        <xs:annotation>
+          <xs:documentation>Annulation d’un tableau P mobile au TIV.D
+            pr&amp;#233;annonc&amp;#233;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tpex">
+        <xs:annotation>
+          <xs:documentation>Ex&amp;#233;cution d’un tableau P fixe au TIV.D
+            pr&amp;#233;annonc&amp;#233;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="vaa">
+        <xs:annotation>
+          <xs:documentation>Annulation d’un TIV.D fixe ou mobile.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="van">
+        <xs:annotation>
+          <xs:documentation>Vitesse d’annonce (R ou (R) ou TIV.D mobile).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="vra">
+        <xs:annotation>
+          <xs:documentation>Vitesse de rappel (RR ou (RR) ou TIV.R).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="vreo">
+        <xs:annotation>
+          <xs:documentation>R&amp;#233;ouverture vitesse.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dgv">
+        <xs:annotation>
+          <xs:documentation>D&amp;#233;but de zone &amp;#224; grande vitesse</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fgv">
+        <xs:annotation>
+          <xs:documentation>Fin de zone &amp;#224; grande vitesse</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="bidirectionalRouteLocking" type="SNCF:BidirectionalRouteLocking"/>
+  <xs:complexType name="BidirectionalRouteLocking">
+    <xs:annotation>
+      <xs:documentation>Opposing route locking for routes in areas with points. fr-FR: Enclenchement
+        de parcours banalis&amp;#233; (dans les zones &amp;#233;quip&amp;#233;es d'appareils de
+        voie). Les conditions d'&amp;#233;tablissement de l'itin&amp;#233;raire ne
+        requi&amp;#232;rent que la v&amp;#233;rification du transit de sens contraire en aval du
+        signal origine de l'itin&amp;#233;raire (e.g. pour v&amp;#233;rifier qu'aucun
+        intin&amp;#233;raire de sens contraire form&amp;#233; a pour destination un signal en amont
+        du signal origine.) </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:OpposingRouteLocking">
+        <xs:sequence>
+          <xs:element name="checksTransit" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>This transit needs checking.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>SNCF:Transit</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="kvbInformationField" type="SNCF:KvbInformationField"/>
+  <xs:complexType name="KvbInformationField">
+    <xs:annotation>
+      <xs:documentation>Individual information fields for a KVB Train Protection
+        System.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:BaseObject">
+        <xs:attribute name="designation" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>Optional designation of an information field; used for digital balises
+              when there is a need to distinguish two information fields that have the same
+              function. </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="normalDirection" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>true: information works in the normal direction. false: works in
+              reverse direction. Normal/reverse refers to the orientation of the balise
+              group.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="remarks" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Remarks such as "train sub-category is not subject to speed control".
+              FR: observations, tel que "sous-cat&amp;#233;gorie de train non
+              contr&amp;#244;l&amp;#233;e en vitesse =&amp;gt; non KV".</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="KvbCsspInformationTypes">
+    <xs:annotation>
+      <xs:documentation>Enumeration of values for the information field of the CSSP family not
+        linked to speed control and various functions. fr-FR: Abr&amp;#233;viations de la
+        d&amp;#233;signation des champs de la famille CSSP &lt;i&gt;non &lt;/i&gt;li&amp;#233;s au
+        contr&amp;#244;le de vitesse et fonctions diverses. Source: SNCF document IG90169, paragraph
+        6.3.3</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cr">
+        <xs:annotation>
+          <xs:documentation>Canal radio num&amp;#233;ro ...</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sr">
+        <xs:annotation>
+          <xs:documentation>Syst&amp;#232;me radio num&amp;#233;ro ...</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="etu">
+        <xs:annotation>
+          <xs:documentation>Entr&amp;#233;e tunnel.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="stu">
+        <xs:annotation>
+          <xs:documentation>Sortie tunnel.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qte">
+        <xs:annotation>
+          <xs:documentation>Quai de type haut.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qtc">
+        <xs:annotation>
+          <xs:documentation>Quai de type interm&amp;#233;diaire.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qtb1">
+        <xs:annotation>
+          <xs:documentation>Quai de type mi-haut niveau 1.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qtb3">
+        <xs:annotation>
+          <xs:documentation>Quai de type mi-haut niveau 3. </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qta">
+        <xs:annotation>
+          <xs:documentation>Quai de type bas.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qag">
+        <xs:annotation>
+          <xs:documentation>Quai &amp;#224; desservir &amp;#224; gauche.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qad">
+        <xs:annotation>
+          <xs:documentation>Quai &amp;#224; desservir &amp;#224; droite.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qgd">
+        <xs:annotation>
+          <xs:documentation>Quai &amp;#224; desservir &amp;#224; gauche et &amp;#224;
+            droite.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qhg">
+        <xs:annotation>
+          <xs:documentation>Quai haut &amp;#224; gauche.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qhd">
+        <xs:annotation>
+          <xs:documentation>Quai haut &amp;#224; droite.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="vwc">
+        <xs:annotation>
+          <xs:documentation>Verrouillage WC.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lwc">
+        <xs:annotation>
+          <xs:documentation>Lib&amp;#233;ration WC.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bgl">
+        <xs:annotation>
+          <xs:documentation>Banlieue Grande Ligne.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qbg">
+        <xs:annotation>
+          <xs:documentation>Quai bas &amp;#224; gauche.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qbd">
+        <xs:annotation>
+          <xs:documentation>Quai bas &amp;#224; droite.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qhdg">
+        <xs:annotation>
+          <xs:documentation>Quai haut &amp;#224; droite et &amp;#224; gauche.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qbdg">
+        <xs:annotation>
+          <xs:documentation>Quai bas &amp;#224; droite et &amp;#224; gauche.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CrocodileReactionType">
+    <xs:annotation>
+      <xs:documentation>The kind of reaction for which the crocodile is designed. This determines
+        the type of current that is injected into the crocodile.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="warning">
+        <xs:annotation>
+          <xs:documentation>fr-FR: Avertissement de survitesse DC current </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="emergencyBrake">
+        <xs:annotation>
+          <xs:documentation>fr-FR: Frein d'urgence AC current</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WarningAndEb">
+        <xs:annotation>
+          <xs:documentation>fr-FR: Avertissement et frein d'urgence.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="kvbSystemProperties" type="SNCF:KvbSystemProperties"/>
+  <xs:complexType name="KvbSystemProperties">
+    <xs:annotation>
+      <xs:documentation>KVB system properties. The inherited speed design properties are not used
+        for KVB. FR: champs d'informations</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:TpsDataTransmissionSystemProperties">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="hasInformationField"
+            type="SNCF:KvbInformationField">
+            <xs:annotation>
+              <xs:documentation>Digital balise group can have many information fields. The order of
+                the information fields is defined in SNCF document DES258/IG33258. Analog balise
+                group: multiplicity is one for an unidirectional balise group, or two for a
+                bidirectional balise group. FR: &lt;i&gt;champs
+                d'information&lt;/i&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="crocodile" type="SNCF:Crocodile"/>
+  <xs:complexType name="Crocodile">
+    <xs:annotation>
+      <xs:documentation>Train Protection Device used in France, Belgium and
+        Luxemburg.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:TpsSpotDevice">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="isSuppressedByTreadle"
+            type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>crocodile est annul&amp;#233; par p&amp;#233;dale</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:Treadle</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="trackLocking" type="SNCF:TrackLocking"/>
+  <xs:complexType abstract="true" name="TrackLocking">
+    <xs:annotation>
+      <xs:documentation>Opposing route locking for line without points. fr-FR: Enclenchement portant
+        sur des portions de voie lin&amp;#233;aire, g&amp;#233;n&amp;#233;ralement sans
+        aiguilles.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SNCF:OpposingRouteLocking">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="checksTransitForEvenDirection"
+            type="SNCF:TransitAndMovableElementPosition"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="checksTransitForOddDirection"
+            type="SNCF:TransitAndMovableElementPosition"/>
+        </xs:sequence>
+        <xs:attribute name="betweenInterlockings" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>fr-FR: Enclenchement entre postes ou non</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="interval" type="SNCF:Interval"/>
+  <xs:complexType name="Interval">
+    <xs:annotation>
+      <xs:documentation>Track between two signals equipped with an interlocked direction. fr-FR:
+        Intervalle (portion de voie entre 2 signaux munie d'un enclenchement de
+        sens).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="hasTvpSections"
+        type="rtmCommon:tElementWithIDref">
+        <xs:annotation>
+          <xs:documentation>fr-Fr: L'intervalle est compos&amp;#233; de zones (sections
+            TVP).</xs:documentation>
+          <xs:appinfo>
+            <ObjectTypeRef>signalling:TvpSection</ObjectTypeRef>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="2" minOccurs="2" name="limitedBySignals"
+        type="rtmCommon:tElementWithIDref">
+        <xs:annotation>
+          <xs:documentation>fr-FR: L'intervalle est d&amp;#233;limit&amp;#233; par deux
+            signaux.</xs:documentation>
+          <xs:appinfo>
+            <ObjectTypeRef>signalling:ActiveSignal</ObjectTypeRef>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
