@@ -1,5 +1,6 @@
-﻿using Logic.Managers;
-using Models.File;
+﻿using Models.File;
+using Models.Service;
+using Models.TopoModels.Eulynx;
 using Models.Translation;
 using Services.Service;
 using Services.TopoModels;
@@ -7,20 +8,23 @@ using System;
 using System.IO;
 using System.Security.AccessControl;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace IMSpoorToRTM
 {
     public partial class Form1 : Form
     {
-        private ITranslationService<IMSpoor, RailTopoModel> translationService = new TranslationService();
-        private IReadFileService<IMSpoor> imSpoorFileReadService = new ReadIMSpoorFileService();
+        private ITranslationService<IMSpoor, RailTopoModel> translationService = new XSDParseTranslationService();
+        private IReadFileService<Models.TopoModels.IMSpoor.IMSpoor> imSpoorFileReadService = new ReadIMSpoorFileService();
+        private ISerializer<Eulynx> eulynxSerializer = new XMLSerializeService();
 
         public Form1()
         {
             InitializeComponent();
 
             //textBox_IMSpoorXML.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            textBox_IMSpoorXML.Text = @"D:\IMSpoor-1.3.0-actual.xml";
+            textBox_IMSpoorXML.Text = @"C:\Users\jurje\OneDrive\Documenten\ProRail EULYNX IMSPOOR Collections\IMSpoor-1.3.0_Examples\IMSpoor-1.3.0-actual.xml";
         }
 
         private void button_chooseIMSpoorXML_Click(object sender, EventArgs e)
@@ -44,12 +48,19 @@ namespace IMSpoorToRTM
         {
             String filePath = textBox_IMSpoorXML.Text;
 
-            setAccessRule(filePath);
+            var imSpoor = imSpoorFileReadService.Read(filePath);
+            Eulynx eulynx = (Eulynx)imSpoor;
 
-            IReadableFile file = new ReadableFile(filePath);
-            IMSpoor imSpoorModel = imSpoorFileReadService.Read(file);
+            String eulynxXml = eulynxSerializer.Serialize(eulynx);
 
-            RailTopoModel rtm = translationService.Translate(imSpoorModel);
+            XDocument eulynxDoc = XDocument.Parse(eulynxXml);
+
+            //eulynxDoc.Save(@"C:\Users\jurje\OneDrive\Documenten\EULYNX-from-IMSpoor.xml");
+            saveFileDialog_EulynxXMLOutput.InitialDirectory = @"C:\Users\jurje\OneDrive\Documenten\EULYNX-from-IMSpoor.xml";
+            if (saveFileDialog_EulynxXMLOutput.ShowDialog() == DialogResult.OK)
+            {
+                eulynxDoc.Save(saveFileDialog_EulynxXMLOutput.FileName);
+            }
         }
     }
 }

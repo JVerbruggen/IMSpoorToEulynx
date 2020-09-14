@@ -1,19 +1,30 @@
 ﻿using Models.File;
-using Services.TopoModels;
+using Models.TopoModels.Eulynx;
+using Models.TopoModels.IMSpoor;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.IO;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace Services.Service
 {
     public class ReadIMSpoorFileService : IReadFileService<IMSpoor>
     {
-        public IMSpoor Read(IReadableFile file)
+        private T DeserializeObject<T>(string xml)
         {
-            XElement xelement = XElement.Load(file.FilePath);
+            var serializer = new XmlSerializer(typeof(T));
+            using (var tr = new StringReader(xml))
+            {
+                return (T)serializer.Deserialize(tr);
+            }
+        }
 
-            return new IMSpoor(xelement);
+        public IMSpoor Read(String filePath)
+        {
+            var d = XDocument.Load(filePath);
+            IMSpoor imSpoor = DeserializeObject<IMSpoor>(d.ToString());
+
+            return imSpoor;
         }
     }
 }

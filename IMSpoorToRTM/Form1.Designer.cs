@@ -35,6 +35,7 @@
             this.button_startConversion = new System.Windows.Forms.Button();
             this.label_IMSpoorXMLFile = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.saveFileDialog_EulynxXMLOutput = new System.Windows.Forms.SaveFileDialog();
             this.groupBox_IMSpoorXML.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,6 +113,11 @@
             this.progressBar1.Size = new System.Drawing.Size(355, 29);
             this.progressBar1.TabIndex = 3;
             // 
+            // saveFileDialog_EulynxXMLOutput
+            // 
+            this.saveFileDialog_EulynxXMLOutput.FileName = "eulynx-from-imspoor-generated.xml";
+            this.saveFileDialog_EulynxXMLOutput.Filter = "XML files|*.xml";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -137,6 +143,7 @@
         private System.Windows.Forms.Label label_IMSpoorXMLFile;
         private System.Windows.Forms.Button button_startConversion;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog_EulynxXMLOutput;
     }
 }
 
