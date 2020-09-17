@@ -52,7 +52,7 @@
             // button_chooseIMSpoorXML
             // 
             this.button_chooseIMSpoorXML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_chooseIMSpoorXML.Location = new System.Drawing.Point(328, 46);
+            this.button_chooseIMSpoorXML.Location = new System.Drawing.Point(430, 46);
             this.button_chooseIMSpoorXML.Name = "button_chooseIMSpoorXML";
             this.button_chooseIMSpoorXML.Size = new System.Drawing.Size(29, 27);
             this.button_chooseIMSpoorXML.TabIndex = 0;
@@ -66,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_IMSpoorXML.Location = new System.Drawing.Point(8, 46);
             this.textBox_IMSpoorXML.Name = "textBox_IMSpoorXML";
-            this.textBox_IMSpoorXML.Size = new System.Drawing.Size(314, 27);
+            this.textBox_IMSpoorXML.Size = new System.Drawing.Size(416, 27);
             this.textBox_IMSpoorXML.TabIndex = 1;
             // 
             // groupBox_IMSpoorXML
@@ -79,7 +79,7 @@
             this.groupBox_IMSpoorXML.Controls.Add(this.textBox_IMSpoorXML);
             this.groupBox_IMSpoorXML.Location = new System.Drawing.Point(11, 5);
             this.groupBox_IMSpoorXML.Name = "groupBox_IMSpoorXML";
-            this.groupBox_IMSpoorXML.Size = new System.Drawing.Size(363, 125);
+            this.groupBox_IMSpoorXML.Size = new System.Drawing.Size(465, 125);
             this.groupBox_IMSpoorXML.TabIndex = 2;
             this.groupBox_IMSpoorXML.TabStop = false;
             this.groupBox_IMSpoorXML.Text = "IMSpoor XML";
@@ -87,7 +87,7 @@
             // button_startConversion
             // 
             this.button_startConversion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_startConversion.Location = new System.Drawing.Point(263, 90);
+            this.button_startConversion.Location = new System.Drawing.Point(365, 90);
             this.button_startConversion.Name = "button_startConversion";
             this.button_startConversion.Size = new System.Drawing.Size(94, 29);
             this.button_startConversion.TabIndex = 3;
@@ -110,7 +110,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(19, 136);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(355, 29);
+            this.progressBar1.Size = new System.Drawing.Size(457, 29);
             this.progressBar1.TabIndex = 3;
             // 
             // saveFileDialog_EulynxXMLOutput
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 369);
+            this.ClientSize = new System.Drawing.Size(488, 463);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox_IMSpoorXML);
             this.Name = "Form1";

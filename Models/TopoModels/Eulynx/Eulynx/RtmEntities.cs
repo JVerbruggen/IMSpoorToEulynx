@@ -1,30 +1,27 @@
-﻿using System;
+﻿using Models.TopoModels.IMSpoor;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Models.TopoModels.Eulynx
 {
-    public partial class RtmEntities
+    public partial class RtmEntities : ITranslatableSingle<RtmEntities, tSituation>
     {
-
-        public static RtmEntities GetRtmEntities()
+        public RtmEntities TranslateSingle(tSituation situation)
         {
-            RtmEntities rtmEntities = new RtmEntities();
+            //this.ownsBufferstop = VehicleStop.GetVehicleStops();
+            //this.ownsPoint = Turnout.GetTurnouts();
+            //this.ownsRouteBody = RouteBody.GetRouteBodies();
+            //this.ownsSignal = Signal.GetSignals();
+            //this.usesCablingTopology = CablingTopology.GetCablingTopology();
+            //this.usesLinearLocation = LinearLocation.GetLinearLocations();
+            //this.usesPositioningSystem = PositioningSystem.GetPositioningSystems();
+            //this.usesPositioningSystemCoordinate = PositioningSystemCoordinate.GetPositioningSystemCoordinates();
+            //this.usesSpotLocation = SpotLocation.GetSpotLocations();
+            this.usesTrackTopology = new TrackTopology().TranslateSingle(situation.RailInfrastructure.RailTopology);
+            this.uuid = "";
 
-            rtmEntities.ownsBufferstop = VehicleStop.GetVehicleStops();
-            rtmEntities.ownsPoint = Turnout.GetTurnouts();
-            rtmEntities.ownsRouteBody = RouteBody.GetRouteBodies();
-            rtmEntities.ownsSignal = Signal.GetSignals();
-            rtmEntities.usesCablingTopology = CablingTopology.GetCablingTopology();
-            rtmEntities.usesLinearLocation = LinearLocation.GetLinearLocations();
-            rtmEntities.usesPositioningSystem = PositioningSystem.GetPositioningSystems();
-            rtmEntities.usesPositioningSystemCoordinate = PositioningSystemCoordinate.GetPositioningSystemCoordinates();
-            rtmEntities.usesSpotLocation = SpotLocation.GetSpotLocations();
-            rtmEntities.usesTrackTopology = TrackTopology.GetTrackTopology();
-            rtmEntities.uuid = "";
-
-            return rtmEntities;
+            return this;
         }
-
     }
 }

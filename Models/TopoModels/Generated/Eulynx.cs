@@ -21,7 +21,6 @@ namespace Models.TopoModels.Eulynx
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("verticalAlignment", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -44,7 +43,6 @@ public partial class VerticalAlignment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 public partial class tElementWithIDref {
@@ -66,7 +64,6 @@ public partial class tElementWithIDref {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("trackTopology", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -102,7 +99,6 @@ public partial class TrackTopology {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("positionedRelation", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -210,7 +206,6 @@ public enum Usage {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PositionedRelation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("relation", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -240,7 +235,6 @@ public partial class Relation : NetworkResource {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonLinearElement))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("networkResource", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -296,7 +290,6 @@ public abstract partial class NetworkResource : NamedResource {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Specification))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("namedResource", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -943,7 +936,6 @@ public abstract partial class NamedResource : BaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderedCollection))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("baseObject", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -967,7 +959,6 @@ public abstract partial class BaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignalFunction1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalFunction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -1003,7 +994,6 @@ public partial class SignalFunction : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SignalFunction", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("signalFunction", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -1087,7 +1077,6 @@ public enum SignalFunctionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("leuPort", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -1667,7 +1656,6 @@ public partial class LeuPort : BaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SystemState))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="BaseObject", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("baseObject", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -1677,7 +1665,6 @@ public abstract partial class BaseObject1 : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("popGroupAssociation", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -1752,7 +1739,6 @@ public partial class PopGroupAssociation : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("rtmEntities", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -1892,7 +1878,6 @@ public partial class RtmEntities : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("vehicleStop", Namespace="http://www.railtopomodel.org/schemas/Signalling", IsNullable=false)]
@@ -1910,7 +1895,6 @@ public partial class VehicleStop : LocatedNetEntity {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpsSpotDevice))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NetEntity")]
 [System.Xml.Serialization.XmlRootAttribute("locatedNetEntity", Namespace="http://www.railtopomodel.org/schemas/NetEntity", IsNullable=false)]
@@ -1942,7 +1926,6 @@ public partial class LocatedNetEntity : NetEntity {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpsSpotDevice))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NetEntity")]
 [System.Xml.Serialization.XmlRootAttribute("netEntity", Namespace="http://www.railtopomodel.org/schemas/NetEntity", IsNullable=false)]
@@ -1952,7 +1935,6 @@ public partial class NetEntity : NetworkResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeBody", Namespace="http://www.railtopomodel.org/schemas/Signalling", IsNullable=false)]
@@ -1962,7 +1944,6 @@ public partial class RouteBody : LocatedNetEntity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signal", Namespace="http://www.railtopomodel.org/schemas/Signalling", IsNullable=false)]
@@ -1972,7 +1953,6 @@ public partial class Signal : LocatedNetEntity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("turnout", Namespace="http://www.railtopomodel.org/schemas/Signalling", IsNullable=false)]
@@ -1985,7 +1965,6 @@ public partial class Turnout : LocatedNetEntity {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpsSpotDevice))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("onTrackSignallingDevice", Namespace="http://www.railtopomodel.org/schemas/Signalling", IsNullable=false)]
@@ -1995,7 +1974,6 @@ public abstract partial class OnTrackSignallingDevice : LocatedNetEntity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("vehiclePassageDetector", Namespace="http://www.railtopomodel.org/schemas/Signalling", IsNullable=false)]
@@ -2006,7 +1984,6 @@ public partial class VehiclePassageDetector : OnTrackSignallingDevice {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpsSpotDevice))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsDevice", Namespace="http://www.railtopomodel.org/schemas/Signalling", IsNullable=false)]
@@ -2016,7 +1993,6 @@ public partial class TpsDevice : OnTrackSignallingDevice {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsSpotDevice", Namespace="http://www.railtopomodel.org/schemas/Signalling", IsNullable=false)]
@@ -2026,7 +2002,6 @@ public partial class TpsSpotDevice : TpsDevice {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("cablingTopology", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -2064,7 +2039,6 @@ public partial class CablingTopology {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonLinearElement))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("positioningNetElement", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2087,7 +2061,6 @@ public partial class PositioningNetElement : CompositionNetElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("associatedPositioningSystem", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2123,7 +2096,6 @@ public partial class AssociatedPositioningSystem : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("intrinsicCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2162,7 +2134,6 @@ public partial class IntrinsicCoordinate : BaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonLinearElement))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("compositionNetElement", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2187,7 +2158,6 @@ public abstract partial class CompositionNetElement : NetElement {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderedCollection))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("elementPartCollection", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2201,7 +2171,6 @@ public partial class ElementPartCollection : BaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonLinearElement))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("netElement", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2225,7 +2194,6 @@ public partial class NetElement : NetworkResource {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinearLocationCoordinate))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("linearLocation", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2250,7 +2218,6 @@ public partial class LinearLocation : BaseLocation {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(AssociatedNetElementCoordinate))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("associatedNetElement", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2341,7 +2308,6 @@ public enum LateralSide {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinearLocationCoordinate))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("baseLocation", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2353,7 +2319,6 @@ public abstract partial class BaseLocation : BaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeometricPositioningSystem))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("positioningSystem", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2367,7 +2332,6 @@ public partial class PositioningSystem : NamedResource {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeographicCoordinate))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("positioningSystemCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2395,7 +2359,6 @@ public partial class PositioningSystemCoordinate : ObservableProperty {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeographicCoordinate))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("observableProperty", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2426,7 +2389,6 @@ public partial class ObservableProperty : BaseProperty {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Gradient))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("quantity", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2480,7 +2442,6 @@ public abstract partial class Quantity {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeographicCoordinate))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("baseProperty", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2505,7 +2466,6 @@ public abstract partial class BaseProperty : NamedResource {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpotLocationCoordinate))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("spotLocation", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -2554,7 +2514,6 @@ public abstract partial class SpotLocation : BaseLocation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("signallingEntities", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -3743,7 +3702,6 @@ public partial class SignallingEntities : BaseObject1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignalAndMessage))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("assetAndState", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4222,7 +4180,6 @@ public enum ProvingTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ControlledTrackAsset))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("configuredBaseObject", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4245,7 +4202,6 @@ public abstract partial class ConfiguredBaseObject : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("configuration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4365,7 +4321,6 @@ public partial class Configuration : BaseObject1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(OutOfServicePreparative))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("configurationProperty", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4375,7 +4330,6 @@ public abstract partial class ConfigurationProperty : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("signallingEquivalentUnit", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -4398,7 +4352,6 @@ public partial class SignallingEquivalentUnit : ConfigurationProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("equipmentLocation", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -4449,7 +4402,6 @@ public enum EquipmentLocationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("supplierInformation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4498,7 +4450,6 @@ public partial class SupplierInformation : ConfigurationProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("controlCode", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4521,7 +4472,6 @@ public partial class ControlCode : ConfigurationProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("foreignKey", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4557,7 +4507,6 @@ public partial class ForeignKey : ConfigurationProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("description", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4587,7 +4536,6 @@ public partial class Description : ConfigurationProperty {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SimpleDesignation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("designation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4597,7 +4545,6 @@ public abstract partial class Designation : ConfigurationProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Designation", Namespace="http://www.railtopomodel.org/schemas/RFI")]
 [System.Xml.Serialization.XmlRootAttribute("designation", Namespace="http://www.railtopomodel.org/schemas/RFI", IsNullable=false)]
@@ -4646,7 +4593,6 @@ public partial class Designation4 : Designation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Designation", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("designation", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -4709,7 +4655,6 @@ public partial class Designation3 : Designation {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(FullDesignation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Designation", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("designation", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -4732,7 +4677,6 @@ public partial class Designation2 : Designation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("fullDesignation", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -4782,7 +4726,6 @@ public partial class FullDesignation : Designation2 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TdsDesignation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Designation", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("designation", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -4883,7 +4826,6 @@ public partial class Designation1 : Designation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("tdsDesignation", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -4925,7 +4867,6 @@ public enum CodeLetter {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("simpleDesignation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4952,7 +4893,6 @@ public partial class SimpleDesignation : Designation {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(OutOfServicePreparative))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("objectStatus", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4962,7 +4902,6 @@ public abstract partial class ObjectStatus : ConfigurationProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("dummyMode", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4972,7 +4911,6 @@ public partial class DummyMode : ObjectStatus {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("coveredObject", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4983,7 +4921,6 @@ public partial class CoveredObject : ObjectStatus {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(OutOfServicePreparative))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("outOfService", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -4993,7 +4930,6 @@ public partial class OutOfService : ObjectStatus {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("outOfServicePreparative", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -5010,7 +4946,6 @@ public partial class OutOfServicePreparative : OutOfService {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(BidirectionalRouteLocking))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("opposingRouteLocking", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5025,7 +4960,6 @@ public abstract partial class OpposingRouteLocking : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(IpcsLocking))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("trackLocking", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5074,7 +5008,6 @@ public abstract partial class TrackLocking : OpposingRouteLocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("transitAndMovableElementPosition", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5111,7 +5044,6 @@ public partial class TransitAndMovableElementPosition {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PointElementAndPosition))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("movableElementAndPosition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -5186,7 +5118,6 @@ public partial class MovableElementAndPosition : AssetAndState {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("crossingElementAndPosition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -5222,7 +5153,6 @@ public enum LeftRight {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("derailerElementAndPosition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -5258,7 +5188,6 @@ public enum DerailingPositionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pointElementAndPosition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -5281,7 +5210,6 @@ public partial class PointElementAndPosition : MovableElementAndPosition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("directionLocking", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5304,7 +5232,6 @@ public partial class DirectionLocking : TrackLocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("interval", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5340,7 +5267,6 @@ public partial class Interval {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("singleTrackLocking", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5363,7 +5289,6 @@ public partial class SingleTrackLocking : TrackLocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("stationTrackLocking", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5386,7 +5311,6 @@ public partial class StationTrackLocking : TrackLocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("standoffLocking", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5409,7 +5333,6 @@ public partial class StandoffLocking : TrackLocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("ipcsLocking", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5471,7 +5394,6 @@ public partial class IpcsLocking : TrackLocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("opposingRouteLabel", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5481,7 +5403,6 @@ public partial class OpposingRouteLabel {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("pointLockedLabel", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5491,7 +5412,6 @@ public partial class PointLockedLabel {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("bidirectionalRouteLocking", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5514,7 +5434,6 @@ public partial class BidirectionalRouteLocking : OpposingRouteLocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("transit", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -5567,7 +5486,6 @@ public enum SncfDirectionTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotCentralControlledAreaDepartureTrack))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("departureTrack", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -5616,7 +5534,6 @@ public partial class DepartureTrack : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("temporaryShuntingAreaDepartureTrack", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -5626,7 +5543,6 @@ public partial class TemporaryShuntingAreaDepartureTrack : DepartureTrack {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("centralControlledAreaDepartureTrack", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -5701,7 +5617,6 @@ public partial class CentralControlledAreaDepartureTrack : DepartureTrack {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("duration", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -5711,7 +5626,6 @@ public partial class Duration : Quantity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("length", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -5721,7 +5635,6 @@ public partial class Length : Quantity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("workzoneDepartureTrack", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -5744,7 +5657,6 @@ public partial class WorkzoneDepartureTrack : DepartureTrack {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("speed", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -5754,7 +5666,6 @@ public partial class Speed : Quantity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("notCentralControlledAreaDepartureTrack", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -5803,7 +5714,6 @@ public partial class NotCentralControlledAreaDepartureTrack : DepartureTrack {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("departureTrackExtension", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -5826,7 +5736,6 @@ public partial class DepartureTrackExtension : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("obscuration", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -5849,7 +5758,6 @@ public partial class Obscuration : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("popGroup", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -5859,7 +5767,6 @@ public partial class PopGroup : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("shuntingTargetAuthorityDependent", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -5882,7 +5789,6 @@ public partial class ShuntingTargetAuthorityDependent : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("communicationRelation", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6050,7 +5956,6 @@ public partial class CommunicationRelation : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Attachment1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("attachment", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -6099,7 +6004,6 @@ public partial class Attachment : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("imageAttachment", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -6150,7 +6054,6 @@ public enum ImageTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Attachment", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("attachment", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6329,7 +6232,6 @@ public enum BandwidthTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("communicationNode", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6456,7 +6358,6 @@ public enum CommunicationTechnologyTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("tpsToPointRelation", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6492,7 +6393,6 @@ public partial class TpsToPointRelation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("predefinedEtcsTelegramSet", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6541,7 +6441,6 @@ public partial class PredefinedEtcsTelegramSet : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("remainingShuntingRouteRelease", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6564,7 +6463,6 @@ public partial class RemainingShuntingRouteRelease : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("positioningMeasurementInfo", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6617,7 +6515,6 @@ public partial class PositioningMeasurementInfo : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsProgrammingAuxiliaryFile))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("binaryDataFile", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6679,7 +6576,6 @@ public partial class BinaryDataFile : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("fileProperties", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6741,7 +6637,6 @@ public partial class FileProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("airgapDataFile", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6805,7 +6700,6 @@ public partial class AirgapDataFile : BinaryDataFile {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsProgrammingAuxiliaryFile))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("etcsProgrammingFile", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6867,7 +6761,6 @@ public partial class EtcsProgrammingFile : BinaryDataFile {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTelegramLoadFile", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6877,7 +6770,6 @@ public partial class EtcsTelegramLoadFile : EtcsProgrammingFile {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("etcsProgrammingAuxiliaryFile", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6887,7 +6779,6 @@ public partial class EtcsProgrammingAuxiliaryFile : EtcsProgrammingFile {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("baliseLabellingInformation", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6955,7 +6846,6 @@ public enum SourceOfLabelInformationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("occupiedExitFromStubTrack", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -6978,7 +6868,6 @@ public partial class OccupiedExitFromStubTrack : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("dualFlankProtection", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -7111,7 +7000,6 @@ public enum DualFlankProtectionMeasureTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("sciLsAspects", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -7175,7 +7063,6 @@ public partial class SciLsAspects : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActiveAspect))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("aspect", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7264,7 +7151,6 @@ public partial class Aspect : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Symbol1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("symbol", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7287,7 +7173,6 @@ public partial class Symbol {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Symbol", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("symbol", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -7406,7 +7291,6 @@ public enum SignalRestrictionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("textInformation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7429,7 +7313,6 @@ public partial class TextInformation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Aspect", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("aspect", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -7490,7 +7373,6 @@ public enum SignalColourTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("activeAspect", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7568,7 +7450,6 @@ public enum AspectDeactivationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalMessageDegradation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7627,7 +7508,6 @@ public partial class SignalMessageDegradation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalVector", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7731,7 +7611,6 @@ public partial class SignalVector : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProceedMessage))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("message", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7780,7 +7659,6 @@ public abstract partial class Message : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Message", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("message", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -7790,7 +7668,6 @@ public partial class Message1 : Message {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("stopMessage", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7826,7 +7703,6 @@ public partial class StopMessage : Message {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("proceedMessage", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7836,7 +7712,6 @@ public partial class ProceedMessage : Message {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tempShuntingArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7850,7 +7725,6 @@ public partial class TempShuntingArea : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsBaliseGroup))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsDataTransmissionSystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7886,7 +7760,6 @@ public partial class TpsDataTransmissionSystem : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbVvInstallation", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -7898,7 +7771,6 @@ public partial class AtbVvInstallation : TpsDataTransmissionSystem {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsBaliseGroup))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("baliseGroup", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -7921,7 +7793,6 @@ public partial class BaliseGroup : TpsDataTransmissionSystem {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("baliseGroupPurpose", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8005,7 +7876,6 @@ public partial class BaliseGroupPurpose {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="BaliseGroup", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("baliseGroup", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -8028,7 +7898,6 @@ public partial class BaliseGroup1 : BaliseGroup {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsBaliseGroup", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8142,7 +8011,6 @@ public partial class EtcsBaliseGroup : BaliseGroup {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("viaLocation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8178,7 +8046,6 @@ public partial class ViaLocation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tunnelSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8205,7 +8072,6 @@ public partial class TunnelSignal : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpwsSystemProperties))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsDataTransmissionSystemProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8384,7 +8250,6 @@ public enum TpsPowerSupplyTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PzbSpeedCheckingSystemProperties))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("speedCheckingSystemProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8419,7 +8284,6 @@ public partial class SpeedCheckingSystemProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("speedProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8477,7 +8341,6 @@ public partial class SpeedProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("pzbSpeedCheckingSystemProperties", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -8530,7 +8393,6 @@ public enum SuppressedDirectionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbSystemProperties", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -8555,7 +8417,6 @@ public partial class KvbSystemProperties : TpsDataTransmissionSystemProperties {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(KvbCsspInformationField))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbInformationField", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -8604,7 +8465,6 @@ public partial class KvbInformationField : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbSpeedControlInformationField", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -8774,7 +8634,6 @@ public enum KvbSpeedControlInformationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbSpeedDesignProperties", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -8834,7 +8693,6 @@ public partial class KvbSpeedDesignProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("kvbTrain", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8862,7 +8720,6 @@ public partial class KvbTrain : TrainCategory {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpwsTrain))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trainCategory", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8872,7 +8729,6 @@ public abstract partial class TrainCategory : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("passengerTrain", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8882,7 +8738,6 @@ public partial class PassengerTrain : TrainCategory {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("freightTrain", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8892,7 +8747,6 @@ public partial class FreightTrain : TrainCategory {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tiltingTrain", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8902,7 +8756,6 @@ public partial class TiltingTrain : TrainCategory {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpwsTrain", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -8925,7 +8778,6 @@ public partial class TpwsTrain : TrainCategory {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbTpsToTargetRelation", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -8987,7 +8839,6 @@ public partial class KvbTpsToTargetRelation : KvbRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("gradient", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -8998,7 +8849,6 @@ public partial class Gradient : Quantity {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(KvbTpsToTargetRelation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbRelation", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -9075,7 +8925,6 @@ public partial class KvbRelation : TpsRelation {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(KvbTpsToTargetRelation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9163,7 +9012,6 @@ public partial class TpsRelation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbCsspInformationField", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -9282,7 +9130,6 @@ public enum KvbCsspInformationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("crocodileSystemProperties", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -9376,7 +9223,6 @@ public enum CrocodileReactionType {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("awsSystemProperties", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -9399,7 +9245,6 @@ public partial class AwsSystemProperties : TpsDataTransmissionSystemProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("tpwsSystemProperties", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -9487,7 +9332,6 @@ public enum TpwsFunctionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("tpwsTrainCategorySpecificProperties", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -9534,7 +9378,6 @@ public enum TpwsSystemTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("infrastructureBorder", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9557,7 +9400,6 @@ public partial class InfrastructureBorder : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeApproachLocking", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9645,7 +9487,6 @@ public partial class RouteApproachLocking : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("referenceDrawing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9720,7 +9561,6 @@ public partial class ReferenceDrawing : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("referenceDrawingParameter", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9758,7 +9598,6 @@ public partial class ReferenceDrawingParameter : BaseObject1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LevelCrossingTimerSet1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingTimerSet", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9781,7 +9620,6 @@ public abstract partial class LevelCrossingTimerSet : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LevelCrossingTimerSet", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingTimerSet", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -9817,7 +9655,6 @@ public enum MrotTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LevelCrossingTimerSet", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingTimerSet", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -9853,7 +9690,6 @@ public partial class LevelCrossingTimerSet1 : LevelCrossingTimerSet {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("normalisation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9908,7 +9744,6 @@ public enum NormalisationTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConditionAffectingSignal))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9958,7 +9793,6 @@ public abstract partial class RouteCondition : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConditionAffectingKRI))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("conditionAffectingRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -9981,7 +9815,6 @@ public partial class ConditionAffectingRoute : RouteCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("conditionAffectingKRI", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10033,7 +9866,6 @@ public enum TargetTrackConditionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("conditionAffectingSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10058,7 +9890,6 @@ public partial class ConditionAffectingSignal : RouteCondition {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(AssetControlRelation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("controlRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10211,7 +10042,6 @@ public partial class ControlRelation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("controllerRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10247,7 +10077,6 @@ public partial class ControllerRelation : ControlRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("assetControlRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10283,7 +10112,6 @@ public partial class AssetControlRelation : ControlRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsPointCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10319,7 +10147,6 @@ public partial class EtcsPointCrossing : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperatingZoneRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10390,7 +10217,6 @@ public enum LocalOperatingZoneRelationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lockCombination", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10413,7 +10239,6 @@ public partial class LockCombination : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("expansionJoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10449,7 +10274,6 @@ public partial class ExpansionJoint : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("dangerAreaTrack", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10486,7 +10310,6 @@ public partial class DangerAreaTrack : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineSideSpotDetector))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lineSideSpotDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10522,7 +10345,6 @@ public partial class LineSideSpotDevice : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lineSideSpotDetector", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10573,7 +10395,6 @@ public enum LineSideDetectorTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperatingZone", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10612,7 +10433,6 @@ public partial class LocalOperatingZone : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemporarySpeedRestriction))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("segment", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10650,7 +10470,6 @@ public abstract partial class Segment : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemporarySpeedRestriction))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("speedSegment", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10686,7 +10505,6 @@ public partial class SpeedSegment : Segment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trainCategorySpeedRestriction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10709,7 +10527,6 @@ public partial class TrainCategorySpeedRestriction : SpeedSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("temporarySpeedRestriction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10719,7 +10536,6 @@ public partial class TemporarySpeedRestriction : SpeedSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("assetUser", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10742,7 +10558,6 @@ public partial class AssetUser : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperatingZoneLimit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10810,7 +10625,6 @@ public enum LocalOperatingZoneLimitTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsNode", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10859,7 +10673,6 @@ public partial class EtcsNode : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cssArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10883,7 +10696,6 @@ public partial class CssArea : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignalFrame1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalFrame", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -10973,7 +10785,6 @@ public partial class SignalFrame : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(VerticalOffsetOfReferencePoint))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("offsetOfReferencePoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11007,7 +10818,6 @@ public partial class OffsetOfReferencePoint {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("horizontalOffsetOfReferencePoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11017,7 +10827,6 @@ public partial class HorizontalOffsetOfReferencePoint : OffsetOfReferencePoint {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("verticalOffsetOfReferencePoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11067,7 +10876,6 @@ public enum SignalFrameTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SignalFrame", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("signalFrame", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -11116,7 +10924,6 @@ public partial class SignalFrame1 : SignalFrame {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SignalFrameComponent", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("signalFrameComponent", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -11139,7 +10946,6 @@ public partial class SignalFrameComponent1 : SignalFrameComponent {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("gridLocation", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -11176,7 +10982,6 @@ public partial class GridLocation {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignalFrameComponent1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalFrameComponent", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11199,7 +11004,6 @@ public partial class SignalFrameComponent : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("frameDimension", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -11240,7 +11044,6 @@ public partial class FrameDimension {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonStoppingArea))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackConditionArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11263,7 +11066,6 @@ public abstract partial class TrackConditionArea : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("noEddyCurrentBrakeArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11299,7 +11101,6 @@ public enum EddyCurrentProhibitionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("limitedCurrentArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11335,7 +11136,6 @@ public partial class LimitedCurrentArea : TrackConditionArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("bigMetalMassArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11345,7 +11145,6 @@ public partial class BigMetalMassArea : TrackConditionArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("noRegenerativeBrakeArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11355,7 +11154,6 @@ public partial class NoRegenerativeBrakeArea : TrackConditionArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("nonStoppingArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11386,7 +11184,6 @@ public partial class NonStoppingArea : TrackConditionArea {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsRoute))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("route", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11500,7 +11297,6 @@ public abstract partial class Route : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Route", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("route", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -11537,7 +11333,6 @@ public enum RouteLevelTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(MainRoute1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("mainRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11547,7 +11342,6 @@ public abstract partial class MainRoute : Route {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="MainRoute", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("mainRoute", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -11605,7 +11399,6 @@ public enum MainRouteTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ShuntingRoute1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("shuntingRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11615,7 +11408,6 @@ public abstract partial class ShuntingRoute : Route {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="ShuntingRoute", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("shuntingRoute", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -11658,7 +11450,6 @@ public enum ShuntingRouteTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(OnSightRoute1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("onSightRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11668,7 +11459,6 @@ public abstract partial class OnSightRoute : Route {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="OnSightRoute", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("onSightRoute", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -11691,7 +11481,6 @@ public partial class OnSightRoute1 : OnSightRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11792,7 +11581,6 @@ public partial class EtcsRoute : Route {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("standstillDetectionForShunting", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11830,7 +11618,6 @@ public partial class StandstillDetectionForShunting {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperationalPlatformEdge))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("platformEdge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11905,7 +11692,6 @@ public abstract partial class PlatformEdge : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("dispatchPosition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11928,7 +11714,6 @@ public partial class DispatchPosition : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="PlatformEdge", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("platformEdge", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -11973,7 +11758,6 @@ public enum PlatformHeights {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("usablePlatformEdge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11983,7 +11767,6 @@ public partial class UsablePlatformEdge : PlatformEdge {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("infrastructuralPlatformEdge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -11993,7 +11776,6 @@ public partial class InfrastructuralPlatformEdge : PlatformEdge {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("operationalPlatformEdge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12004,7 +11786,6 @@ public partial class OperationalPlatformEdge : PlatformEdge {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrainCategorySpeedProfile))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("speedProfile", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12027,7 +11808,6 @@ public partial class SpeedProfile : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trainCategorySpeedProfile", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12061,7 +11841,6 @@ public partial class TrainCategorySpeedProfile : SpeedProfile {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnderTrackCrossing))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12132,7 +11911,6 @@ public enum MaterialTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableTray", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12142,7 +11920,6 @@ public partial class CableTray : CableRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableTrough", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12152,7 +11929,6 @@ public partial class CableTrough : CableRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("raisedCableTrough", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12162,7 +11938,6 @@ public partial class RaisedCableTrough : CableRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("freeCableRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12172,7 +11947,6 @@ public partial class FreeCableRoute : CableRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("freeHangingCableRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12183,7 +11957,6 @@ public partial class FreeHangingCableRoute : CableRoute {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(CableBridge1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableBridge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12193,7 +11966,6 @@ public partial class CableBridge : CableRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="CableBridge", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("cableBridge", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -12216,7 +11988,6 @@ public partial class CableBridge1 : CableBridge {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableTrench", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12226,7 +11997,6 @@ public partial class CableTrench : CableRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("temporaryCableRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12236,7 +12006,6 @@ public partial class TemporaryCableRoute : CableRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cablePipe", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12246,7 +12015,6 @@ public partial class CablePipe : CableRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("underTrackCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12258,7 +12026,6 @@ public partial class UnderTrackCrossing : CableRoute {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhysicalPowerSupplyModule))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("powerSupplyModule", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12268,7 +12035,6 @@ public abstract partial class PowerSupplyModule : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("virtualPowerSupplyModule", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12278,7 +12044,6 @@ public partial class VirtualPowerSupplyModule : PowerSupplyModule {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("physicalPowerSupplyModule", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12349,7 +12114,6 @@ public enum PowerSupplyModuleType {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("rbcArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12411,7 +12175,6 @@ public partial class RbcArea : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("civilStructure", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12421,7 +12184,6 @@ public partial class CivilStructure : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tdsOccupancyOverrideGroup", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12447,7 +12209,6 @@ public partial class TdsOccupancyOverrideGroup : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RouteConflictOverlap))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("conflictingRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12525,7 +12286,6 @@ public enum RouteConflictTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeConvergencyConflict", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12587,7 +12347,6 @@ public partial class RouteConvergencyConflict : ConflictingRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeConflictOverlappingTvpSections", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12597,7 +12356,6 @@ public partial class RouteConflictOverlappingTvpSections : ConflictingRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeConflictOverlap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12607,7 +12365,6 @@ public partial class RouteConflictOverlap : ConflictingRoute {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("controlArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12658,7 +12415,6 @@ public partial class ControlArea : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Overlap))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("safetyDistance", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12746,7 +12502,6 @@ public abstract partial class SafetyDistance : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("distanceToDangerpoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12756,7 +12511,6 @@ public partial class DistanceToDangerpoint : SafetyDistance {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("overlap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12870,7 +12624,6 @@ public partial class Overlap : SafetyDistance {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("overlapRelease", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12932,7 +12685,6 @@ public enum OverlapReleaseConditionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingRouteRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -12981,7 +12733,6 @@ public partial class LevelCrossingRouteRelation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsEdge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13030,7 +12781,6 @@ public partial class EtcsEdge : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("swingingOverlap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13053,7 +12803,6 @@ public partial class SwingingOverlap : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13102,7 +12851,6 @@ public partial class EtcsSignal : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsEndOfAuthority", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13160,7 +12908,6 @@ public partial class EtcsEndOfAuthority {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsDangerpoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13235,7 +12982,6 @@ public partial class EtcsDangerpoint : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTrainCategorySpeed", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13271,7 +13017,6 @@ public partial class EtcsTrainCategorySpeed {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsOverlap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13342,7 +13087,6 @@ public partial class EtcsOverlap {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("key", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13378,7 +13122,6 @@ public partial class Key : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("illumination", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13443,7 +13186,6 @@ public enum IlluminationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingSignalRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13518,7 +13260,6 @@ public partial class LevelCrossingSignalRelation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("conductorRail", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13583,7 +13324,6 @@ public enum LeftRightCentreTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("sectionsForFlankProtection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13619,7 +13359,6 @@ public partial class SectionsForFlankProtection : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("diagnosticsOpcUaConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13632,7 +13371,6 @@ public partial class DiagnosticsOpcUaConfiguration : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaliseGroupeTypeLt))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("baliseGroupFunction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13657,7 +13395,6 @@ public partial class BaliseGroupFunction : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaliseGroupeTypeLt))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("baliseGroupFunctionLabels", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -13680,7 +13417,6 @@ public partial class BaliseGroupFunctionLabels : BaliseGroupFunction {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("baliseGroupTypeL2", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -13703,7 +13439,6 @@ public partial class BaliseGroupTypeL2 : BaliseGroupFunctionLabels {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("baliseGroupeTypeLt", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -13743,7 +13478,6 @@ public enum LtFunctionTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalOperatingArea1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperatingArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13766,7 +13500,6 @@ public partial class LocalOperatingArea : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LocalOperatingArea", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("localOperatingArea", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -13848,7 +13581,6 @@ public enum LocalControlTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RouteBody2))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="RouteBody", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeBody", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13923,7 +13655,6 @@ public partial class RouteBody1 : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeEntry", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13949,7 +13680,6 @@ public partial class RouteEntry : RouteExtremity {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RouteExit1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeExtremity", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13973,7 +13703,6 @@ public abstract partial class RouteExtremity : BaseObject1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RouteExit1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeExit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -13983,7 +13712,6 @@ public partial class RouteExit : RouteExtremity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="RouteExit", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("routeExit", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -14019,7 +13747,6 @@ public partial class RouteExit1 : RouteExit {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="RouteBody", Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("routeBody", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -14068,7 +13795,6 @@ public partial class RouteBody3 : RouteBody1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="RouteBody", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("routeBody", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -14092,7 +13818,6 @@ public partial class RouteBody2 : RouteBody1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LevelCrossingLocalOperationUiElement1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingLocalOperationUiElement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14154,7 +13879,6 @@ public partial class LevelCrossingLocalOperationUiElement : ConfiguredBaseObject
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LevelCrossingLocalOperationUiElement", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingLocalOperationUiElement", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -14208,7 +13932,6 @@ public enum LcUiFunctionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("compositeRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14231,7 +13954,6 @@ public partial class CompositeRoute : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("conditionSectionsClear", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14280,7 +14002,6 @@ public partial class ConditionSectionsClear : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("nonReplacement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14329,7 +14050,6 @@ public partial class NonReplacement : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsProtectionDistance", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14366,7 +14086,6 @@ public partial class TpsProtectionDistance : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(FootpathCrossing))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14415,7 +14134,6 @@ public partial class TrackCrossing : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("footpathCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14425,7 +14143,6 @@ public partial class FootpathCrossing : TrackCrossing {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("triggerAssignment", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14514,7 +14231,6 @@ public partial class TriggerAssignment : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(StdCondition))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("condition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14614,7 +14330,6 @@ public enum MathematicalOperators {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("stdCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14650,7 +14365,6 @@ public partial class StdCondition : Condition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("rastaPropertySet", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14736,7 +14450,6 @@ public enum EulynxSciTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("redundancyLayerConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14816,7 +14529,6 @@ public enum CheckCodeTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("redundancyMessageCounters", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14850,7 +14562,6 @@ public partial class RedundancyMessageCounters {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("safetyRetransmissionLayerConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14908,7 +14619,6 @@ public partial class SafetyRetransmissionLayerConfiguration {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("safetyMessageCounters", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14967,7 +14677,6 @@ public partial class SafetyMessageCounters {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RaStaFullSafetyCode))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("raStaSafetyCode", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -14989,7 +14698,6 @@ public partial class RaStaSafetyCode {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("raStaFullSafetyCode", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15011,7 +14719,6 @@ public partial class RaStaFullSafetyCode : RaStaSafetyCode {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("platformFacility", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15047,7 +14754,6 @@ public partial class PlatformFacility : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("platformAccess", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15134,7 +14840,6 @@ public enum PlatformAccessTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("platformEdgeAccessPoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15170,7 +14875,6 @@ public partial class PlatformEdgeAccessPoint : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTelegram", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15267,7 +14971,6 @@ public partial class EtcsTelegram : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpTransitionMarker))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("changeMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15316,7 +15019,6 @@ public abstract partial class ChangeMarker : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("speedChangeMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15359,7 +15061,6 @@ public partial class SpeedChangeMarker : ChangeMarker {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpTransitionMarker))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15408,7 +15109,6 @@ public abstract partial class TpMarker : ChangeMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("nTC", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15491,7 +15191,6 @@ public enum EtcsLevelTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsGradientChangeMarker))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15514,7 +15213,6 @@ public partial class EtcsMarker : TpMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("weightLimitMarker", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -15567,7 +15265,6 @@ public enum WeightLimitMarkerTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsModeTransitionMarker))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTransitionMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15603,7 +15300,6 @@ public partial class EtcsTransitionMarker : EtcsMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("boundaryElement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15637,7 +15333,6 @@ public partial class BoundaryElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsRbcTransitionMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15673,7 +15368,6 @@ public partial class EtcsRbcTransitionMarker : EtcsTransitionMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTsiCcsTransitionMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15696,7 +15390,6 @@ public partial class EtcsTsiCcsTransitionMarker : EtcsTransitionMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsLevelTransitionMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15719,7 +15412,6 @@ public partial class EtcsLevelTransitionMarker : EtcsTransitionMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("ltProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15780,7 +15472,6 @@ public partial class LtProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsAcknowledgementLT", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15805,7 +15496,6 @@ public partial class EtcsAcknowledgementLT : EtcsAcknowledgement {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsAcknowledgementMode))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsAcknowledgement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15827,7 +15517,6 @@ public partial class EtcsAcknowledgement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsAcknowledgementMode", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15850,7 +15539,6 @@ public partial class EtcsAcknowledgementMode : EtcsAcknowledgement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsModeTransitionMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15925,7 +15613,6 @@ public partial class EtcsModeTransitionMarker : EtcsTransitionMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsGeoPosMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15961,7 +15648,6 @@ public partial class EtcsGeoPosMarker : EtcsMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsNationalValueChangeMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -15984,7 +15670,6 @@ public partial class EtcsNationalValueChangeMarker : EtcsMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsConditionalEmergencyStopMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16048,7 +15733,6 @@ public partial class EtcsConditionalEmergencyStopMarker : EtcsMarker {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsCesPointCondition))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsCesCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16058,7 +15742,6 @@ public partial class EtcsCesCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsCesSectionCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16081,7 +15764,6 @@ public partial class EtcsCesSectionCondition : EtcsCesCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsCesPointCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16109,7 +15791,6 @@ public partial class EtcsCesPointCondition : EtcsCesCondition {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TC39_ChangeOfTractionSystem))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTrackConditionMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16145,7 +15826,6 @@ public partial class EtcsTrackConditionMarker : EtcsMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tC67_BigMetalMass", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16155,7 +15835,6 @@ public partial class TC67_BigMetalMass : EtcsTrackConditionMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tC40_ChangeOfAllowedCurrentConsumption", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16178,7 +15857,6 @@ public partial class TC40_ChangeOfAllowedCurrentConsumption : EtcsTrackCondition
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tC69_StationPlatforms", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16227,7 +15905,6 @@ public partial class TC69_StationPlatforms : EtcsTrackConditionMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tC68_TrackCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16263,7 +15940,6 @@ public partial class TC68_TrackCondition : EtcsTrackConditionMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("areaLocation", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -16286,7 +15962,6 @@ public partial class AreaLocation : BaseLocation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tC39_ChangeOfTractionSystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16322,7 +15997,6 @@ public partial class TC39_ChangeOfTractionSystem : EtcsTrackConditionMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTextMessageMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16501,7 +16175,6 @@ public partial class EtcsTextMessageMarker : EtcsMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTextDisplayEndCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16601,7 +16274,6 @@ public partial class EtcsTextDisplayEndCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsLevelCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16637,7 +16309,6 @@ public partial class EtcsLevelCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTextDisplayStartCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16711,7 +16382,6 @@ public partial class EtcsTextDisplayStartCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsSpeedChangeMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16799,7 +16469,6 @@ public partial class EtcsSpeedChangeMarker : EtcsMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cantDeficiencySpeed", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16839,7 +16508,6 @@ public partial class CantDeficiencySpeed {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsSpeedSignalCondition))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsSpeedChangeCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16849,7 +16517,6 @@ public partial class EtcsSpeedChangeCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsWorkzoneCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16872,7 +16539,6 @@ public partial class EtcsWorkzoneCondition : EtcsSpeedChangeCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsSpeedPointCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16895,7 +16561,6 @@ public partial class EtcsSpeedPointCondition : EtcsSpeedChangeCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsSpeedChangeOtherCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16905,7 +16570,6 @@ public partial class EtcsSpeedChangeOtherCondition : EtcsSpeedChangeCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsSpeedSignalCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16928,7 +16592,6 @@ public partial class EtcsSpeedSignalCondition : EtcsSpeedChangeCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsGradientChangeMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16964,7 +16627,6 @@ public partial class EtcsGradientChangeMarker : EtcsMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpTransitionMarker", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16974,7 +16636,6 @@ public partial class TpTransitionMarker : TpMarker {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("workZone", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -16984,7 +16645,6 @@ public partial class WorkZone : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsNationalValueSet", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17009,7 +16669,6 @@ public partial class EtcsNationalValueSet : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsNationalValueSubset))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsNationalValueElement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17019,7 +16678,6 @@ public partial class EtcsNationalValueElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsNationalValuePair", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17055,7 +16713,6 @@ public partial class EtcsNationalValuePair : EtcsNationalValueElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsNationalValueSubset", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17078,7 +16735,6 @@ public partial class EtcsNationalValueSubset : EtcsNationalValueElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("shuntingRouteSectionProving", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17115,7 +16771,6 @@ public partial class ShuntingRouteSectionProving : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpecialPositionArrangement1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("specialPositionArrangement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17138,7 +16793,6 @@ public abstract partial class SpecialPositionArrangement : ConfiguredBaseObject 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SpecialPositionArrangement", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("specialPositionArrangement", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -17302,7 +16956,6 @@ public enum SpecialSignalArrangementTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TcFeedingReceivingCable))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackAsset", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17335,7 +16988,6 @@ public partial class TrackAsset : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsBalise))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="TpsDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17401,7 +17053,6 @@ public partial class TpsDevice1 : TrackAsset {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(AtbngLoop))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsLinearDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17427,7 +17078,6 @@ public partial class TpsLinearDevice : TpsDevice1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(AtbngLoop))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbLoop", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -17450,7 +17100,6 @@ public abstract partial class AtbLoop : TpsLinearDevice {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbEgLoop", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -17460,7 +17109,6 @@ public partial class AtbEgLoop : AtbLoop {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbvvLoop", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -17470,7 +17118,6 @@ public partial class AtbvvLoop : AtbLoop {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbngLoop", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -17523,7 +17170,6 @@ public partial class AtbngLoop : AtbLoop {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsBalise))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="TpsSpotDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsSpotDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17533,7 +17179,6 @@ public partial class TpsSpotDevice1 : TpsDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("crocodile", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -17556,7 +17201,6 @@ public partial class Crocodile : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbvvBeacon", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -17566,7 +17210,6 @@ public partial class AtbvvBeacon : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbngBeacon", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -17589,7 +17232,6 @@ public partial class AtbngBeacon : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("tpwsDevice", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -17666,7 +17308,6 @@ public enum TpwsFrequencyTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("apcMagnet", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -17689,7 +17330,6 @@ public partial class ApcMagnet : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("awsMagnet", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -17738,7 +17378,6 @@ public partial class AwsMagnet : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("tripcockTester", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -17761,7 +17400,6 @@ public partial class TripcockTester : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("trainStop", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -17784,7 +17422,6 @@ public partial class TrainStop : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("atpBeacon", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -17794,7 +17431,6 @@ public partial class AtpBeacon : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("pzbDevice", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -17804,7 +17440,6 @@ public partial class PzbDevice : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("detonator", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17845,7 +17480,6 @@ public partial class Detonator : TpsSpotDevice1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcsBalise))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("balise", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -17894,7 +17528,6 @@ public partial class Balise : TpsSpotDevice1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/TRV")]
 [System.Xml.Serialization.XmlRootAttribute("atcBalise", Namespace="http://www.railtopomodel.org/schemas/TRV", IsNullable=false)]
@@ -17906,7 +17539,6 @@ public partial class AtcBalise : Balise {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(KvbAnalogBalise))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbBalise", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -17929,7 +17561,6 @@ public partial class KvbBalise : Balise {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbDigitalBalise", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -17939,7 +17570,6 @@ public partial class KvbDigitalBalise : KvbBalise {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("kvbAnalogBalise", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -18005,7 +17635,6 @@ public enum KvbAnalogBaliseFunctionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsBalise", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18043,7 +17672,6 @@ public partial class EtcsBalise : Balise {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SandHump))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="VehicleStop", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("vehicleStop", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18124,7 +17752,6 @@ public enum VehicleStopTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("bufferStop", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18166,7 +17793,6 @@ public enum BufferStopTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("sandHump", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18199,7 +17825,6 @@ public partial class SandHump : VehicleStop1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcslLevelCrossingSystem))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18300,7 +17925,6 @@ public partial class LevelCrossingSystem : TrackAsset {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LevelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -18395,7 +18019,6 @@ public enum LevelCrossingControlTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LevelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -18551,7 +18174,6 @@ public enum LevelCrossingTechnologyTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SelfSupervisedLevelCrossingSystem))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("interlockingIntegratedLevelCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18562,7 +18184,6 @@ public partial class InterlockingIntegratedLevelCrossing : LevelCrossingSystem {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(MainSignalProtectedLevelCrossing1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("mainSignalProtectedLevelCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18572,7 +18193,6 @@ public partial class MainSignalProtectedLevelCrossing : InterlockingIntegratedLe
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="MainSignalProtectedLevelCrossing", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("mainSignalProtectedLevelCrossing", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -18661,7 +18281,6 @@ public enum LxOperationalPlugTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SelfSupervisedLevelCrossingSystem))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("selfSupervisedLevelCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18671,7 +18290,6 @@ public partial class SelfSupervisedLevelCrossing : InterlockingIntegratedLevelCr
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("selfSupervisedLevelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -18746,7 +18364,6 @@ public partial class SelfSupervisedLevelCrossingSystem : SelfSupervisedLevelCros
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("locallyMonitoredLevelCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18757,7 +18374,6 @@ public partial class LocallyMonitoredLevelCrossing : LevelCrossingSystem {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EtcslLevelCrossingSystem))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsLevelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18767,7 +18383,6 @@ public partial class EtcsLevelCrossingSystem : LevelCrossingSystem {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("etcslLevelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -18829,7 +18444,6 @@ public partial class EtcslLevelCrossingSystem : EtcsLevelCrossingSystem {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingMalfunction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18876,7 +18490,6 @@ public partial class LevelCrossingMalfunction {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(DepressionBar))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="VehiclePassageDetector", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("vehiclePassageDetector", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18928,7 +18541,6 @@ public abstract partial class VehiclePassageDetector1 : TrackAsset {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElectricJoint))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tdsComponent", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18951,7 +18563,6 @@ public partial class TdsComponent : VehiclePassageDetector1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("axleCountingHead", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -18987,7 +18598,6 @@ public partial class AxleCountingHead : TdsComponent {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("insulatedRailJoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19010,7 +18620,6 @@ public partial class InsulatedRailJoint : TdsComponent {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("electricJoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19028,7 +18637,6 @@ public partial class ElectricJoint : TdsComponent {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(DepressionBar))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("vehicleSensor", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19038,7 +18646,6 @@ public partial class VehicleSensor : VehiclePassageDetector1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("derailmentDetector", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -19062,7 +18669,6 @@ public partial class DerailmentDetector : VehicleSensor {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TcSensorCombined))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tcSensor", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19072,7 +18678,6 @@ public partial class TcSensor : VehicleSensor {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tcSensorCombined", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19082,7 +18687,6 @@ public partial class TcSensorCombined : TcSensor {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("loop", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19105,7 +18709,6 @@ public partial class Loop : VehicleSensor {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("treadle", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19167,7 +18770,6 @@ public partial class Treadle : VehicleSensor {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("eMSensor", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19190,7 +18792,6 @@ public partial class EMSensor : VehicleSensor {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("bufferSensor", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19213,7 +18814,6 @@ public partial class BufferSensor : VehicleSensor {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("depressionBar", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19224,7 +18824,6 @@ public partial class DepressionBar : VehicleSensor {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(MovableElement1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("movableElement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19325,7 +18924,6 @@ public partial class MovableElement : TrackAsset {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="MovableElement", Namespace="http://www.railtopomodel.org/schemas/TRV")]
 [System.Xml.Serialization.XmlRootAttribute("movableElement", Namespace="http://www.railtopomodel.org/schemas/TRV", IsNullable=false)]
@@ -19356,7 +18954,6 @@ public partial class MovableElement1 : MovableElement {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(MovableBridge))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("movableSystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19366,7 +18963,6 @@ public abstract partial class MovableSystem : TrackAsset {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("railwayBarrier", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19376,7 +18972,6 @@ public partial class RailwayBarrier : MovableSystem {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("movableCatenary", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19416,7 +19011,6 @@ public partial class MovableCatenary : MovableSystem {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Crossing))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Turnout", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("turnout", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19452,7 +19046,6 @@ public partial class Turnout1 : MovableSystem {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("derailer", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19464,7 +19057,6 @@ public partial class Derailer : Turnout1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Crossing))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pointCrossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19539,7 +19131,6 @@ public partial class PointCrossing : Turnout1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pointHeating", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19562,7 +19153,6 @@ public partial class PointHeating {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("point", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19610,7 +19200,6 @@ public enum PointTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("crossing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19647,7 +19236,6 @@ public partial class Crossing : PointCrossing {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(DiamondHalf))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("diamond", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19670,7 +19258,6 @@ public partial class Diamond : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("diamondHalf", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19764,7 +19351,6 @@ public enum CrossingTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("movableBridge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19788,7 +19374,6 @@ public partial class MovableBridge : MovableSystem {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(FacingPointLock))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("movableComponent", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19830,7 +19415,6 @@ public partial class MovableComponent : TrackAsset {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(MechanicalMechanism))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("mechanism", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19856,7 +19440,6 @@ public partial class Mechanism : MovableComponent {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PneumaticDrive))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("poweredMechanism", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19866,7 +19449,6 @@ public partial class PoweredMechanism : Mechanism {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("electricDrive", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19876,7 +19458,6 @@ public partial class ElectricDrive : PoweredMechanism {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("hydraulicDrive", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19886,7 +19467,6 @@ public partial class HydraulicDrive : PoweredMechanism {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pneumaticDrive", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19896,7 +19476,6 @@ public partial class PneumaticDrive : PoweredMechanism {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("handOperatedMechanism", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19906,7 +19485,6 @@ public partial class HandOperatedMechanism : Mechanism {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("mechanicalMechanism", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19922,7 +19500,6 @@ public partial class MechanicalMechanism : Mechanism {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(FacingPointLock))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("turnoutComponent", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -19933,7 +19510,6 @@ public partial class TurnoutComponent : MovableComponent {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PointBlade))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pointBlades", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20099,7 +19675,6 @@ public enum PointIndicatorTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pointBlade", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20110,7 +19685,6 @@ public partial class PointBlade : PointBlades {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(DerailerComponent1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("derailerComponent", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20146,7 +19720,6 @@ public partial class DerailerComponent : TurnoutComponent {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="DerailerComponent", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("derailerComponent", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -20201,7 +19774,6 @@ public enum DerailerIndicatorTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("frog", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20211,7 +19783,6 @@ public partial class Frog : TurnoutComponent {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("facingPointLock", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20221,7 +19792,6 @@ public partial class FacingPointLock : TurnoutComponent {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tvpSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20272,7 +19842,6 @@ public partial class TvpSection : TrackAsset {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LightSignalTyped))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Signal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20386,7 +19955,6 @@ public partial class Signal1 : TrackAsset {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localDatum", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20508,7 +20076,6 @@ public enum FixingTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="Signal", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("signal", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -20563,7 +20130,6 @@ public enum AreaValidityTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("virtualSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20589,7 +20155,6 @@ public partial class VirtualSignal : Signal1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(FictitiousSignal))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("nonPhysicalSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20612,7 +20177,6 @@ public partial class NonPhysicalSignal : Signal1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="FictitiousSignal", Namespace="http://www.railtopomodel.org/schemas/SNCF")]
 [System.Xml.Serialization.XmlRootAttribute("fictitiousSignal", Namespace="http://www.railtopomodel.org/schemas/SNCF", IsNullable=false)]
@@ -20645,7 +20209,6 @@ public enum FictitiousSignalFunctionTypes2 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="FictitiousSignal", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("fictitiousSignal", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -20690,7 +20253,6 @@ public enum FictitiousSignalFunctionTypes1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("fictitiousSignal", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -20758,7 +20320,6 @@ public enum FictitiousSignalFunctionTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LightSignalTyped))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("physicalSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -20768,7 +20329,6 @@ public partial class PhysicalSignal : Signal1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="PhysicalSignal", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("physicalSignal", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -20843,7 +20403,6 @@ public partial class PhysicalSignal1 : PhysicalSignal {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("confusionRisk", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -20990,7 +20549,6 @@ public enum ConfusionRiskWithOtherSignalsTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Milepost))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("sign", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21000,7 +20558,6 @@ public partial class Sign : PhysicalSignal {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("milepost", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21040,7 +20597,6 @@ public partial class Milepost : Sign {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LightSignalTyped))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("activeSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21050,7 +20606,6 @@ public partial class ActiveSignal : PhysicalSignal {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("mechanicalSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21062,7 +20617,6 @@ public partial class MechanicalSignal : ActiveSignal {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LightSignalTyped))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lightSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21114,7 +20668,6 @@ public enum LuminosityTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LightSignal", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("lightSignal", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -21208,7 +20761,6 @@ public enum HoodsLengthTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("lightSignalTyped", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -21253,7 +20805,6 @@ public enum SignalSystemTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("compoundLogicalObject", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21289,7 +20840,6 @@ public partial class CompoundLogicalObject : TrackAsset {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tcFeederReceiverElement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21367,7 +20917,6 @@ public enum TcFeederReceiverTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(HviTrackCircuit))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tdsSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21390,7 +20939,6 @@ public partial class TdsSection : TrackAsset {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("axleCountingSystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21405,7 +20953,6 @@ public partial class AxleCountingSystem : TdsSection {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(HviTrackCircuit))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackCircuit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21482,7 +21029,6 @@ public partial class TrackCircuit : TdsSection {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LowFrequencyTrackCircuitProperties))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackCircuitProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21531,7 +21077,6 @@ public partial class TrackCircuitProperties : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("ftgsTrackCircuitProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21567,7 +21112,6 @@ public partial class FtgsTrackCircuitProperties : TrackCircuitProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lowFrequencyTrackCircuitProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21590,7 +21134,6 @@ public partial class LowFrequencyTrackCircuitProperties : TrackCircuitProperties
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lowFrequencyTrackCircuit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21601,7 +21144,6 @@ public partial class LowFrequencyTrackCircuit : TrackCircuit {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(FtgsTrackCircuit))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("audioFrequencyTrackCircuit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21624,7 +21166,6 @@ public partial class AudioFrequencyTrackCircuit : TrackCircuit {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("ftgsTrackCircuit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21634,7 +21175,6 @@ public partial class FtgsTrackCircuit : AudioFrequencyTrackCircuit {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("dcVoltageTrackCircuit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21644,7 +21184,6 @@ public partial class DcVoltageTrackCircuit : TrackCircuit {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("hviTrackCircuit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21679,7 +21218,6 @@ public partial class HviTrackCircuit : TrackCircuit {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperatingCentre))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("controller", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21830,7 +21368,6 @@ public enum PowerSupplyTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbVvController", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -21840,7 +21377,6 @@ public partial class AtbVvController : Controller {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("virtualController", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21854,7 +21390,6 @@ public partial class VirtualController : Controller {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LeuSystem))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("fieldObjectController", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21864,7 +21399,6 @@ public partial class FieldObjectController : Controller {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tdsEvaluator", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21874,7 +21408,6 @@ public partial class TdsEvaluator : FieldObjectController {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalController", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21884,7 +21417,6 @@ public partial class SignalController : FieldObjectController {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("ioController", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21894,7 +21426,6 @@ public partial class IoController : FieldObjectController {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("leuSystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21956,7 +21487,6 @@ public partial class LeuSystem : FieldObjectController {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("rBC", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21981,7 +21511,6 @@ public partial class RBC : Controller {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(CentralInterlocking))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("interlocking", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -21991,7 +21520,6 @@ public partial class Interlocking : Controller {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("decentralInterlocking", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22001,7 +21529,6 @@ public partial class DecentralInterlocking : Interlocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("centralInterlocking", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22011,7 +21538,6 @@ public partial class CentralInterlocking : Interlocking {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("operatingCentre", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22023,7 +21549,6 @@ public partial class OperatingCentre : Controller {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ShutInSidingKeyReleaseInstrument))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("releaseInstrument", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22047,7 +21572,6 @@ public partial class ReleaseInstrument : TrackAsset {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ShutInSidingKeyReleaseInstrument))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("keyReleaseInstrument", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22086,7 +21610,6 @@ public enum AccessabilityTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("shutInSidingKeyReleaseInstrument", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22099,7 +21622,6 @@ public partial class ShutInSidingKeyReleaseInstrument : KeyReleaseInstrument {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TcFeedingReceivingCable))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tcConnector", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22175,7 +21697,6 @@ public abstract partial class TcConnector : TrackAsset {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImpedanceBond))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("bond", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22252,7 +21773,6 @@ public enum TcBondTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("impedanceBond", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22301,7 +21821,6 @@ public partial class ImpedanceBond : Bond {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tcFeedingReceivingCable", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22363,7 +21882,6 @@ public partial class TcFeedingReceivingCable : TcConnector {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElectrificationOverlap))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackProperty", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22391,7 +21909,6 @@ public abstract partial class TrackProperty : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SidingSection))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackTypeSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22401,7 +21918,6 @@ public partial class TrackTypeSection : TrackProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("shuntingSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22411,7 +21927,6 @@ public partial class ShuntingSection : TrackTypeSection {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("mainSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22421,7 +21936,6 @@ public partial class MainSection : TrackTypeSection {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("openLineSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22431,7 +21945,6 @@ public partial class OpenLineSection : TrackTypeSection {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("secondarySection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22441,7 +21954,6 @@ public partial class SecondarySection : TrackTypeSection {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("sidingSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22451,7 +21963,6 @@ public partial class SidingSection : TrackTypeSection {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackDesignation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22463,7 +21974,6 @@ public partial class TrackDesignation : TrackProperty {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SlabTrack))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackway", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22473,7 +21983,6 @@ public partial class Trackway : TrackProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("sleeperTrack", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22496,7 +22005,6 @@ public partial class SleeperTrack : Trackway {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("slabTrack", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22535,7 +22043,6 @@ public partial class SlabTrack : Trackway {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstructionArea))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("restrictedArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22545,7 +22052,6 @@ public partial class RestrictedArea : TrackProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("removedTrack", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22555,7 +22061,6 @@ public partial class RemovedTrack : RestrictedArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("blockedTrack", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22565,7 +22070,6 @@ public partial class BlockedTrack : RestrictedArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("constructionArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22578,7 +22082,6 @@ public partial class ConstructionArea : RestrictedArea {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpecialTrackGauge))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("specialGauge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22588,7 +22091,6 @@ public abstract partial class SpecialGauge : TrackProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SpecialGauge", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("specialGauge", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -22633,7 +22135,6 @@ public enum SpecialGaugeTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("specialStructureGauge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22669,7 +22170,6 @@ public partial class SpecialStructureGauge : SpecialGauge {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("specialTrackGauge", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22699,7 +22199,6 @@ public partial class SpecialTrackGauge : SpecialGauge {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElectrificationOverlap))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("electrificationSegment", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22711,7 +22210,6 @@ public abstract partial class ElectrificationSegment : TrackProperty {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConductorRailSection))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("electrificationSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22721,7 +22219,6 @@ public partial class ElectrificationSection : ElectrificationSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("overheadLineSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22778,7 +22275,6 @@ public enum TractionVoltageTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("conductorRailSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22821,7 +22317,6 @@ public enum ConductorVoltageTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConductorRailGap))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("electrificationGap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22831,7 +22326,6 @@ public partial class ElectrificationGap : ElectrificationSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("overheadLineGap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22893,7 +22387,6 @@ public enum OverheadLineGapTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("conductorRailGap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22903,7 +22396,6 @@ public partial class ConductorRailGap : ElectrificationGap {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("electrificationOverlap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -22927,7 +22419,6 @@ public partial class ElectrificationOverlap : ElectrificationSegment {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PointLock))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lock", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23015,7 +22506,6 @@ public partial class Lock : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pointLock", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23052,7 +22542,6 @@ public partial class PointLock : Lock {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignalSightingDistance1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalSightingDistance", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23114,7 +22603,6 @@ public partial class SignalSightingDistance : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SignalSightingDistance", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("signalSightingDistance", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -23202,7 +22690,6 @@ public partial class SignalSightingDistance1 : SignalSightingDistance {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("rbcWatchdog", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23242,7 +22729,6 @@ public partial class RbcWatchdog : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TiltingArea))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23291,7 +22777,6 @@ public partial class TpArea : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("zbsArea", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -23301,7 +22786,6 @@ public partial class ZbsArea : TpArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("areaWithoutTps", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23311,7 +22795,6 @@ public partial class AreaWithoutTps : TpArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23360,7 +22843,6 @@ public partial class EtcsArea : TpArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tiltingArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23370,7 +22852,6 @@ public partial class TiltingArea : TpArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingActivation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23498,7 +22979,6 @@ public partial class LevelCrossingActivation : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LevelCrossingActivationDelaySet1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingActivationDelaySet", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23532,7 +23012,6 @@ public partial class LevelCrossingActivationDelaySet {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LevelCrossingActivationDelaySet", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingActivationDelaySet", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -23597,7 +23076,6 @@ public enum LevelCrossingActivationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsOnboardVersion", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23726,7 +23204,6 @@ public enum EtcsSystemVersions {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(GroundFrame))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23835,7 +23312,6 @@ public partial class LocalOperationDevice : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrainRearConfirmation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationUiElement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23885,7 +23361,6 @@ public partial class LocalOperationUiElement : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalOperationUiSwitch1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationUiSwitch", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23895,7 +23370,6 @@ public partial class LocalOperationUiSwitch : LocalOperationUiElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LocalOperationUiSwitch", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationUiSwitch", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -23919,7 +23393,6 @@ public partial class LocalOperationUiSwitch1 : LocalOperationUiSwitch {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalOperationUiButton1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationUiButton", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23929,7 +23402,6 @@ public partial class LocalOperationUiButton : LocalOperationUiElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LocalOperationUiButton", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationUiButton", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -23952,7 +23424,6 @@ public partial class LocalOperationUiButton1 : LocalOperationUiButton {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationUiLever", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23963,7 +23434,6 @@ public partial class LocalOperationUiLever : LocalOperationUiElement {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalOperationUiIndicator1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationUiIndicator", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -23973,7 +23443,6 @@ public partial class LocalOperationUiIndicator : LocalOperationUiElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LocalOperationUiIndicator", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationUiIndicator", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -24039,7 +23508,6 @@ public enum IndicatorFunctionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trainRearConfirmation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24093,7 +23561,6 @@ public enum LocalOperationDeviceTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LocalOperationDevice", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("localOperationDevice", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -24117,7 +23584,6 @@ public partial class LocalOperationDevice1 : LocalOperationDevice {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(GroundFrame))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("controlFrame", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24166,7 +23632,6 @@ public partial class ControlFrame : LocalOperationDevice {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("groundFrame", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24189,7 +23654,6 @@ public partial class GroundFrame : ControlFrame {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cable", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24240,7 +23704,6 @@ public partial class Cable : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationReference))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("locationProxy", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24250,7 +23713,6 @@ public abstract partial class LocationProxy : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("locationOfInterest", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24299,7 +23761,6 @@ public partial class LocationOfInterest : LocationProxy {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("locationReference", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24323,7 +23784,6 @@ public partial class LocationReference : LocationProxy {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignalPostTelephone1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalPostTelephone", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24385,7 +23845,6 @@ public partial class SignalPostTelephone : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SignalPostTelephone", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("signalPostTelephone", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -24460,7 +23919,6 @@ public partial class SignalPostTelephone1 : SignalPostTelephone {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("blockElement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24535,7 +23993,6 @@ public partial class BlockElement : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("levelCrossingDeactivation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24571,7 +24028,6 @@ public partial class LevelCrossingDeactivation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("startUpProcedureConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24622,7 +24078,6 @@ public partial class StartUpProcedureConfiguration : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhysicalMDM))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("maintenanceDataManagement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24658,7 +24113,6 @@ public partial class MaintenanceDataManagement : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("diagnosticsCollector", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24694,7 +24148,6 @@ public partial class DiagnosticsCollector : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("virtualisedMDM", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24704,7 +24157,6 @@ public partial class VirtualisedMDM : MaintenanceDataManagement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("physicalMDM", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24727,7 +24179,6 @@ public partial class PhysicalMDM : MaintenanceDataManagement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsMaSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24789,7 +24240,6 @@ public partial class EtcsMaSection : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeAnnouncerAssignment", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24825,7 +24275,6 @@ public partial class RouteAnnouncerAssignment : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("assetGroup", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24850,7 +24299,6 @@ public abstract partial class AssetGroup : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlankProtectionNone))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("flankProtection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -24978,7 +24426,6 @@ public partial class FlankProtection : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlankProtectionNone))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="FlankProtection", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("flankProtection", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -25014,7 +24461,6 @@ public partial class FlankProtection1 : FlankProtection {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("flankProtectionNone", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -25025,7 +24471,6 @@ public partial class FlankProtectionNone : FlankProtection1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PzbDeviceProperties))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsDeviceProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25087,7 +24532,6 @@ public partial class TpsDeviceProperties : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("pzbDeviceProperties", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -25169,7 +24613,6 @@ public enum PzbFrequencyTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineBlockInformation1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lineBlockInformation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25231,7 +24674,6 @@ public partial class LineBlockInformation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LineBlockInformation", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("lineBlockInformation", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -25280,7 +24722,6 @@ public partial class LineBlockInformation1 : LineBlockInformation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("directionAuthorityDependentOverlap", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25303,7 +24744,6 @@ public partial class DirectionAuthorityDependentOverlap : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("leuModule", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25417,7 +24857,6 @@ public enum LeuModuleClassificationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTelegramConditionRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25486,7 +24925,6 @@ public partial class EtcsTelegramConditionRelation : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TempShuntingCondition))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25496,7 +24934,6 @@ public abstract partial class EtcsCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("specialCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25537,7 +24974,6 @@ public enum SpecialConditionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("workZoneCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25559,7 +24995,6 @@ public partial class WorkZoneCondition : EtcsCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalAspectCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25634,7 +25069,6 @@ public enum SignalFallbackTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pointCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25656,7 +25090,6 @@ public partial class PointCondition : EtcsCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tpsCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25703,7 +25136,6 @@ public partial class TpsCondition : EtcsCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("otherCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25751,7 +25183,6 @@ public partial class OtherCondition : EtcsCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tempShuntingCondition", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25773,7 +25204,6 @@ public partial class TempShuntingCondition : EtcsCondition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("localOperatingAreaUiElement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25838,7 +25268,6 @@ public enum UiElementFunctionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalLocation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25864,7 +25293,6 @@ public partial class SignalLocation : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(CableJointRack))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableJointInstallation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25900,7 +25328,6 @@ public partial class CableJointInstallation : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableJointRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25934,7 +25361,6 @@ public partial class CableJointRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableDistributorDisconnector", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25944,7 +25370,6 @@ public partial class CableDistributorDisconnector : CableJointInstallation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableTerminationRack", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25954,7 +25379,6 @@ public partial class CableTerminationRack : CableJointInstallation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableJointRack", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -25964,7 +25388,6 @@ public partial class CableJointRack : CableJointInstallation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalMessageRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26079,7 +25502,6 @@ public partial class SignalMessageRelation : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Fixing))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("equipmentSupport", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26140,7 +25562,6 @@ public partial class EquipmentSupport : ConfiguredBaseObject {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EquipmentHouse))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("housing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26176,7 +25597,6 @@ public partial class Housing : EquipmentSupport {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("noHousing", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -26186,7 +25606,6 @@ public partial class NoHousing : Housing {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("panel", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26200,7 +25619,6 @@ public partial class Panel : Housing {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(CabinetGroup))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cabinet", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26249,7 +25667,6 @@ public partial class Cabinet : Housing {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("atbvvConnectionCabinet", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -26259,7 +25676,6 @@ public partial class AtbvvConnectionCabinet : Cabinet {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("driveCabinet", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -26269,7 +25685,6 @@ public partial class DriveCabinet : Cabinet {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("leuCabinet", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26305,7 +25720,6 @@ public partial class LeuCabinet : Cabinet {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("leuElectricProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26425,7 +25839,6 @@ public enum NominalVoltageTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("leuCabinetLocation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26487,7 +25900,6 @@ public enum LeuRelativePositionTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cabinetGroup", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26511,7 +25923,6 @@ public partial class CabinetGroup : Cabinet {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ControlRoom))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("equipmentRoom", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26521,7 +25932,6 @@ public partial class EquipmentRoom : Housing {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("controlRoom", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26531,7 +25941,6 @@ public partial class ControlRoom : EquipmentRoom {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("container", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26542,7 +25951,6 @@ public partial class Container : Housing {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(EquipmentHouse))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("building", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26552,7 +25960,6 @@ public partial class Building : Housing {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("equipmentHouse", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26562,7 +25969,6 @@ public partial class EquipmentHouse : Building {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("fixing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26624,7 +26030,6 @@ public partial class Fixing : EquipmentSupport {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("sectionList", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26660,7 +26065,6 @@ public partial class SectionList : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("controlledTrackAsset", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26826,7 +26230,6 @@ public partial class ControlledTrackAsset : ConfiguredBaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lXandState", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26893,7 +26296,6 @@ public enum LxStateTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("sectionAndVacancy", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26942,7 +26344,6 @@ public enum SectionVacancyTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("compoundLogicalObjectAndState", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -26978,7 +26379,6 @@ public partial class CompoundLogicalObjectAndState : AssetAndState {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalAndMessage", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27014,7 +26414,6 @@ public partial class SignalAndMessage : AssetAndState {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("automatic", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27066,7 +26465,6 @@ public enum AutomaticTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("backToBackLocking", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27130,7 +26528,6 @@ public enum RouteCategoryTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("baselineOfRuleSet", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27156,7 +26553,6 @@ public partial class BaselineOfRuleSet : BaseObject1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(CableRouteExit))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableRouteJunction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27231,7 +26627,6 @@ public partial class CableRouteJunction {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableRouteJoin", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27241,7 +26636,6 @@ public partial class CableRouteJoin : CableRouteJunction {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cablePit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27251,7 +26645,6 @@ public partial class CablePit : CableRouteJunction {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableRouteExit", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27266,7 +26659,6 @@ public partial class CableRouteExit : CableRouteJunction {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LozSignalRelation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lozAssetRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27301,7 +26693,6 @@ public abstract partial class LozAssetRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lozTdsSection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27335,7 +26726,6 @@ public partial class LozTdsSection : LozAssetRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lozDerailerRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27382,7 +26772,6 @@ public partial class LozDerailerRelation : LozAssetRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lozPointRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27429,7 +26818,6 @@ public partial class LozPointRelation : LozAssetRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lozKeyReleaseInstrumentRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27463,7 +26851,6 @@ public partial class LozKeyReleaseInstrumentRelation : LozAssetRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lozSignalRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27497,7 +26884,6 @@ public partial class LozSignalRelation : LozAssetRelation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("manualOverlapRelease", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27520,7 +26906,6 @@ public partial class ManualOverlapRelease : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("maxRouteBodySpeed", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27556,7 +26941,6 @@ public partial class MaxRouteBodySpeed : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("notUpgradeableSpeedRestriction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27579,7 +26963,6 @@ public partial class NotUpgradeableSpeedRestriction : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("nonStopMovement", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27631,7 +27014,6 @@ public enum NonStopMovementAllowedTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("operationalLocality", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27706,7 +27088,6 @@ public partial class OperationalLocality : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("oppositeTrackSignal", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27739,7 +27120,6 @@ public partial class OppositeTrackSignal : BaseObject1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RouteTractionType))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeProperty", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27775,7 +27155,6 @@ public abstract partial class RouteProperty : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("routeSettingProperties", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -27837,7 +27216,6 @@ public partial class RouteSettingProperties : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("autoRoute", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27847,7 +27225,6 @@ public partial class AutoRoute : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeTowardsTunnel", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27857,7 +27234,6 @@ public partial class RouteTowardsTunnel : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeSetupTime", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27880,7 +27256,6 @@ public partial class RouteSetupTime : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("intermediatePointRelatedSpeedUpgrade", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27890,7 +27265,6 @@ public partial class IntermediatePointRelatedSpeedUpgrade : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routePriority", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27913,7 +27287,6 @@ public partial class RoutePriority : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeAvailableInARS", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27923,7 +27296,6 @@ public partial class RouteAvailableInARS : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeWithReducedBrakingDistance", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27933,7 +27305,6 @@ public partial class RouteWithReducedBrakingDistance : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeSpeedRestriction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27956,7 +27327,6 @@ public partial class RouteSpeedRestriction : RouteProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("routeTractionType", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -27993,7 +27363,6 @@ public enum RouteTractionTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignalType1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalType", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28029,7 +27398,6 @@ public partial class SignalType : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SignalType", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("signalType", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -28095,7 +27463,6 @@ public enum SignalTypeTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(MovableElementAsBuiltConfiguration))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trackAssetConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28118,7 +27485,6 @@ public partial class TrackAssetConfiguration : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("projectPhase", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28153,7 +27519,6 @@ public enum ProjectPhaseTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lxConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28228,7 +27593,6 @@ public partial class LxConfiguration : TrackAssetConfiguration {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tdsSectionAsBuiltConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28253,7 +27617,6 @@ public partial class TdsSectionAsBuiltConfiguration : TrackAssetConfiguration {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PointCrossingElementConfiguration))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("movableElementConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28372,7 +27735,6 @@ public enum MovableElementOperatingModes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("derailerElementConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28408,7 +27770,6 @@ public partial class DerailerElementConfiguration : MovableElementConfiguration 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("pointCrossingElementConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28509,7 +27870,6 @@ public partial class PointCrossingElementConfiguration : MovableElementConfigura
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tdsComponentConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28546,7 +27906,6 @@ public partial class TdsComponentConfiguration : TrackAssetConfiguration {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TurnoutComponentConfiguration1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("turnoutComponentConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28620,7 +27979,6 @@ public enum MechanismTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="TurnoutComponentConfiguration", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("turnoutComponentConfiguration", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -28659,7 +28017,6 @@ public enum PointControlTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tdsSectionConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28799,7 +28156,6 @@ public partial class TdsSectionConfiguration : TrackAssetConfiguration {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("resetStrategy", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28854,7 +28210,6 @@ public enum ResetStrategyTypes {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(TvpSectionConfiguration1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("tvpSectionConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28890,7 +28245,6 @@ public partial class TvpSectionConfiguration : TrackAssetConfiguration {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="TvpSectionConfiguration", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
 [System.Xml.Serialization.XmlRootAttribute("tvpSectionConfiguration", Namespace="http://www.railtopomodel.org/schemas/ProRail", IsNullable=false)]
@@ -28942,7 +28296,6 @@ public enum RouteReleaseTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("movableElementAsBuiltConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -28965,7 +28318,6 @@ public partial class MovableElementAsBuiltConfiguration : TrackAssetConfiguratio
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("modificationInformation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29001,7 +28353,6 @@ public partial class ModificationInformation : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("timeFrame", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29063,7 +28414,6 @@ public partial class TimeFrame : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsPacket", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29073,7 +28423,6 @@ public abstract partial class EtcsPacket : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("annotation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29161,7 +28510,6 @@ public partial class Annotation : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lxDepartureDetection", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29212,7 +28560,6 @@ public partial class LxDepartureDetection : BaseObject1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlternateFlash))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("synchedFlashing", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29235,7 +28582,6 @@ public abstract partial class SynchedFlashing : BaseObject1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("flashInPhase", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29245,7 +28591,6 @@ public partial class FlashInPhase : SynchedFlashing {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("alternateFlash", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29255,7 +28600,6 @@ public partial class AlternateFlash : SynchedFlashing {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("systemState", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -29280,7 +28624,6 @@ public abstract partial class SystemState : BaseObject1 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpeedLimit))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NetEntity")]
 [System.Xml.Serialization.XmlRootAttribute("netProperty", Namespace="http://www.railtopomodel.org/schemas/NetEntity", IsNullable=false)]
@@ -29303,7 +28646,6 @@ public partial class NetProperty : NetworkResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NetEntity")]
 [System.Xml.Serialization.XmlRootAttribute("slope", Namespace="http://www.railtopomodel.org/schemas/NetEntity", IsNullable=false)]
@@ -29326,7 +28668,6 @@ public partial class Slope : NetProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NetEntity")]
 [System.Xml.Serialization.XmlRootAttribute("speedLimit", Namespace="http://www.railtopomodel.org/schemas/NetEntity", IsNullable=false)]
@@ -29349,7 +28690,6 @@ public partial class SpeedLimit : NetProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("nonLinearElement", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29359,7 +28699,6 @@ public partial class NonLinearElement : PositioningNetElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("instant", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29382,7 +28721,6 @@ public partial class Instant {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("timeValue", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29407,7 +28745,6 @@ public partial class TimeValue : Quantity {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LegacyID))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29418,7 +28755,6 @@ public abstract partial class tID {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RailwayAlignmentCant))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("lateralInclination", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29428,7 +28764,6 @@ public partial class LateralInclination {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("horizontalAlignment", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29452,7 +28787,6 @@ public partial class HorizontalAlignment {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RailwayDiscretisedPoint))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("discretisedPoint", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29476,7 +28810,6 @@ public partial class DiscretisedPoint {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(Specification))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("informationSource", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29512,7 +28845,6 @@ public abstract partial class InformationSource : NamedResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("orderedCollection", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29551,7 +28883,6 @@ public partial class OrderedCollection : ElementPartCollection {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompositeTimeInterval))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("timeInterval", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29561,7 +28892,6 @@ public abstract partial class TimeInterval {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("segmentCantLine", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29573,7 +28903,6 @@ public partial class SegmentCantLine : AlignmentCantSegment {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SegmentCantLine))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("alignmentCantSegment", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29596,7 +28925,6 @@ public abstract partial class AlignmentCantSegment : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("network", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29632,7 +28960,6 @@ public partial class Network : NamedResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("geometricPositioningSystem", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29655,7 +28982,6 @@ public partial class GeometricPositioningSystem : PositioningSystem {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("networkLevel", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29710,7 +29036,6 @@ public enum DescriptionLevel {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("segmentCantTransition", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29720,7 +29045,6 @@ public partial class SegmentCantTransition : AlignmentCantSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("associatedNetElementCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29743,7 +29067,6 @@ public partial class AssociatedNetElementCoordinate : AssociatedNetElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("spotLocationCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29766,7 +29089,6 @@ public partial class SpotLocationCoordinate : SpotLocation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("horizontalSegmentArc", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29779,7 +29101,6 @@ public partial class HorizontalSegmentArc : HorizontalAlignmentSegment {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(HorizontalSegmentArc))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("horizontalAlignmentSegment", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29802,7 +29123,6 @@ public abstract partial class HorizontalAlignmentSegment : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("sensor", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29825,7 +29145,6 @@ public partial class Sensor : NamedResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("specification", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29835,7 +29154,6 @@ public abstract partial class Specification : InformationSource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("spotLocationIntrinsic", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29858,7 +29176,6 @@ public partial class SpotLocationIntrinsic : SpotLocation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("geographicCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29922,7 +29239,6 @@ public partial class GeographicCoordinate : GeometricCoordinate {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeographicCoordinate))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("geometricCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29932,7 +29248,6 @@ public abstract partial class GeometricCoordinate : PositioningSystemCoordinate 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("alignmentCurve", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29983,7 +29298,6 @@ public partial class AlignmentCurve : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("validityPeriod", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -29994,7 +29308,6 @@ public partial class ValidityPeriod : SimpleTimeInterval {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ValidityPeriod))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("simpleTimeInterval", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30082,7 +29395,6 @@ public partial class SimpleTimeInterval : TimeInterval {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("compositeTimeInterval", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30118,7 +29430,6 @@ public partial class CompositeTimeInterval : TimeInterval {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("legacyID", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30140,7 +29451,6 @@ public partial class LegacyID : tID {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("uUID", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30153,7 +29463,6 @@ public partial class UUID : tID {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(VerticalSegmentTransition))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("verticalAlignmentSegment", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30176,7 +29485,6 @@ public abstract partial class VerticalAlignmentSegment : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("measurementMethod", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30191,7 +29499,6 @@ public abstract partial class MeasurementMethod : Circumstance {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasurementMethod))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("circumstance", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30201,7 +29508,6 @@ public abstract partial class Circumstance : NamedResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("scaleValueDefinition", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30237,7 +29543,6 @@ public partial class ScaleValueDefinition {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("linearAnchorPoint", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30286,7 +29591,6 @@ public partial class LinearAnchorPoint : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("context", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30296,7 +29600,6 @@ public abstract partial class Context : Circumstance {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("verticalSegmentTransition", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30306,7 +29609,6 @@ public partial class VerticalSegmentTransition : VerticalAlignmentSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("associatedNetElementIntrinsic", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30329,7 +29631,6 @@ public partial class AssociatedNetElementIntrinsic : AssociatedNetElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("measurementEquipment", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30339,7 +29640,6 @@ public abstract partial class MeasurementEquipment : Circumstance {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("horizontalSegmentTransition", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30349,7 +29649,6 @@ public partial class HorizontalSegmentTransition : HorizontalAlignmentSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("scale", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30384,7 +29683,6 @@ public partial class Scale {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("phenomenonTime", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30394,7 +29692,6 @@ public abstract partial class PhenomenonTime : Circumstance {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("railwayAlignmentCant", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30417,7 +29714,6 @@ public partial class RailwayAlignmentCant : LateralInclination {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("propertySet", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30440,7 +29736,6 @@ public partial class PropertySet : BaseProperty {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("unorderedCollection", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30463,7 +29758,6 @@ public partial class UnorderedCollection : ElementPartCollection {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("discretisedPointSet", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30499,7 +29793,6 @@ public partial class DiscretisedPointSet : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("verticalSegmentArc", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30509,7 +29802,6 @@ public partial class VerticalSegmentArc : VerticalAlignmentSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("quantityKind", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30558,7 +29850,6 @@ public partial class QuantityKind : NamedResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("linearLocationCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30581,7 +29872,6 @@ public partial class LinearLocationCoordinate : LinearLocation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("linearPositioningSystem", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30659,7 +29949,6 @@ public enum LrsMethod {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("inertia", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30669,7 +29958,6 @@ public partial class Inertia : Quantity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("result", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30679,7 +29967,6 @@ public partial class Result : Quantity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("threeDAlignmentCurve", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30715,7 +30002,6 @@ public partial class ThreeDAlignmentCurve : BaseObject {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("linearElement", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30725,7 +30011,6 @@ public partial class LinearElement : PositioningNetElement {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("linearCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30774,7 +30059,6 @@ public partial class LinearCoordinate : PositioningSystemCoordinate {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("railwayDiscretisedPoint", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30784,7 +30068,6 @@ public partial class RailwayDiscretisedPoint : DiscretisedPoint {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("cartesianCoordinate", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30846,7 +30129,6 @@ public partial class CartesianCoordinate : GeometricCoordinate {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("timedLocation", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30856,7 +30138,6 @@ public partial class TimedLocation : BaseLocation {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("measurementAuthor", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30866,7 +30147,6 @@ public abstract partial class MeasurementAuthor : Circumstance {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("horizontalSegmentLine", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30876,7 +30156,6 @@ public partial class HorizontalSegmentLine : HorizontalAlignmentSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("unit", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30912,7 +30191,6 @@ public partial class Unit : NamedResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("timeReferenceSystem", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30922,7 +30200,6 @@ public partial class TimeReferenceSystem : NamedResource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("observation", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -30997,7 +30274,6 @@ public partial class Observation : InformationSource {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("mass", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -31007,7 +30283,6 @@ public partial class Mass : Quantity {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/Common")]
 [System.Xml.Serialization.XmlRootAttribute("verticalSegmentLine", Namespace="http://www.railtopomodel.org/schemas/Common", IsNullable=false)]
@@ -31017,7 +30292,6 @@ public partial class VerticalSegmentLine : VerticalAlignmentSegment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsPositionReportParametersArea", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31051,7 +30325,6 @@ public partial class EtcsPositionReportParametersArea {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("aspectProving", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31086,7 +30359,6 @@ public partial class AspectProving {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("blockElementConfiguration", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31193,7 +30465,6 @@ public enum BlockSettingTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lineSideLinearConstruction", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31227,7 +30498,6 @@ public partial class LineSideLinearConstruction {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("powerOutputChannelProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31399,7 +30669,6 @@ public partial class PowerOutputChannelProperties {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(MouldedCableJoint))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableJoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31422,7 +30691,6 @@ public partial class CableJoint {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("rbcProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31578,7 +30846,6 @@ public partial class RbcProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("powerSourceRelation", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31701,7 +30968,6 @@ public enum PowerSourceTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("rbcInterlockingCommGroup", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31713,7 +30979,6 @@ public partial class RbcInterlockingCommGroup : RbcInterlockingGroup {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(RbcInterlockingCommGroup))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("rbcInterlockingGroup", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31749,7 +31014,6 @@ public abstract partial class RbcInterlockingGroup {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("foulTrackControl", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31807,7 +31071,6 @@ public partial class FoulTrackControl {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("nearestAccessPoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31843,7 +31106,6 @@ public partial class NearestAccessPoint {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignalAlignment1))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalAlignment", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31901,7 +31163,6 @@ public partial class SignalAlignment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="SignalAlignment", Namespace="http://www.railtopomodel.org/schemas/RFI")]
 [System.Xml.Serialization.XmlRootAttribute("signalAlignment", Namespace="http://www.railtopomodel.org/schemas/RFI", IsNullable=false)]
@@ -31924,7 +31185,6 @@ public partial class SignalAlignment1 : SignalAlignment {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("centralSafetySystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -31934,7 +31194,6 @@ public partial class CentralSafetySystem : RbcInterlockingGroup {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsSignalProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32143,7 +31402,6 @@ public enum EtcsBlockageExitTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("intentionallyDarkAllowed", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32165,7 +31423,6 @@ public partial class IntentionallyDarkAllowed {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("blockSystem", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32339,7 +31596,6 @@ public enum BlockCircuitryTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsPointCrossingProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32423,7 +31679,6 @@ public partial class EtcsPointCrossingProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("mouldedCableJoint", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32433,7 +31688,6 @@ public partial class MouldedCableJoint : CableJoint {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("etcsTrackToTrainPacket", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32443,7 +31697,6 @@ public partial class EtcsTrackToTrainPacket {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("trainSelectionProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32478,7 +31731,6 @@ public partial class TrainSelectionProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableProperties", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32798,7 +32050,6 @@ public partial class CableProperties {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("cableCapacity", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32849,7 +32100,6 @@ public enum StrandTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalplan", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32872,7 +32122,6 @@ public partial class Signalplan {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("signalAlignmentPointDescription", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32924,7 +32173,6 @@ public partial class SignalAlignmentPointDescription {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LensDiffuserWithOrientation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
 [System.Xml.Serialization.XmlRootAttribute("lensDiffuser", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling", IsNullable=false)]
@@ -32946,7 +32194,6 @@ public partial class LensDiffuser {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LensDiffuser", Namespace="http://www.railtopomodel.org/schemas/RFI")]
 [System.Xml.Serialization.XmlRootAttribute("lensDiffuser", Namespace="http://www.railtopomodel.org/schemas/RFI", IsNullable=false)]
@@ -32988,7 +32235,6 @@ public enum LensDiffuserTypes2 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LensDiffuserWithHotStrip))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LensDiffuser", Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("lensDiffuser", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -33032,7 +32278,6 @@ public enum LensDiffuserTypes1 {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/NR")]
 [System.Xml.Serialization.XmlRootAttribute("lensDiffuserWithHotStrip", Namespace="http://www.railtopomodel.org/schemas/NR", IsNullable=false)]
@@ -33056,7 +32301,6 @@ public partial class LensDiffuserWithHotStrip : LensDiffuser2 {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(LensDiffuserWithOrientation))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(TypeName="LensDiffuser", Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("lensDiffuser", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -33106,7 +32350,6 @@ public enum LensDiffuserTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("lensDiffuserWithOrientation", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -33180,7 +32423,6 @@ public enum LensDiffuserOrientationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("eulynx", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -33226,7 +32468,6 @@ public partial class Eulynx {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("version", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -33262,7 +32503,6 @@ public partial class Version {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("xsdGeneratorVersion", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -33309,7 +32549,6 @@ public partial class XsdGeneratorVersion {
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(PackageBaseline))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("baseline", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -33380,7 +32619,6 @@ public partial class Baseline {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD")]
 [System.Xml.Serialization.XmlRootAttribute("packageBaseline", Namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD", IsNullable=false)]
@@ -33451,7 +32689,6 @@ public enum NationalDomains {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("etcsProgrammingFileSet", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -33486,7 +32723,6 @@ public partial class EtcsProgrammingFileSet {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("pzbRouteRelation", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -33554,7 +32790,6 @@ public enum PzbRouteRelationTypes {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("routeSignalling", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]
@@ -33600,7 +32835,6 @@ public partial class RouteSignalling {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.railtopomodel.org/schemas/DB")]
 [System.Xml.Serialization.XmlRootAttribute("applicationSystem", Namespace="http://www.railtopomodel.org/schemas/DB", IsNullable=false)]

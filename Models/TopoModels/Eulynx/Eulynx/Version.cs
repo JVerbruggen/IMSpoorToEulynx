@@ -4,12 +4,10 @@ using System.Text;
 
 namespace Models.TopoModels.Eulynx
 {
-    public partial class Version
+    public partial class Version : ITranslatableSingle<Version, IMSpoor.IMSpoor>
     {
-        public static Version GetVersion(String versionString)
+        public Version TranslateSingle(IMSpoor.IMSpoor imSpoor)
         {
-            Version version = new Version();
-
             XsdGeneratorVersion xsdGeneratorVersion = new XsdGeneratorVersion();
             xsdGeneratorVersion.generatedByTool = "IMSpoor-1.3.0 to EULYNX Converter tool";
             xsdGeneratorVersion.generatedByToolVersion = "0.1";
@@ -20,11 +18,10 @@ namespace Models.TopoModels.Eulynx
             baseline.minor = 1;
             Baseline[] hasBaseline = new Baseline[] { baseline };
 
-            version.generatedByTool = generatedByTool;
-            version.hasBaseline = hasBaseline;
+            this.generatedByTool = generatedByTool;
+            this.hasBaseline = hasBaseline;
 
-            return version;
+            return this;
         }
-
     }
 }

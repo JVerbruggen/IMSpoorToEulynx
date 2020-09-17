@@ -48,15 +48,16 @@ namespace IMSpoorToRTM
         {
             String filePath = textBox_IMSpoorXML.Text;
 
-            var imSpoor = imSpoorFileReadService.Read(filePath);
-            Eulynx eulynx = (Eulynx)imSpoor;
+            Models.TopoModels.IMSpoor.IMSpoor imSpoor = imSpoorFileReadService.Read(filePath);
+            Eulynx eulynx = new Eulynx();
+
+            eulynx = eulynx.TranslateSingle(imSpoor);
 
             String eulynxXml = eulynxSerializer.Serialize(eulynx);
-
             XDocument eulynxDoc = XDocument.Parse(eulynxXml);
+            eulynxDoc.Declaration = new XDeclaration("1.0", "UTF-8", null);
 
-            //eulynxDoc.Save(@"C:\Users\jurje\OneDrive\Documenten\EULYNX-from-IMSpoor.xml");
-            saveFileDialog_EulynxXMLOutput.InitialDirectory = @"C:\Users\jurje\OneDrive\Documenten\EULYNX-from-IMSpoor.xml";
+            saveFileDialog_EulynxXMLOutput.InitialDirectory = @"C:\Users\jurje\OneDrive\Documenten\Eulynxgens\EULYNX-from-IMSpoor.xml";
             if (saveFileDialog_EulynxXMLOutput.ShowDialog() == DialogResult.OK)
             {
                 eulynxDoc.Save(saveFileDialog_EulynxXMLOutput.FileName);

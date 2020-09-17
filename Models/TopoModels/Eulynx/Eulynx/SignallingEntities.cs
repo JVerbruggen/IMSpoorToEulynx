@@ -6,7 +6,7 @@ namespace Models.TopoModels.Eulynx
 {
     public partial class SignallingEntities
     {
-        public static SignallingEntities GetSignallingEntities()
+        public static SignallingEntities GetSignallingEntities(IMSpoor.IMSpoor imSpoor)
         {
             SignallingEntities signallingEntities = new SignallingEntities();
 
@@ -26,6 +26,17 @@ namespace Models.TopoModels.Eulynx
             signallingEntities.ownsCompoundLogicalObject = CompoundLogicalObject.GetCompoundLogicalObjects();
             signallingEntities.ownsConditionSectionsClear = ConditionSectionsClear.GetConditionSectionsClears();
             signallingEntities.ownsConductorRail = ConductorRail.GetConductorRails();
+            signallingEntities.ownsConflictingRoute = ConflictingRoute.GetConflictingRoutes();
+            signallingEntities.ownsControlArea = ControlArea.GetControlAreas();
+            signallingEntities.ownsControlledTrackAsset = ControlledTrackAsset.GetControlledTrackAssets();
+            signallingEntities.ownsController = Controller.GetControllers();
+            signallingEntities.ownsControlRelation = ControlRelation.GetControlRelations();
+            signallingEntities.ownsDADoverlap = DirectionAuthorityDependentOverlap.GetDirectionAuthorityDependentOverlaps();
+            signallingEntities.ownsDescription = Description.GetDescriptions();
+            signallingEntities.ownsDesignation = Designation.GetDesignations();
+            signallingEntities.ownsDistanceToDangerpoint = DistanceToDangerpoint.GetDistanceToDangerpoints();
+            signallingEntities.ownsDualFlankProtection = DualFlankProtection.GetDualFlankProtections();
+            signallingEntities.ownsEquipmentSupport = EquipmentSupport.GetEquipmentSupports();
 
             throw new NotImplementedException();
 

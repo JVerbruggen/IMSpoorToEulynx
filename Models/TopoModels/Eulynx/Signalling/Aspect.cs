@@ -14,5 +14,14 @@ namespace Models.TopoModels.Eulynx
             return aspects;
         }
 
+        public Aspect[] TranslateMultiple(IMSpoor.IMSpoor imSpoor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Aspect TranslateSingle(IMSpoor.IMSpoor imSpoor)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

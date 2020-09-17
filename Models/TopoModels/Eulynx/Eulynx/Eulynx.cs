@@ -1,28 +1,40 @@
-﻿using System;
+﻿using Models.TopoModels.IMSpoor;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Models.TopoModels.Eulynx
 {
-    public partial class Eulynx
+    public partial class Eulynx : ITranslatableSingle<Eulynx, IMSpoor.IMSpoor>
     {
-
-        public static explicit operator Eulynx(IMSpoor.IMSpoor imSpoor)
+        public Eulynx TranslateSingle(IMSpoor.IMSpoor imSpoor)
         {
             object item = imSpoor.Item;
             String version = imSpoor.imxVersion;
-            
-            Eulynx eulynx = new Eulynx();
-            Version v = Version.GetVersion(version);
-            RtmEntities rtmEntities = RtmEntities.GetRtmEntities();
-            SignallingEntities signallingEntities = SignallingEntities.GetSignallingEntities();
 
-            eulynx.isReleaseVersion = v;
-            eulynx.ownsRtmEntities = rtmEntities;
-            eulynx.ownsSignallingEntities = signallingEntities;
+            if (item == null) return null;
 
-            return eulynx;
+            Version v = new Version().TranslateSingle(imSpoor);
+            this.isReleaseVersion = v;
+            tSituation situation;
+
+            if (item is tSituation)
+            {
+                situation = (tSituation)item;
+            }
+            else
+            {
+                Project project = (Project)item;
+                situation = project.InitialSituation;
+            }
+
+            RtmEntities rtmEntities = new RtmEntities().TranslateSingle(situation);
+            //SignallingEntities signallingEntities = SignallingEntities.GetSignallingEntities(imSpoor);
+
+            this.ownsRtmEntities = rtmEntities;
+            //this.ownsSignallingEntities = signallingEntities;
+
+            return this;
         }
-
     }
 }
