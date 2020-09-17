@@ -4,19 +4,15 @@ using System;
 using System.IO;
 using System.Text;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Services.Service
 {
-    public class XMLSerializeService : ISerializer<Eulynx>
+    public class XDocSerializeService : IXDocSerializer<Eulynx>
     {
-        public String Serialize(Eulynx eulynx)
+        private String SerializeToString(Eulynx eulynx)
         {
-            //MethodInfo method = typeof(XmlSerializer).GetMethod("set_Mode", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-            //String s = (String)method.Invoke(null, new object[] { eulynx });
-            //return s;
-
-
             XmlSerializerNamespaces xmlns = new XmlSerializerNamespaces();
             xmlns.Add("xsi", @"http://www.w3.org/2001/XMLSchema-instance");
             xmlns.Add("rtmCommon", @"http://www.railtopomodel.org/schemas/Common");
@@ -34,10 +30,17 @@ namespace Services.Service
                     xml = sww.ToString(); // Your XML
                 }
             }
-
             return xml;
         }
 
+        public XDocument Serialize(Eulynx eulynx)
+        {
+            String eulynxXml = this.SerializeToString(eulynx);
+            XDocument eulynxDoc = XDocument.Parse(eulynxXml);
+            eulynxDoc.Declaration = new XDeclaration("1.0", "UTF-8", null);
+
+            return eulynxDoc;
+        }
 
 
     }

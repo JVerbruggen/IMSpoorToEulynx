@@ -71,9 +71,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\IMSpoorToRTM\\IMSpoorToRTM.csproj",
-      "projectName": "IMSpoorToRTM",
-      "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\IMSpoorToRTM\\IMSpoorToRTM.csproj",
+      "projectUniqueName": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\IMSpoorToRTM\\FormsApp.csproj",
+      "projectName": "FormsApp",
+      "projectPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\IMSpoorToRTM\\FormsApp.csproj",
       "packagesPath": "C:\\Users\\jurje\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\IMSpoorToRTM\\obj\\",
       "projectStyle": "PackageReference",
@@ -129,7 +129,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

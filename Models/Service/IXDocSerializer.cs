@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
 
 namespace Models.Service
 {
-    public interface ISerializer<T>
+    public interface IXDocSerializer<T>
     {
-        public String Serialize(T t);
+        public XDocument Serialize(T t);
     }
 }
