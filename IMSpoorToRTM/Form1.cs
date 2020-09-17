@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace IMSpoorToRTM
+namespace FormsApp
 {
     public partial class Form1 : Form
     {
@@ -51,6 +51,9 @@ namespace IMSpoorToRTM
             {
                 eulynxDoc.Save(saveFileDialog_EulynxXMLOutput.FileName);
             }
+
+            TopologyView topologyView = new TopologyView(eulynx);
+            topologyView.Show();
         }
     }
 }

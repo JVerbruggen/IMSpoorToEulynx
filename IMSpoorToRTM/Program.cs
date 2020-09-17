@@ -1,11 +1,10 @@
-using Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IMSpoorToRTM
+namespace FormsApp
 {
     static class Program
     {
@@ -15,8 +14,6 @@ namespace IMSpoorToRTM
         [STAThread]
         static void Main()
         {
-            LinqXMLTest.main();
-
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Services</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data_NETStandard\3.0. Data.csproj" />
+    <ProjectReference Include="..\Models_NETStandard\4.0. Models.csproj" />
+  </ItemGroup>
+
+</Project>

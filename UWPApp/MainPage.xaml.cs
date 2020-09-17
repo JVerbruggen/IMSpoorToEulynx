@@ -1,8 +1,15 @@
-﻿using System;
+﻿using Models.File;
+using Models.Service;
+using Models.TopoModels.Eulynx;
+using Models.TopoModels.IMSpoor;
+using Models.Translation;
+using Services.Service;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +29,44 @@ namespace UWPApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ITranslationService<IMSpoor, Eulynx> imspoorToEulynxTranslationService = new IMSpoorToEulynxTranslationService();
+        private IReadFileService<IMSpoor> imSpoorFileReadService = new ReadIMSpoorFileService();
+        private IXDocSerializer<Eulynx> eulynxSerializer = new XDocSerializeService();
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private async void saveXDocument(XDocument xDocument )
+        {
+            var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+            savePicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            savePicker.FileTypeChoices.Add("XML File", new List<string>() { ".xml" });
+            savePicker.SuggestedFileName = "EULYNX-from-IMSpoor.xml";
+
+            Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
+            if (file != null)
+            {
+                Windows.Storage.CachedFileManager.DeferUpdates(file);
+
+                xDocument.Save(file.Path);
+
+                Windows.Storage.Provider.FileUpdateStatus status = await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
+                if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
+                {
+                    Console.Out.WriteLine("File saved");
+
+                }
+                else
+                {
+                    Console.Out.WriteLine("File couldn't be saved");
+                }
+            }
+            else
+            {
+                Console.Out.WriteLine("Open save file cancelled");
+            }
         }
 
         private void Button_XMLConvert_Click(object sender, RoutedEventArgs e)
@@ -36,11 +78,7 @@ namespace UWPApp
 
             XDocument eulynxDoc = eulynxSerializer.Serialize(eulynx);
 
-            saveFileDialog_EulynxXMLOutput.InitialDirectory = @"C:\Users\jurje\OneDrive\Documenten\Eulynxgens\EULYNX-from-IMSpoor.xml";
-            if (saveFileDialog_EulynxXMLOutput.ShowDialog() == DialogResult.OK)
-            {
-                eulynxDoc.Save(saveFileDialog_EulynxXMLOutput.FileName);
-            }
+            saveXDocument(eulynxDoc);
         }
     }
 }

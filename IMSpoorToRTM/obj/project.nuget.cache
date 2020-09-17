@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "F9VjnujLT7akJE/agkmMXcFXFfLZiV+1Ri0fxQgrzO8vx8f6Z86hanPMthxlosR9itlmRd1W+Z5XN26+AYJCGA==",
+  "dgSpecHash": "Av5qXFIegp9f1iae9qMf5k1XL5in8n3oA2Jw3VewAKKWHCPgh9NZLb3qy6UkAgbYwDmWBaBZfszTirSmR7RqMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\IMSpoorToRTM\\FormsApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\jurje\\source\\repos\\IMSpoorToRTM\\IMSpoorToRTM\\1.0. FormsApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jurje\\.nuget\\packages\\automaticgraphlayout\\1.1.9\\automaticgraphlayout.1.1.9.nupkg.sha512",
+    "C:\\Users\\jurje\\.nuget\\packages\\automaticgraphlayout.drawing\\1.1.9\\automaticgraphlayout.drawing.1.1.9.nupkg.sha512",
+    "C:\\Users\\jurje\\.nuget\\packages\\automaticgraphlayout.graphviewergdi\\1.1.9\\automaticgraphlayout.graphviewergdi.1.1.9.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
+  ],
   "logs": []
 }
