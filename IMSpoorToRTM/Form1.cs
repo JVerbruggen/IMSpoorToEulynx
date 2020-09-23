@@ -70,5 +70,27 @@ namespace FormsApp
             TopologyView topologyView = new TopologyView(eulynx);
             topologyView.Show();
         }
+
+        private void button_languageSelect_Click(object sender, EventArgs e)
+        {
+            Form languageSelect = new LanguageSelect();
+
+            languageSelect.ShowDialog();
+
+            Control found = null;
+            foreach(Control c in languageSelect.Controls)
+            {
+                if(c.Name == "label_chosenLanguage")
+                {
+                    found = c;
+                    break;
+                }
+            }
+            if (found == null) return;
+
+
+            Language result = (Language)Enum.Parse(typeof(Language), found.Text);
+
+        }
     }
 }

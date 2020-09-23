@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFileDialog_IMSpoorXML = new System.Windows.Forms.OpenFileDialog();
             this.button_chooseIMSpoorXML = new System.Windows.Forms.Button();
             this.textBox_IMSpoorXML = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@
             this.label_IMSpoorXMLFile = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.saveFileDialog_EulynxXMLOutput = new System.Windows.Forms.SaveFileDialog();
+            this.button_languageSelect = new System.Windows.Forms.Button();
             this.groupBox_IMSpoorXML.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,90 +46,72 @@
             this.openFileDialog_IMSpoorXML.AddExtension = false;
             this.openFileDialog_IMSpoorXML.DefaultExt = "xml";
             this.openFileDialog_IMSpoorXML.FileName = "IMSpoor-1.3.0-actual.xml";
-            this.openFileDialog_IMSpoorXML.Filter = "XML files (*.xml)|*.xml";
+            resources.ApplyResources(this.openFileDialog_IMSpoorXML, "openFileDialog_IMSpoorXML");
             this.openFileDialog_IMSpoorXML.InitialDirectory = "C:\\";
             this.openFileDialog_IMSpoorXML.RestoreDirectory = true;
-            this.openFileDialog_IMSpoorXML.Title = "Select IMSpoor XML file to load";
             // 
             // button_chooseIMSpoorXML
             // 
-            this.button_chooseIMSpoorXML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_chooseIMSpoorXML.Location = new System.Drawing.Point(430, 46);
+            resources.ApplyResources(this.button_chooseIMSpoorXML, "button_chooseIMSpoorXML");
             this.button_chooseIMSpoorXML.Name = "button_chooseIMSpoorXML";
-            this.button_chooseIMSpoorXML.Size = new System.Drawing.Size(29, 27);
-            this.button_chooseIMSpoorXML.TabIndex = 0;
-            this.button_chooseIMSpoorXML.Text = "...";
             this.button_chooseIMSpoorXML.UseVisualStyleBackColor = true;
             this.button_chooseIMSpoorXML.Click += new System.EventHandler(this.button_chooseIMSpoorXML_Click);
             // 
             // textBox_IMSpoorXML
             // 
-            this.textBox_IMSpoorXML.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_IMSpoorXML.Location = new System.Drawing.Point(8, 46);
+            resources.ApplyResources(this.textBox_IMSpoorXML, "textBox_IMSpoorXML");
             this.textBox_IMSpoorXML.Name = "textBox_IMSpoorXML";
-            this.textBox_IMSpoorXML.Size = new System.Drawing.Size(416, 27);
-            this.textBox_IMSpoorXML.TabIndex = 1;
             // 
             // groupBox_IMSpoorXML
             // 
-            this.groupBox_IMSpoorXML.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox_IMSpoorXML, "groupBox_IMSpoorXML");
             this.groupBox_IMSpoorXML.Controls.Add(this.button_startConversion);
             this.groupBox_IMSpoorXML.Controls.Add(this.label_IMSpoorXMLFile);
             this.groupBox_IMSpoorXML.Controls.Add(this.button_chooseIMSpoorXML);
             this.groupBox_IMSpoorXML.Controls.Add(this.textBox_IMSpoorXML);
-            this.groupBox_IMSpoorXML.Location = new System.Drawing.Point(11, 5);
             this.groupBox_IMSpoorXML.Name = "groupBox_IMSpoorXML";
-            this.groupBox_IMSpoorXML.Size = new System.Drawing.Size(465, 125);
-            this.groupBox_IMSpoorXML.TabIndex = 2;
             this.groupBox_IMSpoorXML.TabStop = false;
-            this.groupBox_IMSpoorXML.Text = "IMSpoor XML";
             // 
             // button_startConversion
             // 
-            this.button_startConversion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_startConversion.Location = new System.Drawing.Point(365, 90);
+            resources.ApplyResources(this.button_startConversion, "button_startConversion");
             this.button_startConversion.Name = "button_startConversion";
-            this.button_startConversion.Size = new System.Drawing.Size(94, 29);
-            this.button_startConversion.TabIndex = 3;
-            this.button_startConversion.Text = "Convert";
             this.button_startConversion.UseVisualStyleBackColor = true;
             this.button_startConversion.Click += new System.EventHandler(this.button_startConversion_Click);
             // 
             // label_IMSpoorXMLFile
             // 
-            this.label_IMSpoorXMLFile.AutoSize = true;
-            this.label_IMSpoorXMLFile.Location = new System.Drawing.Point(8, 23);
+            resources.ApplyResources(this.label_IMSpoorXMLFile, "label_IMSpoorXMLFile");
             this.label_IMSpoorXMLFile.Name = "label_IMSpoorXMLFile";
-            this.label_IMSpoorXMLFile.Size = new System.Drawing.Size(154, 20);
-            this.label_IMSpoorXMLFile.TabIndex = 3;
-            this.label_IMSpoorXMLFile.Text = "Locatie IMSpoor XML:";
             // 
             // progressBar1
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(19, 136);
+            resources.ApplyResources(this.progressBar1, "progressBar1");
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(457, 29);
-            this.progressBar1.TabIndex = 3;
             // 
             // saveFileDialog_EulynxXMLOutput
             // 
             this.saveFileDialog_EulynxXMLOutput.FileName = "eulynx-from-imspoor-generated.xml";
-            this.saveFileDialog_EulynxXMLOutput.Filter = "XML files|*.xml";
+            resources.ApplyResources(this.saveFileDialog_EulynxXMLOutput, "saveFileDialog_EulynxXMLOutput");
+            // 
+            // button_languageSelect
+            // 
+            resources.ApplyResources(this.button_languageSelect, "button_languageSelect");
+            this.button_languageSelect.Name = "button_languageSelect";
+            this.button_languageSelect.UseVisualStyleBackColor = true;
+            this.button_languageSelect.Click += new System.EventHandler(this.button_languageSelect_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 463);
+            this.Controls.Add(this.button_languageSelect);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox_IMSpoorXML);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.ShowIcon = false;
             this.groupBox_IMSpoorXML.ResumeLayout(false);
             this.groupBox_IMSpoorXML.PerformLayout();
             this.ResumeLayout(false);
@@ -144,6 +128,7 @@
         private System.Windows.Forms.Button button_startConversion;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog_EulynxXMLOutput;
+        private System.Windows.Forms.Button button_languageSelect;
     }
 }
 

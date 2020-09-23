@@ -57,6 +57,243 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;groupBox_IMSpoorXML.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+  <data name="groupBox_IMSpoorXML.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_chooseIMSpoorXML.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>430, 46</value>
+  </data>
+  <data name="&gt;&gt;groupBox_IMSpoorXML.Name" xml:space="preserve">
+    <value>groupBox_IMSpoorXML</value>
+  </data>
+  <data name="&gt;&gt;textBox_IMSpoorXML.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_chooseIMSpoorXML.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>0</value>
+  </data>
+  <data name="textBox_IMSpoorXML.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>416, 27</value>
+  </data>
+  <data name="&gt;&gt;button_startConversion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_startConversion.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>365, 90</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBox_IMSpoorXML.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog_EulynxXMLOutput.Name" xml:space="preserve">
+    <value>saveFileDialog_EulynxXMLOutput</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog_IMSpoorXML.Name" xml:space="preserve">
+    <value>openFileDialog_IMSpoorXML</value>
+  </data>
+  <data name="progressBar1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="button_startConversion.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>94, 29</value>
+  </data>
+  <data name="&gt;&gt;button_chooseIMSpoorXML.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_chooseIMSpoorXML.Name" xml:space="preserve">
+    <value>button_chooseIMSpoorXML</value>
+  </data>
+  <data name="label_IMSpoorXMLFile.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_languageSelect.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_IMSpoorXMLFile.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_IMSpoorXML.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>382, 422</value>
+  </data>
+  <data name="&gt;&gt;button_startConversion.Name" xml:space="preserve">
+    <value>button_startConversion</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_chooseIMSpoorXML.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox_IMSpoorXML.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="progressBar1.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textBox_IMSpoorXML.Parent" xml:space="preserve">
+    <value>groupBox_IMSpoorXML</value>
+  </data>
+  <data name="&gt;&gt;label_IMSpoorXMLFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_IMSpoorXMLFile.Name" xml:space="preserve">
+    <value>label_IMSpoorXMLFile</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_chooseIMSpoorXML.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Name" xml:space="preserve">
+    <value>progressBar1</value>
+  </data>
+  <data name="button_startConversion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="button_chooseIMSpoorXML.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="button_languageSelect.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>382, 422</value>
+  </data>
+  <data name="label_IMSpoorXMLFile.Text" xml:space="preserve">
+    <value>Location IMSpoor XML:</value>
+  </data>
+  <data name="label_IMSpoorXMLFile.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>163, 20</value>
+  </data>
+  <data name="&gt;&gt;button_startConversion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_startConversion.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_languageSelect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox_IMSpoorXML.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>1</value>
+  </data>
+  <data name="button_chooseIMSpoorXML.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>29, 27</value>
+  </data>
+  <data name="openFileDialog_IMSpoorXML.Title" xml:space="preserve">
+    <value>Select IMSpoor XML file to load</value>
+  </data>
+  <data name="saveFileDialog_EulynxXMLOutput.Filter" xml:space="preserve">
+    <value>XML files|*.xml</value>
+  </data>
+  <data name="&gt;&gt;textBox_IMSpoorXML.Name" xml:space="preserve">
+    <value>textBox_IMSpoorXML</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>IMSpoor to EULYNX converter tool</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_IMSpoorXMLFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog_IMSpoorXML.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_IMSpoorXML.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="openFileDialog_IMSpoorXML.Filter" xml:space="preserve">
+    <value>XML files (*.xml)|*.xml</value>
+  </data>
+  <data name="&gt;&gt;label_IMSpoorXMLFile.Parent" xml:space="preserve">
+    <value>groupBox_IMSpoorXML</value>
+  </data>
+  <data name="groupBox_IMSpoorXML.Text" xml:space="preserve">
+    <value>IMSpoor XML</value>
+  </data>
+  <data name="&gt;&gt;button_languageSelect.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_chooseIMSpoorXML.Parent" xml:space="preserve">
+    <value>groupBox_IMSpoorXML</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing.Primitives">
+    <value>8, 20</value>
+  </data>
+  <data name="groupBox_IMSpoorXML.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>465, 125</value>
+  </data>
+  <data name="progressBar1.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>457, 29</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>4</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>488, 463</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog_EulynxXMLOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox_IMSpoorXML.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>11, 5</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button_languageSelect.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;groupBox_IMSpoorXML.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBox_IMSpoorXML.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>8, 46</value>
+  </data>
+  <data name="&gt;&gt;button_languageSelect.Name" xml:space="preserve">
+    <value>button_languageSelect</value>
+  </data>
+  <data name="label_IMSpoorXMLFile.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>8, 23</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>19, 136</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="button_startConversion.Text" xml:space="preserve">
+    <value>Convert</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_startConversion.Parent" xml:space="preserve">
+    <value>groupBox_IMSpoorXML</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>156</value>
   </metadata>
