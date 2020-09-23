@@ -1,4 +1,6 @@
-﻿using Models.TopoModels.IMSpoor;
+﻿using Models.DependencyInjection.Manager;
+using Models.TopoModels.DependencyInjection;
+using Models.TopoModels.IMSpoor;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +11,8 @@ namespace Models.TopoModels.Eulynx
     {
         public Eulynx TranslateSingle(IMSpoor.IMSpoor imSpoor)
         {
+            InstanceManager.AddInstanceSupplier(new InstanceSupplier<IMSpoor.IMSpoor>(imSpoor));
+
             object item = imSpoor.Item;
             String version = imSpoor.imxVersion;
 
@@ -27,6 +31,8 @@ namespace Models.TopoModels.Eulynx
                 Project project = (Project)item;
                 situation = project.InitialSituation;
             }
+
+            InstanceManager.AddInstanceSupplier(new InstanceSupplier<tSituation>(situation));
 
             RtmEntities rtmEntities = new RtmEntities().TranslateSingle(situation);
             //SignallingEntities signallingEntities = SignallingEntities.GetSignallingEntities(imSpoor);

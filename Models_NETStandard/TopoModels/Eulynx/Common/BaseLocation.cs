@@ -1,11 +1,11 @@
-﻿using Models.Positioning;
+﻿using Models.Location;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Models.TopoModels.Eulynx
 {
-    public partial class PositioningSystem : IPositioningSystem
+    public abstract partial class BaseLocation
     {
 
     }

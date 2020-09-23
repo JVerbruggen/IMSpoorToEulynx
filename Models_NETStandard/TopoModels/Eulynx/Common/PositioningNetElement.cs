@@ -27,6 +27,7 @@ namespace Models.TopoModels.Eulynx
                 LinearElement linearElement = new LinearElement();
                 linearElement.uuid = microLink.trackFunctionalViewRef;
                 linearElement.name = "-";
+                linearElement.associatedPositioningSystems = new AssociatedPositioningSystem().TranslateMultiple(microLink.trackFunctionalViewRef);
 
                 positioningNetElements.Add(linearElement);
             }
