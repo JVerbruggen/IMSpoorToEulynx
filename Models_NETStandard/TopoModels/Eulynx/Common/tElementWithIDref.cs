@@ -7,6 +7,17 @@ namespace Models.TopoModels.Eulynx
     public partial class tElementWithIDref
     {
 
+        public tElementWithIDref()
+        {
+
+        }
+
+        public tElementWithIDref(string @ref)
+        {
+            this.@ref = @ref;
+        }
+
+
         public static tElementWithIDref GetTElementWithIDref()
         {
             tElementWithIDref tElement = new tElementWithIDref();
