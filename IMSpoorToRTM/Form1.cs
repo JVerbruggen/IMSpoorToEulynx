@@ -23,8 +23,8 @@ namespace FormsApp
         {
             InitializeComponent();
 
-            //textBox_IMSpoorXML.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            textBox_IMSpoorXML.Text = @"C:\Users\jurje\OneDrive\Documenten\ProRail EULYNX IMSPOOR Collections\IMSpoor-1.3.0_Examples\IMSpoor-1.3.0-actual.xml";
+            textBox_IMSpoorXML.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\IMSpoor-1.3.0-actual.xml";
+            updateConversionButtonState();
         }
 
         private void button_chooseIMSpoorXML_Click(object sender, EventArgs e)
@@ -34,19 +34,34 @@ namespace FormsApp
             if(openFileDialog_IMSpoorXML.ShowDialog() == DialogResult.OK)
             {
                 textBox_IMSpoorXML.Text = openFileDialog_IMSpoorXML.FileName;
+                updateConversionButtonState();
             }
+        }
+
+        private void updateConversionButtonState()
+        {
+            String filePath = textBox_IMSpoorXML.Text;
+
+            button_startConversion.Enabled = File.Exists(filePath);
         }
 
         private void button_startConversion_Click(object sender, EventArgs e)
         {
             String filePath = textBox_IMSpoorXML.Text;
 
+            if (!File.Exists(filePath))
+            {
+                updateConversionButtonState();
+                return;
+            }
+
             IMSpoor imSpoor = imSpoorFileReadService.Read(filePath);
             Eulynx eulynx = imspoorToEulynxTranslationService.Translate(imSpoor);
 
             XDocument eulynxDoc = eulynxSerializer.Serialize(eulynx);
 
-            saveFileDialog_EulynxXMLOutput.InitialDirectory = @"C:\Users\jurje\OneDrive\Documenten\Eulynxgens\EULYNX-from-IMSpoor.xml";
+            
+            saveFileDialog_EulynxXMLOutput.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\EULYNX-from-IMSpoor.xml";
             if (saveFileDialog_EulynxXMLOutput.ShowDialog() == DialogResult.OK)
             {
                 eulynxDoc.Save(saveFileDialog_EulynxXMLOutput.FileName);
