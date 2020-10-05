@@ -1,5 +1,4 @@
-﻿using Models.Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,10 +11,10 @@ namespace Models.TopoModels.Eulynx
 
         }
 
-        public GeometricPositioningSystem(string type)
+        public GeometricPositioningSystem(string type, string uuid)
         {
             this.crsDefinition = type;
-            this.uuid = UUIDService.NewFakeUUID(type);
+            this.uuid = uuid;
         }
     }
 }

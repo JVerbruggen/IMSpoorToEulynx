@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx
+namespace Services.Managers.Base
 {
-    public partial class Version
+    public interface IManager<T>
     {
-       
     }
 }

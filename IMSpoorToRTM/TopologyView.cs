@@ -28,10 +28,17 @@ namespace FormsApp
             PositionedRelation[] relations = eulynx.ownsRtmEntities.usesTrackTopology.usesPositionedRelation;
             foreach(PositionedRelation relation in relations)
             {
-                graph.AddEdge(relation.elementA.@ref, relation.elementB.@ref);
+                string refA = relation.elementA.@ref;
+                string refB = relation.elementB.@ref;
+
+                if (refA == null || refB == null) continue;
+
+                graph.AddEdge(refA, refB);
             }
 
             viewer.Graph = graph;
+
+            
 
             this.SuspendLayout();
             viewer.Dock = DockStyle.Fill;

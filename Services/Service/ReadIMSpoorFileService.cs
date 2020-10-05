@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace Services.Service
 {
-    public class ReadIMSpoorFileService : IReadFileService<IMSpoor>
+    public class ReadIMSpoorFileService : IReadFileService<Models.TopoModels.IMSpoor.V1_3_0.IMSpoor>
     {
         private T DeserializeObject<T>(string xml)
         {
@@ -19,10 +19,10 @@ namespace Services.Service
             }
         }
 
-        public IMSpoor Read(String filePath)
+        public Models.TopoModels.IMSpoor.V1_3_0.IMSpoor Read(String filePath)
         {
             var d = XDocument.Load(filePath);
-            IMSpoor imSpoor = DeserializeObject<IMSpoor>(d.ToString());
+            Models.TopoModels.IMSpoor.V1_3_0.IMSpoor imSpoor = DeserializeObject<Models.TopoModels.IMSpoor.V1_3_0.IMSpoor>(d.ToString());
 
             return imSpoor;
         }

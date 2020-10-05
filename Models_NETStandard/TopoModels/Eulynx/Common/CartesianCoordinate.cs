@@ -1,4 +1,4 @@
-﻿using Models.Service;
+﻿using Models.TopoModels.IMSpoor;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,12 +12,12 @@ namespace Models.TopoModels.Eulynx
 
         }
 
-        public CartesianCoordinate(double x, double y, String positioningSystemRef)
+        public CartesianCoordinate(double x, double y, tElementWithIDref positioningSystem, string uuid)
         {
             this.x = x;
             this.y = y;
-            this.positioningSystem = new tElementWithIDref(positioningSystemRef);
-            this.uuid = UUIDService.NewFakeUUID(x + "" + y + positioningSystemRef);
+            this.positioningSystem = positioningSystem;
+            this.uuid = uuid;
         }
     }
 }

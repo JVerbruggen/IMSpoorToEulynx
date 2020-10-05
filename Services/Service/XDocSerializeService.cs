@@ -11,25 +11,57 @@ namespace Services.Service
 {
     public class XDocSerializeService : IXDocSerializer<Eulynx>
     {
-        private String SerializeToString(Eulynx eulynx)
+        private XmlSerializerNamespaces GetNamespaces()
         {
             XmlSerializerNamespaces xmlns = new XmlSerializerNamespaces();
             xmlns.Add("xsi", @"http://www.w3.org/2001/XMLSchema-instance");
             xmlns.Add("rtmCommon", @"http://www.railtopomodel.org/schemas/Common");
             xmlns.Add("eurtm", @"http://www.railtopomodel.org/schemas/EULYNX_XSD");
             xmlns.Add("netEntity", @"http://www.railtopomodel.org/schemas/NetEntity");
+            xmlns.Add("euSignalling", @"http://www.railtopomodel.org/schemas/EULYNX_Signalling");
 
-            XmlSerializer xsSubmit = new XmlSerializer(typeof(Eulynx));
-            var subReq = eulynx;
+            return xmlns;
+        }
+
+        private XmlWriterSettings GetWriterSettings()
+        {
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
+            xmlWriterSettings.Indent = true;
+
+            return xmlWriterSettings;
+        }
+
+
+        private String SerializeToString(Eulynx eulynx)
+        {
+            XmlSerializerNamespaces xmlns = GetNamespaces();
+            XmlWriterSettings writerSettings = GetWriterSettings();
+
+            XmlSerializer serializer = new XmlSerializer(typeof(Eulynx));
             var xml = "";
 
             using (var sww = new StringWriter())
             {
-                using (XmlWriter writer = XmlWriter.Create(sww))
+                using (XmlWriter writer = XmlWriter.Create(sww, writerSettings))
                 {
-                    xsSubmit.Serialize(writer, subReq, xmlns);
-                    xml = sww.ToString(); // Your XML
+                    serializer.Serialize(writer, eulynx, xmlns);
+                    xml = sww.GetStringBuilder().ToString();
                 }
+            }
+            return xml;
+        }
+
+        private String SerializeToFile(Eulynx eulynx, string path)
+        {
+            XmlSerializerNamespaces xmlns = GetNamespaces();
+            XmlWriterSettings writerSettings = GetWriterSettings();
+
+            XmlSerializer serializer = new XmlSerializer(typeof(Eulynx));
+            var xml = "";
+
+            using (XmlWriter writer = XmlWriter.Create(path, writerSettings))
+            {
+                serializer.Serialize(writer, eulynx, xmlns);
             }
             return xml;
         }
@@ -43,6 +75,9 @@ namespace Services.Service
             return eulynxDoc;
         }
 
-
+        public void Serialize(Eulynx eulynx, string path)
+        {
+            SerializeToFile(eulynx, path);
+        }
     }
 }

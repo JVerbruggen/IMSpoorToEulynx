@@ -1,5 +1,4 @@
-﻿using Models.Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,11 +11,10 @@ namespace Models.TopoModels.Eulynx
 
         }
 
-        public SpotLocationCoordinate(String positioningSystemCoordinateRef)
+        public SpotLocationCoordinate(tElementWithIDref positioningSystemCoordinate, string uuid)
         {
-            this.coordinate = new tElementWithIDref(positioningSystemCoordinateRef);
-            this.uuid = UUIDService.NewFakeUUID(positioningSystemCoordinateRef);
+            this.coordinate = positioningSystemCoordinate;
+            this.uuid = uuid;
         }
-
     }
 }

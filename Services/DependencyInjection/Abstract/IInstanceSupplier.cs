@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx
+namespace Services.DependencyInjection.Abstract
 {
-    public partial class Version
+    public interface IInstanceSupplier
     {
-       
     }
 }
