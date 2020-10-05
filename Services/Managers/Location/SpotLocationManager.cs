@@ -27,11 +27,10 @@ namespace Services.Managers.Location
             PositioningSystemCoordinateManager positioningSystemCoordinateManager = InstanceManager.Singleton<PositioningSystemCoordinateManager>().GetInstance();
             PositioningSystemManager positioningSystemManager = InstanceManager.Singleton<PositioningSystemManager>().GetInstance();
             GeometricPositioningSystem gps = positioningSystemManager.GetGeometricPositioningSystem(PositioningSystemTypes.RD);
-            tElementWithIDref gpsRef = tElementWithIDref.GetTElementWithIDref(gps);
 
             GeometryDeserializer geometryDeserializer = InstanceManager.Singleton<GeometryDeserializer>().GetInstance();
             float[] xy = geometryDeserializer.GetCoordinate(geoLocation.Point);
-            CartesianCoordinate positioningSystemCoordinate = new CartesianCoordinate(xy[0], xy[1], gpsRef, gps.uuid);
+            CartesianCoordinate positioningSystemCoordinate = new CartesianCoordinate(xy[0], xy[1], gps, gps.uuid);
             positioningSystemCoordinateManager.Register(positioningSystemCoordinate);
 
             tElementWithIDref positioningSystemCoordinateRef = tElementWithIDref.GetTElementWithIDref(positioningSystemCoordinate);

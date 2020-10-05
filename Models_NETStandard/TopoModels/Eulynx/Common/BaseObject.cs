@@ -32,5 +32,10 @@ namespace Models.TopoModels.Eulynx
             if (baseObject == null) return false;
             return this.uuid == baseObject.uuid;
         }
+
+        public static implicit operator tElementWithIDref(BaseObject bo)
+        {
+            return new tElementWithIDref(bo.uuid);
+        }
     }
 }
