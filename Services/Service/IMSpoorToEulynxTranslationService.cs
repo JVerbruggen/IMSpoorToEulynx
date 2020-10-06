@@ -2,6 +2,8 @@
 using Models.TopoModels.IMSpoor;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Models.Translation;
+using Services.DependencyInjection;
+using Services.Managers.Toplevel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ namespace Services.Service
     {
         public Eulynx Translate(IMSpoor imSpoor)
         {
-            Eulynx eulynx = new Eulynx().TranslateSingle(imSpoor);
+            Eulynx eulynx = InstanceManager.Singleton<EulynxManager>().GetInstance().GetEulynx(imSpoor);
 
             return eulynx;
         }

@@ -1,7 +1,7 @@
-﻿using Models.Assets;
-using Models.DependencyInjection.Manager;
-using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx;
+using Services.DependencyInjection;
 using Services.Managers.Base;
+using Services.Managers.Location;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,12 @@ namespace Services.Managers.Assets
             IList<Signal1> signalsConverted = new List<Signal1>();
             foreach (Models.TopoModels.IMSpoor.V1_3_0.Signal imspoorSignal in imspoorSignals)
             {
-                Signal rtmSignal = new Signal(imspoorSignal);
+                SpotLocationManager spotLocationManager = InstanceManager.Singleton<SpotLocationManager>().GetInstance();
+
+                SpotLocation spotLocation = spotLocationManager.GetGeoLocation(imspoorSignal.Location);
+                spotLocationManager.Register(spotLocation);
+                tElementWithIDref[] locations = new tElementWithIDref[] { new tElementWithIDref(spotLocation.uuid) };
+                Signal rtmSignal = new Signal(locations);
                 InstanceManager.Singleton<SignalRTMManager>().GetInstance().Register(rtmSignal);
 
                 SignalFrameManager signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();

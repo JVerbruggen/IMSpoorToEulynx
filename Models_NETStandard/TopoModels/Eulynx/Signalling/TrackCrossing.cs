@@ -1,7 +1,4 @@
-﻿using Models.DependencyInjection.Manager;
-using Models.Location;
-using Models.Service;
-using Models.TopoModels.IMSpoor.V1_3_0;
+﻿using Models.TopoModels.IMSpoor.V1_3_0;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,18 +12,12 @@ namespace Models.TopoModels.Eulynx
 
         }
 
-        public TrackCrossing(LevelCrossing levelCrossing)
+        public TrackCrossing(tElementWithIDref[] isLocatedAt, string streetName, string type, string uuid)
         {
-            SpotLocationManager spotLocationManager = InstanceManager.Singleton<SpotLocationManager>().GetInstance();
-
-            this.isLocatedAt = new tElementWithIDref[] { spotLocationManager.GetGeoLocationRef(levelCrossing.Location) };
-            this.streetName = levelCrossing.locationIndication;
-            this.type = levelCrossing.levelCrossingType.ToString();
-
-            this.uuid = UUIDService.NewFakeUUID(this.isLocatedAt + this.streetName + this.type);
+            this.isLocatedAt = isLocatedAt;
+            this.streetName = streetName;
+            this.type = type;
+            this.uuid = uuid;
         }
-
-
-
     }
 }

@@ -2,6 +2,8 @@
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.Managers.Base;
+using Services.Managers.Location;
+using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,14 +49,21 @@ namespace Services.Managers.Assets
 
         public MainSignalProtectedLevelCrossing GetMainSignalProtectedLevelCrossing(LevelCrossing levelCrossing)
         {
-            TrackCrossing trackCrossing = new TrackCrossing(levelCrossing);
+            SpotLocationManager spotLocationManager = InstanceManager.Singleton<SpotLocationManager>().GetInstance();
+
+            string streetName = levelCrossing.locationIndication;
+            string type = levelCrossing.levelCrossingType.ToString();
+            tElementWithIDref[] isLocatedAt = new tElementWithIDref[] { spotLocationManager.GetGeoLocationRef(levelCrossing.Location) };
+            string uuid = UUIDService.NewFakeUUID(isLocatedAt + streetName + type);
+            TrackCrossing trackCrossing = new TrackCrossing(isLocatedAt, streetName, type, uuid);
+
             InstanceManager.Singleton<TrackCrossingManager>().GetInstance().Register(trackCrossing);
 
             tElementWithIDref protectsTrackCrossing = new tElementWithIDref(trackCrossing.uuid);
             bool dependsOnRoadTrafficLights = levelCrossing.isConnectedToTrafficControlInstallation == tTrueFalseEnum.True;
-            string uuid = levelCrossing.puic;
+            string levelCrossingUUID = levelCrossing.puic;
 
-            MainSignalProtectedLevelCrossing mainSignalProtectedLevelCrossing = new MainSignalProtectedLevelCrossing(protectsTrackCrossing, uuid, dependsOnRoadTrafficLights);
+            MainSignalProtectedLevelCrossing mainSignalProtectedLevelCrossing = new MainSignalProtectedLevelCrossing(protectsTrackCrossing, levelCrossingUUID, dependsOnRoadTrafficLights);
 
             return mainSignalProtectedLevelCrossing;
         }

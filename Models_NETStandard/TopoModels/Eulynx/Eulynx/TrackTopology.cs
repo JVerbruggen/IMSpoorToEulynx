@@ -6,22 +6,17 @@ using System.Text;
 
 namespace Models.TopoModels.Eulynx
 {
-    public partial class TrackTopology : ITranslatableSingle<TrackTopology, RailTopology>
+    public partial class TrackTopology
     {
-
-        public static TrackTopology GetTrackTopology()
+        public TrackTopology()
         {
-            TrackTopology trackTopology = new TrackTopology();
 
-            return trackTopology;
         }
 
-        public TrackTopology TranslateSingle(RailTopology railTopology)
+        public TrackTopology(PositionedRelation[] positionedRelations, PositioningNetElement[] positioningNetElements)
         {
-            this.usesPositionedRelation = new PositionedRelation().TranslateMultiple(railTopology);
-            this.usesPositioningNetElement = new PositioningNetElement().TranslateMultiple(railTopology.MicroLinks);
-
-            return this;
+            this.usesPositionedRelation = positionedRelations;
+            this.usesPositioningNetElement = positioningNetElements;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Services.Managers.Toplevel
 {
     public class EulynxManager : Manager<Eulynx>
     {
-        public Eulynx TranslateSingle(IMSpoor imSpoor)
+        public Eulynx GetEulynx(IMSpoor imSpoor)
         {
             Eulynx eulynx = new Eulynx();
 

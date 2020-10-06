@@ -10,7 +10,7 @@ namespace Services.Managers.Positioning
 {
     public class AssociatedPositioningSystemManager : Manager<AssociatedPositioningSystem>
     {
-        public AssociatedPositioningSystem[] TranslateMultiple(string trackFunctionalViewRef)
+        public AssociatedPositioningSystem[] GetAssociatedPositioningSystems(string trackFunctionalViewRef)
         {
             List<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
 
