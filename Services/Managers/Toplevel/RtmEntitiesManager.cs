@@ -11,7 +11,7 @@ using System.Text;
 
 namespace Services.Managers.Toplevel
 {
-    public class RtmEntitiesManager : Manager<RtmEntities>
+    public class RtmEntitiesManager : UUIDObjectManager<RtmEntities>
     {
         public RtmEntities GetRtmEntities(tSituation situation)
         {

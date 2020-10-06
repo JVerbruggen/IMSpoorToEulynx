@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Services.Managers.Positioning
 {
-    public class AssociatedPositioningSystemManager : Manager<AssociatedPositioningSystem>
+    public class AssociatedPositioningSystemManager : UUIDObjectManager<AssociatedPositioningSystem>
     {
         public AssociatedPositioningSystem[] GetAssociatedPositioningSystems(string trackFunctionalViewRef)
         {

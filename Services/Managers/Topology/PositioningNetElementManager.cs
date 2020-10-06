@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Services.Managers.Topology
 {
-    public class PositioningNetElementManager : Manager<PositioningNetElement>
+    public class PositioningNetElementManager : UUIDObjectManager<PositioningNetElement>
     {
         public PositioningNetElement[] GetPositioningNetElements(MicroLink[] microLinks)
         {

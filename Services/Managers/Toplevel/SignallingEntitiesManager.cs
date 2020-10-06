@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Services.Managers.Toplevel
 {
-    public class SignallingEntitiesManager : Manager<SignallingEntities>
+    public class SignallingEntitiesManager : UUIDObjectManager<SignallingEntities>
     {
 
         public SignallingEntities GetSignallingEntities(IMSpoor imSpoor)

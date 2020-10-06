@@ -37,5 +37,15 @@ namespace Models.TopoModels.Eulynx
         {
             return new tElementWithIDref(bo.uuid);
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

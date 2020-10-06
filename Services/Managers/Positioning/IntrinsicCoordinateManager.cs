@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Services.Managers.Positioning
 {
-    public class IntrinsicCoordinateManager : Manager<IntrinsicCoordinate>
+    public class IntrinsicCoordinateManager : UUIDObjectManager<IntrinsicCoordinate>
     {
         public IntrinsicCoordinate GetIntrinsicCoordinate(double x, double y, tElementWithIDref geometricPositioningSystem)
         {

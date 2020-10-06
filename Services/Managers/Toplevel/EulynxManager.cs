@@ -10,7 +10,7 @@ using Version = Models.TopoModels.Eulynx.Version;
 
 namespace Services.Managers.Toplevel
 {
-    public class EulynxManager : Manager<Eulynx>
+    public class EulynxManager : AbstractManager<Eulynx>
     {
         public Eulynx GetEulynx(IMSpoor imSpoor)
         {

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Services.Managers.Positioning
 {
-    public class CartesianCoordinateManager : Manager<CartesianCoordinate>
+    public class CartesianCoordinateManager : UUIDObjectManager<CartesianCoordinate>
     {
 
         public CartesianCoordinate GetCartesianCoordinate(double x, double y, tElementWithIDref positioningSystem)

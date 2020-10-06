@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Services.Managers.Topology
 {
-    public class TrackTopologyManager : Manager<TrackTopology>
+    public class TrackTopologyManager : AbstractManager<TrackTopology>
     {
         public TrackTopology GetTrackTopology(RailTopology railTopology)
         {

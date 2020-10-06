@@ -21,7 +21,7 @@ namespace Services.Managers.Topology
         public RelationDirection RelationDirection { get; set; }
     }
 
-    public class PositionedRelationManager : Manager<PositionedRelation>
+    public class PositionedRelationManager : UUIDObjectManager<PositionedRelation>
     {
         private MicroLinkRelation yoWhichTrackDoesThisPortHave(RailTopology railTopology, String junction, int port)
         {
