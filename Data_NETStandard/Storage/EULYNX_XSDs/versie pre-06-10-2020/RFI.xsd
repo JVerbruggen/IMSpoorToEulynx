@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:RFI="http://www.railtopomodel.org/schemas/RFI"
-  xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common"
-  xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling"
-  elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/RFI">
-  <!--<dc:date>2020-09-05T14:49:48Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:RFI="http://www.railtopomodel.org/schemas/RFI" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/RFI">
+  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
-  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling"
-    schemaLocation="EULYNX_Signalling.xsd"/>
+  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling" schemaLocation="EULYNX_Signalling.xsd"/>
   <xs:element name="lensDiffuser" type="RFI:LensDiffuser"/>
   <xs:complexType name="LensDiffuser">
     <xs:annotation>
-      <xs:documentation>RFI lens diffuser type. it-IT: diffusore a lente RFI </xs:documentation>
+      <xs:documentation>RFI lens diffuser type.
+it-IT: diffusore a lente RFI
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:LensDiffuser">
@@ -27,9 +24,9 @@
       <xs:extension base="signalling:SignalAlignment">
         <xs:attribute name="alpha" type="xs:float" use="required">
           <xs:annotation>
-            <xs:documentation>The angle in degrees between tangent to the track and signal target
-              direction at a distance of 300m or less. it-IT: L'angolo in gradi tra la tangente alla
-              traccia e la direzione del segnale ad una distanza di 300m o meno.</xs:documentation>
+            <xs:documentation>The angle in degrees between tangent to the track and signal target direction at a distance of 300m or less.
+
+it-IT: L'angolo in gradi tra la tangente alla traccia e la direzione del segnale ad una distanza di 300m o meno.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -38,10 +35,14 @@
   <xs:element name="designation" type="RFI:Designation"/>
   <xs:complexType name="Designation">
     <xs:annotation>
-      <xs:documentation>Italian track assets are labeled with a series of strings: prefix + number +
-        fullname it-IT: I track asset italiani sono etichettati con una serie di stringhe: prefisso
-        + numero + nome completo E.g. prefix="Savv", number="03", fullname="Savv03"
-      </xs:documentation>
+      <xs:documentation>Italian track assets are labeled with a series
+of strings: prefix + number + fullname 
+
+it-IT: I track asset italiani sono etichettati con una serie di stringhe: 
+prefisso + numero + nome completo 
+
+E.g.  prefix="Savv",  number="03",  fullname="Savv03"
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:Designation">
@@ -57,8 +58,8 @@
   </xs:complexType>
   <xs:simpleType name="LensDiffuserTypes">
     <xs:annotation>
-      <xs:documentation>RFI lens diffuser types it-IT: tipi di diffusori a lente
-        RFI</xs:documentation>
+      <xs:documentation>RFI lens diffuser types
+it-IT: tipi di diffusori a lente RFI</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="line">
@@ -68,19 +69,23 @@
       </xs:enumeration>
       <xs:enumeration value="highRadius">
         <xs:annotation>
-          <xs:documentation>A raggio di curvatura &amp;lt; 7500 m</xs:documentation>
+          <xs:documentation>A
+raggio di curvatura &amp;lt; 7500 m</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="lineCurveToRight">
         <xs:annotation>
-          <xs:documentation>Bd raggio di curvatura &amp;lt; 1500 m</xs:documentation>
+          <xs:documentation>Bd
+raggio di curvatura &amp;lt; 1500 m</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="lineCurveToLeft">
         <xs:annotation>
-          <xs:documentation>Bs raggio di curvatura &amp;lt; 1500 m</xs:documentation>
+          <xs:documentation>Bs
+raggio di curvatura &amp;lt; 1500 m</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
+

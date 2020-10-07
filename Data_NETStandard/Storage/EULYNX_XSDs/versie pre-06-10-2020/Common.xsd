@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" elementFormDefault="qualified"
-  targetNamespace="http://www.railtopomodel.org/schemas/Common">
-  <!--<dc:date>2020-09-05T14:49:48Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/Common">
+  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:element name="verticalAlignment" type="rtmCommon:VerticalAlignment"/>
   <xs:complexType name="VerticalAlignment">
     <xs:annotation>
-      <xs:documentation>The vertical alignment is composed of a set of ordered vertical alignment
-        segments. Each segment can be of one of the following three geometry types: &lt;ul&gt;
-        &lt;li&gt;straight line&lt;/li&gt; &lt;li&gt;arc of a circle&lt;/li&gt; &lt;li&gt;transition
-        curve&lt;/li&gt; &lt;/ul&gt;</xs:documentation>
+      <xs:documentation>The vertical alignment is composed of a set of ordered vertical alignment segments. Each  segment can be of one of the following three geometry types:
+&lt;ul&gt;
+ &lt;li&gt;straight line&lt;/li&gt;
+ &lt;li&gt;arc of a circle&lt;/li&gt;
+ &lt;li&gt;transition curve&lt;/li&gt;
+&lt;/ul&gt;</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="IsStructuredIn"
-        type="rtmCommon:tElementWithIDref">
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="isStructuredIn" type="rtmCommon:tElementWithIDref">
         <xs:annotation>
           <xs:appinfo>
             <ObjectTypeRef>rtmCommon:VerticalAlignmentSegment</ObjectTypeRef>
@@ -25,8 +24,7 @@
   <xs:element name="elementPartCollection" type="rtmCommon:ElementPartCollection"/>
   <xs:complexType name="ElementPartCollection">
     <xs:annotation>
-      <xs:documentation>Defines a collection of NetElements that can aggregate into a higher level
-        NetElement class. </xs:documentation>
+      <xs:documentation>Defines a collection of NetElements that can aggregate into a higher level NetElement class. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject"/>
@@ -35,8 +33,7 @@
   <xs:element name="nonLinearElement" type="rtmCommon:NonLinearElement"/>
   <xs:complexType name="NonLinearElement">
     <xs:annotation>
-      <xs:documentation>A topological element that isn't (curvi-)linear, i.e. area or
-        point.</xs:documentation>
+      <xs:documentation>A topological element that isn't (curvi-)linear, i.e. area or point.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:PositioningNetElement"/>
@@ -45,12 +42,10 @@
   <xs:element name="instant" type="rtmCommon:Instant"/>
   <xs:complexType name="Instant">
     <xs:annotation>
-      <xs:documentation>A (physical) instant that can be associated with different time values from
-        different time reference systems. (informative) An example (instance) is "instant of
-        tripping of circuit breaker X of locomotive Y". the instant is an instance of (Physical)
-        Instant. The circuit breaker tripping provides the context, hence the physical meaning. The
-        time equivalent of "SpotLocation", except that a PhysicalInstant must have an owner (here,
-        the locomotive or the circuit breaker).</xs:documentation>
+      <xs:documentation>A (physical) instant that can be associated with different time values from different time reference systems.
+(informative)
+An example (instance) is "instant of tripping of circuit breaker X of locomotive Y". the instant is an instance of (Physical) Instant. The circuit breaker tripping provides the context, hence the physical meaning.
+The time equivalent of "SpotLocation", except that a PhysicalInstant must have an owner (here, the locomotive or the circuit breaker).</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="atTime" type="rtmCommon:TimeValue"/>
@@ -59,34 +54,26 @@
   <xs:element name="baseObject" type="rtmCommon:BaseObject"/>
   <xs:complexType abstract="true" name="BaseObject">
     <xs:annotation>
-      <xs:documentation>NetElements can be grouped in collections (class: ElementPartCollection) ;
-        collections can be ordered (subclass: OrderedCollection) or not (subclass:
-        UnorderedCollection). The nature of collections and the meaning of the "order" are left to
-        the user. </xs:documentation>
+      <xs:documentation>NetElements can be grouped in collections (class: ElementPartCollection) ; collections can be ordered (subclass: OrderedCollection) or not (subclass: UnorderedCollection). The nature of collections and the meaning of the "order" are left to the user.
+</xs:documentation>
     </xs:annotation>
     <xs:attribute name="uuid" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The XSD generator can be hard coded so that the uuid attribute is
-          restricted to the pattern
-          (urn:uuid:)?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}</xs:documentation>
+        <xs:documentation>The XSD generator can be hard coded so that the uuid attribute is restricted to the pattern (urn:uuid:)?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="tElementWithIDref">
     <xs:attribute name="ref" type="xs:string" use="required">
       <xs:annotation>
-        <xs:documentation>The XSD generator can be hard coded so that the ref attribute is
-          restricted to the pattern
-          (urn:uuid:)?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}</xs:documentation>
+        <xs:documentation>The XSD generator can be hard coded so that the ref attribute is restricted to the pattern (urn:uuid:)?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
   <xs:element name="tID" type="rtmCommon:tID"/>
   <xs:complexType abstract="true" name="tID">
     <xs:annotation>
-      <xs:documentation>It is strongly recommended for implementations of new systems to use the
-        UUID type definition. If this is not possible a parallel ID of type UUID should be
-        implemented to allow for global compatibility.</xs:documentation>
+      <xs:documentation>It is strongly recommended for implementations of new systems to use the UUID type definition. If this is not possible a parallel ID of type UUID should be implemented to allow for global compatibility.</xs:documentation>
     </xs:annotation>
   </xs:complexType>
   <xs:simpleType name="DescriptionLevel">
@@ -96,40 +83,31 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="Macro">
         <xs:annotation>
-          <xs:documentation>The Macro level aims to describe the network at regional or national
-            level, with the nonlinear elements being the boundaries and the major OP‚Äôs, while the
-            linear elements are the sections of lines connecting those points.</xs:documentation>
+          <xs:documentation>The Macro level aims to describe the network at regional or national level, with the nonlinear elements being the boundaries and the major OPís, while the linear elements are the sections of lines connecting those points.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Meso">
         <xs:annotation>
-          <xs:documentation>The Meso level brings the description of the tracks between the
-            operational points of the network into focus. The non-linear elements are the Operating
-            Points (OP = stations, yards, junctions, boundaries), and linear elements are the tracks
-            connecting Ops.</xs:documentation>
+          <xs:documentation>The Meso level brings the description of the tracks between the operational points of the network into focus.
+The non-linear elements are the Operating Points (OP = stations, yards, junctions, boundaries), and linear elements are the tracks connecting Ops.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Micro">
         <xs:annotation>
-          <xs:documentation>At micro level, the smallest details aggregate into a single item. E.g.
-            individual point components and point blades and tips coalesce into a single turnout.
-          </xs:documentation>
+          <xs:documentation>At micro level, the smallest details aggregate into a single item. E.g. individual point components and point blades and tips coalesce into a single turnout. </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Nano">
         <xs:annotation>
-          <xs:documentation>The nano level could be described as a properly attributed surveyor‚Äôs
-            map, including topological properties of the rail network in the finest possible
-            granularity. Use cases for the Nano level would include interlocking and asset
-            management.</xs:documentation>
+          <xs:documentation>The nano level could be described as a properly attributed surveyorís map, including topological properties of the rail network in the finest possible granularity. 
+Use cases for the Nano level would include interlocking and asset management.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="Usage">
     <xs:annotation>
-      <xs:documentation>States whether the relation connecting two NetElements is positioned at the
-        start or end.</xs:documentation>
+      <xs:documentation>States whether the relation connecting two NetElements is positioned at the start or end.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="start">
@@ -147,26 +125,24 @@
   <xs:element name="lateralInclination" type="rtmCommon:LateralInclination"/>
   <xs:complexType name="LateralInclination">
     <xs:annotation>
-      <xs:documentation>The lateral inclination is a generic class serving as a reference for the
-        description of any kind of inclination related to an alignment curve i.e. for describing
-        cross sections for road or cant for railways. So lateral inclination is independent from the
-        usage i.e. road or rail. For the purpose of railway the spezialized class
-        RailwayAlignmentCant will be used.</xs:documentation>
+      <xs:documentation>The lateral inclination is a generic class serving as a reference for the description of any kind of inclination related to an alignment curve i.e.  for describing cross sections for road or cant for railways. So lateral inclination is independent from the usage i.e. road or rail. 
+For the purpose of railway the spezialized class RailwayAlignmentCant will be used.</xs:documentation>
     </xs:annotation>
   </xs:complexType>
   <xs:element name="horizontalAlignment" type="rtmCommon:HorizontalAlignment"/>
   <xs:complexType name="HorizontalAlignment">
     <xs:annotation>
-      <xs:documentation>The horizontal alignment is composed of a set of ordered horizontal
-        alignment segments. Each segment can be of one of the following three geometry types:
-        &lt;ul&gt; &lt;li&gt;straight line&lt;/li&gt; &lt;li&gt;arc of a circle&lt;/li&gt;
-        &lt;li&gt;transition curve&lt;/li&gt; &lt;/ul&gt; The horizontal alignment delivers the
-        metric for the linear reference system used to position the vertical alignment segments and
-        the cant segments.</xs:documentation>
+      <xs:documentation>The horizontal alignment is composed of a set of ordered horizontal alignment segments. Each  segment can be of one of the following three geometry types:
+&lt;ul&gt;
+ &lt;li&gt;straight line&lt;/li&gt;
+ &lt;li&gt;arc of a circle&lt;/li&gt;
+ &lt;li&gt;transition curve&lt;/li&gt;
+&lt;/ul&gt;
+
+The horizontal alignment delivers the metric for the linear reference system used to position the vertical alignment segments and the cant segments.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="IsStructuredIn"
-        type="rtmCommon:tElementWithIDref">
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="isStructuredIn" type="rtmCommon:tElementWithIDref">
         <xs:annotation>
           <xs:appinfo>
             <ObjectTypeRef>rtmCommon:HorizontalAlignmentSegment</ObjectTypeRef>
@@ -178,27 +154,21 @@
   <xs:element name="discretisedPoint" type="rtmCommon:DiscretisedPoint"/>
   <xs:complexType name="DiscretisedPoint">
     <xs:annotation>
-      <xs:documentation>A geometric point that is a sample of a discretized point set. The class can
-        inform about the sampling process that produced this point. Role "location" points to a
-        SpotLocation, which is the abstraction for "point in space". This allows to document the
-        location in one or more reference system(s).</xs:documentation>
+      <xs:documentation>A geometric point that is a sample of a discretized point set. The class can inform about the sampling process that produced this point. Role "location" points to a SpotLocation, which is the abstraction for "point in space". This allows to document the location in one or more reference system(s).</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="HasSpotLocation" type="rtmCommon:SpotLocation"/>
+      <xs:element name="hasSpotLocation" type="rtmCommon:SpotLocation"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="informationSource" type="rtmCommon:InformationSource"/>
   <xs:complexType abstract="true" name="InformationSource">
     <xs:annotation>
-      <xs:documentation>Abstraction of w3c sosa:observation. Needed for the purpose of dealing with
-        specified values (de:Sollwert) and observed values (de:Istwert) on symmetric
-        terms.</xs:documentation>
+      <xs:documentation>Abstraction of w3c sosa:observation. Needed for the purpose of dealing with specified values (de:Sollwert) and observed values (de:Istwert) on symmetric terms.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NamedResource">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="featureOfInterest"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="featureOfInterest" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:BaseObject</ObjectTypeRef>
@@ -219,25 +189,18 @@
   <xs:element name="orderedCollection" type="rtmCommon:OrderedCollection"/>
   <xs:complexType name="OrderedCollection">
     <xs:annotation>
-      <xs:documentation>Ordered collection of NetElements. Elements are ordered inside the
-        collection via the role elementParts. Moreover, the user may define several ordered
-        collections and decide to order the ordered collections themselves, using the "sequence"
-        attribute. &lt;i&gt;Suggested use case: starting from a micro-level description of a dense
-        area, create CompositionNetElements representing all possible paths (disjoint or
-        overlapping). Each path is an OrderedCollection and points to an ordered list of
-        NetElements. NetElements can be shared by several paths. Paths can be ordered (using the
-        sequence attribute), where the meaning of the order is left to the user. The order may be
-        absolute (all 'sequence' values are distinct) or relative (two OrderedCollections may bear
-        the same 'sequence' attribute).&lt;/i&gt;</xs:documentation>
+      <xs:documentation>Ordered collection of NetElements. 
+Elements are ordered inside the collection via the role elementParts.
+Moreover, the user may define several ordered collections and decide to order the ordered collections themselves, using the "sequence" attribute.
+
+&lt;i&gt;Suggested use case: starting from a micro-level description of a dense area, create CompositionNetElements representing all possible paths (disjoint or overlapping). Each path is an OrderedCollection and points to an ordered list of NetElements. NetElements can be shared by several paths. Paths can be ordered (using the sequence attribute), where the meaning of the order is left to the user. The order may be absolute (all 'sequence' values are distinct) or relative (two OrderedCollections may bear the same 'sequence' attribute).&lt;/i&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:ElementPartCollection">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="elementParts"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="elementParts" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>an ordered set of NetElements that are part of the higher
-                level.</xs:documentation>
+              <xs:documentation>an ordered set of NetElements that are part of the higher level.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:NetElement</ObjectTypeRef>
               </xs:appinfo>
@@ -251,18 +214,19 @@
   <xs:element name="timeInterval" type="rtmCommon:TimeInterval"/>
   <xs:complexType abstract="true" name="TimeInterval">
     <xs:annotation>
-      <xs:documentation>Abstract class for time intervals. (informative) Time intervals bear no IDs,
-        as they are expected to be managed by other objects, such as "TimeTable" or "NetElement"
-        (describing the interval of validity: former validFrom... validTo) May include basic methods
-        such as: isIncluded(instant:DateTime): boolean ; intersection(interval:TimeInterval):
-        TimeInterval, etc.</xs:documentation>
+      <xs:documentation>Abstract class for time intervals.
+(informative)
+Time intervals bear no IDs, as they are expected to be managed by other objects, such as "TimeTable" or "NetElement" (describing the interval of validity: former validFrom... validTo)
+May include basic methods such as:
+isIncluded(instant:DateTime): boolean ;
+intersection(interval:TimeInterval): TimeInterval, etc.</xs:documentation>
     </xs:annotation>
   </xs:complexType>
   <xs:element name="segmentCantLine" type="rtmCommon:SegmentCantLine"/>
   <xs:complexType name="SegmentCantLine">
     <xs:annotation>
-      <xs:documentation>Geometric primitive. All needed attributes are defined in the class
-        "AlignmentCantSegment". </xs:documentation>
+      <xs:documentation>Geometric primitive. All needed attributes are defined in the class "AlignmentCantSegment".
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:AlignmentCantSegment"/>
@@ -271,8 +235,8 @@
   <xs:element name="gradient" type="rtmCommon:Gradient"/>
   <xs:complexType name="Gradient">
     <xs:annotation>
-      <xs:documentation>Quantity of kind gradient, slope, ramp, etc. Uphill is positive, downhill is
-        negative.</xs:documentation>
+      <xs:documentation>Quantity of kind gradient, slope, ramp, etc. 
+Uphill is positive, downhill is negative.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:Quantity"/>
@@ -283,15 +247,12 @@
     <xs:sequence>
       <xs:element name="appliesInDirection" type="rtmCommon:ApplicationDirection">
         <xs:annotation>
-          <xs:documentation>indicates the direction in which the object along this linear location
-            is valid, i.e. the function of the (curvi-)linear object applies in the given
-            direction.</xs:documentation>
+          <xs:documentation>indicates the direction in which the object along this linear location is valid, i.e. the function of the (curvi-)linear object applies in the given direction.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="isLocatedToSide" type="rtmCommon:LateralSide">
         <xs:annotation>
-          <xs:documentation>With respect to the linear element, the entity is located to this side.
-          </xs:documentation>
+          <xs:documentation>With respect to the linear element, the entity is located to this side. </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="netElement" type="rtmCommon:tElementWithIDref">
@@ -307,27 +268,23 @@
   <xs:element name="network" type="rtmCommon:Network"/>
   <xs:complexType name="Network">
     <xs:annotation>
-      <xs:documentation>An instance of ‚ÄúNetwork‚Äù can be considered as a set of description levels
-        (‚ÄúLevelNetwork‚Äù) and a set of ‚ÄúNetworkResource‚Äù instances. A "Network" is described in at
-        least one "LevelNetwork". A "Network" may be described in more than one "LevelNetwork",
-        typically for different levels of detail.</xs:documentation>
+      <xs:documentation>An instance of ìNetworkî can be considered as a set of description levels (ìLevelNetworkî) and a set of ìNetworkResourceî instances.
+
+A "Network" is described in at least one "LevelNetwork". A "Network" may be described in more than one "LevelNetwork", typically for different levels of detail.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NamedResource">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="levels"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="levels" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:NetworkLevel</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="networkResources"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="networkResources" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>Reference to the resources that constitute the
-                network.</xs:documentation>
+              <xs:documentation>Reference to the resources that constitute the network.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:NetworkResource</ObjectTypeRef>
               </xs:appinfo>
@@ -340,19 +297,14 @@
   <xs:element name="geometricPositioningSystem" type="rtmCommon:GeometricPositioningSystem"/>
   <xs:complexType name="GeometricPositioningSystem">
     <xs:annotation>
-      <xs:documentation>Defines schematic, geographic or geodetic coordinate reference systems (CRS)
-        used to position instances of NetElement or NetEntity. GeometricPositioningSystem instances
-        support the transformation between intrinsic locations and geometric
-        coordinates.</xs:documentation>
+      <xs:documentation>Defines schematic, geographic or geodetic coordinate reference systems (CRS) used to position instances of NetElement or NetEntity. GeometricPositioningSystem instances support the transformation between intrinsic locations and geometric coordinates.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:PositioningSystem">
         <xs:attribute name="crsDefinition" type="xs:string" use="required">
           <xs:annotation>
-            <xs:documentation>Name of the Coordinate reference System, e.g. WGS-84 for GPS
-              coordinates or national CRS such as Lambert-93 (France), RD (Netherlands). Informs
-              about the units in which the coordinates are expressed, usually kilometres or
-              metres.</xs:documentation>
+            <xs:documentation>Name of the Coordinate reference System, e.g. WGS-84 for GPS coordinates or national CRS such as Lambert-93 (France), RD (Netherlands).
+Informs about the units in which the coordinates are expressed, usually kilometres or metres.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -360,37 +312,29 @@
   </xs:complexType>
   <xs:simpleType name="Navigability">
     <xs:annotation>
-      <xs:documentation>The possible values for Navigability allow the graph to be oriented. "Both"
-        is the generally valid value for railways.</xs:documentation>
+      <xs:documentation>The possible values for Navigability allow the graph to be oriented. "Both" is the generally valid value for railways.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="AB">
         <xs:annotation>
-          <xs:documentation>Navigation is possible only from NetElement A to NetElement
-            B.</xs:documentation>
+          <xs:documentation>Navigation is possible only from NetElement A to NetElement B.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="BA">
         <xs:annotation>
-          <xs:documentation>Navigation is possible only from NetElement B to NetElement
-            A.</xs:documentation>
+          <xs:documentation>Navigation is possible only from NetElement B to NetElement A.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Both">
         <xs:annotation>
-          <xs:documentation>Navigation between element A and B is possible in both
-            directions.</xs:documentation>
+          <xs:documentation>Navigation between element A and B is possible in both directions.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="None">
         <xs:annotation>
-          <xs:documentation>None is an extraneous value - a graph would have no edge at all in such
-            case. It conveys the meaning that NetElements are "adjacent", which makes no sense in
-            graph theory but would have a meaning in mathematical topology (you cannot insert any
-            NetElement between). This is a slight but practical concession to conceptual purity. To
-            keep the real connectivity we need all the edges and the "none" value, else the
-            connectivity graph (same for the line graph) is not properly formed with regard to the
-            original graph.</xs:documentation>
+          <xs:documentation>None is an extraneous value - a graph would have no edge at all in such case. It conveys the meaning that NetElements are "adjacent", which makes no sense in graph theory but would have a meaning in mathematical topology (you cannot insert any NetElement between). This is a slight but practical concession to conceptual purity.
+
+To keep the real connectivity we need all the edges and the "none" value, else the connectivity graph (same for the line graph) is not properly formed with regard to the original graph.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -400,11 +344,9 @@
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="coordinates"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="coordinates" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>Reference to coordinate(s) in a given coordinate reference
-                system.</xs:documentation>
+              <xs:documentation>Reference to coordinate(s) in a given coordinate reference system.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:PositioningSystemCoordinate</ObjectTypeRef>
               </xs:appinfo>
@@ -418,18 +360,14 @@
   <xs:element name="networkLevel" type="rtmCommon:NetworkLevel"/>
   <xs:complexType name="NetworkLevel">
     <xs:annotation>
-      <xs:documentation>LevelNetwork depicts a specific description level and defines a consistent
-        "view" of a Network at a certain level of granularity. An instance of this class therefore
-        includes all resources that are required to define the corresponding level (e.g.
-        micro/track, or macro/line). The concept of description level is central to the goal of
-        computational efficiency.</xs:documentation>
+      <xs:documentation>LevelNetwork depicts a specific description level and defines a consistent "view" of a Network at a certain level of granularity. An instance of this class therefore includes all resources that are required to define the corresponding level (e.g. micro/track, or macro/line).
+The concept of description level is central to the goal of computational efficiency.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
         <xs:sequence>
           <xs:element name="hasDescriptionLevel" type="rtmCommon:DescriptionLevel"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="networkResources"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="networkResources" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:NetworkResource</ObjectTypeRef>
@@ -443,9 +381,8 @@
   <xs:element name="segmentCantTransition" type="rtmCommon:SegmentCantTransition"/>
   <xs:complexType name="SegmentCantTransition">
     <xs:annotation>
-      <xs:documentation>Geometric primitive for transition curves. All the attributes except the
-        type of transition curve and initial and final radius are defined in the class
-        "AlignmentCantSegment".</xs:documentation>
+      <xs:documentation>Geometric primitive for transition curves.
+All the attributes except the type of transition curve and initial and final radius are defined in the class "AlignmentCantSegment".</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:AlignmentCantSegment"/>
@@ -456,11 +393,9 @@
     <xs:complexContent>
       <xs:extension base="rtmCommon:AssociatedNetElement">
         <xs:sequence>
-          <xs:element maxOccurs="2" minOccurs="2" name="extremities"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="2" minOccurs="2" name="extremities" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>the extremities of the associated linear element given as
-                coordinate(s) in a given coordinate reference system.</xs:documentation>
+              <xs:documentation>the extremities of the associated linear element given as coordinate(s) in a given coordinate reference system.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:PositioningSystemCoordinate</ObjectTypeRef>
               </xs:appinfo>
@@ -473,20 +408,13 @@
   <xs:element name="observableProperty" type="rtmCommon:ObservableProperty"/>
   <xs:complexType name="ObservableProperty">
     <xs:annotation>
-      <xs:documentation>Definition: see &lt;a
-        href="https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty"&gt;&lt;font
-        color="#0000ff"&gt;&lt;u&gt;https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;
-        . This class embodies all properties that need to be referenced by another class in this
-        model (or a model using the present model). While platform-specific code may reference any
-        public attribute or property, UML2.5 (used here to build a platform-independent model) does
-        not allow a class to reference directly an attribute of another class, even if it is
-        public.</xs:documentation>
+      <xs:documentation>Definition: see &lt;a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; .
+This class embodies all properties that need to be referenced by another class in this model (or a model using the present model). While platform-specific code may reference any public attribute or property, UML2.5 (used here to build a platform-independent model) does not allow a class to reference directly an attribute of another class, even if it is public.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseProperty">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="quantity" type="rtmCommon:Quantity"
-          />
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="quantity" type="rtmCommon:Quantity"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -501,8 +429,7 @@
         <xs:sequence>
           <xs:element name="coordinate" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>Has a coordinate in a given coordinate reference
-                system.</xs:documentation>
+              <xs:documentation>Has a coordinate in a given coordinate reference system.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:PositioningSystemCoordinate</ObjectTypeRef>
               </xs:appinfo>
@@ -515,8 +442,10 @@
   <xs:element name="horizontalSegmentArc" type="rtmCommon:HorizontalSegmentArc"/>
   <xs:complexType name="HorizontalSegmentArc">
     <xs:annotation>
-      <xs:documentation>Geometric primitive for Arc of circle. All Attributes except the radius are
-        defined in the class "HorizontalAlignmentSegment". </xs:documentation>
+      <xs:documentation>Geometric primitive for Arc of circle.
+All Attributes except the radius are defined in the class "HorizontalAlignmentSegment".
+
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:HorizontalAlignmentSegment"/>
@@ -525,14 +454,12 @@
   <xs:element name="sensor" type="rtmCommon:Sensor"/>
   <xs:complexType name="Sensor">
     <xs:annotation>
-      <xs:documentation>A device that measures a physical feature of an object resulting in one or
-        more observations.</xs:documentation>
+      <xs:documentation>A device that measures a physical feature of an object resulting in one or more observations.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NamedResource">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="isLocatedAt"
-            type="rtmCommon:BaseLocation">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="isLocatedAt" type="rtmCommon:BaseLocation">
             <xs:annotation>
               <xs:documentation>The sensor's location.</xs:documentation>
             </xs:annotation>
@@ -550,15 +477,14 @@
   <xs:element name="spotLocationIntrinsic" type="rtmCommon:SpotLocationIntrinsic"/>
   <xs:complexType name="SpotLocationIntrinsic">
     <xs:annotation>
-      <xs:documentation>Locates a spot in space using a relative abscissa, i.e. a fraction
-        (percentage) of distance along the linear element.</xs:documentation>
+      <xs:documentation>Locates a spot in space using a relative abscissa, i.e. a
+ fraction (percentage) of distance along the linear element.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:SpotLocation">
         <xs:attribute name="intrinsicCoord" type="xs:double" use="required">
           <xs:annotation>
-            <xs:documentation>The location on the associated NetElement in the range 0 (start) to 1
-              (end of NetElement)</xs:documentation>
+            <xs:documentation>The location on the associated NetElement in the range 0 (start) to 1 (end of NetElement)</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -567,11 +493,8 @@
   <xs:element name="baseLocation" type="rtmCommon:BaseLocation"/>
   <xs:complexType abstract="true" name="BaseLocation">
     <xs:annotation>
-      <xs:documentation>Provides topological and position information "Location" is an abstraction
-        for "some place in space that is &lt;b&gt;used &lt;/b&gt;by some NetEntity". We can relate
-        the location to network topology elements, and associate it with positions in some reference
-        system. BaseLocation, as an abstract class, is the ancestor of actually usable locations
-        (spot, linear, or area).</xs:documentation>
+      <xs:documentation>Provides topological and position information "Location" is an abstraction for "some place in space that is &lt;b&gt;used &lt;/b&gt;by some NetEntity". We can relate the location to network topology elements, and associate it with positions in some reference system.
+BaseLocation, as an abstract class, is the ancestor of actually usable locations (spot, linear, or area).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject"/>
@@ -580,14 +503,12 @@
   <xs:element name="associatedPositioningSystem" type="rtmCommon:AssociatedPositioningSystem"/>
   <xs:complexType name="AssociatedPositioningSystem">
     <xs:annotation>
-      <xs:documentation>Describes the relation between a PositioningNetElement and a
-        PositioningSystem</xs:documentation>
+      <xs:documentation>Describes the relation between a PositioningNetElement and a PositioningSystem</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="intrinsicCoordinates"
-            type="rtmCommon:IntrinsicCoordinate"/>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="intrinsicCoordinates" type="rtmCommon:IntrinsicCoordinate"/>
           <xs:element name="positioningSystem" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
@@ -602,8 +523,7 @@
   <xs:element name="geographicCoordinate" type="rtmCommon:GeographicCoordinate"/>
   <xs:complexType name="GeographicCoordinate">
     <xs:annotation>
-      <xs:documentation>Lattitude, longitude and height. the datum and units are defined by the
-        assocatied positioning system.</xs:documentation>
+      <xs:documentation>Lattitude, longitude and height. the datum and units are defined by the assocatied positioning system.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:GeometricCoordinate">
@@ -618,24 +538,20 @@
   <xs:element name="alignmentCurve" type="rtmCommon:AlignmentCurve"/>
   <xs:complexType name="AlignmentCurve">
     <xs:annotation>
-      <xs:documentation>Class "AlignmentCurve" provides the most used description of railway
-        alignment curves in space, which is by projections. The horizontal projection
-        "HorizontalAlignment" is broken down into a set of segments, each segment having definite
-        geometric characteristics. The same applies to "VerticalAlignment", that may however be
-        missing (hence the 0..1 multiplicity) at early project stages.. Segment boundaries, for
-        vertical and horizontal alignment, do not necessarily coincide. Finally, lateral inclination
-        provides a way to describe the twist or cant applied to a track (specialized class
-        "RailwayAlignmentCant") or, more generally, to the trackbed, bridge deck, or
-        similar.</xs:documentation>
+      <xs:documentation>Class "AlignmentCurve" provides the most used description of railway alignment curves in space, which is by projections. The horizontal projection "HorizontalAlignment" is broken down into a set of segments, each segment having definite geometric characteristics.
+
+The same applies to "VerticalAlignment", that may however be missing (hence the 0..1 multiplicity) at early project stages..
+
+Segment boundaries, for vertical and horizontal alignment, do not necessarily coincide.
+
+Finally, lateral inclination provides a way to describe the twist or cant applied to a track (specialized class "RailwayAlignmentCant") or, more generally, to the trackbed, bridge deck, or similar.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
         <xs:sequence>
-          <xs:element name="HasHorizontalAlignment" type="rtmCommon:HorizontalAlignment"/>
-          <xs:element maxOccurs="1" minOccurs="0" name="HasLateralInclination"
-            type="rtmCommon:LateralInclination"/>
-          <xs:element maxOccurs="1" minOccurs="0" name="HasVerticalAlignment"
-            type="rtmCommon:VerticalAlignment"/>
+          <xs:element name="hasHorizontalAlignment" type="rtmCommon:HorizontalAlignment"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasLateralInclination" type="rtmCommon:LateralInclination"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasVerticalAlignment" type="rtmCommon:VerticalAlignment"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -643,10 +559,7 @@
   <xs:element name="validityPeriod" type="rtmCommon:ValidityPeriod"/>
   <xs:complexType name="ValidityPeriod">
     <xs:annotation>
-      <xs:documentation>Simple time interval, used for defining the time frame in which a functional
-        object is available in the field (from placing into service to de-commissioning). By
-        extension, also used for setting the time frame in which e.g. a regulation or reference
-        system is in force.</xs:documentation>
+      <xs:documentation>Simple time interval, used for defining the time frame in which a functional object is available in the field (from placing into service to de-commissioning). By extension, also used for setting the time frame in which e.g. a regulation or reference system is in force.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:SimpleTimeInterval"/>
@@ -655,21 +568,17 @@
   <xs:element name="compositeTimeInterval" type="rtmCommon:CompositeTimeInterval"/>
   <xs:complexType name="CompositeTimeInterval">
     <xs:annotation>
-      <xs:documentation>Composite intervals contain at least one interval, to which further
-        intervals can be added or subtracted (in a set-theoretical sense). (informative) The
-        combination of additions and subtractions will result in a sequence of disjoint, simple
-        intervals; the resulting sequence may be a derived, persisted property, in practical
-        applications. It is not materialized here. In any operation (e.g. to check if an instant is
-        in a composite interval), all additions shall be done first before subtractions take place.
-        Generating periodic intervals (such as "all weekdays between Jan 1, 2018 and Dec 31, 2019")
-        is best done using a factory pattern, not included here.</xs:documentation>
+      <xs:documentation>Composite intervals contain at least one interval, to which further intervals can be added or subtracted (in a set-theoretical sense).
+(informative)
+The combination of additions and subtractions will result in a sequence of disjoint, simple intervals; the resulting sequence may be a derived, persisted property, in practical applications. It is not materialized here.
+In any operation (e.g. to check if an instant is in a composite interval), all additions shall be done first before subtractions take place.
+Generating periodic intervals (such as "all weekdays between Jan 1, 2018 and Dec 31, 2019") is best done using a factory pattern, not included here.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:TimeInterval">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="1" name="added" type="rtmCommon:TimeInterval"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="subtracted"
-            type="rtmCommon:TimeInterval"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="subtracted" type="rtmCommon:TimeInterval"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -693,8 +602,8 @@
   <xs:element name="length" type="rtmCommon:Length"/>
   <xs:complexType name="Length">
     <xs:annotation>
-      <xs:documentation>Quantity of kind length, distance, height, width, etc. The quantity kind
-        must be a Length.</xs:documentation>
+      <xs:documentation>Quantity of kind length, distance, height, width, etc.
+The quantity kind must be a Length.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:Quantity"/>
@@ -704,18 +613,22 @@
   <xs:complexType abstract="true" name="VerticalAlignmentSegment">
     <xs:annotation>
       <xs:documentation>Abstract class representing any kind of vertical alignment segment.
-        Geometric segments are used to define the vertical alignment. The segments are ordered. Each
-        vertical segment is defined with: &lt;ul&gt; &lt;li&gt;a starting point known by its
-        distance along the horizontal alignment [m]&lt;/li&gt; &lt;li&gt;the starting point
-        elevation in [m]&lt;/li&gt; &lt;li&gt;the starting direction as a gradient [‚Ä∞]&lt;/li&gt;
-        &lt;li&gt;the segment length in [m]&lt;/li&gt; &lt;li&gt;the information on how the segment
-        is connected to the following segment. This information is used to describe possible
-        discontinuities (e.g. if there is a vertical bend).&lt;/li&gt; &lt;/ul&gt; Additionally:
-        &lt;ul&gt; &lt;li&gt;a radius, for arc segments [m]&lt;/li&gt; &lt;li&gt;the initial and
-        final radius for transition segments as well as the type of transition curve. Some
-        transition curves require additional parameters.&lt;/li&gt; &lt;/ul&gt; The elevation (=
-        Cartesian Z-coordinate) of the starting point, the segment length and the starting gradient
-        are defined for each geometric element.</xs:documentation>
+Geometric segments are used to define the vertical alignment. The segments are ordered. Each vertical segment is defined with:
+&lt;ul&gt;
+ &lt;li&gt;a starting point known by its distance along the horizontal alignment [m]&lt;/li&gt;
+ &lt;li&gt;the starting point elevation in [m]&lt;/li&gt;
+ &lt;li&gt;the starting direction as a gradient [â]&lt;/li&gt;
+ &lt;li&gt;the segment length in [m]&lt;/li&gt;
+ &lt;li&gt;the information on how the segment is connected to the following segment. This information is used to describe possible discontinuities (e.g. if there is a vertical bend).&lt;/li&gt;
+&lt;/ul&gt;
+
+Additionally:
+&lt;ul&gt;
+ &lt;li&gt;a radius, for arc segments [m]&lt;/li&gt;
+ &lt;li&gt;the initial and final radius for transition segments as well as the type of transition curve. Some transition curves require additional parameters.&lt;/li&gt;
+&lt;/ul&gt;
+
+The elevation (= Cartesian Z-coordinate) of the starting point, the segment length and the starting gradient are defined for each geometric element.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
@@ -734,10 +647,8 @@
   <xs:element name="scaleValueDefinition" type="rtmCommon:ScaleValueDefinition"/>
   <xs:complexType name="ScaleValueDefinition">
     <xs:annotation>
-      <xs:documentation>Derived from OMG SysML 1.2 : see &lt;a
-        href="http://www.omgwiki.org/OMGSysML/lib/exe/fetch.php?media=sysml-qudv:annex_c.5_2009-08-26.pdf"&gt;&lt;font
-        color="#0000ff"&gt;&lt;u&gt;http://www.omgwiki.org/OMGSysML/lib/exe/fetch.php?media=sysml-qudv:annex_c.5_2009-08-26.pdf&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;
-        , figure C8. </xs:documentation>
+      <xs:documentation>Derived from OMG SysML 1.2 : see &lt;a href="http://www.omgwiki.org/OMGSysML/lib/exe/fetch.php?media=sysml-qudv:annex_c.5_2009-08-26.pdf"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;http://www.omgwiki.org/OMGSysML/lib/exe/fetch.php?media=sysml-qudv:annex_c.5_2009-08-26.pdf&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; , figure C8.
+</xs:documentation>
     </xs:annotation>
     <xs:attribute name="description" type="xs:string" use="required"/>
     <xs:attribute name="value" type="xs:double" use="required"/>
@@ -780,9 +691,9 @@
   <xs:element name="verticalSegmentTransition" type="rtmCommon:VerticalSegmentTransition"/>
   <xs:complexType name="VerticalSegmentTransition">
     <xs:annotation>
-      <xs:documentation>Geometric primitive for transition curves. All the attributes except the
-        type of transition curve and initial and final radius are defined in the class
-        "VerticalAlignmentSegment". </xs:documentation>
+      <xs:documentation>Geometric primitive for transition curves.
+All the attributes except the type of transition curve and initial and final radius are defined in the class "VerticalAlignmentSegment".
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:VerticalAlignmentSegment"/>
@@ -791,9 +702,10 @@
   <xs:element name="simpleTimeInterval" type="rtmCommon:SimpleTimeInterval"/>
   <xs:complexType name="SimpleTimeInterval">
     <xs:annotation>
-      <xs:documentation>Simple, i.e. continuous time interval between start and end. Start and end
-        instants can be included or excluded. (informative) Start excluded is useful for computing
-        statements such as "takes place after", etc.</xs:documentation>
+      <xs:documentation>Simple, i.e. continuous time interval between start and end.
+Start and end instants can be included or excluded.
+(informative)
+Start excluded is useful for computing statements such as "takes place after", etc.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:TimeInterval">
@@ -812,8 +724,7 @@
       <xs:extension base="rtmCommon:AssociatedNetElement">
         <xs:attribute name="intrinsicCoordValues" type="xs:double" use="required">
           <xs:annotation>
-            <xs:documentation>the intrinsic coordinate of the two extremities. The order does not
-              inform about orientation.</xs:documentation>
+            <xs:documentation>the intrinsic coordinate of the two extremities. The order does not inform about orientation.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -827,27 +738,22 @@
   </xs:complexType>
   <xs:simpleType name="ApplicationDirection">
     <xs:annotation>
-      <xs:documentation>Provides orientation to the spot location by defining the direction in which
-        the net entity at this location applies. This direction is given with respect to the
-        associated linear element.</xs:documentation>
+      <xs:documentation>Provides orientation to the spot location by defining the direction in which the net entity at this location applies. This direction is given with respect to the associated linear element.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="undefined">
         <xs:annotation>
-          <xs:documentation>The application direction is irrelevant or (yet) unknown.
-          </xs:documentation>
+          <xs:documentation>The application direction is irrelevant or (yet) unknown. </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="normal">
         <xs:annotation>
-          <xs:documentation>the located object is valid in the direction of the
-            LinearElement</xs:documentation>
+          <xs:documentation>the located object is valid in the direction of the LinearElement</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="reverse">
         <xs:annotation>
-          <xs:documentation>the located object is valid in the reverse direction of the
-            LinearElement.</xs:documentation>
+          <xs:documentation>the located object is valid in the reverse direction of the LinearElement.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="both">
@@ -860,9 +766,10 @@
   <xs:element name="horizontalSegmentTransition" type="rtmCommon:HorizontalSegmentTransition"/>
   <xs:complexType name="HorizontalSegmentTransition">
     <xs:annotation>
-      <xs:documentation>Geometric primitive for transition curves. All the attributes except the
-        type of transition curve and initial and final radius are defined in the class
-        "HorizontalAlignmentSegment". </xs:documentation>
+      <xs:documentation>Geometric primitive for transition curves.
+All the attributes except the type of transition curve and initial and final radius are defined in the class "HorizontalAlignmentSegment".
+
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:HorizontalAlignmentSegment"/>
@@ -871,8 +778,7 @@
   <xs:element name="quantity" type="rtmCommon:Quantity"/>
   <xs:complexType abstract="true" name="Quantity">
     <xs:annotation>
-      <xs:documentation>Allows quantification of Properties, as well as for other purposes (e.g.
-        observation and samples).</xs:documentation>
+      <xs:documentation>Allows quantification of Properties, as well as for other purposes (e.g. observation and samples).</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="1" minOccurs="0" name="quantityKind" type="rtmCommon:tElementWithIDref">
@@ -895,10 +801,9 @@
   <xs:element name="scale" type="rtmCommon:Scale"/>
   <xs:complexType name="Scale">
     <xs:annotation>
-      <xs:documentation>For measuring a quantity on a scale such as Celsius, Kelvin, Beaufort,
-        Richter. A measurement scale is an ordered set of quantity values of quantities of a given
-        kind of quantity used in ranking, according to magnitude, quantities of that kind. A scale
-        may need a unit such as "degree".</xs:documentation>
+      <xs:documentation>For measuring a quantity on a scale such as Celsius, Kelvin, Beaufort, Richter.
+A measurement scale is an ordered set of quantity values of quantities of a given kind of quantity used in ranking, according to magnitude, quantities of that kind.
+A scale may need a unit such as "degree".</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="1" minOccurs="0" name="unit" type="rtmCommon:tElementWithIDref">
@@ -908,22 +813,19 @@
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="valueDefinition"
-        type="rtmCommon:ScaleValueDefinition"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="valueDefinition" type="rtmCommon:ScaleValueDefinition"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="netElement" type="rtmCommon:NetElement"/>
   <xs:complexType name="NetElement">
     <xs:annotation>
-      <xs:documentation>The base member of topology in a connectivity graph representing the network
-        (at any level). An NetElement has relations with one or more other
-        NetElements.</xs:documentation>
+      <xs:documentation>The base member of topology in a connectivity graph representing the network (at any level).
+An NetElement has relations with one or more other NetElements.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NetworkResource">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="relations"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="relation" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:documentation>Reference to topological relations.</xs:documentation>
               <xs:appinfo>
@@ -944,16 +846,16 @@
   <xs:element name="railwayAlignmentCant" type="rtmCommon:RailwayAlignmentCant"/>
   <xs:complexType name="RailwayAlignmentCant">
     <xs:annotation>
-      <xs:documentation>The railway cant alignment is composed of geometric segments with the two
-        following geometry types &lt;ul&gt; &lt;li&gt;Straight line for constant cant or constant
-        change of cant &lt;/li&gt; &lt;li&gt;Transition curve for curved cant&lt;/li&gt;
-        &lt;/ul&gt;</xs:documentation>
+      <xs:documentation>The railway cant alignment is composed of geometric segments with the two following geometry types
+&lt;ul&gt;
+ &lt;li&gt;Straight line for constant cant or constant change of cant &lt;/li&gt;
+ &lt;li&gt;Transition curve for curved cant&lt;/li&gt;
+&lt;/ul&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:LateralInclination">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="IsStructuredIn"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="isStructuredIn" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:AlignmentCantSegment</ObjectTypeRef>
@@ -967,14 +869,12 @@
   <xs:element name="baseProperty" type="rtmCommon:BaseProperty"/>
   <xs:complexType abstract="true" name="BaseProperty">
     <xs:annotation>
-      <xs:documentation>Abstract property class, needed to put the composite pattern at
-        work.</xs:documentation>
+      <xs:documentation>Abstract property class, needed to put the composite pattern at work.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NamedResource">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="appliesTo"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="appliesTo" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:BaseObject</ObjectTypeRef>
@@ -988,21 +888,23 @@
   <xs:element name="alignmentCantSegment" type="rtmCommon:AlignmentCantSegment"/>
   <xs:complexType abstract="true" name="AlignmentCantSegment">
     <xs:annotation>
-      <xs:documentation>Geometric segments are used to define the railway cant. The segments are
-        ordered. Each cant segment is defined with: &lt;ul&gt; &lt;li&gt;a starting point known by
-        its distance along the horizontal alignment [m] &lt;/li&gt; &lt;li&gt;the segment length in
-        [m] &lt;/li&gt; &lt;li&gt;the start cant value in [mm] &lt;/li&gt; &lt;li&gt;the end cant
-        value in [mm] &lt;/li&gt; &lt;li&gt;the information on how the segment is connected to the
-        following segment. This information is used to describe possible discontinuities (e.g.
-        invalid sudden change of cant or missing cant information if end point and starting point
-        differ over a threshold).&lt;/li&gt; &lt;/ul&gt; Additionally:&lt;ul&gt; &lt;li&gt;an
-        information which describes if a smoothing was applied between two cant segments&lt;/li&gt;
-        &lt;/ul&gt;</xs:documentation>
+      <xs:documentation>Geometric segments are used to define the railway cant. The segments are ordered. Each cant segment is defined with:
+&lt;ul&gt;
+ &lt;li&gt;a starting point known by its distance along the horizontal alignment [m] &lt;/li&gt;
+ &lt;li&gt;the segment length in [m] &lt;/li&gt;
+ &lt;li&gt;the start cant value in [mm] &lt;/li&gt;
+ &lt;li&gt;the end cant value in [mm] &lt;/li&gt;
+ &lt;li&gt;the information on how the segment is connected to the following segment. This information is used to describe possible discontinuities (e.g. invalid sudden change of cant or missing cant information if end point and starting point differ over a threshold).&lt;/li&gt;
+&lt;/ul&gt;
+
+Additionally:&lt;ul&gt;
+ &lt;li&gt;an information which describes if a smoothing was applied between two cant segments&lt;/li&gt;
+&lt;/ul&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
         <xs:sequence>
-          <xs:element name="HasLinearLocation" type="rtmCommon:LinearLocation"/>
+          <xs:element name="hasLinearLocation" type="rtmCommon:LinearLocation"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1010,15 +912,12 @@
   <xs:element name="propertySet" type="rtmCommon:PropertySet"/>
   <xs:complexType name="PropertySet">
     <xs:annotation>
-      <xs:documentation>Group of properties. Intended grouping is "mechanical properties", "actual
-        state", or the like, rather than sampled values of the same properties (observations and
-        value sampling are the concerns of another package).</xs:documentation>
+      <xs:documentation>Group of properties. Intended grouping is "mechanical properties", "actual state", or the like, rather than sampled values of the same properties (observations and value sampling are the concerns of another package).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseProperty">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="contains"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="contains" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:BaseProperty</ObjectTypeRef>
@@ -1032,8 +931,7 @@
   <xs:element name="circumstance" type="rtmCommon:Circumstance"/>
   <xs:complexType abstract="true" name="Circumstance">
     <xs:annotation>
-      <xs:documentation>Abstract class for a number of w3c sosa or ssn concepts in relation with
-        observations. See examples.</xs:documentation>
+      <xs:documentation>Abstract class for a number of w3c sosa or ssn concepts in relation with observations. See examples.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NamedResource"/>
@@ -1047,11 +945,9 @@
     <xs:complexContent>
       <xs:extension base="rtmCommon:ElementPartCollection">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="elementParts"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="elementParts" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>an unordered set of NetElements that are part of the higher
-                level.</xs:documentation>
+              <xs:documentation>an unordered set of NetElements that are part of the higher level.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:NetElement</ObjectTypeRef>
               </xs:appinfo>
@@ -1064,17 +960,14 @@
   <xs:element name="linearLocation" type="rtmCommon:LinearLocation"/>
   <xs:complexType name="LinearLocation">
     <xs:annotation>
-      <xs:documentation>Defines location information with a startpoint and an endpoint. Refers to an
-        ordered set of one or more PositioningNetElement instances.</xs:documentation>
+      <xs:documentation>Defines location information with a startpoint and an endpoint. Refers to an ordered set of one or more PositioningNetElement instances.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseLocation">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="associatedElements"
-            type="rtmCommon:AssociatedNetElement">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="associatedElements" type="rtmCommon:AssociatedNetElement">
             <xs:annotation>
-              <xs:documentation>A linear location is linked to one or more associated net elements
-                that carry it in topological sense.</xs:documentation>
+              <xs:documentation>A linear location is linked to one or more associated net elements that carry it in topological sense.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1084,17 +977,13 @@
   <xs:element name="discretisedPointSet" type="rtmCommon:DiscretisedPointSet"/>
   <xs:complexType name="DiscretisedPointSet">
     <xs:annotation>
-      <xs:documentation>A set of points that can be spot-located. Typically the product of a
-        position sampling process such as a land survey, photogrammetry, a measurement campaign with
-        satellite receivers or a mix of these.</xs:documentation>
+      <xs:documentation>A set of points that can be spot-located. Typically the product of a position sampling process such as a land survey, photogrammetry, a measurement campaign with satellite receivers or a mix of these.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="IsDescribedWithPoints"
-            type="rtmCommon:DiscretisedPoint"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="isSubsetOf"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="isDescribedWithPoints" type="rtmCommon:DiscretisedPoint"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="isSubsetOf" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:documentation>allows defining a subset of discretised points.</xs:documentation>
               <xs:appinfo>
@@ -1109,8 +998,10 @@
   <xs:element name="verticalSegmentArc" type="rtmCommon:VerticalSegmentArc"/>
   <xs:complexType name="VerticalSegmentArc">
     <xs:annotation>
-      <xs:documentation>Geometric primitive for Arc of circle. All Attributes except the radius are
-        defined in the class "VerticalAlignmentSegment". </xs:documentation>
+      <xs:documentation>Geometric primitive for Arc of circle.
+All Attributes except the radius are defined in the class "VerticalAlignmentSegment".
+
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:VerticalAlignmentSegment"/>
@@ -1119,23 +1010,19 @@
   <xs:element name="spotLocation" type="rtmCommon:SpotLocation"/>
   <xs:complexType abstract="true" name="SpotLocation">
     <xs:annotation>
-      <xs:documentation>Defines point location information for a LocatedNetentity
-        instance.</xs:documentation>
+      <xs:documentation>Defines point location information for a LocatedNetentity instance.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseLocation">
         <xs:sequence>
           <xs:element name="appliesInDirection" type="rtmCommon:ApplicationDirection">
             <xs:annotation>
-              <xs:documentation>indicates the direction in which the object at this spot location is
-                valid, i.e. the function of the object applies in the given
-                direction.</xs:documentation>
+              <xs:documentation>Indicates the direction in which the object at this spot location is valid, i.e. the direction in which the function of the object applies.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="isLocatedToSide" type="rtmCommon:LateralSide">
             <xs:annotation>
-              <xs:documentation>With respect to the linear element, the location is located to this
-                side. Not given if irrelevant. </xs:documentation>
+              <xs:documentation>With respect to the linear element, the location is located to this side. Not given if irrelevant. </xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="netElement" type="rtmCommon:tElementWithIDref">
@@ -1153,14 +1040,13 @@
   <xs:element name="compositionNetElement" type="rtmCommon:CompositionNetElement"/>
   <xs:complexType abstract="true" name="CompositionNetElement">
     <xs:annotation>
-      <xs:documentation>Allows the nodes to aggregate into bigger nodes. This allows zooming in and
-        out, showing or hiding levels of detail. </xs:documentation>
+      <xs:documentation>Allows the nodes to aggregate into bigger nodes. This allows zooming in and out, showing or hiding levels of detail.
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NetElement">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="elementCollections"
-            type="rtmCommon:ElementPartCollection"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="elementCollections" type="rtmCommon:ElementPartCollection"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1169,16 +1055,19 @@
   <xs:complexType abstract="true" name="HorizontalAlignmentSegment">
     <xs:annotation>
       <xs:documentation>Abstract class representing any kind of horizontal alignment segment.
-        Geometric segments are used to define the horizontal alignment. The segments are ordered.
-        Each horizontal segment is defined with: &lt;ul&gt; &lt;li&gt;a starting point known by its
-        cartesian coordinates&lt;/li&gt; &lt;li&gt;the starting direction in form of an azimuth
-        [gon] or alternatively [rad](radiant).&lt;/li&gt; &lt;li&gt;the segment length in
-        [m]&lt;/li&gt; &lt;li&gt;the information on how the segment is connected to the following
-        segment. This information is used to describe possible discontinuities (e.g. if there is a
-        horizontal bend).&lt;/li&gt; &lt;/ul&gt; Additionally: &lt;ul&gt; &lt;li&gt;a radius, for
-        arc segments&lt;/li&gt; &lt;li&gt;an initial and final radius for transition segments as
-        well as the type of transition curve. Some transition curves require additional
-        parameters.&lt;/li&gt; &lt;/ul&gt;</xs:documentation>
+Geometric segments are used to define the horizontal alignment. The segments are ordered. Each horizontal segment is defined with:
+&lt;ul&gt;
+ &lt;li&gt;a starting point known by its cartesian coordinates&lt;/li&gt;
+ &lt;li&gt;the starting direction in form of an azimuth [gon] or alternatively [rad](radiant).&lt;/li&gt;
+ &lt;li&gt;the segment length in [m]&lt;/li&gt;
+ &lt;li&gt;the information on how the segment is connected to the following segment. This information is used to describe possible discontinuities (e.g. if there is a horizontal bend).&lt;/li&gt;
+&lt;/ul&gt;
+
+Additionally:
+&lt;ul&gt;
+ &lt;li&gt;a radius, for arc segments&lt;/li&gt;
+ &lt;li&gt;an initial and final radius for transition segments as well as the type of transition curve. Some transition curves require additional parameters.&lt;/li&gt;
+&lt;/ul&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
@@ -1191,8 +1080,7 @@
   <xs:element name="quantityKind" type="rtmCommon:QuantityKind"/>
   <xs:complexType name="QuantityKind">
     <xs:annotation>
-      <xs:documentation>A Quantity of a given QuantityKind contains a numerical value expressed in a
-        particular measurement unit.</xs:documentation>
+      <xs:documentation>A Quantity of a given QuantityKind contains a numerical value expressed in a particular measurement unit.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NamedResource">
@@ -1209,11 +1097,9 @@
     <xs:complexContent>
       <xs:extension base="rtmCommon:LinearLocation">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="coordinates"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="coordinates" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>Reference to on or more coordinates that conveys the position in a
-                given coordinate reference system. </xs:documentation>
+              <xs:documentation>Reference to on or more coordinates that conveys the position in a given coordinate reference system. </xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:PositioningSystemCoordinate</ObjectTypeRef>
               </xs:appinfo>
@@ -1226,17 +1112,14 @@
   <xs:element name="linearPositioningSystem" type="rtmCommon:LinearPositioningSystem"/>
   <xs:complexType name="LinearPositioningSystem">
     <xs:annotation>
-      <xs:documentation>Defines a Positioning System where a line of reference, in combination with
-        a single number allows locating within a railway network. The start- and end-measure
-        represent the length of this line of reference and use the same units, e.g. 0.0 m to 422.8 m
-        or 3.3 furlong to 34.2 furlong. The units of linear abscissa use the same unit as the start
-        and end-measure. </xs:documentation>
+      <xs:documentation>Defines a Positioning System where a line of reference, in combination with a single number allows locating within a railway network.
+The start- and end-measure represent the length of this line of reference and use the same units, e.g. 0.0 m to 422.8 m or 3.3 furlong to 34.2 furlong.
+The units of linear abscissa use the same unit as the start and end-measure. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:PositioningSystem">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="anchors"
-            type="rtmCommon:LinearAnchorPoint"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="anchors" type="rtmCommon:LinearAnchorPoint"/>
           <xs:element name="endMeasure" type="rtmCommon:Length">
             <xs:annotation>
               <xs:documentation>the highest abscissa in this system. </xs:documentation>
@@ -1255,9 +1138,8 @@
   <xs:element name="positionedRelation" type="rtmCommon:PositionedRelation"/>
   <xs:complexType name="PositionedRelation">
     <xs:annotation>
-      <xs:documentation>The positioned relation defines an oriented relation between exactly two
-        PositioningNetElements. An instance of this class is equivalent to an edge in a connectivity
-        graph</xs:documentation>
+      <xs:documentation>The positioned relation defines an oriented relation between exactly two PositioningNetElements.
+An instance of this class is equivalent to an edge in a connectivity graph</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:Relation">
@@ -1280,20 +1162,17 @@
           </xs:element>
           <xs:element name="navigability" type="rtmCommon:Navigability">
             <xs:annotation>
-              <xs:documentation>Indicates the direction of possible train travel between A and
-                B.</xs:documentation>
+              <xs:documentation>Indicates the direction of possible train travel between A and B.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="positionOnA" type="rtmCommon:Usage">
             <xs:annotation>
-              <xs:documentation>The relation is with the start or end of NetElement
-                A.</xs:documentation>
+              <xs:documentation>The relation is with the start or end of NetElement A.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="positionOnB" type="rtmCommon:Usage">
             <xs:annotation>
-              <xs:documentation>The relation is with the start or end of NetElement
-                B.</xs:documentation>
+              <xs:documentation>The relation is with the start or end of NetElement B.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1309,12 +1188,9 @@
   <xs:element name="result" type="rtmCommon:Result"/>
   <xs:complexType name="Result">
     <xs:annotation>
-      <xs:documentation>"Result" as per w3c sosa ontology: &lt;a
-        href="https://www.w3.org/TR/vocab-ssn/#SOSAResult"&gt;&lt;font
-        color="#0000ff"&gt;&lt;u&gt;https://www.w3.org/TR/vocab-ssn/#SOSAResult&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;
-        There is no apparent need for an ancestor class, as the result is "borne" by the observation
-        that produces it. W3C does &lt;b&gt;not &lt;/b&gt;indicate any ancestor (other than "Class")
-        or properties, such as units, confidence ranges, etc.</xs:documentation>
+      <xs:documentation>"Result" as per w3c sosa ontology:
+&lt;a href="https://www.w3.org/TR/vocab-ssn/#SOSAResult"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;https://www.w3.org/TR/vocab-ssn/#SOSAResult&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; 
+There is no apparent need for an ancestor class, as the result is "borne" by the observation that produces it. W3C does &lt;b&gt;not &lt;/b&gt;indicate any ancestor (other than "Class") or properties, such as units, confidence ranges, etc.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:Quantity"/>
@@ -1323,8 +1199,7 @@
   <xs:element name="positioningSystem" type="rtmCommon:PositioningSystem"/>
   <xs:complexType name="PositioningSystem">
     <xs:annotation>
-      <xs:documentation>A spatial reference system in which a position can be expressed in terms of
-        coordinates.</xs:documentation>
+      <xs:documentation>A spatial reference system in which a position can be expressed in terms of coordinates.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NamedResource"/>
@@ -1333,23 +1208,23 @@
   <xs:element name="threeDAlignmentCurve" type="rtmCommon:ThreeDAlignmentCurve"/>
   <xs:complexType name="ThreeDAlignmentCurve">
     <xs:annotation>
-      <xs:documentation>Class holding the definition of a geometrical element in 3-D space, as a set
-        of equations, possibly involving up to six coordinates (e.g. x, y, z, rho, theta, phi). The
-        class holds a reference to the coordinate reference system in which the equations are
-        expressed. The class also holds a reference to a linear location on the
-        network.</xs:documentation>
+      <xs:documentation>Class holding the definition of a geometrical element in 3-D space, as a set of equations, possibly involving up to six coordinates (e.g. x, y, z, rho, theta, phi).
+
+The class holds a reference to the coordinate reference system in which the equations are expressed.
+
+The class also holds a reference to a linear location on the network.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseObject">
         <xs:sequence>
-          <xs:element name="HasCoordinateReferenceSystem" type="rtmCommon:tElementWithIDref">
+          <xs:element name="hasCoordinateReferenceSystem" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:GeometricPositioningSystem</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="HasLinearLocation" type="rtmCommon:LinearLocation"/>
+          <xs:element name="hasLinearLocation" type="rtmCommon:LinearLocation"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1372,22 +1247,22 @@
   <xs:element name="linearCoordinate" type="rtmCommon:LinearCoordinate"/>
   <xs:complexType name="LinearCoordinate">
     <xs:annotation>
-      <xs:documentation>A curvilinear abscissa, optional vertical and lateral offset. The units are
-        defined by the associated positioning system.</xs:documentation>
+      <xs:documentation>A curvilinear abscissa, optional vertical and lateral offset.
+The units are defined by the associated positioning system.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:PositioningSystemCoordinate">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="lateralOffset" type="rtmCommon:Length">
             <xs:annotation>
-              <xs:documentation>lateral offset. The sign is always positive and the side, left or
-                right, is given by the spot location's lateral side.</xs:documentation>
+              <xs:documentation>lateral offset. The sign is always positive and the side, left or right, is given by the spot location's lateral side.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="1" name="measure" type="xs:double">
             <xs:annotation>
-              <xs:documentation>A curvilinear abscissa, optional vertical and lateral offset. The
-                units are defined by the associated positioning system. </xs:documentation>
+              <xs:documentation>A curvilinear abscissa, optional vertical and lateral offset.
+The units are defined by the associated positioning system.
+</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="verticalOffset" type="rtmCommon:Length">
@@ -1402,11 +1277,10 @@
   <xs:element name="railwayDiscretisedPoint" type="rtmCommon:RailwayDiscretisedPoint"/>
   <xs:complexType name="RailwayDiscretisedPoint">
     <xs:annotation>
-      <xs:documentation>A geometric point that is a sample of a railway alignment. Can bear
-        geometric attributes such as locally measured cant values, etc. More generally, geometric
-        properties that cannot be represented by SpotLocation (which is the abstraction of a "point
-        in space"), such as twist or the rotation of some local coordinate system, shall be
-        described here. </xs:documentation>
+      <xs:documentation>A geometric point that is a sample of a railway alignment. 
+Can bear geometric attributes such as locally measured cant values, etc.
+More generally, geometric properties that cannot be represented by SpotLocation (which is the abstraction of a "point in space"), such as twist or the rotation of some local coordinate system, shall be described here.
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:DiscretisedPoint"/>
@@ -1415,8 +1289,7 @@
   <xs:element name="cartesianCoordinate" type="rtmCommon:CartesianCoordinate"/>
   <xs:complexType name="CartesianCoordinate">
     <xs:annotation>
-      <xs:documentation>Cartesian coordinates. The x,y, z units are defined by the associated
-        positioning system. </xs:documentation>
+      <xs:documentation>Cartesian coordinates. The x,y, z units are defined by the associated positioning system. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:GeometricCoordinate">
@@ -1453,18 +1326,14 @@
   </xs:complexType>
   <xs:simpleType name="LateralSide">
     <xs:annotation>
-      <xs:documentation>Informs whether the linear location or spot location is situated to the
-        left, right or centre of the associated LinearElement. Left/right is given with respect to
-        the "intrinsic" orientation of the LinearElement (extremity 0 to extremity 1). LateralSide
-        is therefore independent from ApplicationDirection.</xs:documentation>
+      <xs:documentation>Informs whether the linear location or spot location is situated to the left, right or centre of the associated LinearElement. Left/right is given with respect to the "intrinsic" orientation of the LinearElement (extremity 0 to extremity 1).
+
+LateralSide is therefore independent from ApplicationDirection.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="undefined">
         <xs:annotation>
-          <xs:documentation>The lateral side is not yet defined/known although the spot located
-            object is or will be placed to the left or right of the track. Can be used at early
-            planning stages. The actual lateral side can then be given at a later stage, e.g.
-            as-built.</xs:documentation>
+          <xs:documentation>The lateral side is not yet defined/known although the spot located object is or will be placed to the left or right of the track. Can be used at early planning stages. The actual lateral side can then be given at a later stage, e.g. as-built.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="left">
@@ -1507,11 +1376,9 @@
     <xs:complexContent>
       <xs:extension base="rtmCommon:BaseLocation">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="associatedNetElements"
-            type="rtmCommon:AssociatedNetElement">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="associatedNetElements" type="rtmCommon:AssociatedNetElement">
             <xs:annotation>
-              <xs:documentation>An area location is composed of a set of associated net
-                elements.</xs:documentation>
+              <xs:documentation>An area location is composed of a set of associated net elements.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1521,8 +1388,8 @@
   <xs:element name="horizontalSegmentLine" type="rtmCommon:HorizontalSegmentLine"/>
   <xs:complexType name="HorizontalSegmentLine">
     <xs:annotation>
-      <xs:documentation>Geometric primitive. All required attributes are defined in the class
-        "HorizontalAlignmentSegment". </xs:documentation>
+      <xs:documentation>Geometric primitive. All required attributes are defined in the class "HorizontalAlignmentSegment".
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:HorizontalAlignmentSegment"/>
@@ -1531,10 +1398,8 @@
   <xs:element name="unit" type="rtmCommon:Unit"/>
   <xs:complexType name="Unit">
     <xs:annotation>
-      <xs:documentation>Derived from OMG SysML 1.2 : see &lt;a
-        href="http://www.omgwiki.org/OMGSysML/lib/exe/fetch.php?media=sysml-qudv:annex_c.5_2009-08-26.pdf"&gt;&lt;font
-        color="#0000ff"&gt;&lt;u&gt;http://www.omgwiki.org/OMGSysML/lib/exe/fetch.php?media=sysml-qudv:annex_c.5_2009-08-26.pdf&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;
-        , figure C8. </xs:documentation>
+      <xs:documentation>Derived from OMG SysML 1.2 : see &lt;a href="http://www.omgwiki.org/OMGSysML/lib/exe/fetch.php?media=sysml-qudv:annex_c.5_2009-08-26.pdf"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;http://www.omgwiki.org/OMGSysML/lib/exe/fetch.php?media=sysml-qudv:annex_c.5_2009-08-26.pdf&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; , figure C8.
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NamedResource">
@@ -1554,17 +1419,17 @@
   <xs:element name="observation" type="rtmCommon:Observation"/>
   <xs:complexType name="Observation">
     <xs:annotation>
-      <xs:documentation>As per ISO 19156(2011) : &lt;b&gt;observation &lt;/b&gt;= act of measuring
-        or otherwise determining the value of a property &lt;b&gt;property &lt;/b&gt;= facet or
-        attribute of an object referenced by a name Here, "Observation" implements the w3c
-        sosa:Observation class. The latter inherits directly from Class ; in the context of RTM, we
-        let it inherit from NamedResource.</xs:documentation>
+      <xs:documentation>As per ISO 19156(2011) :
+&lt;b&gt;observation &lt;/b&gt;= act of measuring or otherwise determining the value of a property
+&lt;b&gt;property &lt;/b&gt;= facet or attribute of an object referenced by a name
+
+Here, "Observation" implements the w3c sosa:Observation class.
+The latter inherits directly from Class ; in the context of RTM, we let it inherit from NamedResource.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:InformationSource">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="circumstance"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="circumstance" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:Circumstance</ObjectTypeRef>
@@ -1603,8 +1468,7 @@
     <xs:complexContent>
       <xs:extension base="rtmCommon:Quantity">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="timeReferenceSystem"
-            type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="timeReferenceSystem" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:TimeReferenceSystem</ObjectTypeRef>
@@ -1631,20 +1495,17 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="relative">
         <xs:annotation>
-          <xs:documentation>distance along, measured from the intersections (junctions) where linear
-            elements meet.</xs:documentation>
+          <xs:documentation>distance along, measured from the intersections (junctions) where linear elements meet.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="absolute">
         <xs:annotation>
-          <xs:documentation>curvilinear abscissa ("distance along" linear element); values do not
-            necessarily start with zero</xs:documentation>
+          <xs:documentation>curvilinear abscissa ("distance along" linear element); values do not necessarily start with zero</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="interpolation">
         <xs:annotation>
-          <xs:documentation>Fraction (percentage) of distance along linear
-            element.</xs:documentation>
+          <xs:documentation>Fraction (percentage) of distance along linear element.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -1658,8 +1519,9 @@
   <xs:element name="verticalSegmentLine" type="rtmCommon:VerticalSegmentLine"/>
   <xs:complexType name="VerticalSegmentLine">
     <xs:annotation>
-      <xs:documentation>Geometric primitive. All required attributes are defined in the class
-        "Vertical AlignmentSegment". </xs:documentation>
+      <xs:documentation>Geometric primitive. All required attributes are defined in the class "Vertical AlignmentSegment".
+
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:VerticalAlignmentSegment"/>
@@ -1668,8 +1530,7 @@
   <xs:element name="relation" type="rtmCommon:Relation"/>
   <xs:complexType name="Relation">
     <xs:annotation>
-      <xs:documentation>Base class for defining edges in the sense of graph
-        theory.</xs:documentation>
+      <xs:documentation>Base class for defining edges in the sense of graph theory.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:NetworkResource"/>
@@ -1678,17 +1539,13 @@
   <xs:element name="positioningNetElement" type="rtmCommon:PositioningNetElement"/>
   <xs:complexType name="PositioningNetElement">
     <xs:annotation>
-      <xs:documentation>Topological element in the network that requires at least one positioning
-        system and an orientation, carried by the intrinsic coordinate. A concrete class, reflecting
-        the fact that the "linear" or "non-linear" character of a given part of the network may
-        depend on the context: at micro level, there is no ambiguity, but ambiguities may well arise
-        at macro level for instance.</xs:documentation>
+      <xs:documentation>Topological element in the network that requires at least one positioning system and an orientation, carried by the intrinsic coordinate.
+A concrete class, reflecting the fact that the "linear" or "non-linear" character of a given part of the network may depend on the context: at micro level, there is no ambiguity, but ambiguities may well arise at macro level for instance.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="rtmCommon:CompositionNetElement">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="associatedPositioningSystems"
-            type="rtmCommon:AssociatedPositioningSystem">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="associatedPositioningSystems" type="rtmCommon:AssociatedPositioningSystem">
             <xs:annotation>
               <xs:documentation>Has coordinates in a given positioning system.</xs:documentation>
             </xs:annotation>
@@ -1727,3 +1584,4 @@
     </xs:complexContent>
   </xs:complexType>
 </xs:schema>
+

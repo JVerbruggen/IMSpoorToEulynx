@@ -13,7 +13,16 @@ namespace Services.Service
             var serializer = new XmlSerializer(typeof(T));
             using (var tr = new StringReader(xml))
             {
-                return (T)serializer.Deserialize(tr);
+                T s = default(T);
+                try
+                {
+                    s = (T)serializer.Deserialize(tr);
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+                return s;
             }
         }
     }
