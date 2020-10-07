@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -58,6 +59,21 @@ namespace FormsApp
             this.ResumeLayout();
         }
 
+        private void paintFoundPath(PositioningNetElement[] path, PositioningNetElement[] allElements)
+        {
+            foreach (PositioningNetElement pathElement in allElements)
+            {
+                if (path.Contains(pathElement))
+                {
+                    this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                }
+                else
+                {
+                    this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
+                }
+            }
+        }
+
         public void FindShortestPath(string refStartNetElement, string refEndNetElement)
         {
             if (this.eulynx == null) return;
@@ -72,10 +88,7 @@ namespace FormsApp
 
             PositioningNetElement[] shortestPath = InstanceManager.Singleton<PathFinderService>().GetInstance().FindShortestPath(relations, netElements, startNetElement, endNetElement);
 
-            foreach(PositioningNetElement pathElement in shortestPath)
-            {
-                this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-            }
+            paintFoundPath(shortestPath, netElements);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
