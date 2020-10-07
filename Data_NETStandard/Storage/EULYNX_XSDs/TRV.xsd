@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:TRV="http://www.railtopomodel.org/schemas/TRV" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/TRV">
-  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling" schemaLocation="EULYNX_Signalling.xsd"/>
   <xs:element name="atcBalise" type="TRV:AtcBalise"/>

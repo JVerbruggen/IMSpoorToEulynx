@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling">
-  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:simpleType name="ProjectPhaseTypes">
     <xs:restriction base="xs:string">
@@ -767,13 +767,13 @@ The interlocking revokes (part of) the route when this timer expires.</xs:docume
         <xs:annotation>
           <xs:documentation>The route (or parts of it) is not electrified. This route is permissible for non-electric vehicles only.
 &lt;ul&gt;
- &lt;li&gt;Germany: F-Bedienung&lt;/li&gt;
+ &lt;li&gt;de-DE: F-Bedienung&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ul&gt;
- &lt;li&gt;NL: Dieseltractie&lt;/li&gt;
+ &lt;li&gt;nl-NL: Dieseltractie&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ul&gt;
- &lt;li&gt;France: Thermique&lt;/li&gt;
+ &lt;li&gt;fr-FR: Thermique&lt;/li&gt;
 &lt;/ul&gt;
 Note: this is a static property and does not take into account whether traction power can be switched off.</xs:documentation>
         </xs:annotation>
@@ -1665,7 +1665,7 @@ E.g. "entry towards tracks 7-14"
   <xs:complexType name="OverlapRelease">
     <xs:annotation>
       <xs:documentation>Unlocks the elements in the overlap.
-The IL may release the overlap
+The IL may release the overlap in the following situations:
 &lt;ul&gt;
  &lt;li&gt;When the approaching train &lt;i&gt;has plausibly stopped&lt;/i&gt;&lt;u&gt; &lt;/u&gt;before the exit signal. In this case, the overlap release is delayed by a given duration: the timer is triggered when the train occupies or vacates a given section.&lt;/li&gt;
  &lt;li&gt;When the approaching train &lt;i&gt;positively confirms to have stopped&lt;/i&gt; (e.g. by means of an ETCS position report). In this case, the release is immediate or with a short delay.&lt;/li&gt;
@@ -1675,7 +1675,7 @@ The IL may release the overlap
       <xs:element maxOccurs="1" minOccurs="0" name="hasOverlapReleaseDelay" type="rtmCommon:Duration">
         <xs:annotation>
           <xs:documentation>Time that expires before the interlocking releases the overlap.
-DE: D-Weg-Aufl&amp;#246;severz&amp;#246;gerung</xs:documentation>
+de-DE: D-Weg-Aufl&amp;#246;severz&amp;#246;gerung</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="1" minOccurs="0" name="isTriggeredBy" type="rtmCommon:tElementWithIDref">
@@ -4615,8 +4615,7 @@ FR: Poste de controle</xs:documentation>
   <xs:element name="compoundLogicalObjectAndState" type="signalling:CompoundLogicalObjectAndState"/>
   <xs:complexType name="CompoundLogicalObjectAndState">
     <xs:annotation>
-      <xs:documentation>A pair (Compound Logical Object, boolean).
-Refer to the class &lt;a href="$diagram://{E24D37F4-ED9C-4bb4-B771-E61C9C3AA834}"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Compound Logical Object&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;.</xs:documentation>
+      <xs:documentation>A pair (Compound Logical Object, boolean).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:AssetAndState">
@@ -5565,7 +5564,7 @@ de-DE: Ortsstellbereich</xs:documentation>
       <xs:enumeration value="startTimerUponOccupation">
         <xs:annotation>
           <xs:documentation>Overlap release timer starts when train occupies the TVP section, normally the berthing track.
-DE: Zielgleis
+de-DE: Zielgleis
 </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -5578,7 +5577,7 @@ Typically used in reversing scenarios.</xs:documentation>
       <xs:enumeration value="trainInitiatedTrigger">
         <xs:annotation>
           <xs:documentation>Trackside releases the overlap only after train is proven in standstill by ETCS system or by a manual command.
-DE: Aufloesung nach Stillstand des Zuges, z.B. ETCS</xs:documentation>
+de-DE: Aufl&amp;#246;sung nach Stillstand des Zuges, z.B. ETCS</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -6064,7 +6063,7 @@ e.g.
   <xs:complexType name="RouteSpeedRestriction">
     <xs:annotation>
       <xs:documentation>Speed restriction resulting from external constraints that cannot be deduced from the elements situated along or associated with this route. For instance noise reduction or simplification of speed profiles.
-Not to be used for speed restriction due to reduced braking distance. Use the class &lt;a href="$element://{74A6B407-1140-41ae-B7DB-608B70FD2999}"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;RouteWithReducedBrakingDistance&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; instead.</xs:documentation>
+Not to be used for speed restriction due to reduced braking distance. Use the class RouteWithReducedBrakingDistance instead.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:RouteProperty">
@@ -6636,7 +6635,7 @@ de-DE: voll</xs:documentation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="hasAntiToggleTime" type="rtmCommon:Duration">
             <xs:annotation>
-              <xs:documentation>EULYNX parameter Anti-toggle time, Con_t_Anti_Toggle_Time, is a configurable delay, defining the duration of a TVPS in state ìTVPS occupied and unable to be forced to clearî or ìTVPS disturbed and unable to be forced to clearî between an outgoing wheel and the reporting of the new status ìTVPS occupied and able to be forced to clear" or ìTVPS disturbed and able to be forced to clear".</xs:documentation>
+              <xs:documentation>EULYNX parameter Anti-toggle time, Con_t_Anti_Toggle_Time, is a configurable delay, defining the duration of a TVPS in state ‚ÄúTVPS occupied and unable to be forced to clear‚Äù or ‚ÄúTVPS disturbed and unable to be forced to clear‚Äù between an outgoing wheel and the reporting of the new status ‚ÄúTVPS occupied and able to be forced to clear" or ‚ÄúTVPS disturbed and able to be forced to clear".</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="hasDelayOfNotificationOfAvailability" type="rtmCommon:Duration">
@@ -10269,8 +10268,8 @@ A route is abstract and must be specialised, e.g. into main route, shunting rout
 
 This allows a train to cross a tunnel or other zone whilst being sure that it does not stop. Also used when trains cross from one IL to another.
 
-German: Folgeabh&amp;#228;ngigkeit
-Dutch: X/G routes
+de-De: Folgeabh&amp;#228;ngigkeit
+nl-NL: X/G routes
 </xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>signalling:Route</ObjectTypeRef>
@@ -11115,7 +11114,7 @@ de-DE: sonstige</xs:documentation>
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="hasGroupMainSignal" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>pointer to group signal.</xs:documentation>
+              <xs:documentation>Pointer to group signal.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>signalling:Signal</ObjectTypeRef>
               </xs:appinfo>

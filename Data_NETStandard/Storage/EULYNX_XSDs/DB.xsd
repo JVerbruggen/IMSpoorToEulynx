@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:DB="http://www.railtopomodel.org/schemas/DB" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/DB">
-  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling" schemaLocation="EULYNX_Signalling.xsd"/>
   <xs:element name="flankProtectionNone" type="DB:FlankProtectionNone"/>
@@ -1342,43 +1342,43 @@ de-DE: F&amp;#252;r den Bediener soll das Bedienkommando im freigegebenen NB-Ber
       <xs:enumeration value="awu">
         <xs:annotation>
           <xs:documentation>Control trailed point.
-de-DE: Bedienkommando „Aufgefahrene Weiche umstellen“.</xs:documentation>
+de-DE: Bedienkommando â€žAufgefahrene Weiche umstellenâ€œ.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="f_st_z">
         <xs:annotation>
           <xs:documentation>Call a route on non-electrified track.
-de-DE: Bedienkommando „Fahrstra&amp;#223;e in ein Gleis ohne Oberleitung einstellen“ (nur beim &amp;#220;bergang in nicht &amp;#252;berspannte Bereiche relevant). </xs:documentation>
+de-DE: Bedienkommando â€žFahrstra&amp;#223;e in ein Gleis ohne Oberleitung einstellenâ€œ (nur beim &amp;#220;bergang in nicht &amp;#252;berspannte Bereiche relevant). </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="fa_fae">
         <xs:annotation>
           <xs:documentation>(Partially) release route.
-de-DE: Bedienkommando „Fahrstra&amp;#223;e aufl&amp;#246;sen“ und „Fahrwegelement einzeln aufl&amp;#246;sen“.</xs:documentation>
+de-DE: Bedienkommando â€žFahrstra&amp;#223;e aufl&amp;#246;senâ€œ und â€žFahrwegelement einzeln aufl&amp;#246;senâ€œ.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="sbue">
         <xs:annotation>
-          <xs:documentation>Issue command „SBUE“.
-de-DE: Bedienkommando „SBUE“.</xs:documentation>
+          <xs:documentation>Issue command â€žSBUEâ€œ.
+de-DE: Bedienkommando â€žSBUEâ€œ.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="sle_sls">
         <xs:annotation>
           <xs:documentation>Release and block key lock.
-de-DE: Bedienkommando „Schl&amp;#252;sselsperre entsperren“ (freigeben) und „Schl&amp;#252;sselsperre sperren“ (Freigabe zur&amp;#252;cknehmen).</xs:documentation>
+de-DE: Bedienkommando â€žSchl&amp;#252;sselsperre entsperrenâ€œ (freigeben) und â€žSchl&amp;#252;sselsperre sperrenâ€œ (Freigabe zur&amp;#252;cknehmen).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="whu">
         <xs:annotation>
           <xs:documentation>Auxiliary point control command.
-de-DE: Bedienkommando „Weiche hilfsweise umstellen“. </xs:documentation>
+de-DE: Bedienkommando â€žWeiche hilfsweise umstellenâ€œ. </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="wus">
         <xs:annotation>
           <xs:documentation>Block point.
-de-DE: Bedienkommando „Weiche gegen umstellen sperren“. </xs:documentation>
+de-DE: Bedienkommando â€žWeiche gegen umstellen sperrenâ€œ. </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>

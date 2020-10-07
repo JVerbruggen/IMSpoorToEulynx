@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:DB="http://www.railtopomodel.org/schemas/DB" xmlns:NetworkRail="http://www.railtopomodel.org/schemas/NR" xmlns:ProRail="http://www.railtopomodel.org/schemas/ProRail" xmlns:RFI="http://www.railtopomodel.org/schemas/RFI" xmlns:SNCF="http://www.railtopomodel.org/schemas/SNCF" xmlns:TRV="http://www.railtopomodel.org/schemas/TRV" xmlns:base="http://www.railtopomodel.org/schemas/EULYNX_XSD" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:rtmNE="http://www.railtopomodel.org/schemas/NetEntity" xmlns:rtmSig="http://www.railtopomodel.org/schemas/Signalling" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/EULYNX_XSD">
-  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:import namespace="http://www.railtopomodel.org/schemas/RFI" schemaLocation="RFI.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/SNCF" schemaLocation="SNCF.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/ProRail" schemaLocation="ProRail.xsd"/>
@@ -94,7 +94,6 @@ applicability=A</xs:documentation>
       <xs:extension base="signalling:BaseObject">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="knowsAssetAndState" type="signalling:AssetAndState"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsATPdevice" type="signalling:TpsDevice"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsAspect" type="signalling:Aspect"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsAssetGroup" type="signalling:AssetGroup"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsAssetUser" type="signalling:AssetUser"/>
@@ -106,19 +105,18 @@ applicability=A</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsBackToBackLocking" type="signalling:BackToBackLocking"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsBaliseGroupFunction" type="signalling:BaliseGroupFunction"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsBaselineOfRuleSet" type="signalling:BaselineOfRuleSet"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsBlockSystem" type="signalling:BlockSystem"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsCableDuct" type="signalling:CableRoute"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsCableRouteJunction" type="signalling:CableRouteJunction"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsCompositeRoute" type="signalling:CompositeRoute"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsCompoundLogicalObject" type="signalling:CompoundLogicalObject"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsConditionSectionsClear" type="signalling:ConditionSectionsClear"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsConductorRail" type="signalling:ConductorRail"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsConflictingRoute" type="signalling:ConflictingRoute"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsControlArea" type="signalling:ControlArea"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsControlRelation" type="signalling:ControlRelation"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsControlledTrackAsset" type="signalling:ControlledTrackAsset"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsController" type="signalling:Controller"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsDADoverlap" type="signalling:DirectionAuthorityDependentOverlap"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsDescription" type="signalling:Description"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsDesignation" type="signalling:Designation"/>
@@ -151,8 +149,6 @@ applicability=A</xs:documentation>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsLozAssetRelation" type="signalling:LozAssetRelation"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsManualOverlapRelease" type="signalling:ManualOverlapRelease"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsMaxRouteBodySpeed" type="signalling:MaxRouteBodySpeed"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsMovableComponent" type="signalling:MovableComponent"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsMovableSystem" type="signalling:MovableSystem"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsNUSR" type="signalling:NotUpgradeableSpeedRestriction">
             <xs:annotation>
               <xs:documentation>a set of speed restrictions that cannot be upgraded.</xs:documentation>
@@ -172,8 +168,8 @@ applicability=A</xs:documentation>
           </xs:element>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsPlatformEdge" type="signalling:PlatformEdge"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsPlatformFacility" type="signalling:PlatformFacility"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsPositioningMeasurementInfo" type="DB:PositioningMeasurementInfo"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsReferenceDrawing" type="signalling:ReferenceDrawing"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsRemainingShuntingRouteRelease" type="DB:RemainingShuntingRouteRelease"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsRoute" type="signalling:Route"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsRouteApproacLocking" type="signalling:RouteApproachLocking"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsRouteBody" type="signalling:RouteBody"/>
@@ -181,8 +177,6 @@ applicability=A</xs:documentation>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsRouteProperty" type="signalling:RouteProperty"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsSectionsForFlankProtection" type="signalling:SectionsForFlankProtection"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsShuntingRouteSectionProving" type="signalling:ShuntingRouteSectionProving"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsShuntingTargetAuthDep" type="DB:ShuntingTargetAuthorityDependent"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsSignal" type="signalling:Signal"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsSignalFrame" type="signalling:SignalFrame"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsSignalFrameComponent" type="signalling:SignalFrameComponent"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsSignalFunction" type="signalling:SignalFunction"/>
@@ -197,15 +191,13 @@ applicability=A</xs:documentation>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTdsOccupanyOverrideGroup" type="signalling:TdsOccupancyOverrideGroup"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTdsSection" type="signalling:TdsSection"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTpsDataTransmissionSystem" type="signalling:TpsDataTransmissionSystem"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTrackAsset" type="signalling:TrackAsset"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTrackAssetConfiguration" type="signalling:TrackAssetConfiguration"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTrackCrossing" type="signalling:TrackCrossing"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTrackProperty" type="signalling:TrackProperty"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTrainCategory" type="signalling:TrainCategory"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTriggerAssignment" type="signalling:TriggerAssignment"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTunnelSignal" type="signalling:TunnelSignal"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTvpSection" type="signalling:TvpSection"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsVehiclePassageDetector" type="signalling:VehiclePassageDetector"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsVehicleStop" type="signalling:VehicleStop"/>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsViaLocation" type="signalling:ViaLocation"/>
         </xs:sequence>
       </xs:extension>
