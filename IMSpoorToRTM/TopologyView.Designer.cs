@@ -30,9 +30,9 @@
         {
             this.groupBox_drawing = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox_pathFindStart = new System.Windows.Forms.ComboBox();
-            this.comboBox_pathFindEnd = new System.Windows.Forms.ComboBox();
             this.button_findPathSubmit = new System.Windows.Forms.Button();
+            this.comboBox_pathFindEnd = new System.Windows.Forms.ComboBox();
+            this.comboBox_pathFindStart = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,37 +55,42 @@
             this.groupBox1.Controls.Add(this.comboBox_pathFindStart);
             this.groupBox1.Location = new System.Drawing.Point(12, 392);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 133);
+            this.groupBox1.Size = new System.Drawing.Size(471, 133);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Path finder";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
-            // comboBox_pathFindStart
-            // 
-            this.comboBox_pathFindStart.FormattingEnabled = true;
-            this.comboBox_pathFindStart.Location = new System.Drawing.Point(6, 26);
-            this.comboBox_pathFindStart.Name = "comboBox_pathFindStart";
-            this.comboBox_pathFindStart.Size = new System.Drawing.Size(280, 28);
-            this.comboBox_pathFindStart.TabIndex = 2;
-            // 
-            // comboBox_pathFindEnd
-            // 
-            this.comboBox_pathFindEnd.FormattingEnabled = true;
-            this.comboBox_pathFindEnd.Location = new System.Drawing.Point(6, 60);
-            this.comboBox_pathFindEnd.Name = "comboBox_pathFindEnd";
-            this.comboBox_pathFindEnd.Size = new System.Drawing.Size(280, 28);
-            this.comboBox_pathFindEnd.TabIndex = 2;
-            // 
             // button_findPathSubmit
             // 
-            this.button_findPathSubmit.Location = new System.Drawing.Point(192, 98);
+            this.button_findPathSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_findPathSubmit.Location = new System.Drawing.Point(371, 98);
             this.button_findPathSubmit.Name = "button_findPathSubmit";
             this.button_findPathSubmit.Size = new System.Drawing.Size(94, 29);
             this.button_findPathSubmit.TabIndex = 3;
             this.button_findPathSubmit.Text = "Find path";
             this.button_findPathSubmit.UseVisualStyleBackColor = true;
             this.button_findPathSubmit.Click += new System.EventHandler(this.button_findPathSubmit_Click);
+            // 
+            // comboBox_pathFindEnd
+            // 
+            this.comboBox_pathFindEnd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_pathFindEnd.FormattingEnabled = true;
+            this.comboBox_pathFindEnd.Location = new System.Drawing.Point(6, 60);
+            this.comboBox_pathFindEnd.Name = "comboBox_pathFindEnd";
+            this.comboBox_pathFindEnd.Size = new System.Drawing.Size(459, 28);
+            this.comboBox_pathFindEnd.TabIndex = 2;
+            // 
+            // comboBox_pathFindStart
+            // 
+            this.comboBox_pathFindStart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_pathFindStart.FormattingEnabled = true;
+            this.comboBox_pathFindStart.Location = new System.Drawing.Point(6, 26);
+            this.comboBox_pathFindStart.Name = "comboBox_pathFindStart";
+            this.comboBox_pathFindStart.Size = new System.Drawing.Size(459, 28);
+            this.comboBox_pathFindStart.TabIndex = 2;
             // 
             // TopologyView
             // 

@@ -23,7 +23,7 @@ namespace Services.Managers.Toplevel
             signallingEntities.ownsAspect = Aspect.GetAspects();
             signallingEntities.ownsAssetGroup = AssetGroup.GetAssetGroups();
             signallingEntities.ownsAssetUser = AssetUser.GetAssetUsers();
-            signallingEntities.ownsATPdevice_STUB = TpsDevice1.GetTpsDevices();
+            //signallingEntities.ownsATPdevice = TpsDevice1.GetTpsDevices();
             signallingEntities.ownsAtpProtectiveDistance = TpsProtectionDistance.GetTpsProtectionDistances();
             signallingEntities.ownsAttachmentDocument = Attachment.GetAttachments();
             signallingEntities.ownsAutomatic = Automatic.GetAutomatics();

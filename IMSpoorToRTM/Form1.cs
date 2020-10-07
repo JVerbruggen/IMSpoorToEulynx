@@ -17,6 +17,7 @@ namespace FormsApp
     {
         private ITranslationService<IMSpoor, Eulynx> imspoorToEulynxTranslationService = new IMSpoorToEulynxTranslationService();
         private IReadFileService<IMSpoor> imSpoorFileReadService = new ReadIMSpoorFileService();
+        private IReadFileService<Eulynx> eulynxFileReadService = new ReadEulynxFileService();
         private IXDocSerializer<Eulynx> eulynxSerializer = new XDocSerializeService();
 
         public Form1()
@@ -30,8 +31,8 @@ namespace FormsApp
         private void button_chooseIMSpoorXML_Click(object sender, EventArgs e)
         {
             openFileDialog_IMSpoorXML.InitialDirectory = textBox_IMSpoorXML.Text;
-            
-            if(openFileDialog_IMSpoorXML.ShowDialog() == DialogResult.OK)
+
+            if (openFileDialog_IMSpoorXML.ShowDialog() == DialogResult.OK)
             {
                 textBox_IMSpoorXML.Text = openFileDialog_IMSpoorXML.FileName;
                 updateConversionButtonState();
@@ -60,15 +61,50 @@ namespace FormsApp
 
             XDocument eulynxDoc = eulynxSerializer.Serialize(eulynx);
 
-            
+
             saveFileDialog_EulynxXMLOutput.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\EULYNX-from-IMSpoor.xml";
             if (saveFileDialog_EulynxXMLOutput.ShowDialog() == DialogResult.OK)
             {
                 eulynxDoc.Save(saveFileDialog_EulynxXMLOutput.FileName);
+                textBox_eulynxXML.Text = saveFileDialog_EulynxXMLOutput.FileName;
             }
 
+            showTopology(eulynx);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showTopology(Eulynx eulynx)
+        {
             TopologyView topologyView = new TopologyView(eulynx);
             topologyView.Show();
+        }
+
+        private void button_chooseEulynxXML_Click(object sender, EventArgs e)
+        {
+            openFileDialog_EulynxXML.InitialDirectory = textBox_IMSpoorXML.Text;
+
+            if (openFileDialog_EulynxXML.ShowDialog() == DialogResult.OK)
+            {
+                textBox_eulynxXML.Text = openFileDialog_EulynxXML.FileName;
+            }
+        }
+
+        private void button_loadEulynx_Click(object sender, EventArgs e)
+        {
+            String filePath = textBox_eulynxXML.Text;
+
+            if (!File.Exists(filePath))
+            {
+                return;
+            }
+
+            Eulynx eulynx = eulynxFileReadService.Read(filePath);
+
+            showTopology(eulynx);
         }
     }
 }

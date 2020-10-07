@@ -11,10 +11,9 @@ namespace Models.TopoModels.Eulynx
 
         }
 
-        public Signal(tElementWithIDref[] locations)
+        public Signal(tElementWithIDref location)
         {
-            this.locations = locations;
-            this.name = "RTMSignal";
+            this.hasLocation = location;
         }
     }
 }

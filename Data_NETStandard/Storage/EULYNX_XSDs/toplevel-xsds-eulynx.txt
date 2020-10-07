@@ -1,0 +1,23 @@
+xsd.exe /c EULYNX_Signalling.xsd EULYNX_XSD.xsd Common.xsd DB.xsd NR.xsd SNCF.xsd Signalling.xsd NetEntity.xsd
+
+
+1. To convert unknown encoding to UTF-8 in NP++, go to Encoding->Encode in ANSI, then Encoding->Convert to UTF-8
+
+    If skipped, causes serializer to throw error of unknown characters
+    
+2. Make sure to, when generated, move to Models->TopoModels->Generated and add the following namespace:
+
+  namespace Models.TopoModels.Eulynx_<versiongoeshere>
+  {
+  
+  }
+
+3. Remove all [System.Diagnostics.DebuggerStepThroughAttribute()] tags (with newline character) with regex:
+    \[System.Diagnostics.DebuggerStepThroughAttribute\(\)\]+..
+    
+    If skipped, causes debugger to not work within your own code
+    
+4. For each occurence in the generated .cs file of the string: '[][]', add '[]' to the XmlArrayItemAttribbute 'typeof()' class
+    e.g. typeof(SignalMessageRelation) to typeof(SignalMessageRelation[])
+    
+    If skipped, causes error: Compiling CSharp scripts is not supported

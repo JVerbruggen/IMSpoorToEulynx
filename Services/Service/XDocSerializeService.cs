@@ -15,9 +15,11 @@ namespace Services.Service
             XmlSerializerNamespaces xmlns = new XmlSerializerNamespaces();
             xmlns.Add("xsi", @"http://www.w3.org/2001/XMLSchema-instance");
             xmlns.Add("rtmCommon", @"http://www.railtopomodel.org/schemas/Common");
+            xmlns.Add("rtmNE", @"http://www.railtopomodel.org/schemas/NetEntity");
+            xmlns.Add("rtmSig", @"http://www.railtopomodel.org/schemas/Signalling");
+            xmlns.Add("base", @"http://www.railtopomodel.org/schemas/EULYNX_XSD");
             xmlns.Add("eurtm", @"http://www.railtopomodel.org/schemas/EULYNX_XSD");
-            xmlns.Add("netEntity", @"http://www.railtopomodel.org/schemas/NetEntity");
-            xmlns.Add("euSignalling", @"http://www.railtopomodel.org/schemas/EULYNX_Signalling");
+            xmlns.Add("signalling", @"http://www.railtopomodel.org/schemas/EULYNX_Signalling");
 
             return xmlns;
         }

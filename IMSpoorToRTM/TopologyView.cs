@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -33,21 +34,27 @@ namespace FormsApp
             this.viewer = new GViewer();
             this.graph = new Graph("MyGraph");
 
-            foreach(PositioningNetElement netElement in eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement)
+            var rtmEntities = eulynx?.ownsRtmEntities;
+            var trackTopo = rtmEntities?.usesTrackTopology;
+
+            if (rtmEntities != null && trackTopo != null)
             {
-                comboBox_pathFindStart.Items.Add(netElement.uuid);
-                comboBox_pathFindEnd.Items.Add(netElement.uuid);
-            }
+                foreach (PositioningNetElement netElement in trackTopo.usesPositioningNetElement)
+                {
+                    comboBox_pathFindStart.Items.Add(netElement.uuid);
+                    comboBox_pathFindEnd.Items.Add(netElement.uuid);
+                }
 
-            PositionedRelation[] relations = eulynx.ownsRtmEntities.usesTrackTopology.usesPositionedRelation;
-            foreach(PositionedRelation relation in relations)
-            {
-                string refA = relation.elementA.@ref;
-                string refB = relation.elementB.@ref;
+                PositionedRelation[] relations = trackTopo.usesPositionedRelation;
+                foreach (PositionedRelation relation in relations)
+                {
+                    string refA = relation.elementA.@ref;
+                    string refB = relation.elementB.@ref;
 
-                if (refA == null || refB == null) continue;
+                    if (refA == null || refB == null) continue;
 
-                this.graph.AddEdge(refA, refB);
+                    this.graph.AddEdge(refA, refB);
+                }
             }
 
             this.viewer.Graph = this.graph;
@@ -56,6 +63,21 @@ namespace FormsApp
             this.viewer.Dock = DockStyle.Fill;
             this.groupBox_drawing.Controls.Add(this.viewer);
             this.ResumeLayout();
+        }
+
+        private void paintFoundPath(PositioningNetElement[] path, PositioningNetElement[] allElements)
+        {
+            foreach (PositioningNetElement pathElement in allElements)
+            {
+                if (path.Contains(pathElement))
+                {
+                    this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                }
+                else
+                {
+                    this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
+                }
+            }
         }
 
         public void FindShortestPath(string refStartNetElement, string refEndNetElement)
@@ -72,10 +94,7 @@ namespace FormsApp
 
             PositioningNetElement[] shortestPath = InstanceManager.Singleton<PathFinderService>().GetInstance().FindShortestPath(relations, netElements, startNetElement, endNetElement);
 
-            foreach(PositioningNetElement pathElement in shortestPath)
-            {
-                this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-            }
+            paintFoundPath(shortestPath, netElements);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -90,10 +109,13 @@ namespace FormsApp
 
         private void button_findPathSubmit_Click(object sender, EventArgs e)
         {
-            string uuidStart = comboBox_pathFindStart.SelectedItem.ToString();
-            string uuidEnd = comboBox_pathFindEnd.SelectedItem.ToString();
+            string uuidStart = comboBox_pathFindStart.SelectedItem?.ToString();
+            string uuidEnd = comboBox_pathFindEnd.SelectedItem?.ToString();
 
-            FindShortestPath(uuidStart, uuidEnd);
+            if(uuidStart != null && uuidEnd != null)
+            {
+                FindShortestPath(uuidStart, uuidEnd);
+            }
         }
     }
 }
