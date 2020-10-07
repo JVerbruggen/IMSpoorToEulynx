@@ -6636,7 +6636,7 @@ de-DE: voll</xs:documentation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="hasAntiToggleTime" type="rtmCommon:Duration">
             <xs:annotation>
-              <xs:documentation>EULYNX parameter Anti-toggle time, Con_t_Anti_Toggle_Time, is a configurable delay, defining the duration of a TVPS in state “TVPS occupied and unable to be forced to clear” or “TVPS disturbed and unable to be forced to clear” between an outgoing wheel and the reporting of the new status “TVPS occupied and able to be forced to clear" or “TVPS disturbed and able to be forced to clear".</xs:documentation>
+              <xs:documentation>EULYNX parameter Anti-toggle time, Con_t_Anti_Toggle_Time, is a configurable delay, defining the duration of a TVPS in state â€œTVPS occupied and unable to be forced to clearâ€ or â€œTVPS disturbed and unable to be forced to clearâ€ between an outgoing wheel and the reporting of the new status â€œTVPS occupied and able to be forced to clear" or â€œTVPS disturbed and able to be forced to clear".</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="hasDelayOfNotificationOfAvailability" type="rtmCommon:Duration">

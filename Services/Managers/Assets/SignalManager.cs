@@ -20,8 +20,8 @@ namespace Services.Managers.Assets
 
                 SpotLocation spotLocation = spotLocationManager.GetGeoLocation(imspoorSignal.Location);
                 spotLocationManager.Register(spotLocation);
-                tElementWithIDref[] locations = new tElementWithIDref[] { new tElementWithIDref(spotLocation.uuid) };
-                Signal rtmSignal = new Signal(locations);
+                tElementWithIDref location= new tElementWithIDref(spotLocation.uuid);
+                Signal rtmSignal = new Signal(location);
                 InstanceManager.Singleton<SignalRTMManager>().GetInstance().Register(rtmSignal);
 
                 SignalFrameManager signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();

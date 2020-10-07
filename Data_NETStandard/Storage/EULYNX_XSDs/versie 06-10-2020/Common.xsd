@@ -83,7 +83,7 @@ The time equivalent of "SpotLocation", except that a PhysicalInstant must have a
     <xs:restriction base="xs:string">
       <xs:enumeration value="Macro">
         <xs:annotation>
-          <xs:documentation>The Macro level aims to describe the network at regional or national level, with the nonlinear elements being the boundaries and the major OPís, while the linear elements are the sections of lines connecting those points.</xs:documentation>
+          <xs:documentation>The Macro level aims to describe the network at regional or national level, with the nonlinear elements being the boundaries and the major OP‚Äôs, while the linear elements are the sections of lines connecting those points.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Meso">
@@ -99,7 +99,7 @@ The non-linear elements are the Operating Points (OP = stations, yards, junction
       </xs:enumeration>
       <xs:enumeration value="Nano">
         <xs:annotation>
-          <xs:documentation>The nano level could be described as a properly attributed surveyorís map, including topological properties of the rail network in the finest possible granularity. 
+          <xs:documentation>The nano level could be described as a properly attributed surveyors map, including topological properties of the rail network in the finest possible granularity. 
 Use cases for the Nano level would include interlocking and asset management.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -268,7 +268,7 @@ Uphill is positive, downhill is negative.</xs:documentation>
   <xs:element name="network" type="rtmCommon:Network"/>
   <xs:complexType name="Network">
     <xs:annotation>
-      <xs:documentation>An instance of ìNetworkî can be considered as a set of description levels (ìLevelNetworkî) and a set of ìNetworkResourceî instances.
+      <xs:documentation>An instance of ‚ÄúNetwork‚Äù can be considered as a set of description levels (‚ÄúLevelNetwork‚Äù) and a set of ‚ÄúNetworkResource‚Äù instances.
 
 A "Network" is described in at least one "LevelNetwork". A "Network" may be described in more than one "LevelNetwork", typically for different levels of detail.</xs:documentation>
     </xs:annotation>
@@ -617,7 +617,7 @@ Geometric segments are used to define the vertical alignment. The segments are o
 &lt;ul&gt;
  &lt;li&gt;a starting point known by its distance along the horizontal alignment [m]&lt;/li&gt;
  &lt;li&gt;the starting point elevation in [m]&lt;/li&gt;
- &lt;li&gt;the starting direction as a gradient [â]&lt;/li&gt;
+ &lt;li&gt;the starting direction as a gradient [‚Ä∞]&lt;/li&gt;
  &lt;li&gt;the segment length in [m]&lt;/li&gt;
  &lt;li&gt;the information on how the segment is connected to the following segment. This information is used to describe possible discontinuities (e.g. if there is a vertical bend).&lt;/li&gt;
 &lt;/ul&gt;
