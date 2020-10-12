@@ -1,6 +1,7 @@
 ﻿using Models.TopoModels.Eulynx;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
+using Services.Managers.Assets;
 using Services.Managers.Base;
 using Services.Managers.Location;
 using Services.Managers.Positioning;
@@ -20,7 +21,7 @@ namespace Services.Managers.Toplevel
             //this.ownsBufferstop = VehicleStop.GetVehicleStops();
             //this.ownsPoint = Turnout.GetTurnouts();
             //this.ownsRouteBody = RouteBody.GetRouteBodies();
-            //this.ownsSignal = 
+            //rtmEntities.ownsSignal = ;
             //this.usesCablingTopology = CablingTopology.GetCablingTopology();
             //this.usesLinearLocation = LinearLocation.GetLinearLocations();
             rtmEntities.usesTrackTopology = InstanceManager.Singleton<TrackTopologyManager>().GetInstance().GetTrackTopology(situation.RailInfrastructure.RailTopology);
