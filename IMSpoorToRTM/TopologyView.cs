@@ -1,6 +1,7 @@
 ﻿using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
-using Models.TopoModels.Eulynx;
+using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Services.DependencyInjection;
 using Services.Managers.Topology;
 using Services.Service;

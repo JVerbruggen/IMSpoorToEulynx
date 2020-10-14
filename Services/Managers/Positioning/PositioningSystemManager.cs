@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.Common;
 using Services.Managers.Base;
 using Services.Service;
 using System;

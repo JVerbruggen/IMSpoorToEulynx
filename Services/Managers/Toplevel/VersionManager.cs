@@ -1,9 +1,9 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Version = Models.TopoModels.Eulynx.Version;
+using Version = Models.TopoModels.Eulynx.EULYNX_XSD.Version;
 
 namespace Services.Managers.Toplevel
 {

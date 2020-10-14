@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.Managers.Base;
 using System;
@@ -53,7 +53,7 @@ namespace Services.Managers.Topology
             };
         }
 
-        private IList<MicroLinkRelation> whereCanIGoThroughThisPort(RailTopology railTopology, String junction, int port)
+        private MicroLinkRelation[] whereCanIGoThroughThisPort(RailTopology railTopology, String junction, int port)
         {
             IList<MicroLinkRelation> tracksToGoTo = new List<MicroLinkRelation>();
 
@@ -98,14 +98,14 @@ namespace Services.Managers.Topology
                 }
             }
 
-            return tracksToGoTo;
+            return tracksToGoTo.ToArray();
         }
 
-        private IList<PositionedRelation> getPositionedRelationsForThisPort(RailTopology railTopology, tNodePort nodePort, MicroLink currentTrack, RelationDirection relationDirection)
+        private PositionedRelation[] getPositionedRelationsForThisPort(RailTopology railTopology, tNodePort nodePort, MicroLink currentTrack, RelationDirection relationDirection)
         {
             IList<PositionedRelation> positionedRelations = new List<PositionedRelation>();
 
-            IList<MicroLinkRelation> tracksToGoTo = whereCanIGoThroughThisPort(railTopology, nodePort.nodeRef, nodePort.portIndex);
+            MicroLinkRelation[] tracksToGoTo = whereCanIGoThroughThisPort(railTopology, nodePort.nodeRef, nodePort.portIndex);
 
             foreach (MicroLinkRelation tToGoToRelation in tracksToGoTo)
             {
@@ -124,10 +124,10 @@ namespace Services.Managers.Topology
                 positionedRelations.Add(trackRelation);
             }
 
-            return positionedRelations;
+            return positionedRelations.ToArray();
         }
 
-        private IList<PositionedRelation> AddRangeDistinct(IList<PositionedRelation> sourceList, IList<PositionedRelation> addingList)
+        private IList<PositionedRelation> AddRangeDistinct(IList<PositionedRelation> sourceList, PositionedRelation[] addingList)
         {
             foreach (PositionedRelation addition in addingList)
             {
@@ -157,8 +157,8 @@ namespace Services.Managers.Topology
 
             foreach (MicroLink currentTrack in railTopology.MicroLinks)
             {
-                IList<PositionedRelation> relationsAtFromPort = getPositionedRelationsForThisPort(railTopology, currentTrack.FromMicroNode, currentTrack, RelationDirection.ONWARDS);
-                IList<PositionedRelation> relationsAtToPort = getPositionedRelationsForThisPort(railTopology, currentTrack.ToMicroNode, currentTrack, RelationDirection.BACKWARDS);
+                PositionedRelation[] relationsAtFromPort = getPositionedRelationsForThisPort(railTopology, currentTrack.FromMicroNode, currentTrack, RelationDirection.ONWARDS);
+                PositionedRelation[] relationsAtToPort = getPositionedRelationsForThisPort(railTopology, currentTrack.ToMicroNode, currentTrack, RelationDirection.BACKWARDS);
 
                 positionedRelations = AddRangeDistinct(positionedRelations, relationsAtFromPort);
                 positionedRelations = AddRangeDistinct(positionedRelations, relationsAtToPort);

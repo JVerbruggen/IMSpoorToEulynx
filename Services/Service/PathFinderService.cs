@@ -1,9 +1,7 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace Services.Service
 {
@@ -82,8 +80,6 @@ namespace Services.Service
 
         public PositioningNetElement[] FindShortestPath(PositionedRelation[] positionedRelations, PositioningNetElement[] positioningNetElements, PositioningNetElement start, PositioningNetElement end)
         {
-
-
             IList<PositioningNetElement> shortestPath = new List<PositioningNetElement>();
 
             IList<Vertex> vertices = positioningNetElements.Select(x => new Vertex(x)).ToList();

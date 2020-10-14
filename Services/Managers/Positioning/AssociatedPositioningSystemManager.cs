@@ -1,9 +1,10 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.Managers.Base;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Services.Managers.Positioning
@@ -12,7 +13,7 @@ namespace Services.Managers.Positioning
     {
         public AssociatedPositioningSystem[] GetAssociatedPositioningSystems(string trackFunctionalViewRef)
         {
-            List<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
+            IList<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
 
             tSituation situation = InstanceManager.Singleton<tSituation>().GetInstance();
             RailImplementation implementation = situation.RailInfrastructure.RailImplementation;

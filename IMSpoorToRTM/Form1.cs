@@ -1,6 +1,6 @@
 ﻿using Models.File;
-using Models.TopoModels.Eulynx;
-using Models.TopoModels.IMSpoor;
+using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Models.Translation;
 using Services.DependencyInjection;
@@ -34,8 +34,8 @@ namespace FormsApp
             textBox_IMSpoorXML.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\IMSpoor-1.3.0-actual.xml";
             updateConversionButtonState();
 
-            Models.TopoModels.Eulynx.Signal signal = new Models.TopoModels.Eulynx.Signal();
-            tElementWithIDref signalRef = signal;
+            //Signal signal = new Models.TopoModels.Eulynx.EULYNX_Signalling.Signal();
+            //tElementWithIDref signalRef = signal;
 
             
         }
@@ -106,9 +106,6 @@ namespace FormsApp
             }
 
             XDocument doc = XDocument.Load(filePath);
-            var s = doc.XPathSelectElement("//Situation", namespaceManager);
-            var imSpoor = from el in doc.Elements()
-                          select el;
 
             //xmlFileReadService = new ReadXMLFileService(filePath, namespaceManager);
             //IEnumerable<XElement> doc = xmlFileReadService.Read("./imspoor/situation");
@@ -124,7 +121,7 @@ namespace FormsApp
 
         private void button_startConversion_Click(object sender, EventArgs e)
         {
-            startConversionXElementIMSpoor();
+            startConversionIMSpoor();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

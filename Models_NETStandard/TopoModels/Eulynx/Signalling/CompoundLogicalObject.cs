@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx
+namespace Models.TopoModels.Eulynx.EULYNX_Signalling
 {
     public partial class CompoundLogicalObject
     {

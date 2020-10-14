@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
 using System;
 using System.IO;
 using System.Text;

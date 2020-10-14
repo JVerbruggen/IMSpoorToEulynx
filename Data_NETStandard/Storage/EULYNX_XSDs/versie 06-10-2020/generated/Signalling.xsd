@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:rtmNE="http://www.railtopomodel.org/schemas/NetEntity" xmlns:rtmSig="http://www.railtopomodel.org/schemas/Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/Signalling">
+  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <xs:import namespace="http://www.railtopomodel.org/schemas/NetEntity" schemaLocation="NetEntity.xsd"/>
+  <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
+  <xs:element name="tpsDevice" type="rtmSig:TpsDevice"/>
+  <xs:complexType name="TpsDevice">
+    <xs:annotation>
+      <xs:documentation>Device that transmits train protection information to a passing train.
+E.g. crocodile, (Euro-)balise, magnet, loop.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmSig:OnTrackSignallingDevice"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="onTrackSignallingDevice" type="rtmSig:OnTrackSignallingDevice"/>
+  <xs:complexType abstract="true" name="OnTrackSignallingDevice">
+    <xs:annotation>
+      <xs:documentation>Superclass for all on-track signalling devices. Encompasses balises, axle counting heads, LZB cables, etc.
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmNE:LocatedNetEntity"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="turnout" type="rtmSig:Turnout"/>
+  <xs:complexType name="Turnout">
+    <xs:annotation>
+      <xs:documentation>A system where tracks divert, cross or that derails railway traffic.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmNE:LocatedNetEntity"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="vehicleStop" type="rtmSig:VehicleStop"/>
+  <xs:complexType name="VehicleStop">
+    <xs:annotation>
+      <xs:documentation>Installation for physically stopping trains. The track may continue beyond the device. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmNE:LocatedNetEntity"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="vehiclePassageDetector" type="rtmSig:VehiclePassageDetector"/>
+  <xs:complexType name="VehiclePassageDetector">
+    <xs:annotation>
+      <xs:documentation>Line-side device for detecting passage of a rail vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmSig:OnTrackSignallingDevice"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="signal" type="rtmSig:Signal"/>
+  <xs:complexType name="Signal">
+    <xs:annotation>
+      <xs:documentation>Apparatus by means of which a conventional visual or acoustic indication is given, generally concerning the movements of railway vehicles.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmNE:LocatedNetEntity"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tpsSpotDevice" type="rtmSig:TpsSpotDevice"/>
+  <xs:complexType name="TpsSpotDevice">
+    <xs:complexContent>
+      <xs:extension base="rtmSig:TpsDevice"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="routeBody" type="rtmSig:RouteBody"/>
+  <xs:complexType name="RouteBody">
+    <xs:annotation>
+      <xs:documentation>A route body is a linear location, i.e. a closed topological subset of the network, without any branches.
+
+EULYNX DP defines:
+&lt;ul&gt;
+ &lt;li&gt;A route &lt;i&gt;body &lt;/i&gt;has an entry- and exit.&lt;/li&gt;
+ &lt;li&gt;The positions of points that the train encounters in the route body, either facing or trailing, &lt;i&gt;can&lt;/i&gt; be given.&lt;/li&gt;
+&lt;/ul&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="rtmNE:LocatedNetEntity"/>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
+

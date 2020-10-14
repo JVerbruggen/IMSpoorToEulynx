@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Models.TopoModels.IMSpoor;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Models.Translation;

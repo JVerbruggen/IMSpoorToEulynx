@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.Managers.Base;
 using System;
@@ -7,25 +7,25 @@ using System.Text;
 
 namespace Services.Managers.Assets
 {
-    public class TurnoutManager : ItemManager<Turnout1>
+    public class TurnoutManager : ItemManager<Turnout>
     {
-        public Turnout1 GetTurnout(tJunction junction)
+        public Turnout GetTurnout(tJunction junction)
         {
-            Turnout1 turnout = null;
+            Turnout turnout = null;
 
             if(junction is SingleSwitch)
             {
-                var crossing = new Models.TopoModels.Eulynx.Crossing();
+                var crossing = new Models.TopoModels.Eulynx.EULYNX_Signalling.Crossing();
                 crossing.isOfCrossingType = CrossingTypes.simple;
             }
             else if(junction is DoubleDiamondCrossing)
             {
-                var crossing = new Models.TopoModels.Eulynx.Crossing();
+                var crossing = new Models.TopoModels.Eulynx.EULYNX_Signalling.Crossing();
                 crossing.isOfCrossingType = CrossingTypes.doubleSlip;
             }
             else if(junction is SingleDiamondCrossing)
             {
-                var crossing = new Models.TopoModels.Eulynx.Crossing();
+                var crossing = new Models.TopoModels.Eulynx.EULYNX_Signalling.Crossing();
                 crossing.isOfCrossingType = CrossingTypes.singleSlip;
             }
             else if(junction is Models.TopoModels.IMSpoor.V1_3_0.Crossing)
