@@ -16,6 +16,7 @@ namespace Services.Managers.Base
 
         public void Register(T t)
         {
+            if (SavedItems.Contains(t)) return;
             SavedItems.Add(t);
         }
     }

@@ -1,4 +1,7 @@
 ﻿using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.Eulynx.EULYNX_XSD;
+using Services.DependencyInjection;
+using Services.Managers.Topology;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -132,6 +135,23 @@ namespace Services.Service
             Vertex[] prev = savedVertices.Select(x => x.Prev).ToArray();
 
             return shortestPath.ToArray();
+        }
+
+        public PositioningNetElement[] FindShortestPath(Eulynx eulynx, string refStartNetElement, string refEndNetElement)
+        {
+            if (eulynx == null) return null;
+
+            PositioningNetElementManager positioningNetElementManager = InstanceManager.Singleton<PositioningNetElementManager>().GetInstance();
+
+            PositionedRelation[] relations = eulynx.ownsRtmEntities.usesTrackTopology.usesPositionedRelation;
+            PositioningNetElement[] netElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
+
+            PositioningNetElement startNetElement = positioningNetElementManager.Find(netElements, refStartNetElement);
+            PositioningNetElement endNetElement = positioningNetElementManager.Find(netElements, refEndNetElement);
+
+            PositioningNetElement[] shortestPath = FindShortestPath(relations, netElements, startNetElement, endNetElement);
+
+            return shortestPath;
         }
     }
 }

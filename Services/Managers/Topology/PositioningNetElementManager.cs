@@ -2,6 +2,7 @@
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.Managers.Base;
+using Services.Managers.Location;
 using Services.Managers.Positioning;
 using System;
 using System.Collections.Generic;
@@ -28,5 +29,6 @@ namespace Services.Managers.Topology
 
             return positioningNetElements.ToArray();
         }
+
     }
 }

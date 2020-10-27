@@ -1,6 +1,7 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Models.TopoModels.Eulynx.Common
@@ -34,6 +35,11 @@ namespace Models.TopoModels.Eulynx.Common
             return this.uuid == baseObject.uuid;
         }
 
+        public bool Equals(tElementWithIDref idRef)
+        {
+            return this.uuid == idRef.@ref;
+        }
+
         public static implicit operator tElementWithIDref(BaseObject bo)
         {
             return new tElementWithIDref(bo.uuid);
@@ -47,6 +53,21 @@ namespace Models.TopoModels.Eulynx.Common
         public override string ToString()
         {
             return base.ToString();
+        }
+
+        public static T[] Find<T>(T[] allElements, tElementWithIDref[] needles) where T : BaseObject
+        {
+            var allElementsList = allElements.ToList();
+            var e = needles.Any(idRef => idRef.@ref == "ff442c00-0082-496f-9f41-461ac9cb55ab");
+
+            //allElementsList.Where(element => needles.Any(needle => element.uuid == needle.@ref))
+
+            return allElements.ToList().Where(element => (needles.Any(idRef => idRef.@ref.Equals(element.uuid)))).ToArray();
+        }
+
+        public static T[] Find<T>(T[] allElements, tElementWithIDref needle) where T : BaseObject
+        {
+            return allElements.ToList().Where(element => needle.@ref.Equals(element.uuid)).ToArray();
         }
     }
 }

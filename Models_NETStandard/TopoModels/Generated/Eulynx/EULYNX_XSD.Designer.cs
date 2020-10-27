@@ -18,9 +18,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
     using Models.TopoModels.Eulynx.EULYNX_Signalling;
     using Models.TopoModels.Eulynx.DB;
     using Models.TopoModels.Eulynx.NR;
-    using Models.TopoModels.Eulynx.ProRail;
     using Models.TopoModels.Eulynx.SNCF;
-    using Models.TopoModels.Eulynx.TRV;
     using System.Xml;
     
     
@@ -258,10 +256,10 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
     public partial class RtmEntities : BaseObject1
     {
         #region Private fields
-        private VehicleStop[] _ownsBufferstop;
-        private Turnout[] _ownsPoint;
-        private EULYNX_Signalling.RouteBody[] _ownsRouteBody;
-        private Signal[] _ownsSignal;
+        private Signalling.VehicleStop[] _ownsBufferstop;
+        private Signalling.Turnout[] _ownsPoint;
+        private Signalling.RouteBody[] _ownsRouteBody;
+        private Signalling.Signal[] _ownsSignal;
         private AlignmentCurve[] _usesAlignmentCurve;
         private CablingTopology _usesCablingTopology;
         private HorizontalAlignmentSegment[] _usesHorizontalAlignmentSegment;
@@ -275,7 +273,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         #endregion
         
         [XmlElement("ownsBufferstop", Order=0)]
-        public VehicleStop[] ownsBufferstop
+        public Signalling.VehicleStop[] ownsBufferstop
         {
             get
             {
@@ -288,7 +286,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         }
         
         [XmlElement("ownsPoint", Order=1)]
-        public Turnout[] ownsPoint
+        public Signalling.Turnout[] ownsPoint
         {
             get
             {
@@ -301,7 +299,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         }
         
         [XmlElement("ownsRouteBody", Order=2)]
-        public EULYNX_Signalling.RouteBody[] ownsRouteBody
+        public Signalling.RouteBody[] ownsRouteBody
         {
             get
             {
@@ -314,7 +312,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         }
         
         [XmlElement("ownsSignal", Order=3)]
-        public Signal[] ownsSignal
+        public Signalling.Signal[] ownsSignal
         {
             get
             {
@@ -507,750 +505,6 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         }
     }
     
-    [XmlIncludeAttribute(typeof(TdsDesignation))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="Designation", Namespace="http://www.railtopomodel.org/schemas/DB")]
-    public partial class Designation4 : Designation
-    {
-        #region Private fields
-        private int _index;
-        private string _localName;
-        private string _longNameLayoutPlan;
-        private string _nameInTable;
-        private string _nameOnSite;
-        private string _shortNameLayoutPlan;
-        #endregion
-        
-        [XmlAttribute]
-        public int index
-        {
-            get
-            {
-                return _index;
-            }
-            set
-            {
-                _index = value;
-            }
-        }
-        
-        [XmlAttribute]
-        public string localName
-        {
-            get
-            {
-                return _localName;
-            }
-            set
-            {
-                _localName = value;
-            }
-        }
-        
-        [XmlAttribute]
-        public string longNameLayoutPlan
-        {
-            get
-            {
-                return _longNameLayoutPlan;
-            }
-            set
-            {
-                _longNameLayoutPlan = value;
-            }
-        }
-        
-        [XmlAttribute]
-        public string nameInTable
-        {
-            get
-            {
-                return _nameInTable;
-            }
-            set
-            {
-                _nameInTable = value;
-            }
-        }
-        
-        [XmlAttribute]
-        public string nameOnSite
-        {
-            get
-            {
-                return _nameOnSite;
-            }
-            set
-            {
-                _nameOnSite = value;
-            }
-        }
-        
-        [XmlAttribute]
-        public string shortNameLayoutPlan
-        {
-            get
-            {
-                return _shortNameLayoutPlan;
-            }
-            set
-            {
-                _shortNameLayoutPlan = value;
-            }
-        }
-    }
-    
-    [XmlIncludeAttribute(typeof(FullDesignation))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="Designation", Namespace="http://www.railtopomodel.org/schemas/NR")]
-    public partial class Designation3 : Designation
-    {
-        #region Private fields
-        private string _longName;
-        #endregion
-        
-        [XmlAttribute]
-        public string longName
-        {
-            get
-            {
-                return _longName;
-            }
-            set
-            {
-                _longName = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="Designation", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
-    public partial class Designation2 : Designation
-    {
-        #region Private fields
-        private string _areaName;
-        private string _areaType;
-        private string _assetName;
-        private string _assetType;
-        #endregion
-        
-        [XmlAttribute]
-        public string areaName
-        {
-            get
-            {
-                return _areaName;
-            }
-            set
-            {
-                _areaName = value;
-            }
-        }
-        
-        [XmlAttribute]
-        public string areaType
-        {
-            get
-            {
-                return _areaType;
-            }
-            set
-            {
-                _areaType = value;
-            }
-        }
-        
-        [XmlAttribute]
-        public string assetName
-        {
-            get
-            {
-                return _assetName;
-            }
-            set
-            {
-                _assetName = value;
-            }
-        }
-        
-        [XmlAttribute]
-        public string assetType
-        {
-            get
-            {
-                return _assetType;
-            }
-            set
-            {
-                _assetType = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="LevelCrossingTimerSet", Namespace="http://www.railtopomodel.org/schemas/DB")]
-    public partial class LevelCrossingTimerSet2 : LevelCrossingTimerSet
-    {
-        #region Private fields
-        private Duration _hasAdditionalTimer;
-        private Duration _hasLeadTimer;
-        #endregion
-        
-        [XmlElement(Order=0)]
-        public Duration hasAdditionalTimer
-        {
-            get
-            {
-                if ((_hasAdditionalTimer == null))
-                {
-                    _hasAdditionalTimer = new Duration();
-                }
-                return _hasAdditionalTimer;
-            }
-            set
-            {
-                _hasAdditionalTimer = value;
-            }
-        }
-        
-        [XmlElement(Order=1)]
-        public Duration hasLeadTimer
-        {
-            get
-            {
-                if ((_hasLeadTimer == null))
-                {
-                    _hasLeadTimer = new Duration();
-                }
-                return _hasLeadTimer;
-            }
-            set
-            {
-                _hasLeadTimer = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="RouteBody", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
-    public partial class RouteBody3 : ProRail.RouteBody
-    {
-        #region Private fields
-        private bool _hasMovableOverheadLine;
-        #endregion
-        
-        [XmlElement(Order=0)]
-        public bool hasMovableOverheadLine
-        {
-            get
-            {
-                return _hasMovableOverheadLine;
-            }
-            set
-            {
-                _hasMovableOverheadLine = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="RouteBody", Namespace="http://www.railtopomodel.org/schemas/SNCF")]
-    public partial class RouteBody2 : SNCF.RouteBody
-    {
-        #region Private fields
-        private tElementWithIDref[] _activatesTransit;
-        private tElementWithIDref[] _checksOpposingRouteLocking;
-        private SncfDirectionTypes _hasDirection;
-        #endregion
-        
-        [XmlElement("activatesTransit", Order=0)]
-        public tElementWithIDref[] activatesTransit
-        {
-            get
-            {
-                return _activatesTransit;
-            }
-            set
-            {
-                _activatesTransit = value;
-            }
-        }
-        
-        [XmlElement("checksOpposingRouteLocking", Order=1)]
-        public tElementWithIDref[] checksOpposingRouteLocking
-        {
-            get
-            {
-                return _checksOpposingRouteLocking;
-            }
-            set
-            {
-                _checksOpposingRouteLocking = value;
-            }
-        }
-        
-        [XmlElement(Order=2)]
-        public SncfDirectionTypes hasDirection
-        {
-            get
-            {
-                return _hasDirection;
-            }
-            set
-            {
-                _hasDirection = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Container for classes needed for signalling engineering and the Data Preparation. This acts as the root in an XSD file.
-    /// </summary>
-    [XmlIncludeAttribute(typeof(TpsLinearDevice))]
-    [XmlIncludeAttribute(typeof(AtbLoop))]
-    [XmlIncludeAttribute(typeof(AtbEgLoop))]
-    [XmlIncludeAttribute(typeof(AtbvvLoop))]
-    [XmlIncludeAttribute(typeof(AtbngLoop))]
-    [XmlIncludeAttribute(typeof(TpsSpotDevice1))]
-    [XmlIncludeAttribute(typeof(PzbDevice))]
-    [XmlIncludeAttribute(typeof(TpwsDevice))]
-    [XmlIncludeAttribute(typeof(ApcMagnet))]
-    [XmlIncludeAttribute(typeof(AwsMagnet))]
-    [XmlIncludeAttribute(typeof(TripcockTester))]
-    [XmlIncludeAttribute(typeof(TrainStop))]
-    [XmlIncludeAttribute(typeof(AtpBeacon))]
-    [XmlIncludeAttribute(typeof(AtbvvBeacon))]
-    [XmlIncludeAttribute(typeof(AtbngBeacon))]
-    [XmlIncludeAttribute(typeof(Crocodile))]
-    [XmlIncludeAttribute(typeof(Detonator))]
-    [XmlIncludeAttribute(typeof(Balise))]
-    [XmlIncludeAttribute(typeof(AtcBalise))]
-    [XmlIncludeAttribute(typeof(KvbBalise))]
-    [XmlIncludeAttribute(typeof(KvbDigitalBalise))]
-    [XmlIncludeAttribute(typeof(KvbAnalogBalise))]
-    [XmlIncludeAttribute(typeof(EtcsBalise))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="TpsDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
-    public partial class TpsDevice1 : TrackAsset
-    {
-        #region Private fields
-        private tElementWithIDref _implementsTpsDataTxSystem;
-        private tElementWithIDref _isLocatedAt;
-        private int _positionInSystem;
-        #endregion
-        
-        [XmlElement(Order=0)]
-        public tElementWithIDref implementsTpsDataTxSystem
-        {
-            get
-            {
-                if ((_implementsTpsDataTxSystem == null))
-                {
-                    _implementsTpsDataTxSystem = new tElementWithIDref();
-                }
-                return _implementsTpsDataTxSystem;
-            }
-            set
-            {
-                _implementsTpsDataTxSystem = value;
-            }
-        }
-        
-        /// <summary>
-        /// Can be located on <i>1..* </i>spot locations because the route junction is typically situated at the end or start of 1..* net elements.
-        /// </summary>
-        [XmlElement(Order=1)]
-        public tElementWithIDref isLocatedAt
-        {
-            get
-            {
-                if ((_isLocatedAt == null))
-                {
-                    _isLocatedAt = new tElementWithIDref();
-                }
-                return _isLocatedAt;
-            }
-            set
-            {
-                _isLocatedAt = value;
-            }
-        }
-        
-        [XmlElement(Order=2)]
-        public int positionInSystem
-        {
-            get
-            {
-                return _positionInSystem;
-            }
-            set
-            {
-                _positionInSystem = value;
-            }
-        }
-    }
-    
-    [XmlIncludeAttribute(typeof(PzbDevice))]
-    [XmlIncludeAttribute(typeof(TpwsDevice))]
-    [XmlIncludeAttribute(typeof(ApcMagnet))]
-    [XmlIncludeAttribute(typeof(AwsMagnet))]
-    [XmlIncludeAttribute(typeof(TripcockTester))]
-    [XmlIncludeAttribute(typeof(TrainStop))]
-    [XmlIncludeAttribute(typeof(AtpBeacon))]
-    [XmlIncludeAttribute(typeof(AtbvvBeacon))]
-    [XmlIncludeAttribute(typeof(AtbngBeacon))]
-    [XmlIncludeAttribute(typeof(Crocodile))]
-    [XmlIncludeAttribute(typeof(Detonator))]
-    [XmlIncludeAttribute(typeof(Balise))]
-    [XmlIncludeAttribute(typeof(AtcBalise))]
-    [XmlIncludeAttribute(typeof(KvbBalise))]
-    [XmlIncludeAttribute(typeof(KvbDigitalBalise))]
-    [XmlIncludeAttribute(typeof(KvbAnalogBalise))]
-    [XmlIncludeAttribute(typeof(EtcsBalise))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="TpsSpotDevice", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
-    public partial class TpsSpotDevice1 : TpsDevice1
-    {
-    }
-    
-    /// <summary>
-    /// Container for classes needed for signalling engineering and the Data Preparation. This acts as the root in an XSD file.
-    /// </summary>
-    [XmlIncludeAttribute(typeof(BufferStop))]
-    [XmlIncludeAttribute(typeof(SandHump))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="VehicleStop", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
-    public partial class VehicleStop1 : TrackAsset
-    {
-        #region Private fields
-        private VehicleStopTypes _isOfVehicleStopType;
-        private tElementWithIDref _refersToRtmVehicleStop;
-        private tElementWithIDref[] _stopsVehicleAtLocation;
-        #endregion
-        
-        [XmlElement(Order=0)]
-        public VehicleStopTypes isOfVehicleStopType
-        {
-            get
-            {
-                return _isOfVehicleStopType;
-            }
-            set
-            {
-                _isOfVehicleStopType = value;
-            }
-        }
-        
-        [XmlElement(Order=1)]
-        public tElementWithIDref refersToRtmVehicleStop
-        {
-            get
-            {
-                if ((_refersToRtmVehicleStop == null))
-                {
-                    _refersToRtmVehicleStop = new tElementWithIDref();
-                }
-                return _refersToRtmVehicleStop;
-            }
-            set
-            {
-                _refersToRtmVehicleStop = value;
-            }
-        }
-        
-        [XmlElement("stopsVehicleAtLocation", Order=2)]
-        public tElementWithIDref[] stopsVehicleAtLocation
-        {
-            get
-            {
-                return _stopsVehicleAtLocation;
-            }
-            set
-            {
-                _stopsVehicleAtLocation = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="LevelCrossingSystem", Namespace="http://www.railtopomodel.org/schemas/DB")]
-    public partial class LevelCrossingSystem2 : LevelCrossingSystem
-    {
-        #region Private fields
-        private LevelCrossingProtectionTypes _isOfLxProtectionType;
-        private LevelCrossingTechnologyTypes _isOfLxTechnologyType;
-        #endregion
-        
-        [XmlElement(Order=0)]
-        public LevelCrossingProtectionTypes isOfLxProtectionType
-        {
-            get
-            {
-                return _isOfLxProtectionType;
-            }
-            set
-            {
-                _isOfLxProtectionType = value;
-            }
-        }
-        
-        [XmlElement(Order=1)]
-        public LevelCrossingTechnologyTypes isOfLxTechnologyType
-        {
-            get
-            {
-                return _isOfLxTechnologyType;
-            }
-            set
-            {
-                _isOfLxTechnologyType = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Container for classes needed for signalling engineering and the Data Preparation. This acts as the root in an XSD file.
-    /// </summary>
-    [XmlIncludeAttribute(typeof(TdsComponent))]
-    [XmlIncludeAttribute(typeof(AxleCountingHead))]
-    [XmlIncludeAttribute(typeof(InsulatedRailJoint))]
-    [XmlIncludeAttribute(typeof(ElectricJoint))]
-    [XmlIncludeAttribute(typeof(VehicleSensor))]
-    [XmlIncludeAttribute(typeof(DerailmentDetector))]
-    [XmlIncludeAttribute(typeof(TcSensor))]
-    [XmlIncludeAttribute(typeof(TcSensorCombined))]
-    [XmlIncludeAttribute(typeof(Loop))]
-    [XmlIncludeAttribute(typeof(Treadle))]
-    [XmlIncludeAttribute(typeof(EMSensor))]
-    [XmlIncludeAttribute(typeof(BufferSensor))]
-    [XmlIncludeAttribute(typeof(DepressionBar))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="VehiclePassageDetector", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
-    public abstract partial class VehiclePassageDetector1 : TrackAsset
-    {
-        #region Private fields
-        private tElementWithIDref[] _isConstrainedByPositionOf;
-        private tElementWithIDref _occupiesTdsSection;
-        private tElementWithIDref _refersToRtmTrainPassageDetector;
-        #endregion
-        
-        [XmlElement("isConstrainedByPositionOf", Order=0)]
-        public tElementWithIDref[] isConstrainedByPositionOf
-        {
-            get
-            {
-                return _isConstrainedByPositionOf;
-            }
-            set
-            {
-                _isConstrainedByPositionOf = value;
-            }
-        }
-        
-        [XmlElement(Order=1)]
-        public tElementWithIDref occupiesTdsSection
-        {
-            get
-            {
-                if ((_occupiesTdsSection == null))
-                {
-                    _occupiesTdsSection = new tElementWithIDref();
-                }
-                return _occupiesTdsSection;
-            }
-            set
-            {
-                _occupiesTdsSection = value;
-            }
-        }
-        
-        [XmlElement(Order=2)]
-        public tElementWithIDref refersToRtmTrainPassageDetector
-        {
-            get
-            {
-                if ((_refersToRtmTrainPassageDetector == null))
-                {
-                    _refersToRtmTrainPassageDetector = new tElementWithIDref();
-                }
-                return _refersToRtmTrainPassageDetector;
-            }
-            set
-            {
-                _refersToRtmTrainPassageDetector = value;
-            }
-        }
-    }
-    
-    [XmlIncludeAttribute(typeof(Derailer))]
-    [XmlIncludeAttribute(typeof(PointCrossing))]
-    [XmlIncludeAttribute(typeof(Point))]
-    [XmlIncludeAttribute(typeof(Crossing))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="Turnout", Namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling")]
-    public partial class Turnout1 : MovableSystem
-    {
-        #region Private fields
-        private MovableElement[] _isComposedOfMovableElement;
-        private tElementWithIDref _refersToRtmPoint;
-        #endregion
-        
-        [XmlElement("isComposedOfMovableElement", Order=0)]
-        public MovableElement[] isComposedOfMovableElement
-        {
-            get
-            {
-                return _isComposedOfMovableElement;
-            }
-            set
-            {
-                _isComposedOfMovableElement = value;
-            }
-        }
-        
-        [XmlElement(Order=1)]
-        public tElementWithIDref refersToRtmPoint
-        {
-            get
-            {
-                if ((_refersToRtmPoint == null))
-                {
-                    _refersToRtmPoint = new tElementWithIDref();
-                }
-                return _refersToRtmPoint;
-            }
-            set
-            {
-                _refersToRtmPoint = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="Signal", Namespace="http://www.railtopomodel.org/schemas/DB")]
-    public partial class Signal : EULYNX_Signalling.Signal
-    {
-        #region Private fields
-        private AreaValidityTypes _isValidInArea;
-        #endregion
-        
-        [XmlElement(Order=0)]
-        public AreaValidityTypes isValidInArea
-        {
-            get
-            {
-                return _isValidInArea;
-            }
-            set
-            {
-                _isValidInArea = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="FictitiousSignal", Namespace="http://www.railtopomodel.org/schemas/DB")]
-    public partial class FictitiousSignal2 : NonPhysicalSignal
-    {
-        #region Private fields
-        private FictitiousSignalFunctionTypes2[] _hasFunction;
-        #endregion
-        
-        [XmlElement("hasFunction", Order=0)]
-        public FictitiousSignalFunctionTypes2[] hasFunction
-        {
-            get
-            {
-                return _hasFunction;
-            }
-            set
-            {
-                _hasFunction = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [XmlTypeAttribute(TypeName="FictitiousSignalFunctionTypes", Namespace="http://www.railtopomodel.org/schemas/DB")]
-    public enum FictitiousSignalFunctionTypes2
-    {
-        entryInterlockingControlArea,
-        exitInterlockingControlArea,
-        shuntingEntryOrExit,
-        shuntingSidingEntry,
-        shuntingSidingExit,
-        trainEntryIntermediatePoint,
-        trainEntryWithoutSignal,
-        trainExitWithoutSignal,
-        trainExitOpenLine,
-        other,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="FictitiousSignal", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
-    public partial class FictitiousSignal1 : NonPhysicalSignal
-    {
-        #region Private fields
-        private FictitiousSignalFunctionTypes1 _hasFunction;
-        #endregion
-        
-        [XmlElement(Order=0)]
-        public FictitiousSignalFunctionTypes1 hasFunction
-        {
-            get
-            {
-                return _hasFunction;
-            }
-            set
-            {
-                _hasFunction = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [Serializable]
-    [XmlTypeAttribute(TypeName="FictitiousSignalFunctionTypes", Namespace="http://www.railtopomodel.org/schemas/ProRail")]
-    public enum FictitiousSignalFunctionTypes1
-    {
-        bufferstop,
-        stop,
-        operatedMainSignal,
-        limitOfProtectedArea,
-        optionalStop,
-    }
-    
     /// <summary>
     /// Container class for aspects as defined by the EULYNX SCI LS cluster.
     /// </summary>
@@ -1333,7 +587,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
     {
         #region Private fields
         private AssetAndState[] _knowsAssetAndState;
-        private TpsDevice1[] _ownsATPdevice;
+        private TpsDevice[] _ownsATPdevice;
         private Aspect[] _ownsAspect;
         private AssetGroup[] _ownsAssetGroup;
         private AssetUser[] _ownsAssetUser;
@@ -1423,8 +677,8 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         private TriggerAssignment[] _ownsTriggerAssignment;
         private TunnelSignal[] _ownsTunnelSignal;
         private TvpSection[] _ownsTvpSection;
-        private VehiclePassageDetector1[] _ownsVehiclePassageDetector;
-        private VehicleStop1[] _ownsVehicleStop;
+        private VehiclePassageDetector[] _ownsVehiclePassageDetector;
+        private VehicleStop[] _ownsVehicleStop;
         private ViaLocation[] _ownsViaLocation;
         #endregion
         
@@ -1442,7 +696,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         }
         
         [XmlElement("ownsATPdevice", Order=1)]
-        public TpsDevice1[] ownsATPdevice
+        public TpsDevice[] ownsATPdevice
         {
             get
             {
@@ -2628,7 +1882,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         }
         
         [XmlElement("ownsVehiclePassageDetector", Order=91)]
-        public VehiclePassageDetector1[] ownsVehiclePassageDetector
+        public VehiclePassageDetector[] ownsVehiclePassageDetector
         {
             get
             {
@@ -2641,7 +1895,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_XSD
         }
         
         [XmlElement("ownsVehicleStop", Order=92)]
-        public VehicleStop1[] ownsVehicleStop
+        public VehicleStop[] ownsVehicleStop
         {
             get
             {
