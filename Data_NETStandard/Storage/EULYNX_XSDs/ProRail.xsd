@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ProRail="http://www.railtopomodel.org/schemas/ProRail" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/ProRail">
-  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ProRail="http://www.railtopomodel.org/schemas/ProRail" xmlns:base="http://www.railtopomodel.org/schemas/EULYNX_XSD" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/ProRail">
+  <!--<dc:date>2020-10-27T18:02:58Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling" schemaLocation="EULYNX_Signalling.xsd"/>
+  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD" schemaLocation="EULYNX_XSD.xsd"/>
   <xs:element name="weightLimitMarker" type="ProRail:WeightLimitMarker"/>
   <xs:complexType name="WeightLimitMarker">
     <xs:annotation>
@@ -554,6 +555,12 @@ nl-NL: Vertrekspoor VR-Gebied</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="ProRail:DepartureTrack"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="signallingEntities" type="ProRail:SignallingEntities"/>
+  <xs:complexType name="SignallingEntities">
+    <xs:complexContent>
+      <xs:extension base="base:SignallingEntities"/>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="atbvvConnectionCabinet" type="ProRail:AtbvvConnectionCabinet"/>

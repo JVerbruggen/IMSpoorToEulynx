@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:SNCF="http://www.railtopomodel.org/schemas/SNCF" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/SNCF">
-  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:SNCF="http://www.railtopomodel.org/schemas/SNCF" xmlns:base="http://www.railtopomodel.org/schemas/EULYNX_XSD" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/SNCF">
+  <!--<dc:date>2020-10-27T18:02:58Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD" schemaLocation="EULYNX_XSD.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling" schemaLocation="EULYNX_Signalling.xsd"/>
   <xs:element name="ipcsLocking" type="SNCF:IpcsLocking"/>
@@ -20,7 +21,7 @@ D&amp;#232;s que l'intervalle n'est plus occup&amp;#233; et qu'il n'y a plus d'i
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="checksState" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>checks that lever or key release instrument is activated.</xs:documentation>
+              <xs:documentation>Checks that lever or key release instrument is activated.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>signalling:CompoundLogicalObjectAndState</ObjectTypeRef>
               </xs:appinfo>
@@ -40,7 +41,7 @@ D&amp;#232;s que l'intervalle n'est plus occup&amp;#233; et qu'il n'y a plus d'i
   </xs:complexType>
   <xs:simpleType name="SncfDirectionTypes">
     <xs:annotation>
-      <xs:documentation>Direction types in use with SNCF</xs:documentation>
+      <xs:documentation>Direction types in use with SNCF.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="odd">
@@ -155,7 +156,7 @@ fr-FR: paire transit et position de l' aiguille.</xs:documentation>
     <xs:sequence>
       <xs:element maxOccurs="1" minOccurs="0" name="checksIfMovableElementIsInPosition" type="signalling:MovableElementAndPosition">
         <xs:annotation>
-          <xs:documentation>fr-FR: V&amp;#233;rifie l'&amp;#233;tat du transit si l'aiguille est dans une position donn&amp;#233;e</xs:documentation>
+          <xs:documentation>fr-FR: V&amp;#233;rifie l'&amp;#233;tat du transit si l'aiguille est dans une position donn&amp;#233;e.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="checksTransit" type="rtmCommon:tElementWithIDref">
@@ -272,7 +273,7 @@ fr-FR: en talon gauche ou droite d'une aiguille </xs:documentation>
       <xs:documentation>Used case of single track, i.e. the opposing routes are part of one yard controlled by a single interlocking.
 
 fr-FR: Voie Unique (VU)
-Une voie unique dans le poste est une portion de voie d&amp;#233;limit&amp;#233; par deux signaux de sens contraire dos &amp;#224; dos. Est v&amp;#233;rifi&amp;#233; que le transit de sens contraire de la zone de la VU est lib&amp;#233;r&amp;#233;. Si c'est le cas, le sens de la VU est pris et l'itin&amp;#233;raire s'&amp;#233;tablit. </xs:documentation>
+Une voie unique dans le poste est une portion de voie d&amp;#233;limit&amp;#233;e par deux signaux de sens contraire dos &amp;#224; dos. Est v&amp;#233;rifi&amp;#233; que le transit de sens contraire de la zone de la VU est lib&amp;#233;r&amp;#233;. Si c'est le cas, le sens de la VU est pris et l'itin&amp;#233;raire s'&amp;#233;tablit. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="SNCF:TrackLocking">
@@ -523,11 +524,21 @@ fr-FR: Sens de l'itin&amp;#233;raire pair ou impair.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="signallingEntities" type="SNCF:SignallingEntities"/>
+  <xs:complexType name="SignallingEntities">
+    <xs:complexContent>
+      <xs:extension base="base:SignallingEntities">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTransit" type="SNCF:Transit"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="opposingRouteLocking" type="SNCF:OpposingRouteLocking"/>
   <xs:complexType abstract="true" name="OpposingRouteLocking">
     <xs:annotation>
-      <xs:documentation>A signal that provides entry to a route can only be opened when no opposing route is set. This prevents face-to-face movement.
-For this purpose, the system proves that sections in between opposing signals are not claimed for movement in the opposite direction.</xs:documentation>
+      <xs:documentation>Defines the configuration parameters needed to implement the exclusion of face-to-face movement.
+The system proves that sections in between opposing signals are not claimed for movement in the opposite direction. A signal that provides entry to a route can only be opened when no opposing route is set. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:ConfiguredBaseObject"/>
@@ -771,7 +782,7 @@ Source: SNCF document IG90169, paragraph 6.3.2</xs:documentation>
     <xs:annotation>
       <xs:documentation>Opposing route locking for routes in areas with points.
 fr-FR: Enclenchement de parcours banalis&amp;#233; (dans les zones &amp;#233;quip&amp;#233;es d'appareils de voie).
-Les conditions d'&amp;#233;tablissement de l'itin&amp;#233;raire ne requi&amp;#232;rent que la v&amp;#233;rification du transit de sens contraire en aval du signal origine de l'itin&amp;#233;raire (e.g. pour v&amp;#233;rifier qu'aucun intin&amp;#233;raire de sens contraire form&amp;#233; a pour destination un signal en amont du signal origine.) </xs:documentation>
+Les conditions d'&amp;#233;tablissement de l'itin&amp;#233;raire ne requi&amp;#232;rent que la v&amp;#233;rification du transit de sens contraire en aval du signal origine de l'itin&amp;#233;raire (e.g. pour v&amp;#233;rifier qu'aucun intin&amp;#233;raire de sens contraire form&amp;#233; a pour destination un signal en amont du signal origine). </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="SNCF:OpposingRouteLocking">
@@ -1017,7 +1028,7 @@ fr-FR: Enclenchement portant sur des portions de voie lin&amp;#233;aire, g&amp;#
         </xs:sequence>
         <xs:attribute name="betweenInterlockings" type="xs:boolean" use="required">
           <xs:annotation>
-            <xs:documentation>fr-FR: Enclenchement entre postes ou non</xs:documentation>
+            <xs:documentation>fr-FR: Enclenchement entre postes ou non.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -1027,12 +1038,12 @@ fr-FR: Enclenchement portant sur des portions de voie lin&amp;#233;aire, g&amp;#
   <xs:complexType name="Interval">
     <xs:annotation>
       <xs:documentation>Track between two signals equipped with an interlocked direction.
-fr-FR: Intervalle (portion de voie entre 2 signaux munie d'un enclenchement de sens).</xs:documentation>
+fr-FR: Intervalle. Portion de voie entre 2 signaux munie d'un enclenchement de sens.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="unbounded" minOccurs="1" name="hasTvpSections" type="rtmCommon:tElementWithIDref">
         <xs:annotation>
-          <xs:documentation>fr-Fr: L'intervalle est compos&amp;#233; de zones (sections TVP).</xs:documentation>
+          <xs:documentation>fr-Fr: L'intervalle est constitu&amp;#233; de zones (sections TVP).</xs:documentation>
           <xs:appinfo>
             <ObjectTypeRef>signalling:TvpSection</ObjectTypeRef>
           </xs:appinfo>

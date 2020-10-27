@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:DB="http://www.railtopomodel.org/schemas/DB" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/DB">
-  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:DB="http://www.railtopomodel.org/schemas/DB" xmlns:base="http://www.railtopomodel.org/schemas/EULYNX_XSD" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/DB">
+  <!--<dc:date>2020-10-27T18:02:58Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD" schemaLocation="EULYNX_XSD.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling" schemaLocation="EULYNX_Signalling.xsd"/>
   <xs:element name="flankProtectionNone" type="DB:FlankProtectionNone"/>
@@ -76,15 +77,7 @@ de-DE: Auswahl der Ma&amp;#223;nahme "Verzicht": Der Flankenschutz wird durch be
   <xs:complexType name="TdsDesignation">
     <xs:annotation>
       <xs:documentation>Bezeichnung einer FMA Anlage (Train detection section).
-zB. Freimeldeabschnitt 1 im Bahnhofsgleis 12 
-&lt;ul&gt;
- &lt;li&gt;localName=112&lt;/li&gt;
- &lt;li&gt;shortNameLayoutPlan = 112&lt;/li&gt;
- &lt;li&gt;longNameLayoutPlan = 13&lt;b&gt;G&lt;/b&gt;112&lt;/li&gt;
- &lt;li&gt;nameInTable = 13&lt;b&gt;G&lt;/b&gt;112&lt;/li&gt;
- &lt;li&gt;nameOnSite = 13&lt;b&gt;G&lt;/b&gt;112&lt;/li&gt;
- &lt;li&gt;&lt;i&gt;hasCodeLetter = &lt;/i&gt;&lt;b&gt;&lt;i&gt;G &lt;/i&gt;&lt;/b&gt;(Kennbuchstabe)&lt;/li&gt;
-&lt;/ul&gt;</xs:documentation>
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="DB:Designation">
@@ -241,13 +234,15 @@ de-DE: : Wahr wenn Nachlaufverhinderung aktiv. Das Nachlaufen der Weiche wird ve
   </xs:complexType>
   <xs:element name="levelCrossingActivationDelaySet" type="DB:LevelCrossingActivationDelaySet"/>
   <xs:complexType name="LevelCrossingActivationDelaySet">
+    <xs:annotation>
+      <xs:documentation>de-DE: B&amp;#252; Zeitverhalten</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:LevelCrossingActivationDelaySet">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="hasDefaultPartialTimer" type="rtmCommon:Duration">
             <xs:annotation>
-              <xs:documentation>CKL investigates the meaning of this. Needs to become composition to timer.
-de-DE: teilvorgabeZeit</xs:documentation>
+              <xs:documentation>de-DE: TeilvorgabeZeit</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="hasSupplierSpecificActivationDelay" type="rtmCommon:Duration">
@@ -361,7 +356,8 @@ de-DE: Kennbuchstabe</xs:documentation>
   </xs:complexType>
   <xs:simpleType name="CommunicationMediumTypes">
     <xs:annotation>
-      <xs:documentation>Types of physical communication layer type. </xs:documentation>
+      <xs:documentation>Types of physical communication layer type. 
+de-DE: Physikalische Auspr&amp;#228;gung des &amp;#220;bertragungsweges</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="cuAdo8">
@@ -423,8 +419,7 @@ de-DE: Kennbuchstabe</xs:documentation>
   <xs:complexType name="DriveCabinet">
     <xs:annotation>
       <xs:documentation>Cabinet housing a drive of a movable component or level crossing.
-
-DE: Schranken- oder Weichenantrieb</xs:documentation>
+DE: Schranken- oder Weichenantrieb. Eine Au&amp;#223;enelementansteuerung kann in einem Schranken- oder Weichenantrieb untergebracht sein.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:Cabinet"/>
@@ -645,7 +640,7 @@ de-DE: weitergabe</xs:documentation>
       </xs:enumeration>
       <xs:enumeration value="BAST">
         <xs:annotation>
-          <xs:documentation/>
+          <xs:documentation>de-DE: Betriebliche Aufgabenstellung</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="areaOverviewAndDetailedView">
@@ -831,20 +826,20 @@ A set of load and auxiliary files.</xs:documentation>
   </xs:complexType>
   <xs:element name="levelCrossingTimerSet" type="DB:LevelCrossingTimerSet"/>
   <xs:complexType name="LevelCrossingTimerSet">
+    <xs:annotation>
+      <xs:documentation>Set of configurable level crossing timers.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:LevelCrossingTimerSet">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="hasAdditionalTimer" type="rtmCommon:Duration">
             <xs:annotation>
-              <xs:documentation>Time during which the level crossing.... CKL investigates.
-
-de-DE: Nachlaufzeit</xs:documentation>
+              <xs:documentation>de-DE: Nachlaufzeit</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="hasLeadTimer" type="rtmCommon:Duration">
             <xs:annotation>
               <xs:documentation>Lead timer that activates the level crossing earlier.
-
 de-DE: B&amp;#220; Vorlaufzeit</xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -928,6 +923,9 @@ The code can be used to drive programming software.</xs:documentation>
   </xs:complexType>
   <xs:element name="signalType" type="DB:SignalType"/>
   <xs:complexType name="SignalType">
+    <xs:annotation>
+      <xs:documentation>Type of signal as defined by DB</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:SignalType">
         <xs:sequence>
@@ -938,6 +936,9 @@ The code can be used to drive programming software.</xs:documentation>
   </xs:complexType>
   <xs:element name="localOperationUiButton" type="DB:LocalOperationUiButton"/>
   <xs:complexType name="LocalOperationUiButton">
+    <xs:annotation>
+      <xs:documentation>de-DE: Bedienelement Taste</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:LocalOperationUiButton">
         <xs:sequence>
@@ -962,6 +963,9 @@ de-DE: Bereich wo besondere Lichtraumbedingungen vorhanden sind. Es werden nur d
   </xs:complexType>
   <xs:element name="activeAspect" type="DB:ActiveAspect"/>
   <xs:complexType name="ActiveAspect">
+    <xs:annotation>
+      <xs:documentation>de-DE: Geschalteter Teil des Signalbegriffes.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:ActiveAspect">
         <xs:sequence>
@@ -1119,17 +1123,6 @@ de-DE: NB-R: wie W, zus&amp;#228;tzlich Fahren mit Rangierstra&amp;#223;en inner
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:element name="message" type="DB:Message"/>
-  <xs:complexType name="Message">
-    <xs:annotation>
-      <xs:documentation>DB signal messages map to &lt;a href="$inet://http://confluence.plan-pro.org/display/G180/Signalbegriff"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Signalbegriffe&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; listed in RiL301.
-DB therefore doesn't need to extend the message (which is done class in the EULYNX DP signal message taxonomy)
-de-DE: Signalbegriff</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="signalling:AspectComposition"/>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="SourceOfLabelInformationTypes">
     <xs:annotation>
       <xs:documentation>Indicates the source of the text on the label.</xs:documentation>
@@ -1189,7 +1182,7 @@ de-DE: Wirksamkeit</xs:documentation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="HRL">
         <xs:annotation>
-          <xs:documentation/>
+          <xs:documentation>de-DE: Streuscheibegattungen</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="HG">
@@ -1284,10 +1277,17 @@ de-DE: Bandbreite in (k/M)bit pro Sekunde</xs:documentation>
     </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="ButtonFunctionTypes">
+    <xs:annotation>
+      <xs:documentation>List of functions that can be allocated to a button.
+de-DE: Funktionstypen die einer Taste zugeordnet werden k&amp;#246;nnen.</xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
   <xs:element name="localOperationUiSwitch" type="DB:LocalOperationUiSwitch"/>
   <xs:complexType name="LocalOperationUiSwitch">
+    <xs:annotation>
+      <xs:documentation>de-DE: Bedienelement Schalter</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:LocalOperationUiSwitch">
         <xs:sequence>
@@ -1297,6 +1297,10 @@ de-DE: Bandbreite in (k/M)bit pro Sekunde</xs:documentation>
     </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="SwitchFunctionTypes">
+    <xs:annotation>
+      <xs:documentation>de-DE: Funktionstypen die einem Schalter zugeordnet werden k&amp;#246;nnen.
+</xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
   <xs:simpleType name="DualFlankProtectionTypes">
@@ -1328,7 +1332,11 @@ Flankenschutzweiche, die durch die gleiche Fahrt in beiden Stellungen angeforder
     <xs:complexContent>
       <xs:extension base="signalling:LocalOperationDevice">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="0" name="hasBuzzerSoundingDuration" type="rtmCommon:Duration"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasBuzzerSoundingDuration" type="rtmCommon:Duration">
+            <xs:annotation>
+              <xs:documentation>de-DE: Hupdauer in Sekunden</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1336,7 +1344,7 @@ Flankenschutzweiche, die durch die gleiche Fahrt in beiden Stellungen angeforder
   <xs:simpleType name="NbrFunctionalityTypes">
     <xs:annotation>
       <xs:documentation>List of commands that the local operator can issue in zones classified as NB-R. 
-de-DE: F&amp;#252;r den Bediener soll das Bedienkommando im freigegebenen NB-Bereich m&amp;#246;glich sein. Das Planungsdatum ist im Regelwerk der DB AG nicht enthalten. Es ist nur im Lastenheft zu finden, das dem LST-Fachplaner nicht zur Verf&amp;#252;gung steht.</xs:documentation>
+de-DE: F&amp;#252;r den Bediener soll das Bedienkommando im freigegebenen NB-Bereich m&amp;#246;glich sein.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="awu">
@@ -1383,7 +1391,7 @@ de-DE: Bedienkommando „Weiche gegen umstellen sperren“. </xs:documentation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="LxOperationalPlugTypes">
+  <xs:simpleType name="LevelCrossingOperationalPlugTypes">
     <xs:annotation>
       <xs:documentation>de-DE: Betriebsartensteckertypen.</xs:documentation>
     </xs:annotation>
@@ -1466,8 +1474,9 @@ Die Flankenschutzweiche wird in der Linkslage verschlossen. </xs:documentation>
       </xs:enumeration>
       <xs:enumeration value="remote">
         <xs:annotation>
-          <xs:documentation>de-DE: Fernschutz
-Der Flankenschutz wird durch das n&amp;#228;chste Flankenschutzelement hergestellt. </xs:documentation>
+          <xs:documentation>when flank protection measure is remote, the remote flank protection measure is given. 
+de-DE: Fernschutz. Der Flankenschutz wird durch das n&amp;#228;chste Flankenschutzelement hergestellt. (Ersatzschutzma&amp;#223;nahme) 
+                                                   </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="none">
@@ -1539,29 +1548,35 @@ de-DE: Aufloesung einer nicht angefahrenen Rangierstra&amp;#223;e bei einer wend
 de-DE: Je Fahrstra&amp;#223;e zu zeigende Signalisierung, die sich nicht eindeutig aus den Stellwerksfunktionen ergibt. Der Verweis auf targetAspect ist optional da es nur bei verk&amp;#252;rztem Signalabstand eine Abh&amp;#228;ngigkeit zum Signalbegriff des Zielsignals gibt.
 </xs:documentation>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element name="appliesToRoute" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:Route</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="entryAspect" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:Aspect</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="targetAspect" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:Aspect</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
+    <xs:complexContent>
+      <xs:extension base="signalling:ConfiguredBaseObject">
+        <xs:sequence>
+          <xs:element name="appliesToRoute" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:Route</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="entryAspect" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>de-DE: Signalbegriff Einfahrsignal</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:Aspect</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="targetAspect" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>de-DE: Signalbegriff Ausfahrsignal</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:Aspect</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="SpecialGaugeTypes">
     <xs:annotation>
@@ -1743,7 +1758,8 @@ de-DE: Uebertragungsweg_Art</xs:documentation>
   </xs:simpleType>
   <xs:simpleType name="CommunicationTechnologyTypes">
     <xs:annotation>
-      <xs:documentation>de-DE: Technik_Art. Technische Auspr&amp;#228;gung der physikalischen Schnittstelle</xs:documentation>
+      <xs:documentation>Types of communication technology
+de-DE: Technik_Art. Technische Auspr&amp;#228;gung der physikalischen Schnittstelle</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="analogueFsk">
@@ -1784,7 +1800,7 @@ de-DE: SBI-intern LWL-Faser</xs:documentation>
     <xs:complexContent>
       <xs:extension base="signalling:LevelCrossingLocalOperationUiElement">
         <xs:sequence>
-          <xs:element name="hasFunctionType" type="DB:LcUiFunctionTypes"/>
+          <xs:element name="hasFunctionType" type="DB:LevelCrossingUiFunctionTypes"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1827,7 +1843,7 @@ de-DE: laufende Nummer Telegrammspezifikation gem&amp;#228;&amp;#223; Ril 819.13
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="LcUiFunctionTypes">
+  <xs:simpleType name="LevelCrossingUiFunctionTypes">
     <xs:annotation>
       <xs:documentation>List of function types that a switch or button for a level crossing can fulfil.
 de-DE: </xs:documentation>
@@ -2051,12 +2067,15 @@ Die Bezeichnung besteht i. d. R. ausschlie&amp;#223;lich aus dem &amp;#214;rtlic
   </xs:complexType>
   <xs:element name="selfSupervisedLevelCrossingSystem" type="DB:SelfSupervisedLevelCrossingSystem"/>
   <xs:complexType name="SelfSupervisedLevelCrossingSystem">
+    <xs:annotation>
+      <xs:documentation>de-DE: F&amp;#252;-B&amp;#220;, Fern&amp;#252;berwachter Bahn&amp;#252;bergang</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:SelfSupervisedLevelCrossing">
         <xs:sequence>
           <xs:element name="hasTimeOut" type="rtmCommon:Duration">
             <xs:annotation>
-              <xs:documentation>Timer starts when train is announced (? CKL investigates).
+              <xs:documentation>Timer starts when train is announced 
 de-DE: Zeit&amp;#252;berschreitungsmeldung.</xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -2075,7 +2094,7 @@ de-DE: st&amp;#246;rhaltmerkhinweis</xs:documentation>
         <xs:attribute name="malfunctionSignalClosure" type="xs:boolean" use="required">
           <xs:annotation>
             <xs:documentation>Tech note that an extra signal must be closed when the level crossing safety level is deemed insufficient. 
-de-DE: st&amp;#246;rhaltHaltfall</xs:documentation>
+de-DE: st&amp;#246;rhaltHaltfall. Haltfall des vor einem F&amp;#220;-B&amp;#220; liegenden Signals, wenn dieser gest&amp;#246;rt ist.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="reportsBatteryStatus" type="xs:boolean" use="required">
@@ -2158,6 +2177,9 @@ de-DE: physikalischer Kommunikationstr&amp;#228;ger</xs:documentation>
   </xs:complexType>
   <xs:element name="localOperationUiIndicator" type="DB:LocalOperationUiIndicator"/>
   <xs:complexType name="LocalOperationUiIndicator">
+    <xs:annotation>
+      <xs:documentation>de-DE: Melder</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:LocalOperationUiIndicator">
         <xs:sequence>
@@ -2172,10 +2194,13 @@ de-DE: physikalischer Kommunikationstr&amp;#228;ger</xs:documentation>
   </xs:complexType>
   <xs:element name="mainSignalProtectedLevelCrossing" type="DB:MainSignalProtectedLevelCrossing"/>
   <xs:complexType name="MainSignalProtectedLevelCrossing">
+    <xs:annotation>
+      <xs:documentation>de-DE: B&amp;#220; mit deckendem Signal (Haupt-/LS-Signal) </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:MainSignalProtectedLevelCrossing">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="0" name="hasOperationPlug" type="DB:LxOperationalPlugTypes">
+          <xs:element maxOccurs="1" minOccurs="0" name="hasOperationPlug" type="DB:LevelCrossingOperationalPlugTypes">
             <xs:annotation>
               <xs:documentation>A plug that modifies the behaviour of the level crossing control module
 DE: Weichenbetriebsartstecker.</xs:documentation>
@@ -2279,6 +2304,22 @@ de-DE: LzV</xs:documentation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:element name="signallingEntities" type="DB:SignallingEntities"/>
+  <xs:complexType name="SignallingEntities">
+    <xs:complexContent>
+      <xs:extension base="base:SignallingEntities">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsCommunicationRelation" type="DB:CommunicationRelation"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsDualFlankProtection" type="DB:DualFlankProtection"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsPzbRouteRelation" type="DB:PzbRouteRelation"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsRemainingShuntingRouteRelease" type="DB:RemainingShuntingRouteRelease"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsRouteSignalling" type="DB:RouteSignalling"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsShuntingTargetAuthDep" type="DB:ShuntingTargetAuthorityDependent"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsTpsToPointRelation" type="DB:TpsToPointRelation"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="attachment" type="DB:Attachment"/>
   <xs:complexType name="Attachment">
     <xs:annotation>
@@ -2438,6 +2479,9 @@ In Germany, one &lt;i&gt;may &lt;/i&gt;wish to associate a signal system with th
   </xs:complexType>
   <xs:element name="signalFunction" type="DB:SignalFunction"/>
   <xs:complexType name="SignalFunction">
+    <xs:annotation>
+      <xs:documentation>Signal function as defined by DB</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:SignalFunction">
         <xs:sequence>
@@ -2533,6 +2577,9 @@ Im Falle von Sonderh&amp;#246;he ist "hasPredefinedHeight=other, hasHeight=&lt;i
   </xs:complexType>
   <xs:element name="mainRoute" type="DB:MainRoute"/>
   <xs:complexType name="MainRoute">
+    <xs:annotation>
+      <xs:documentation>de-DE: Zugfahrstra&amp;#223;e</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:MainRoute">
         <xs:sequence>
@@ -2601,8 +2648,7 @@ Im Falle von Sonderh&amp;#246;he ist "hasPredefinedHeight=other, hasHeight=&lt;i
   <xs:element name="localOperatingArea" type="DB:LocalOperatingArea"/>
   <xs:complexType name="LocalOperatingArea">
     <xs:annotation>
-      <xs:documentation>de-DE: Nahbedienbereich
-nl-NL: Vrijgave Rangeren gebied</xs:documentation>
+      <xs:documentation>de-DE: Nahbedienbereich</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:LocalOperatingArea">
@@ -2625,7 +2671,8 @@ de-DE: NR-R Funktionen </xs:documentation>
   <xs:element name="shuntingTargetAuthorityDependent" type="DB:ShuntingTargetAuthorityDependent"/>
   <xs:complexType name="ShuntingTargetAuthorityDependent">
     <xs:annotation>
-      <xs:documentation>de-DE: Eine Rangierstra&amp;#223;e mit diesem Zielsignal ist nur einstellbar, wenn die Erlaubnis des Streckenblocks in Richtung Strecke zeigt. Abhaengigkeit einer auf ein Signal zufuehrenden Rangierstra&amp;#223;e von der Stellung der Erlaubnis einer Block Anlage. </xs:documentation>
+      <xs:documentation>A shunting route towards the referenced exit signal is allowed only when the referenced block is set in direction of the open line. 
+de-DE: Eine Rangierstra&amp;#223;e mit diesem Zielsignal ist nur einstellbar, wenn die Erlaubnis des Streckenblocks in Richtung Strecke zeigt. Abhaengigkeit einer auf ein Signal zufuehrenden Rangierstra&amp;#223;e von der Stellung der Erlaubnis einer Block Anlage. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:ConfiguredBaseObject">

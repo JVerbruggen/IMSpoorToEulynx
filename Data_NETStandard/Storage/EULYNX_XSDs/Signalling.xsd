@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:rtmNE="http://www.railtopomodel.org/schemas/NetEntity" xmlns:rtmSig="http://www.railtopomodel.org/schemas/Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/Signalling">
-  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <!--<dc:date>2020-10-27T18:02:58Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:import namespace="http://www.railtopomodel.org/schemas/NetEntity" schemaLocation="NetEntity.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:element name="tpsDevice" type="rtmSig:TpsDevice"/>

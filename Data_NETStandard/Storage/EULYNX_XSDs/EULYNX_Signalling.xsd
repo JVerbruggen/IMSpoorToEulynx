@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling">
-  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:rtmSig="http://www.railtopomodel.org/schemas/Signalling" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling">
+  <!--<dc:date>2020-10-27T18:02:58Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <xs:import namespace="http://www.railtopomodel.org/schemas/Signalling" schemaLocation="Signalling.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:simpleType name="ProjectPhaseTypes">
     <xs:restriction base="xs:string">
@@ -101,7 +102,7 @@ UTX joins two cable pits, as per the cable duct topology.
     </xs:sequence>
   </xs:complexType>
   <xs:element name="systemState" type="signalling:SystemState"/>
-  <xs:complexType abstract="true" name="SystemState">
+  <xs:complexType name="SystemState">
     <xs:annotation>
       <xs:documentation>A set of (asset,state) pairs that describes the state of the signalling system. </xs:documentation>
     </xs:annotation>
@@ -353,15 +354,8 @@ nl-NL: puntafbakening van het beinvloedingsgebied.</xs:documentation>
       <xs:documentation>List of sections included in the route body, ordered from entry to exit.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:RouteBodyProperty">
         <xs:sequence>
-          <xs:element name="appliesToRouteBody" type="rtmCommon:tElementWithIDref">
-            <xs:annotation>
-              <xs:appinfo>
-                <ObjectTypeRef>signalling:RouteBody</ObjectTypeRef>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element maxOccurs="unbounded" minOccurs="1" name="hasSection" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
@@ -398,7 +392,7 @@ nl-NL: puntafbakening van het beinvloedingsgebied.</xs:documentation>
       <xs:documentation>A pair (signal, message). 
 When instantiated, this provides a list of all possible (signal, message) pairs needed for constructing &lt;u&gt;signal plans&lt;/u&gt;. Pairs that are not in the list are disallowed. 
 
-An entry in the list would be for instance "signal 1105 shows yellow flashing".
+An entry in the list would be for instance "signal 1105 shows the message proceed with caution,  represented by yellow flashing".
 </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -413,9 +407,9 @@ An entry in the list would be for instance "signal 1105 shows yellow flashing".
           </xs:element>
           <xs:element name="showsMessage" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>A signal transmits a meaningful message to the train. The message can vary with the aspect of the signal.</xs:documentation>
+              <xs:documentation>The given signal sends this signal message to the train driver. </xs:documentation>
               <xs:appinfo>
-                <ObjectTypeRef>signalling:AspectComposition</ObjectTypeRef>
+                <ObjectTypeRef>signalling:SignalMessage</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -485,30 +479,34 @@ en-GB: ground frame</xs:documentation>
     <xs:annotation>
       <xs:documentation>The configuration of the line block working.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element name="appliesToLineBlockElement" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:BlockElement</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="hasBlockNormalisingWarning" type="xs:boolean">
-        <xs:annotation>
-          <xs:documentation>True if an acoustic warning sounds when the block is normalised.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="hasBlockSettingType" type="signalling:BlockSettingTypes">
-        <xs:annotation>
-          <xs:documentation>A block element sets the block in one or more of these ways.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="hasTrainOnLineWarning" type="xs:boolean">
-        <xs:annotation>
-          <xs:documentation>True if an acoustic warning sounds when a train approaches on the block.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
+    <xs:complexContent>
+      <xs:extension base="signalling:TrackAssetConfiguration">
+        <xs:sequence>
+          <xs:element name="appliesToLineBlockElement" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:BlockElement</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasBlockNormalisingWarning" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>True if an acoustic warning sounds when the block is normalised.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="hasBlockSettingType" type="signalling:BlockSettingTypes">
+            <xs:annotation>
+              <xs:documentation>A block element sets the block in one or more of these ways.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasTrainOnLineWarning" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>True if an acoustic warning sounds when a train approaches on the block.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="objectStatus" type="signalling:ObjectStatus"/>
   <xs:complexType abstract="true" name="ObjectStatus">
@@ -832,7 +830,7 @@ Need not to be filled in if irrelevant to signalling or unknown.</xs:documentati
       <xs:documentation>A connector used by track circuits.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="connectsToRail" type="signalling:LeftRight">
             <xs:annotation>
@@ -945,7 +943,7 @@ False: degrade to the given set of active aspects.</xs:documentation>
 Note: the end user can specialise this class to adapt it to national needs.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:AspectComposition"/>
+      <xs:extension base="signalling:AspectSet"/>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="etcsAcknowledgementMode" type="signalling:EtcsAcknowledgementMode"/>
@@ -1057,7 +1055,7 @@ The frequency and phase difference of flashing are given by national rules.
           <xs:element maxOccurs="2" minOccurs="2" name="appliesToAspect" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
-                <ObjectTypeRef>signalling:Aspect</ObjectTypeRef>
+                <ObjectTypeRef>signalling:ActiveAspect</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -1094,18 +1092,19 @@ de-DE: Ausweichanschlussstelle</xs:documentation>
       <xs:extension base="signalling:FieldObjectController">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="hasLeuPort" type="signalling:LeuPort"/>
-          <xs:element maxOccurs="1" minOccurs="0" name="isGovernedByMovableElement" type="rtmCommon:tElementWithIDref">
-            <xs:annotation>
-              <xs:documentation>Reference to a movable element that governs the LEU's output. Direct, typically a contact at the level of the point control or indirect via interlocking logic ??</xs:documentation>
-              <xs:appinfo>
-                <ObjectTypeRef>signalling:MovableElement</ObjectTypeRef>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element maxOccurs="2" minOccurs="0" name="isHousedInCabinet" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>signalling:LeuCabinet</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="isRelatedToMovableElement" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>The movable element associated with the LEU. Typically used to generate the designation of the LEU.
+</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:MovableElement</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -1124,31 +1123,26 @@ de-DE: Ausweichanschlussstelle</xs:documentation>
   <xs:element name="lineSideLinearConstruction" type="signalling:LineSideLinearConstruction"/>
   <xs:complexType name="LineSideLinearConstruction">
     <xs:annotation>
-      <xs:documentation>Technical line-side construction relevant to, but not planned by, signalling.
-Facade for devices like
+      <xs:documentation>Facade for linear located constructions like
 &lt;ul&gt;
  &lt;li&gt;Bridge&lt;/li&gt;
  &lt;li&gt;Tunnel&lt;/li&gt;
  &lt;li&gt;Noise protection barrier&lt;/li&gt;
 &lt;/ul&gt;</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element name="isLocatedAt" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>rtmCommon:LinearLocation</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="refersToCivilStructure" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:documentation>The line-side device, e.g. a bridge, may be registered as a civil structure.</xs:documentation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:CivilStructure</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
+    <xs:complexContent>
+      <xs:extension base="signalling:LineSideInstallation">
+        <xs:sequence>
+          <xs:element name="isLocatedAt" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:appinfo>
+                <ObjectTypeRef>rtmCommon:LinearLocation</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="etcsBalise" type="signalling:EtcsBalise"/>
   <xs:complexType name="EtcsBalise">
@@ -1667,7 +1661,7 @@ E.g. "entry towards tracks 7-14"
       <xs:documentation>Unlocks the elements in the overlap.
 The IL may release the overlap in the following situations:
 &lt;ul&gt;
- &lt;li&gt;When the approaching train &lt;i&gt;has plausibly stopped&lt;/i&gt;&lt;u&gt; &lt;/u&gt;before the exit signal. In this case, the overlap release is delayed by a given duration: the timer is triggered when the train occupies or vacates a given section.&lt;/li&gt;
+ &lt;li&gt;When the approaching train &lt;i&gt;has plausibly stopped&lt;/i&gt; before the exit signal. In this case, the overlap release is delayed by a given duration: the timer is triggered when the train occupies or vacates a given section.&lt;/li&gt;
  &lt;li&gt;When the approaching train &lt;i&gt;positively confirms to have stopped&lt;/i&gt; (e.g. by means of an ETCS position report). In this case, the release is immediate or with a short delay.&lt;/li&gt;
 &lt;/ul&gt;</xs:documentation>
     </xs:annotation>
@@ -2202,8 +2196,10 @@ nl-NL: doorschietlengte</xs:documentation>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="requiresFlankProtection" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:documentation>Used in those cases that rules are insufficient to describe flank protection
-DB: not filled in because implemented by supplier by rules.
-NR: only special cases are described.</xs:documentation>
+&lt;ul&gt;
+ &lt;li&gt;DB: not filled in because implemented by supplier by rules.&lt;/li&gt;
+ &lt;li&gt;NR: only special cases are described.&lt;/li&gt;
+&lt;/ul&gt;</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>signalling:FlankProtection</ObjectTypeRef>
               </xs:appinfo>
@@ -2258,7 +2254,7 @@ Track gauge is the distance between the rails. </xs:documentation>
 nl-NL: Grendel</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element name="isHousedIn" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -2457,13 +2453,37 @@ de-DE: Anforderung von der Weichenspitze</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="signalAlignment" type="signalling:SignalAlignment"/>
+  <xs:complexType abstract="true" name="SignalAlignment">
+    <xs:complexContent>
+      <xs:extension base="signalling:ConfiguredBaseObject">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="appliesToLightSignal" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:LightSignal</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="appliesToSignalFrame" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>A signal can carry more than one frame. Each frame may target a different alignment point, depending on the light parameters or on the type of route (e.g. shunting vs. main route).</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:SignalFrame</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="powerOutputChannelProperties" type="signalling:PowerOutputChannelProperties"/>
   <xs:complexType name="PowerOutputChannelProperties">
     <xs:annotation>
       <xs:documentation>The parameters of a power output channel.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="appliesToPsModule" type="rtmCommon:tElementWithIDref">
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="appliesToPsModule" type="rtmCommon:tElementWithIDref">
         <xs:annotation>
           <xs:appinfo>
             <ObjectTypeRef>signalling:PowerSupplyModule</ObjectTypeRef>
@@ -2583,6 +2603,7 @@ An ETCS profile is an ordered sequence of markers.</xs:documentation>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="appliesWhenPointElementInPosition" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:documentation>The marker action applies only when the point element(s) are in the given position.
+When no point element position is given, the ETCS marker doesn't depend on the path. 
 de-DE: Entscheidungsweiche</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>signalling:PointElementAndPosition</ObjectTypeRef>
@@ -2609,7 +2630,7 @@ de-DE: Entscheidungsweiche</xs:documentation>
  &lt;li&gt;NR: a signal box maps to a building.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ul&gt;
- &lt;li&gt;de-DE: Geb&amp;#228;ude&lt;/li&gt;
+ &lt;li&gt;de-DE: Geb&amp;#228;ude, z.B. Bahnhofsgeb&amp;#228;ude.&lt;/li&gt;
 &lt;/ul&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -2632,15 +2653,8 @@ de-DE: Entscheidungsweiche</xs:documentation>
 de-DE: Geschwindigkeit, die bei Zugstra&amp;#223;en mit diesem befahrenen Teil ohne Einschr&amp;#228;nkung durch Zs 3 gefahren w&amp;#252;rde (Geschwindigkeit der Strecke).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:BaseObject">
+      <xs:extension base="signalling:RouteBodyProperty">
         <xs:sequence>
-          <xs:element name="appliesToRouteBody" type="rtmCommon:tElementWithIDref">
-            <xs:annotation>
-              <xs:appinfo>
-                <ObjectTypeRef>signalling:RouteBody</ObjectTypeRef>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="hasMaxSpeed" type="rtmCommon:Speed"/>
         </xs:sequence>
       </xs:extension>
@@ -2681,7 +2695,7 @@ For instance: Milepost 23 1/2</xs:documentation>
 </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:AspectComposition">
+      <xs:extension base="signalling:AspectSet">
         <xs:attribute name="imperative" type="xs:boolean" use="optional">
           <xs:annotation>
             <xs:documentation>This boolean modifies of the message.
@@ -2761,36 +2775,6 @@ As opposed to the cable joint installation, the cable joint is not housed. The l
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="assetGroup" type="signalling:AssetGroup"/>
-  <xs:complexType abstract="true" name="AssetGroup">
-    <xs:annotation>
-      <xs:documentation>Assets may need grouping. Typically, a group will be used to hide the underlying members. For instance, a signalman may dim a group of signals.
-Given the wide variety of uses, this element is abstract and the end-user, i.e. the IM must specialise this element.
-Examples:
-&lt;ul&gt;
- &lt;li&gt;Points grouping for purposes of point heating&lt;/li&gt;
- &lt;li&gt;Cascaded points&lt;/li&gt;
- &lt;li&gt;Driver information. de-DE: Weichenbereich. nl-NL: wisselstraat. fr-FR: Reprise info&lt;/li&gt;
- &lt;li&gt;Power supply&lt;/li&gt;
- &lt;li&gt;Day-night signal intensity (de-DE: Nachtschaltung)&lt;/li&gt;
-&lt;/ul&gt;
-
-</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
-        <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="containsTrackAsset" type="rtmCommon:tElementWithIDref">
-            <xs:annotation>
-              <xs:appinfo>
-                <ObjectTypeRef>signalling:TrackAsset</ObjectTypeRef>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:element name="physicalMDM" type="signalling:PhysicalMDM"/>
   <xs:complexType name="PhysicalMDM">
     <xs:annotation>
@@ -2856,7 +2840,7 @@ False: the interlocking doesn't check the presence of the key before taking back
 This controller class can be instantiated when no other appropriate sub-class is available, e.g. when a new kind of controller is introduced.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="hasBackupPowerSupplyType" type="signalling:PowerSupplyTypes"/>
           <xs:element maxOccurs="1" minOccurs="0" name="hasPowerSupplyType" type="signalling:PowerSupplyTypes"/>
@@ -2984,7 +2968,7 @@ Enum: B&amp;#220; Funktions&amp;#252;berwachung</xs:documentation>
       <xs:documentation>Train Detection System associated with a TVP section.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:VirtualTrackAsset">
         <xs:sequence>
           <xs:element name="appliesToTvpSection" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -3006,7 +2990,7 @@ The description attribute can contain textual description of the field elements 
 Use this for ancillary equipment connected to the interlocking, e.g. bascule bridges, tunnel equipment, detectors such as earthquake and flooding detectors. Also useful for reading inputs from field activated level crossings. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="isImplementedByDetector" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -3225,7 +3209,7 @@ A non-physical signal has no frame</xs:documentation>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" name="isOfFixingType" type="signalling:FixingTypes">
+          <xs:element maxOccurs="1" minOccurs="0" name="isDesignedForFixingType" type="signalling:FixingTypes">
             <xs:annotation>
               <xs:documentation>General information about the fixing of a signal. Mainly used in early design phase and cost calculations.</xs:documentation>
             </xs:annotation>
@@ -3255,11 +3239,11 @@ de-DE: D-Wege die an einem Signal beginnen.</xs:documentation>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" name="showsDefaultMessage" type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="1" minOccurs="0" name="showsDefaultActiveAspectSet" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>The default message that the signal shows after startup and at rest (most restrictive message/aspect).</xs:documentation>
+              <xs:documentation>The default set of active aspects that the signal shows after startup and at rest (most restrictive message/aspect).</xs:documentation>
               <xs:appinfo>
-                <ObjectTypeRef>signalling:AspectComposition</ObjectTypeRef>
+                <ObjectTypeRef>signalling:ActiveAspectSet</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -3379,7 +3363,7 @@ nl-NL: de lengte van de conditionele snelheidsbeperking naar de overweg van het 
       <xs:documentation>Describes the sourcing of power to a power supply. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="ProvidesPowerTo" type="rtmCommon:tElementWithIDref">
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="ProvidesPowerTo" type="rtmCommon:tElementWithIDref">
         <xs:annotation>
           <xs:appinfo>
             <ObjectTypeRef>signalling:PowerSupplyModule</ObjectTypeRef>
@@ -3559,8 +3543,22 @@ ETCS variable D_SECTIONTIMERSTOPLOC is the distance between start and stop locat
   </xs:complexType>
   <xs:element name="etcsSpeedChangeOtherCondition" type="signalling:EtcsSpeedChangeOtherCondition"/>
   <xs:complexType name="EtcsSpeedChangeOtherCondition">
+    <xs:annotation>
+      <xs:documentation>A speed condition that applies under other conditions such as night-time speed restriction.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:EtcsSpeedChangeCondition"/>
+      <xs:extension base="signalling:EtcsSpeedChangeCondition">
+        <xs:sequence>
+          <xs:element name="isTriggeredByObject" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>The speed is triggered by a contact from an object.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:BaseObject</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="movableElementAsBuiltConfiguration" type="signalling:MovableElementAsBuiltConfiguration"/>
@@ -3652,22 +3650,27 @@ ETCS variable D_SECTIONTIMERSTOPLOC is the distance between start and stop locat
       <xs:documentation>A set of actively controlled signal aspects.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:BaseObject">
+      <xs:extension base="signalling:SignalMessage">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="emitsActiveAspect" type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="isComposedOfActiveAspect" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>Commands emission of this aspect.</xs:documentation>
+              <xs:documentation>Reference to active aspect that is part of the message to the driver.
+If no active aspect is given, the signal is dark, e.g. for cab signalling.</xs:documentation>
               <xs:appinfo>
                 <ObjectTypeRef>signalling:ActiveAspect</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="requiresSynchedFlashing" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>Synchronised flashing is used to modify the message.
+For instance: RFI uses in-phase and alternate flashing.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:SynchedFlashing</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
-        <xs:attribute name="semantic" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation>Description of the meaning of the message as a string.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -3714,7 +3717,8 @@ The slip points, if any, to which the crossing connects are separate instances o
   <xs:complexType name="FoulTrackControl">
     <xs:annotation>
       <xs:documentation>The train detector within a fouling track dictates which movable element positions must be checked and which section must be clear as a consequence (if any).
-Typically used in Germany.</xs:documentation>
+Typically used in Germany.
+de-DE: Nicht-grenzzeichenfreie Freimeldung</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="1" minOccurs="0" name="alsoCheckMovableElement" type="rtmCommon:tElementWithIDref">
@@ -3837,7 +3841,8 @@ One area per level. Areas can overlap, i.e. a fall-back level 1 would largely ov
   <xs:element name="aspect" type="signalling:Aspect"/>
   <xs:complexType name="Aspect">
     <xs:annotation>
-      <xs:documentation>Atomic information displayed by the signal, conveyed by means of light, shape, text, symbol or sound.</xs:documentation>
+      <xs:documentation>Atomic information displayed by the signal, conveyed by means of light, shape, text, symbol, form, colour.
+de-DE: Signalbegriff</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:ConfiguredBaseObject">
@@ -4194,7 +4199,7 @@ FR: bande de frequences (F1 .. F4).
       <xs:documentation>Telephone for communication between train driver and signalman.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="1" name="appliesToSignal" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -4250,39 +4255,29 @@ FR: bande de frequences (F1 .. F4).
     <xs:attribute name="m_leveltextdisplay" type="xs:int" use="required"/>
     <xs:attribute name="nid_ntc" type="xs:int" use="required"/>
   </xs:complexType>
-  <xs:element name="signalAlignment" type="signalling:SignalAlignment"/>
-  <xs:complexType name="SignalAlignment">
+  <xs:element name="signalAlignmentPointOnTrack" type="signalling:SignalAlignmentPointOnTrack"/>
+  <xs:complexType name="SignalAlignmentPointOnTrack">
     <xs:annotation>
       <xs:documentation>The signal must be aligned such that the driver can see it. This class describes the position (upstream on the track) of the target of the signal: distance, and optionally height.
 This information is typically checked during the installation and testing phases.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="0" name="appliesToLightSignal" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:LightSignal</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="appliesToSignalFrame" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:SignalFrame</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="distance" type="rtmCommon:Length">
-        <xs:annotation>
-          <xs:documentation>distance along the track to the alignment target </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="height" type="rtmCommon:Length">
-        <xs:annotation>
-          <xs:documentation>height over the track of the alignment target 
+    <xs:complexContent>
+      <xs:extension base="signalling:SignalAlignment">
+        <xs:sequence>
+          <xs:element name="distance" type="rtmCommon:Length">
+            <xs:annotation>
+              <xs:documentation>distance along the track to the alignment target </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="height" type="rtmCommon:Length">
+            <xs:annotation>
+              <xs:documentation>height over the track of the alignment target 
 </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="cable" type="signalling:Cable"/>
   <xs:complexType name="Cable">
@@ -4577,7 +4572,7 @@ FR: Poste de controle</xs:documentation>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="hasNonVitalDataFile" type="signalling:Attachment">
+          <xs:element maxOccurs="1" minOccurs="0" name="hasNonVitalDataFile" type="signalling:Attachment">
             <xs:annotation>
               <xs:documentation> The TFTP file with non-safety-critical data.</xs:documentation>
             </xs:annotation>
@@ -4664,7 +4659,7 @@ This class stores parameters relevant to the activation process.</xs:documentati
     <xs:complexContent>
       <xs:extension base="signalling:ConfiguredBaseObject">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="activatesDangerTrackArea" type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="activatesDangerAreaTrack" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:documentation>One activation applies to one crossing that might be composed of several danger area tracks.</xs:documentation>
               <xs:appinfo>
@@ -4982,6 +4977,18 @@ nl-NL: verzoekwissel. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:VehiclePassageDetector"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="virtualTrackAsset" type="signalling:VirtualTrackAsset"/>
+  <xs:complexType abstract="true" name="VirtualTrackAsset">
+    <xs:annotation>
+      <xs:documentation>An intangible asset.
+Virtual track assets can be composed of or derived from physical track assets.
+They might be visualized on user interfaces for signaller.
+Logical things such as routes are not considered track assets as they transient.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:TrackAsset"/>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="rbcWatchdog" type="signalling:RbcWatchdog"/>
@@ -5309,14 +5316,9 @@ Typically, an Interlocking assures that trains progress from section to section 
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="trackAsset" type="signalling:TrackAsset"/>
-  <xs:complexType name="TrackAsset">
+  <xs:complexType abstract="true" name="TrackAsset">
     <xs:annotation>
-      <xs:documentation>A track asset is a named physical or virtual element that is relevant to signalling. E.g. point, signal, train detector or train detection section.
-
-Most track assets are 'iron assets' but for convenience, one may define virtual track assets. These have no physical appearance but may be represented by e.g. a "chalk mark" on the rails. Examples are the virtual exit signal of certain routes.
-
-Logical classes such as routes and TVP sections are not considered track assets.
-</xs:documentation>
+      <xs:documentation>Named physical or virtual permanent (non-transient) field element that is relevant to signalling.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:ConfiguredBaseObject"/>
@@ -5555,6 +5557,15 @@ de-DE: Ortsstellbereich</xs:documentation>
     </xs:annotation>
     <xs:attribute name="nc_diff" type="xs:int" use="required"/>
     <xs:attribute name="v_diff" type="xs:int" use="required"/>
+  </xs:complexType>
+  <xs:element name="passiveAspect" type="signalling:PassiveAspect"/>
+  <xs:complexType name="PassiveAspect">
+    <xs:annotation>
+      <xs:documentation>Atomic static information displayed by the signal.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:Aspect"/>
+    </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="OverlapReleaseConditionTypes">
     <xs:annotation>
@@ -5882,7 +5893,7 @@ Only given when the interlocking can't dynamically provide the overlap length to
 </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:VirtualTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="imposesSpeedRestriction" type="rtmCommon:Speed"/>
           <xs:element name="isLocatedAt" type="rtmCommon:tElementWithIDref">
@@ -5945,34 +5956,17 @@ Given with respect to the topological application direction that is associated w
   </xs:simpleType>
   <xs:simpleType name="ControlModes">
     <xs:annotation>
-      <xs:documentation>The mode in which the movable element shall be controlled. 
-Choose 
-&lt;ul&gt;
- &lt;li&gt;&lt;b&gt;locally &lt;/b&gt;controlled by trackside manually operated levers or ground frame in the vicinity.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
- &lt;li&gt;&lt;b&gt;remote &lt;/b&gt;controlled when an interlocking normally controls the element, even when the element can be taken over for local working e.g. shunting.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
- &lt;li&gt;&lt;b&gt;not movable&lt;/b&gt; for crossings without movable diamond.&lt;/li&gt;
- &lt;li&gt;&lt;b&gt;decommissioned &lt;/b&gt;when (partly) removed.&lt;/li&gt;
- &lt;li&gt;&lt;b&gt;other &lt;/b&gt;mode.&lt;/li&gt;
- &lt;li&gt;&lt;b&gt;undetermined&lt;/b&gt;, when the mode is unknown.&lt;/li&gt;
-&lt;/ul&gt;
-Most remote controlled points can be cranked locally.</xs:documentation>
+      <xs:documentation>The mode in which the movable element shall be controlled. See this &lt;a href="$element://{81F76E0C-713C-4d1a-9BDE-3F549BA808D6}"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;enumeration&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; for choices of the types of mechanism that actually drive the movable components. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="local">
         <xs:annotation>
-          <xs:documentation>The element is locally controlled by hand.
-When there is a ground frame, the &lt;i&gt;components &lt;/i&gt;are normally mechanically controlled (&lt;a href="$element://{81F76E0C-713C-4d1a-9BDE-3F549BA808D6}"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;see this class&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
-</xs:documentation>
+          <xs:documentation>The element is locally controlled by trackside operated levers, local operating panel or nearby ground frame.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="remote">
         <xs:annotation>
-          <xs:documentation>an interlocking normally controls the element, even when the element can be taken over for local working e.g. shunting.
-</xs:documentation>
+          <xs:documentation>An interlocking normally controls the element, even when the element can be taken over for local working e.g. shunting.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="notMovable">
@@ -6549,7 +6543,11 @@ This information could be filled in by the IM or the supplier.</xs:documentation
     <xs:complexContent>
       <xs:extension base="signalling:EtcsTrackConditionMarker">
         <xs:sequence>
-          <xs:element name="hasTrackConditionAreaLocation" type="rtmCommon:AreaLocation"/>
+          <xs:element name="hasTrackConditionAreaLocation" type="rtmCommon:AreaLocation">
+            <xs:annotation>
+              <xs:documentation>Reference to an area location such as a tunnel </xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
         <xs:attribute name="m_trackcond" type="xs:int" use="required"/>
       </xs:extension>
@@ -6784,7 +6782,7 @@ The platform designation is usually composed of the names of the platform edges,
 </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="1" name="containsPlatformEdge" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -6918,7 +6916,7 @@ The manually applied lock is not considered a movable component.
 </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="isLocatedAt" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -6982,7 +6980,7 @@ Most commonly left or right, although a wide gauge derailer can derail a train t
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="isDrivenByMechanismType" type="signalling:MechanismTypes">
             <xs:annotation>
-              <xs:documentation>Only useful when the turnout mechanism is not broken down further.</xs:documentation>
+              <xs:documentation>Defining the type of driving mechanism is only useful when the turnout mechanism is not broken down further.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -6997,7 +6995,7 @@ This class allows naming the street, road or path according to national rules.
 The track crossing can, &lt;i&gt;but need not&lt;/i&gt;, be protected by a level crossing system.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:VirtualTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="1" name="isLocatedAt" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -7048,6 +7046,9 @@ There can be multiple locations because more than one rail track can be crossed.
     </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="MechanismTypes">
+    <xs:annotation>
+      <xs:documentation>The types of mechanisms that drive movable components.</xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="electric">
         <xs:annotation>
@@ -7430,7 +7431,11 @@ Note : slip points are considered as two back-to-back points thus removing ambig
       <xs:documentation>Abstract class for systems that have movable elements. Movable systems either divert, halt or derail railway traffic.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset"/>
+      <xs:extension base="signalling:PhysicalTrackAsset">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="isComposedOfMovableElement" type="signalling:MovableElement"/>
+        </xs:sequence>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="groundFrame" type="signalling:GroundFrame"/>
@@ -7447,7 +7452,8 @@ Note : slip points are considered as two back-to-back points thus removing ambig
   <xs:element name="localOperatingArea" type="signalling:LocalOperatingArea"/>
   <xs:complexType name="LocalOperatingArea">
     <xs:annotation>
-      <xs:documentation>Part of the interlocking area that staff can control locally, notably for directing shunting movements. The procedure of handing over control between signalman and local staff is supported by switches, keys and indicators on a local operating device.</xs:documentation>
+      <xs:documentation>Part of the interlocking area that staff can control locally, notably for directing shunting movements. The procedure of handing over control between signalman and local staff is supported by switches, keys and indicators on a local operating device.
+nl-NL: Vrijgave Rangeren gebied</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:ConfiguredBaseObject">
@@ -7559,7 +7565,7 @@ False: send the telegram when TPS device or system is not active.</xs:documentat
 en-UK: strike-in or strike-out detector.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="isConstrainedByPositionOf" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -8164,7 +8170,6 @@ A generic term for point-, crossing- and derailer-systems.
     <xs:complexContent>
       <xs:extension base="signalling:MovableSystem">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="1" name="isComposedOfMovableElement" type="signalling:MovableElement"/>
           <xs:element name="refersToRtmPoint" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
@@ -8182,7 +8187,7 @@ A generic term for point-, crossing- and derailer-systems.
       <xs:documentation>A physical section of conductor rail that is placed to the left, right or centre. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element name="isLocatedAt" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -8822,7 +8827,8 @@ nl-NL: punt of een gebied op een overwegspoor aan weerszijden van de overweg.</x
   <xs:element name="activeAspect" type="signalling:ActiveAspect"/>
   <xs:complexType name="ActiveAspect">
     <xs:annotation>
-      <xs:documentation>An aspect that can be controlled.</xs:documentation>
+      <xs:documentation>Atomic dynamic information displayed by the signal. 
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:Aspect">
@@ -9058,7 +9064,7 @@ The state machine entry point is the LevelCrossingActivation.</xs:documentation>
       <xs:documentation>The facility that protects a track crossing.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:VirtualTrackAsset">
         <xs:sequence>
           <xs:element name="protectsTrackCrossing" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -9116,6 +9122,15 @@ If a date isn't given, it is open-ended. </xs:documentation>
         <xs:attribute name="end" type="xs:date" use="optional"/>
         <xs:attribute name="start" type="xs:date" use="optional"/>
       </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="physicalTrackAsset" type="signalling:PhysicalTrackAsset"/>
+  <xs:complexType abstract="true" name="PhysicalTrackAsset">
+    <xs:annotation>
+      <xs:documentation>Tangible asset installed on, near or as part of the track.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:TrackAsset"/>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="safetyDistance" type="signalling:SafetyDistance"/>
@@ -9571,6 +9586,26 @@ fr-FR: autorisation d'annulation de transit.</xs:documentation>
       <xs:extension base="signalling:ConfiguredBaseObject"/>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="routeBodyProperty" type="signalling:RouteBodyProperty"/>
+  <xs:complexType abstract="true" name="RouteBodyProperty">
+    <xs:annotation>
+      <xs:documentation>Base class for additional route body properties.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:ConfiguredBaseObject">
+        <xs:sequence>
+          <xs:element name="appliesToRouteBody" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>this helps the signalman to visualize via which point or track the train will travel.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:RouteBody</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="DerailingPositionTypes">
     <xs:annotation>
       <xs:documentation>Set of positions that a derailer can adopt.</xs:documentation>
@@ -9753,7 +9788,7 @@ The movable element is an abstraction that associates the underlying movable com
 </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="1" name="associatesMovableComponent" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -9974,7 +10009,7 @@ This approach is equivalent to the ETCS SSP.</xs:documentation>
       <xs:documentation>Installation for physically stopping trains. The track may continue beyond the device. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="isOfVehicleStopType" type="signalling:VehicleStopTypes">
             <xs:annotation>
@@ -10089,30 +10124,28 @@ nl-NL: behuizing</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="aspectComposition" type="signalling:AspectComposition"/>
-  <xs:complexType name="AspectComposition">
+  <xs:element name="aspectSet" type="signalling:AspectSet"/>
+  <xs:complexType name="AspectSet">
     <xs:annotation>
-      <xs:documentation>A message sent by a signal. 
-Typically, the meaning of the message is defined in a rule book and associated with a given light aspect, sign and/or shape of the signal. </xs:documentation>
+      <xs:documentation>A set of active and/or passive aspects representing a message sent by a signal. 
+Typically, the meaning of the message is defined in a rule book.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ActiveAspectSet">
+      <xs:extension base="signalling:SignalMessage">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="composedOfAspect" type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="1" minOccurs="0" name="isComposedOfActiveAspectSet" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>The message signalled to the driver is composed of one or more aspects, typically a light aspect from a main signal frame and another aspect from an additional signal frame that modulates the message.
-Messages have a semantic organised in a taxonomy.</xs:documentation>
+              <xs:documentation>refers to the active aspect </xs:documentation>
               <xs:appinfo>
-                <ObjectTypeRef>signalling:Aspect</ObjectTypeRef>
+                <ObjectTypeRef>signalling:ActiveAspectSet</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" name="requiresSynchedFlashing" type="rtmCommon:tElementWithIDref">
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="isComposedOfPassiveAspect" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>Synchronised flashing is used to modify the message.
-For instance: RFI uses in-phase and alternate flashing.</xs:documentation>
+              <xs:documentation>Reference to aspect that is part of the message to the driver.</xs:documentation>
               <xs:appinfo>
-                <ObjectTypeRef>signalling:SynchedFlashing</ObjectTypeRef>
+                <ObjectTypeRef>signalling:PassiveAspect</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -10168,7 +10201,7 @@ The designation of the platform edge is for passenger information systems, typic
 </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="unbounded" minOccurs="0" name="hasDispatchPosition" type="signalling:DispatchPosition"/>
           <xs:element maxOccurs="1" minOccurs="0" name="hasHeight" type="rtmCommon:Length">
@@ -10969,10 +11002,21 @@ de-DE: ETCS Knoten im ETCS Knoten-Kanten Modell</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="signalMessage" type="signalling:SignalMessage"/>
+  <xs:complexType name="SignalMessage">
+    <xs:annotation>
+      <xs:documentation>A message to the train driver represented by a set of active/passive signal aspects.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="semantic" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Description of the meaning of the message as a string.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:element name="interlocking" type="signalling:Interlocking"/>
   <xs:complexType name="Interlocking">
     <xs:annotation>
-      <xs:documentation>A specific interlocking system that has a control relationship with track-assets and/or controllers in a yard.</xs:documentation>
+      <xs:documentation>An interlocking system that has a control relationship with track-assets and/or controllers in a yard.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:Controller"/>
@@ -11840,87 +11884,91 @@ de-DE: Gleisfreimelde-Innenanlage</xs:documentation>
   </xs:complexType>
   <xs:element name="cableProperties" type="signalling:CableProperties"/>
   <xs:complexType name="CableProperties">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="appliesToCable" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:Cable</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="hasCableCapacity" type="signalling:CableCapacity">
-        <xs:annotation>
-          <xs:documentation>Total capacity of the cable in terms of number of pairs or quads.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="hasSpareCapacity" type="signalling:CableCapacity"/>
-    </xs:sequence>
-    <xs:attribute name="capacitiveCoupling" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>In picoFarad per kilometre.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="category" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>Taken from a national list. E.g. energy, signalling.
+    <xs:complexContent>
+      <xs:extension base="signalling:BaseObject">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="appliesToCable" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:Cable</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasCableCapacity" type="signalling:CableCapacity">
+            <xs:annotation>
+              <xs:documentation>Total capacity of the cable in terms of number of pairs or quads.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="hasSpareCapacity" type="signalling:CableCapacity"/>
+        </xs:sequence>
+        <xs:attribute name="capacitiveCoupling" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>In picoFarad per kilometre.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="category" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Taken from a national list. E.g. energy, signalling.
 For instance, NR uses A2,A3,A4 cable that is well defined and known throughout the industry.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="crossSectionalArea" type="xs:float" use="optional">
-      <xs:annotation>
-        <xs:documentation>Cross-sectional area in square millimetres.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="diameter" type="xs:float" use="optional">
-      <xs:annotation>
-        <xs:documentation>Diameter in mm.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="modeltype" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>OEM designation of the cable type.
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="crossSectionalArea" type="xs:float" use="optional">
+          <xs:annotation>
+            <xs:documentation>Cross-sectional area in square millimetres.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="diameter" type="xs:float" use="optional">
+          <xs:annotation>
+            <xs:documentation>Diameter in mm.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="modeltype" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>OEM designation of the cable type.
 </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="numberOfCores" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>Number of cores in the cable.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="operatingVoltage" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>Maximum sustainable operational voltage.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="ratingPerCore" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>Rating per core of the cable in Amps.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="resistancePerCore" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>Resistance per metre per core of the cable in Ohms.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="strandedElements" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>Number of stranded elements within the cable.
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="numberOfCores" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of cores in the cable.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="operatingVoltage" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Maximum sustainable operational voltage.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ratingPerCore" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Rating per core of the cable in Amps.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="resistancePerCore" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Resistance per metre per core of the cable in Ohms.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="strandedElements" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of stranded elements within the cable.
 de-DE: Anzahl der Verseilelemente.
 </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="strandingCode" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>4: 4 quad stranded
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="strandingCode" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>4: 4 quad stranded
 2: twisted pair
 1: all cores are twisted </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="testingVoltage" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>Voltage with which core against core resistance against short circuiting is tested.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="testingVoltage" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Voltage with which core against core resistance against short circuiting is tested.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="lowFrequencyTrackCircuit" type="signalling:LowFrequencyTrackCircuit"/>
   <xs:complexType name="LowFrequencyTrackCircuit">
@@ -11988,7 +12036,6 @@ False: counting down along the ribbon.</xs:documentation>
       <xs:documentation>The typical delay between the moment the operator calls this route and the moment the entry signal opens. 
 This  parameter includes the response-time of many subsystems as well as point throwing time (the position of which is often unknown beforehand). This parameter is by nature stochastic.
 This parameter is useful for simulation purposes and system performance analysis.
-
 de-DE: Fahrstra&amp;#223;enbildezeit
 </xs:documentation>
     </xs:annotation>
@@ -12014,8 +12061,7 @@ May be mounted indoors. When outdoors, it is typically fixed to a post and cover
   <xs:complexType name="FieldObjectController">
     <xs:annotation>
       <xs:documentation>A device that exchanges commands, information, power with one or a few individual field objects like signal, point, etc.
-
-In control of active track assets.</xs:documentation>
+Is in control of active track assets.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="signalling:Controller"/>
@@ -12134,8 +12180,7 @@ When one of the two signals is opened, the other remains closed.</xs:documentati
   <xs:element name="lineSideSpotDevice" type="signalling:LineSideSpotDevice"/>
   <xs:complexType name="LineSideSpotDevice">
     <xs:annotation>
-      <xs:documentation>Technical line-side device relevant to but not planned by signalling.
-Facade for devices like
+      <xs:documentation>Facade for spot located devices like
 &lt;ul&gt;
  &lt;li&gt;hot axle box detector&lt;/li&gt;
  &lt;li&gt;Telecom antenna&lt;/li&gt;
@@ -12143,20 +12188,12 @@ Facade for devices like
 &lt;/ul&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:LineSideInstallation">
         <xs:sequence>
           <xs:element name="isLocatedAt" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:appinfo>
                 <ObjectTypeRef>rtmCommon:SpotLocation</ObjectTypeRef>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" name="refersToCivilStructure" type="rtmCommon:tElementWithIDref">
-            <xs:annotation>
-              <xs:documentation>The line-side device, e.g. a mast, may be registered as a civil structure.</xs:documentation>
-              <xs:appinfo>
-                <ObjectTypeRef>signalling:CivilStructure</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -12357,7 +12394,7 @@ Not to be confused with the topological direction of the linear element, which i
       <xs:documentation>A rail component designed to absorb lengthening or shortening of rail, for instance thermal expansion.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element name="isLocatedAt" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -12473,19 +12510,19 @@ NR puts the spot location of the loop in the centre.</xs:documentation>
               <xs:documentation>The train in this category is allowed to approach the dangerpoint with this release speed.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="isLocatedAt" type="rtmCommon:tElementWithIDref">
+          <xs:element name="isAttLocationProxy" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>A spot beyond the EoA. D_DP is the distance between EoA and dangerpoint</xs:documentation>
+              <xs:documentation>DB defines the location of the ETCS danger point. This redunds the direct &lt;i&gt;is located at &lt;/i&gt;path.</xs:documentation>
               <xs:appinfo>
-                <ObjectTypeRef>rtmCommon:SpotLocation</ObjectTypeRef>
+                <ObjectTypeRef>signalling:LocationProxy</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="isLocatedAt" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
-              <xs:documentation>DB defines the location of the ETCS danger point - redunds the direct is located at path.</xs:documentation>
+              <xs:documentation>A spot beyond the EoA. D_DP is the distance between EoA and dangerpoint</xs:documentation>
               <xs:appinfo>
-                <ObjectTypeRef>signalling:LocationProxy</ObjectTypeRef>
+                <ObjectTypeRef>rtmCommon:SpotLocation</ObjectTypeRef>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -12662,8 +12699,8 @@ End point A and B in combination with the navigability inform about the directio
       <xs:extension base="signalling:LocalOperationUiElement"/>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="lxConfiguration" type="signalling:LxConfiguration"/>
-  <xs:complexType name="LxConfiguration">
+  <xs:element name="levelCrossingConfiguration" type="signalling:LevelCrossingConfiguration"/>
+  <xs:complexType name="LevelCrossingConfiguration">
     <xs:complexContent>
       <xs:extension base="signalling:TrackAssetConfiguration">
         <xs:sequence>
@@ -12768,7 +12805,7 @@ de-DE: Bedien-Anzeige Element, das wirksam sein muss, damit die Fstr gesichert i
 This class can be instantiated if the device is not (yet) planned and located in detail.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="implementsTpsDataTxSystem" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -12818,6 +12855,26 @@ The device can implement several systems, i.e. a Eurobalise can implement ETCS L
         <xs:documentation>The actual value of the national value identified by the key. If a subset of key,value-pairs follows, the value isn't needed.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+  </xs:complexType>
+  <xs:element name="lineSideInstallation" type="signalling:LineSideInstallation"/>
+  <xs:complexType abstract="true" name="LineSideInstallation">
+    <xs:annotation>
+      <xs:documentation>Technical line-side installation relevant to but not planned by signalling.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="signalling:ConfiguredBaseObject">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="refersToCivilStructure" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>The line-side installation, e.g. a mast or a bridge, may be registered as a civil structure.</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:CivilStructure</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="usablePlatformEdge" type="signalling:UsablePlatformEdge"/>
   <xs:complexType name="UsablePlatformEdge">
@@ -13047,7 +13104,7 @@ Not to be used for drawings of &lt;i&gt;specific &lt;/i&gt;objects: instantiate 
 A feeder and receiver can share a spot location.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:TrackAsset">
+      <xs:extension base="signalling:PhysicalTrackAsset">
         <xs:sequence>
           <xs:element name="connectsToRailVia" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
@@ -13298,24 +13355,11 @@ Can be used in exceptional cases such as tight curves to describe a target that 
 NR normally targets the signal's  AWS magnet and alternatively a given distance from the signal, or a spot on the track at a given distance from the signal. 
 </xs:documentation>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="0" name="appliesToLightSignal" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:LightSignal</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="appliesToSignalFrame" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:documentation>A signal can carry more than one frame. Each frame may target a different alignment point, depending on the light parameters or on the type of route (e.g. shunting vs. main route).</xs:documentation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:SignalFrame</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="description" type="xs:string" use="required"/>
+    <xs:complexContent>
+      <xs:extension base="signalling:SignalAlignment">
+        <xs:attribute name="description" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="AspectDeactivationTypes">
     <xs:restriction base="xs:string">
@@ -13346,22 +13390,27 @@ The trigger is the same for all technically triggered aspects of the same signal
 
 Specialisation shows the purpose of the grouping, i.e. for administrative purposes or communication.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="includesInterlocking" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:CentralInterlocking</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="unbounded" minOccurs="1" name="includesRbc" type="rtmCommon:tElementWithIDref">
-        <xs:annotation>
-          <xs:appinfo>
-            <ObjectTypeRef>signalling:RBC</ObjectTypeRef>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
+    <xs:complexContent>
+      <xs:extension base="signalling:ConfiguredBaseObject">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="includesInterlocking" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:CentralInterlocking</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="includesRbc" type="rtmCommon:tElementWithIDref">
+            <xs:annotation>
+              <xs:documentation>The grouping includes this RBC</xs:documentation>
+              <xs:appinfo>
+                <ObjectTypeRef>signalling:RBC</ObjectTypeRef>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="lensDiffuser" type="signalling:LensDiffuser"/>
   <xs:complexType name="LensDiffuser">
@@ -13415,19 +13464,13 @@ These parameters can be stored with the data.</xs:documentation>
   <xs:complexType name="ViaLocation">
     <xs:annotation>
       <xs:documentation>Hint to the signalman showing &lt;i&gt;via &lt;/i&gt;which location (track, section or signal) the train will travel.
-The location proxy is placed on the topology on the track, section or signal of the route body.</xs:documentation>
+The location proxy is placed on the topology on the track, section or signal of the route body.
+This helps the signalman to visualize via which point or track the train will travel.
+</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:RouteBodyProperty">
         <xs:sequence>
-          <xs:element name="appliesToRouteBody" type="rtmCommon:tElementWithIDref">
-            <xs:annotation>
-              <xs:documentation>this helps the signalman to visualise via which point or track the train will travel.</xs:documentation>
-              <xs:appinfo>
-                <ObjectTypeRef>signalling:RouteBody</ObjectTypeRef>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="leadsViaLocation" type="rtmCommon:tElementWithIDref">
             <xs:annotation>
               <xs:documentation>Refers to the Location the RouteBody leads over.</xs:documentation>
@@ -13446,7 +13489,7 @@ The location proxy is placed on the topology on the track, section or signal of 
       <xs:documentation>System for transmitting train protection data. Also known as &lt;i&gt;Information Point.&lt;/i&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="signalling:ConfiguredBaseObject">
+      <xs:extension base="signalling:VirtualTrackAsset">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="hasControllerHousedIn" type="rtmCommon:tElementWithIDref">
             <xs:annotation>

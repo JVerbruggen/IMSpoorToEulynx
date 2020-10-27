@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:NetworkRail="http://www.railtopomodel.org/schemas/NR" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/NR">
-  <!--<dc:date>2020-10-07T11:54:18Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:NetworkRail="http://www.railtopomodel.org/schemas/NR" xmlns:base="http://www.railtopomodel.org/schemas/EULYNX_XSD" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/NR">
+  <!--<dc:date>2020-10-27T18:02:58Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD" schemaLocation="EULYNX_XSD.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling" schemaLocation="EULYNX_Signalling.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
   <xs:element name="atpBeacon" type="NetworkRail:AtpBeacon"/>
@@ -509,6 +510,18 @@ Allows weighting the cost of the asset for accounting purposes.</xs:documentatio
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:element name="signallingEntities" type="NetworkRail:SignallingEntities"/>
+  <xs:complexType name="SignallingEntities">
+    <xs:complexContent>
+      <xs:extension base="base:SignallingEntities">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsObscuration" type="NetworkRail:Obscuration"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsPopGroup" type="NetworkRail:PopGroup"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ownsPopGroupAssociation" type="NetworkRail:PopGroupAssociation"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="MrotTypes">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Mrot10">
