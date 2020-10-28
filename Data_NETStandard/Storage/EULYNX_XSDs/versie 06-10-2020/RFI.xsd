@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:RFI="http://www.railtopomodel.org/schemas/RFI" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/RFI">
-  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:RFI="http://www.railtopomodel.org/schemas/RFI" xmlns:base="http://www.railtopomodel.org/schemas/EULYNX_XSD" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/RFI">
+  <!--<dc:date>2020-10-27T18:02:58Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:import namespace="http://www.railtopomodel.org/schemas/Common" schemaLocation="Common.xsd"/>
+  <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_XSD" schemaLocation="EULYNX_XSD.xsd"/>
   <xs:import namespace="http://www.railtopomodel.org/schemas/EULYNX_Signalling" schemaLocation="EULYNX_Signalling.xsd"/>
   <xs:element name="lensDiffuser" type="RFI:LensDiffuser"/>
   <xs:complexType name="LensDiffuser">
@@ -18,10 +19,16 @@ it-IT: diffusore a lente RFI
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="signallingEntities" type="RFI:SignallingEntities"/>
+  <xs:complexType name="SignallingEntities">
+    <xs:complexContent>
+      <xs:extension base="base:SignallingEntities"/>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="signalAlignment" type="RFI:SignalAlignment"/>
   <xs:complexType name="SignalAlignment">
     <xs:complexContent>
-      <xs:extension base="signalling:SignalAlignment">
+      <xs:extension base="signalling:SignalAlignmentPointOnTrack">
         <xs:attribute name="alpha" type="xs:float" use="required">
           <xs:annotation>
             <xs:documentation>The angle in degrees between tangent to the track and signal target direction at a distance of 300m or less.

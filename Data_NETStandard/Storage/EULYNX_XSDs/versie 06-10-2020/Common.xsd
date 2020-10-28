@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" elementFormDefault="qualified" targetNamespace="http://www.railtopomodel.org/schemas/Common">
-  <!--<dc:date>2020-10-06T17:19:00Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
+  <!--<dc:date>2020-10-27T18:02:58Z</dc:date><dc:creator>rtm2xsd 1.8.5</dc:creator><dc:source>Model , XMI 2.4.1, EA 13</dc:source>-->
   <xs:element name="verticalAlignment" type="rtmCommon:VerticalAlignment"/>
   <xs:complexType name="VerticalAlignment">
     <xs:annotation>
@@ -99,7 +99,7 @@ The non-linear elements are the Operating Points (OP = stations, yards, junction
       </xs:enumeration>
       <xs:enumeration value="Nano">
         <xs:annotation>
-          <xs:documentation>The nano level could be described as a properly attributed surveyors map, including topological properties of the rail network in the finest possible granularity. 
+          <xs:documentation>The nano level could be described as a properly attributed surveyor’s map, including topological properties of the rail network in the finest possible granularity. 
 Use cases for the Nano level would include interlocking and asset management.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
