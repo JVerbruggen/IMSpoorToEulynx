@@ -25,7 +25,7 @@ namespace Services.Managers.Positioning
             }
             if(found == null)
             {
-                string uuid = UUIDService.NewFakeUUID(type);
+                string uuid = UUIDService.NewFakeUUID(type, typeof(GeometricPositioningSystem));
                 found = new GeometricPositioningSystem(type, uuid);
                 this.Register(found);
             }

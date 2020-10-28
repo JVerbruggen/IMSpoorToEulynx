@@ -39,8 +39,13 @@ namespace Services.Managers.Toplevel
 
             InstanceManager.AddInstanceSupplier(new InstanceSupplier<tSituation>(situation));
 
-            RtmEntities rtmEntities = InstanceManager.Singleton<RtmEntitiesManager>().GetInstance().GetRtmEntities(situation);
-            SignallingEntities signallingEntities = InstanceManager.Singleton<SignallingEntitiesManager>().GetInstance().GetSignallingEntities(imSpoor);
+            RtmEntitiesManager rtmEntitiesManager = InstanceManager.Singleton<RtmEntitiesManager>().GetInstance();
+            SignallingEntitiesManager signallingEntitiesManager = InstanceManager.Singleton<SignallingEntitiesManager>().GetInstance();
+
+            RtmEntities rtmEntities = rtmEntitiesManager.GetRtmEntities(situation);
+            SignallingEntities signallingEntities = signallingEntitiesManager.GetSignallingEntities(imSpoor);
+
+            rtmEntities = rtmEntitiesManager.UpdateRtmEntities(rtmEntities, situation);
 
             eulynx.ownsRtmEntities = rtmEntities;
             eulynx.ownsSignallingEntities = signallingEntities;

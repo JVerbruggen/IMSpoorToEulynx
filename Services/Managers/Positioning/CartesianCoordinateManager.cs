@@ -13,7 +13,7 @@ namespace Services.Managers.Positioning
 
         public CartesianCoordinate GetCartesianCoordinate(double x, double y, tElementWithIDref positioningSystem)
         {
-            string uuid = UUIDService.NewFakeUUID("cartesian:" + x + "" + y + positioningSystem.@ref);
+            string uuid = UUIDService.NewFakeUUID(x + "" + y + positioningSystem.@ref, typeof(CartesianCoordinate));
             CartesianCoordinate cartesianCoordinate = new CartesianCoordinate(x, y, positioningSystem, uuid);
             
             InstanceManager.Singleton<PositioningSystemCoordinateManager>().GetInstance().Register(cartesianCoordinate);

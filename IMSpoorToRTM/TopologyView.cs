@@ -159,15 +159,17 @@ namespace FormsApp
             if (this.paintedPath == null) return;
             var allPSCoords = eulynx.ownsRtmEntities.usesPositioningSystemCoordinate;
 
+            TrackAssetManager trackAssetManager = InstanceManager.Singleton<TrackAssetManager>().GetInstance();
 
-            BaseLocation[] allLocations = this.eulynx.ownsRtmEntities.usesSpotLocation.Where(sl => sl is SpotLocationCoordinate).Cast<SpotLocationCoordinate>().ToArray();
-            LocatedNetEntity[] allNetEntities = this.eulynx.ownsRtmEntities.ownsSignal;
-            TrackAsset[] allTrackAssets = InstanceManager.Singleton<TrackAssetManager>().GetInstance().GetTrackAssets(eulynx);
+            //BaseLocation[] allLocations = this.eulynx.ownsRtmEntities.usesSpotLocation.Where(sl => sl is SpotLocationCoordinate).Cast<SpotLocationCoordinate>().ToArray();
+            //LocatedNetEntity[] allNetEntities = this.eulynx.ownsRtmEntities.ownsSignal;
+            TrackAsset[] pathTrackAssets = trackAssetManager.GetTrackAssets(eulynx, this.paintedPath);
 
-            LocatedNetEntity[] netEntities = netEntityLocator.GetAssetsOnPath(this.paintedPath, allLocations, allNetEntities);
+            //LocatedNetEntity[] netEntities = netEntityLocator.GetAssetsOnPath(this.paintedPath, allLocations, allNetEntities);
 
             listBox_content.Items.Clear(); 
-            listBox_content.Items.AddRange(netEntities);
+            //listBox_content.Items.AddRange(netEntities);
+            listBox_content.Items.AddRange(pathTrackAssets);
         }
     }
 }

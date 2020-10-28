@@ -18,12 +18,19 @@ namespace Services.Managers.Toplevel
         {
             RtmEntities rtmEntities = new RtmEntities();
 
-            //this.ownsBufferstop = VehicleStop.GetVehicleStops();
-            //this.ownsPoint = Turnout.GetTurnouts();
-            //this.ownsRouteBody = RouteBody.GetRouteBodies();
-            //rtmEntities.ownsSignal = ;
-            //this.usesCablingTopology = CablingTopology.GetCablingTopology();
-            //this.usesLinearLocation = LinearLocation.GetLinearLocations();
+            UpdateRtmEntities(rtmEntities, situation);
+
+            return rtmEntities;
+        }
+
+        public RtmEntities UpdateRtmEntities(RtmEntities rtmEntities, tSituation situation)
+        {
+            //rtmEntities.ownsBufferstop = VehicleStop.GetVehicleStops();
+            //rtmEntities.ownsPoint = Turnout.GetTurnouts();
+            //rtmEntities.ownsRouteBody = RouteBody.GetRouteBodies();
+            rtmEntities.ownsSignal = InstanceManager.Singleton<SignalRTMManager>().GetInstance().GetAll();
+            //rtmEntities.usesCablingTopology = CablingTopology.GetCablingTopology();
+            //rtmEntities.usesLinearLocation = LinearLocation.GetLinearLocations();
             rtmEntities.usesTrackTopology = InstanceManager.Singleton<TrackTopologyManager>().GetInstance().GetTrackTopology(situation.RailInfrastructure.RailTopology);
             rtmEntities.usesSpotLocation = InstanceManager.Singleton<SpotLocationManager>().GetInstance().GetAll();
             rtmEntities.usesPositioningSystem = InstanceManager.Singleton<PositioningSystemManager>().GetInstance().GetAll();

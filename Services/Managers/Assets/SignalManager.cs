@@ -3,6 +3,7 @@ using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Services.DependencyInjection;
 using Services.Managers.Base;
 using Services.Managers.Location;
+using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,18 +19,24 @@ namespace Services.Managers.Assets
             foreach (Models.TopoModels.IMSpoor.V1_3_0.Signal imspoorSignal in imspoorSignals)
             {
                 SpotLocationManager spotLocationManager = InstanceManager.Singleton<SpotLocationManager>().GetInstance();
+                SignalFrameManager signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();
+                SignalRTMManager signalRTMManager = InstanceManager.Singleton<SignalRTMManager>().GetInstance();
 
                 SpotLocation spotLocation = spotLocationManager.GetGeoLocation(imspoorSignal.Location);
                 spotLocationManager.Register(spotLocation);
-                tElementWithIDref location = new tElementWithIDref(spotLocation.uuid);
-                var rtmSignal = new Models.TopoModels.Eulynx.Signalling.Signal(location);
-                InstanceManager.Singleton<SignalRTMManager>().GetInstance().Register(rtmSignal);
 
-                SignalFrameManager signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();
+                var rtmSignal = new Models.TopoModels.Eulynx.Signalling.Signal(spotLocation);
+                rtmSignal.uuid = UUIDService.NewFakeUUID(rtmSignal);
+                signalRTMManager.Register(rtmSignal);
+
+                spotLocation.netElement = rtmSignal;
+
                 SignalFrame[] signalFrames = signalFrameManager.GetSignalFrames();
                 tElementWithIDref[] signalFramesRefs = tElementWithIDref.GetTElementsWithIDref(signalFrames);
+                signalFrameManager.Register(signalFrames);
 
-                Signal signal = new Signal(imspoorSignal, rtmSignal, signalFramesRefs);
+                string uuid = imspoorSignal.puic;
+                Signal signal = new Signal(uuid, null, spotLocation, signalFramesRefs, FixingTypes.foundation, null, rtmSignal, null, null);
                 signalsConverted.Add(signal);
             }
             return signalsConverted.ToArray();

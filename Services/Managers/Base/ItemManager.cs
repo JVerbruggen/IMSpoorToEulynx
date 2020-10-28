@@ -19,5 +19,13 @@ namespace Services.Managers.Base
             if (SavedItems.Contains(t)) return;
             SavedItems.Add(t);
         }
+
+        public void Register(T[] ts)
+        {
+            foreach(T t in ts)
+            {
+                Register(t);
+            }
+        }
     }
 }

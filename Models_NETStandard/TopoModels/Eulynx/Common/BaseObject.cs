@@ -67,6 +67,7 @@ namespace Models.TopoModels.Eulynx.Common
 
         public static T[] Find<T>(T[] allElements, tElementWithIDref needle) where T : BaseObject
         {
+            if (needle == null || needle.@ref == null) return null;
             return allElements.ToList().Where(element => needle.@ref.Equals(element.uuid)).ToArray();
         }
     }
