@@ -1,9 +1,11 @@
 ﻿using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
 using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Models.TopoModels.Eulynx.NetEntity;
 using Services.DependencyInjection;
+using Services.Managers.Assets;
 using Services.Managers.Topology;
 using Services.Service;
 using System;
@@ -157,8 +159,10 @@ namespace FormsApp
             if (this.paintedPath == null) return;
             var allPSCoords = eulynx.ownsRtmEntities.usesPositioningSystemCoordinate;
 
+
             BaseLocation[] allLocations = this.eulynx.ownsRtmEntities.usesSpotLocation.Where(sl => sl is SpotLocationCoordinate).Cast<SpotLocationCoordinate>().ToArray();
             LocatedNetEntity[] allNetEntities = this.eulynx.ownsRtmEntities.ownsSignal;
+            TrackAsset[] allTrackAssets = InstanceManager.Singleton<TrackAssetManager>().GetInstance().GetTrackAssets(eulynx);
 
             LocatedNetEntity[] netEntities = netEntityLocator.GetAssetsOnPath(this.paintedPath, allLocations, allNetEntities);
 
