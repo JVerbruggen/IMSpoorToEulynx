@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
 using System;
 using System.IO;
 using System.Text;
@@ -13,13 +13,20 @@ namespace Services.Service
         private XmlSerializerNamespaces GetNamespaces()
         {
             XmlSerializerNamespaces xmlns = new XmlSerializerNamespaces();
-            xmlns.Add("xsi", @"http://www.w3.org/2001/XMLSchema-instance");
-            xmlns.Add("rtmCommon", @"http://www.railtopomodel.org/schemas/Common");
-            xmlns.Add("rtmNE", @"http://www.railtopomodel.org/schemas/NetEntity");
-            xmlns.Add("rtmSig", @"http://www.railtopomodel.org/schemas/Signalling");
-            xmlns.Add("base", @"http://www.railtopomodel.org/schemas/EULYNX_XSD");
-            xmlns.Add("eurtm", @"http://www.railtopomodel.org/schemas/EULYNX_XSD");
-            xmlns.Add("signalling", @"http://www.railtopomodel.org/schemas/EULYNX_Signalling");
+            var dict = NamespaceProvider.GetEulynxNamespaces();
+
+            foreach (string name in dict.Keys)
+            {
+                string @namespace = dict[name];
+                xmlns.Add(name, @namespace);
+            }
+            //xmlns.Add("xsi", @"http://www.w3.org/2001/XMLSchema-instance");
+            //xmlns.Add("rtmCommon", @"http://www.railtopomodel.org/schemas/Common");
+            //xmlns.Add("rtmNE", @"http://www.railtopomodel.org/schemas/NetEntity");
+            //xmlns.Add("rtmSig", @"http://www.railtopomodel.org/schemas/Signalling");
+            //xmlns.Add("base", @"http://www.railtopomodel.org/schemas/EULYNX_XSD");
+            //xmlns.Add("eurtm", @"http://www.railtopomodel.org/schemas/EULYNX_XSD");
+            //xmlns.Add("signalling", @"http://www.railtopomodel.org/schemas/EULYNX_Signalling");
 
             return xmlns;
         }

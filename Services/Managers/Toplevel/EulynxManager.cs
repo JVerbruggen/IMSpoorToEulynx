@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.DependencyInjection.Abstract;
@@ -6,7 +6,7 @@ using Services.Managers.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Version = Models.TopoModels.Eulynx.Version;
+using Version = Models.TopoModels.Eulynx.EULYNX_XSD.Version;
 
 namespace Services.Managers.Toplevel
 {
@@ -39,8 +39,13 @@ namespace Services.Managers.Toplevel
 
             InstanceManager.AddInstanceSupplier(new InstanceSupplier<tSituation>(situation));
 
-            RtmEntities rtmEntities = InstanceManager.Singleton<RtmEntitiesManager>().GetInstance().GetRtmEntities(situation);
-            SignallingEntities signallingEntities = InstanceManager.Singleton<SignallingEntitiesManager>().GetInstance().GetSignallingEntities(imSpoor);
+            RtmEntitiesManager rtmEntitiesManager = InstanceManager.Singleton<RtmEntitiesManager>().GetInstance();
+            SignallingEntitiesManager signallingEntitiesManager = InstanceManager.Singleton<SignallingEntitiesManager>().GetInstance();
+
+            RtmEntities rtmEntities = rtmEntitiesManager.GetRtmEntities(situation);
+            SignallingEntities signallingEntities = signallingEntitiesManager.GetSignallingEntities(imSpoor);
+
+            rtmEntities = rtmEntitiesManager.UpdateRtmEntities(rtmEntities, situation);
 
             eulynx.ownsRtmEntities = rtmEntities;
             eulynx.ownsSignallingEntities = signallingEntities;

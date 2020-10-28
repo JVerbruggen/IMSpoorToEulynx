@@ -34,5 +34,32 @@ namespace Services.Service
                 return returningString.ToString();
             }
         }
+
+        public static String NewFakeUUID(String seed, Type t)
+        {
+            return NewFakeUUID(t.Name + seed);
+        }
+
+        /// <summary>
+        /// Generate new fake uuid based on given object using reflection
+        /// Uses MD5 to convert seed to UUID
+        /// </summary>
+        /// <param name="obj">Object to generate UUID for</param>
+        /// <returns>Generated UUID string</returns>
+        public static String NewFakeUUID(object obj)
+        {
+            Type t = obj.GetType();
+            string seed = "";
+            foreach(var prop in t.GetProperties())
+            {
+                var val = prop.GetValue(obj, null);
+                if(val != null)
+                {
+                    seed += val.ToString();
+                }
+            }
+
+            return NewFakeUUID(seed, t);
+        }
     }
 }

@@ -1,7 +1,11 @@
 ﻿using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
-using Models.TopoModels.Eulynx;
+using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.Eulynx.EULYNX_Signalling;
+using Models.TopoModels.Eulynx.EULYNX_XSD;
+using Models.TopoModels.Eulynx.NetEntity;
 using Services.DependencyInjection;
+using Services.Managers.Assets;
 using Services.Managers.Topology;
 using Services.Service;
 using System;
@@ -20,16 +24,19 @@ namespace FormsApp
         private Eulynx eulynx = null;
         private Graph graph;
         private GViewer viewer;
+        private PathFinderService PathFinderService;
+        private NetEntityLocator netEntityLocator;
+
+        private PositioningNetElement[] paintedPath;
 
         public TopologyView()
         {
-            InitializeComponent();
+            Initialize();
         }
 
-        public TopologyView(Eulynx eulynx)
+        public TopologyView(Eulynx eulynx) : this()
         {
             this.eulynx = eulynx;
-            InitializeComponent();
 
             this.viewer = new GViewer();
             this.graph = new Graph("MyGraph");
@@ -58,6 +65,7 @@ namespace FormsApp
             }
 
             this.viewer.Graph = this.graph;
+            viewer.Click += ViewerNodeClickEvent;
 
             this.SuspendLayout();
             this.viewer.Dock = DockStyle.Fill;
@@ -65,8 +73,45 @@ namespace FormsApp
             this.ResumeLayout();
         }
 
+        public void ViewerNodeClickEvent(object sender, EventArgs e)
+        {
+            GViewer viewer = sender as GViewer;
+            if(viewer.SelectedObject is Node)
+            {
+                Node node = viewer.SelectedObject as Node;
+                fillPathFindPath(node.LabelText);
+            }
+        }
+
+        private void fillPathFindPath(string label)
+        {
+            if (!eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement.Any(item => item.uuid == label)) return;
+
+            if(comboBox_pathFindStart.Text == "")
+            {
+                comboBox_pathFindStart.SelectedItem = label;
+            }else if(comboBox_pathFindEnd.Text == "")
+            {
+                comboBox_pathFindEnd.SelectedItem = label;
+            }
+            else
+            {
+                comboBox_pathFindStart.SelectedItem = label;
+                comboBox_pathFindEnd.SelectedItem = null;
+            }
+        }
+
+        private void Initialize()
+        {
+            this.PathFinderService = InstanceManager.Singleton<PathFinderService>().GetInstance();
+            this.netEntityLocator = InstanceManager.Singleton<NetEntityLocator>().GetInstance();
+            InitializeComponent();
+        }
+
         private void paintFoundPath(PositioningNetElement[] path, PositioningNetElement[] allElements)
         {
+            this.paintedPath = path;
+
             foreach (PositioningNetElement pathElement in allElements)
             {
                 if (path.Contains(pathElement))
@@ -78,23 +123,6 @@ namespace FormsApp
                     this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
                 }
             }
-        }
-
-        public void FindShortestPath(string refStartNetElement, string refEndNetElement)
-        {
-            if (this.eulynx == null) return;
-
-            PositioningNetElementManager positioningNetElementManager = InstanceManager.Singleton<PositioningNetElementManager>().GetInstance();
-
-            PositionedRelation[] relations = eulynx.ownsRtmEntities.usesTrackTopology.usesPositionedRelation;
-            PositioningNetElement[] netElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
-
-            PositioningNetElement startNetElement = positioningNetElementManager.Find(netElements, refStartNetElement);
-            PositioningNetElement endNetElement = positioningNetElementManager.Find(netElements, refEndNetElement);
-
-            PositioningNetElement[] shortestPath = InstanceManager.Singleton<PathFinderService>().GetInstance().FindShortestPath(relations, netElements, startNetElement, endNetElement);
-
-            paintFoundPath(shortestPath, netElements);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -114,8 +142,34 @@ namespace FormsApp
 
             if(uuidStart != null && uuidEnd != null)
             {
-                FindShortestPath(uuidStart, uuidEnd);
+                FindShortestPath(this.eulynx, uuidStart, uuidEnd);
             }
+        }
+
+        private void FindShortestPath(Eulynx eulynx, string uuidStart, string uuidEnd)
+        {
+            PositioningNetElement[] shortestPath = PathFinderService.FindShortestPath(eulynx, uuidStart, uuidEnd);
+            PositioningNetElement[] allNetElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
+
+            paintFoundPath(shortestPath, allNetElements);
+        }
+
+        private void button_netEntities_Click(object sender, EventArgs e)
+        {
+            if (this.paintedPath == null) return;
+            var allPSCoords = eulynx.ownsRtmEntities.usesPositioningSystemCoordinate;
+
+            TrackAssetManager trackAssetManager = InstanceManager.Singleton<TrackAssetManager>().GetInstance();
+
+            //BaseLocation[] allLocations = this.eulynx.ownsRtmEntities.usesSpotLocation.Where(sl => sl is SpotLocationCoordinate).Cast<SpotLocationCoordinate>().ToArray();
+            //LocatedNetEntity[] allNetEntities = this.eulynx.ownsRtmEntities.ownsSignal;
+            TrackAsset[] pathTrackAssets = trackAssetManager.GetTrackAssets(eulynx, this.paintedPath);
+
+            //LocatedNetEntity[] netEntities = netEntityLocator.GetAssetsOnPath(this.paintedPath, allLocations, allNetEntities);
+
+            listBox_content.Items.Clear(); 
+            //listBox_content.Items.AddRange(netEntities);
+            listBox_content.Items.AddRange(pathTrackAssets);
         }
     }
 }

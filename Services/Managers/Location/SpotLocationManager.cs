@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.Managers.Base;
@@ -6,6 +6,7 @@ using Services.Managers.Positioning;
 using Services.Service;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Services.Managers.Location
@@ -30,7 +31,9 @@ namespace Services.Managers.Location
 
             GeometryDeserializer geometryDeserializer = InstanceManager.Singleton<GeometryDeserializer>().GetInstance();
             float[] xy = geometryDeserializer.GetCoordinate(geoLocation.Point);
-            CartesianCoordinate positioningSystemCoordinate = new CartesianCoordinate(xy[0], xy[1], gps, gps.uuid);
+            CartesianCoordinate positioningSystemCoordinate = new CartesianCoordinate(xy[0], xy[1], gps, "");
+            positioningSystemCoordinate.uuid = UUIDService.NewFakeUUID(positioningSystemCoordinate);
+
             positioningSystemCoordinateManager.Register(positioningSystemCoordinate);
 
             tElementWithIDref positioningSystemCoordinateRef = tElementWithIDref.GetTElementWithIDref(positioningSystemCoordinate);
