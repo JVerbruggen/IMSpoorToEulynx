@@ -1,4 +1,6 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.DB;
+using Models.TopoModels.Eulynx.EULYNX_Signalling;
+using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.Managers.Assets;
@@ -23,7 +25,7 @@ namespace Services.Managers.Toplevel
             signallingEntities.ownsAspect = Aspect.GetAspects();
             signallingEntities.ownsAssetGroup = AssetGroup.GetAssetGroups();
             signallingEntities.ownsAssetUser = AssetUser.GetAssetUsers();
-            signallingEntities.ownsATPdevice_STUB = TpsDevice1.GetTpsDevices();
+            //signallingEntities.ownsATPdevice = TpsDevice1.GetTpsDevices();
             signallingEntities.ownsAtpProtectiveDistance = TpsProtectionDistance.GetTpsProtectionDistances();
             signallingEntities.ownsAttachmentDocument = Attachment.GetAttachments();
             signallingEntities.ownsAutomatic = Automatic.GetAutomatics();

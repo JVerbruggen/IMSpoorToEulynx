@@ -5,15 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx
+namespace Models.TopoModels.Eulynx.Common
 {
     public partial class PositioningNetElement
     {
-        public PositioningNetElement()
-        {
-
-        }
-
         public double Distance(PositioningNetElement otherNetElement)
         {
             return 1;

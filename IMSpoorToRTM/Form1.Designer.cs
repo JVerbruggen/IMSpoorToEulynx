@@ -36,7 +36,13 @@
             this.label_IMSpoorXMLFile = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.saveFileDialog_EulynxXMLOutput = new System.Windows.Forms.SaveFileDialog();
+            this.groupBox_eulynxXML = new System.Windows.Forms.GroupBox();
+            this.button_loadEulynx = new System.Windows.Forms.Button();
+            this.button_chooseEulynxXML = new System.Windows.Forms.Button();
+            this.textBox_eulynxXML = new System.Windows.Forms.TextBox();
+            this.openFileDialog_EulynxXML = new System.Windows.Forms.OpenFileDialog();
             this.groupBox_IMSpoorXML.SuspendLayout();
+            this.groupBox_eulynxXML.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog_IMSpoorXML
@@ -118,11 +124,62 @@
             this.saveFileDialog_EulynxXMLOutput.FileName = "eulynx-from-imspoor-generated.xml";
             this.saveFileDialog_EulynxXMLOutput.Filter = "XML files|*.xml";
             // 
+            // groupBox_eulynxXML
+            // 
+            this.groupBox_eulynxXML.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_eulynxXML.Controls.Add(this.button_loadEulynx);
+            this.groupBox_eulynxXML.Controls.Add(this.button_chooseEulynxXML);
+            this.groupBox_eulynxXML.Controls.Add(this.textBox_eulynxXML);
+            this.groupBox_eulynxXML.Location = new System.Drawing.Point(11, 171);
+            this.groupBox_eulynxXML.Name = "groupBox_eulynxXML";
+            this.groupBox_eulynxXML.Size = new System.Drawing.Size(465, 106);
+            this.groupBox_eulynxXML.TabIndex = 4;
+            this.groupBox_eulynxXML.TabStop = false;
+            this.groupBox_eulynxXML.Text = "EULYNX XML";
+            this.groupBox_eulynxXML.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button_loadEulynx
+            // 
+            this.button_loadEulynx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_loadEulynx.Location = new System.Drawing.Point(365, 71);
+            this.button_loadEulynx.Name = "button_loadEulynx";
+            this.button_loadEulynx.Size = new System.Drawing.Size(94, 29);
+            this.button_loadEulynx.TabIndex = 3;
+            this.button_loadEulynx.Text = "Load";
+            this.button_loadEulynx.UseVisualStyleBackColor = true;
+            this.button_loadEulynx.Click += new System.EventHandler(this.button_loadEulynx_Click);
+            // 
+            // button_chooseEulynxXML
+            // 
+            this.button_chooseEulynxXML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_chooseEulynxXML.Location = new System.Drawing.Point(430, 26);
+            this.button_chooseEulynxXML.Name = "button_chooseEulynxXML";
+            this.button_chooseEulynxXML.Size = new System.Drawing.Size(29, 27);
+            this.button_chooseEulynxXML.TabIndex = 0;
+            this.button_chooseEulynxXML.Text = "...";
+            this.button_chooseEulynxXML.UseVisualStyleBackColor = true;
+            this.button_chooseEulynxXML.Click += new System.EventHandler(this.button_chooseEulynxXML_Click);
+            // 
+            // textBox_eulynxXML
+            // 
+            this.textBox_eulynxXML.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_eulynxXML.Location = new System.Drawing.Point(8, 26);
+            this.textBox_eulynxXML.Name = "textBox_eulynxXML";
+            this.textBox_eulynxXML.Size = new System.Drawing.Size(416, 27);
+            this.textBox_eulynxXML.TabIndex = 1;
+            // 
+            // openFileDialog_EulynxXML
+            // 
+            this.openFileDialog_EulynxXML.FileName = "openFileDialog_EulynxXML";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 463);
+            this.Controls.Add(this.groupBox_eulynxXML);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox_IMSpoorXML);
             this.Name = "Form1";
@@ -130,6 +187,8 @@
             this.Text = "Form1";
             this.groupBox_IMSpoorXML.ResumeLayout(false);
             this.groupBox_IMSpoorXML.PerformLayout();
+            this.groupBox_eulynxXML.ResumeLayout(false);
+            this.groupBox_eulynxXML.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -144,6 +203,11 @@
         private System.Windows.Forms.Button button_startConversion;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog_EulynxXMLOutput;
+        private System.Windows.Forms.GroupBox groupBox_eulynxXML;
+        private System.Windows.Forms.Button button_loadEulynx;
+        private System.Windows.Forms.Button button_chooseEulynxXML;
+        private System.Windows.Forms.TextBox textBox_eulynxXML;
+        private System.Windows.Forms.OpenFileDialog openFileDialog_EulynxXML;
     }
 }
 

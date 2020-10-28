@@ -13,6 +13,12 @@ namespace Services.Managers.Base
         void Register(T t);
 
         /// <summary>
+        /// Register multiple instances of T to this manager
+        /// </summary>
+        /// <param name="t">Instances to register</param>
+        void Register(T[] t);
+
+        /// <summary>
         /// Get all instances of T previously registered to this manager
         /// </summary>
         /// <returns></returns>

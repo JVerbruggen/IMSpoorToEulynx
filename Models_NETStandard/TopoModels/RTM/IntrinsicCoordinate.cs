@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Models.TopoModels.Eulynx.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx
+namespace Models.TopoModels.Eulynx.Common
 {
     public partial class IntrinsicCoordinate
     {

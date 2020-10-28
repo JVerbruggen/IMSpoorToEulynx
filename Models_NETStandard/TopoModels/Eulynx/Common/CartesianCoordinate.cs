@@ -1,9 +1,8 @@
-﻿using Models.TopoModels.IMSpoor;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx
+namespace Models.TopoModels.Eulynx.Common
 {
     public partial class CartesianCoordinate
     {

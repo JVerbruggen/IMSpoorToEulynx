@@ -1,4 +1,5 @@
-﻿using Models.TopoModels.Eulynx;
+﻿using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.Managers.Base;
@@ -53,7 +54,7 @@ namespace Services.Managers.Assets
 
             string streetName = levelCrossing.locationIndication;
             string type = levelCrossing.levelCrossingType.ToString();
-            tElementWithIDref[] isLocatedAt = new tElementWithIDref[] { spotLocationManager.GetGeoLocationRef(levelCrossing.Location) };
+            tElementWithIDref[] isLocatedAt = tElementWithIDref.GetTElementsWithIDref(spotLocationManager.GetGeoLocationRef(levelCrossing.Location));
             string uuid = UUIDService.NewFakeUUID(isLocatedAt + streetName + type);
             TrackCrossing trackCrossing = new TrackCrossing(isLocatedAt, streetName, type, uuid);
 
