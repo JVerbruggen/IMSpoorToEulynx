@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Models_NETStandard\4.0. Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Factory\Toplevel\" />
+  </ItemGroup>
+
 </Project>

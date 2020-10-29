@@ -16,6 +16,7 @@ namespace Services.Service
         public Eulynx Translate(IMSpoor imSpoor)
         {
             Eulynx eulynx = InstanceManager.Singleton<EulynxManager>().GetInstance().GetEulynx(imSpoor);
+            InstanceManager.Singleton(eulynx);
 
             return eulynx;
         }
