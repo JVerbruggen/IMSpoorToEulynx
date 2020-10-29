@@ -3,6 +3,7 @@ using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.DependencyInjection.Abstract;
 using Services.Managers.Base;
+using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,7 +17,7 @@ namespace Services.Managers.Toplevel
         {
             Eulynx eulynx = new Eulynx();
 
-            InstanceManager.AddInstanceSupplier(new InstanceSupplier<IMSpoor>(imSpoor));
+            //InstanceManager.AddInstanceSupplier(new InstanceSupplier<IMSpoor>(imSpoor));
 
             object item = imSpoor.Item;
             String version = imSpoor.imxVersion;
@@ -37,7 +38,8 @@ namespace Services.Managers.Toplevel
                 situation = project.InitialSituation;
             }
 
-            InstanceManager.AddInstanceSupplier(new InstanceSupplier<tSituation>(situation));
+            //InstanceManager.AddInstanceSupplier(new InstanceSupplier<tSituation>(situation));
+            InstanceManager.Singleton<IMSpoorReadingService>().GetInstance().situation = situation;
 
             RtmEntitiesManager rtmEntitiesManager = InstanceManager.Singleton<RtmEntitiesManager>().GetInstance();
             SignallingEntitiesManager signallingEntitiesManager = InstanceManager.Singleton<SignallingEntitiesManager>().GetInstance();

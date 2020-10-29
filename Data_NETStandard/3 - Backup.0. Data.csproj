@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Data</RootNamespace>
+    <Configurations>Debug;Release;CI</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models_NETStandard\4.0. Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Storage\IMSpoor_Examples\IMSpoor-1.3.0-ExampleBGT.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_Examples\IMSpoor-1.3.0-ExampleERTMS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-Alignment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-BasicTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-BGTObjects.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-Communication.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-ERTMS-packets.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-ERTMS-variables.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-ERTMS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-Furniture.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-gml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-Groupings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-Infra.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-ReturnCurrents.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-SystemConfiguration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-TrackAssets.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Storage\IMSpoor_XSDs\IMSpoor-1.3.0-TrainControl.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+</Project>

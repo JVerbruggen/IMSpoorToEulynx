@@ -5,6 +5,7 @@ using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.Managers.Assets;
 using Services.Managers.Base;
+using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,7 +17,7 @@ namespace Services.Managers.Toplevel
 
         public SignallingEntities GetSignallingEntities(IMSpoor imSpoor)
         {
-            tSituation situation = InstanceManager.Singleton<tSituation>().GetInstance();
+            tSituation situation = InstanceManager.Singleton<IMSpoorReadingService>().GetInstance().situation;
             TrackAssets trackAssets = situation.RailInfrastructure.TrackAssets;
 
             SignallingEntities signallingEntities = new SignallingEntities();

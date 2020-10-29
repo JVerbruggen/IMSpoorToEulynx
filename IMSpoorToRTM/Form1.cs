@@ -34,6 +34,9 @@ namespace FormsApp
             textBox_IMSpoorXML.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\IMSpoor-1.3.0-actual.xml";
             updateConversionButtonState();
 
+            Dependencies.RegisterFactories();
+            Dependencies.RegisterDependencies();
+
             //Signal signal = new Models.TopoModels.Eulynx.EULYNX_Signalling.Signal();
             //tElementWithIDref signalRef = signal;
 

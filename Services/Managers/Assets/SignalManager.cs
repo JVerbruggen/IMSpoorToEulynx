@@ -1,5 +1,6 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.Eulynx.EULYNX_Signalling;
+using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Services.DependencyInjection;
 using Services.Managers.Base;
 using Services.Managers.Location;
@@ -40,6 +41,22 @@ namespace Services.Managers.Assets
                 signalsConverted.Add(signal);
             }
             return signalsConverted.ToArray();
+        }
+
+        public BaseLocation GetLocation(Signal signal)
+        {
+            tElementWithIDref rtmSignalRef = signal.refersToRtmSignal;
+
+            Eulynx eulynx = InstanceManager.Singleton<Eulynx>().GetInstance();
+            var rtmSignals = eulynx.ownsRtmEntities.ownsSignal;
+
+            var spotLocations = eulynx.ownsRtmEntities.usesSpotLocation;
+
+            var rtmSignal = BaseObject.Find(rtmSignals, rtmSignalRef);
+            var rtmSignalLocationsRef = rtmSignal.locations;
+            var rtmSignalSpotLocation = rtmSignal.GetLocation(spotLocations);
+
+            return rtmSignalSpotLocation;
         }
 
     }

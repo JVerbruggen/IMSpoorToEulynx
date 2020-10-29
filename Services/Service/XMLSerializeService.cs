@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.Translation;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Services.Service
 {
-    public class XMLSerializeService
+    public class XMLSerializeService : IService
     {
         public T DeserializeObject<T>(string xml)
         {

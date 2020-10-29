@@ -1,5 +1,6 @@
 ﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Models.TopoModels.IMSpoor.V1_3_0;
+using Services.Managers.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +8,7 @@ using Version = Models.TopoModels.Eulynx.EULYNX_XSD.Version;
 
 namespace Services.Managers.Toplevel
 {
-    public class VersionManager
+    public class VersionManager : AbstractManager<Version>
     {
         public Version GetVersion(IMSpoor imSpoor)
         {

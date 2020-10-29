@@ -547,7 +547,7 @@
          <rtmNE:locations ref="94ecb5d9-bec4-4bd6-8c96-882d811432a1"/>
       </base:ownsRouteBody>
       <base:ownsSignal name="60REG" uuid="956b37ac-e830-41e5-97a2-a174fca10357">
-         <rtmNE:locations ref="a62a3e52-285d-437d-85a1-a2c116a14ad3"/>
+         <rtmNE:locations ref="f27d7aea-de6c-45e6-93c5-9844e476c21f"/>
       </base:ownsSignal>
       <base:ownsSignal name="60RE" uuid="1d199d86-4cec-4648-afba-8e93e797e350">
          <rtmNE:locations ref="499e8d58-5ac5-4bcf-9c77-a208097ad52d"/>
