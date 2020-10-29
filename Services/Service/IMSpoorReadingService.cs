@@ -8,7 +8,7 @@ namespace Services.Service
 {
     public class IMSpoorReadingService : IService
     {
-        public tSituation situation { get; set; }
+        public tSituation situation { get; set; } // TO DO SET SITUATION
 
 
     }

@@ -13,6 +13,8 @@ namespace Services.Managers.Assets
     {
         public abstract TrackAsset[] GetTrackAssets(Eulynx eulynx);
 
+        //public abstract TrackAsset[] GetTrackAssets<T>(Eulynx eulynx) where T : BaseObject;
+
         public virtual TrackAsset[] GetTrackAssets(Eulynx eulynx, PositioningNetElement[] path)
         {
             IList<TrackAsset> foundAssets = new List<TrackAsset>();

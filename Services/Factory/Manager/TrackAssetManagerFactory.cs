@@ -13,15 +13,5 @@ namespace Services.Factory.Manager
         {
             return new TrackAssetManagerLimited();
         }
-
-        //public Type GetCreatingType()
-        //{
-        //    return typeof(TrackAsset);
-        //}
-
-        //public TrackAssetManager GetManager()
-        //{
-        //    return CreateDefault();
-        //}
     }
 }

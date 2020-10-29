@@ -66,10 +66,16 @@ namespace Models.TopoModels.Eulynx.Common
             return allElements.ToList().Where(element => (needles.Any(idRef => idRef.@ref.Equals(element.uuid)))).ToArray();
         }
 
-        public static T[] Find<T>(T[] allElements, tElementWithIDref needle) where T : BaseObject
+        public static T[] FindWithDuplicates<T>(T[] allElements, tElementWithIDref needle) where T : BaseObject
         {
             if (needle == null || needle.@ref == null) return null;
             return allElements.ToList().Where(element => needle.@ref.Equals(element.uuid)).ToArray();
+        }
+
+        public static T Find<T>(T[] allElements, tElementWithIDref needle) where T : BaseObject
+        {
+            if (needle == null || needle.@ref == null) return null;
+            return allElements.ToList().Where(element => needle.@ref.Equals(element.uuid)).First();
         }
     }
 }

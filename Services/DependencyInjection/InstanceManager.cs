@@ -89,8 +89,8 @@ namespace Services.DependencyInjection
             if(instanceSupplier == null)
             {
                 instanceSupplier = new InstanceSupplier<T>(t);
+                AddInstanceSupplier(instanceSupplier);
             }
-            AddInstanceSupplier(instanceSupplier);
             return instanceSupplier;
         }
 
