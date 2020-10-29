@@ -1,5 +1,6 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.Eulynx.EULYNX_XSD;
+using Models.Translation;
 using Services.DependencyInjection;
 using Services.Managers.Topology;
 using System;
@@ -62,7 +63,7 @@ namespace Services.Service
         }
     }
 
-    public class PathFinderService
+    public class PathFinderService : IService
     {
         private Vertex minDist(Vertex[] allVertices)
         {

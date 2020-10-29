@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Models.Translation;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace Services.Service
 {
-    public class UUIDService
+    public class UUIDService : IService
     {
 
         /// <summary>

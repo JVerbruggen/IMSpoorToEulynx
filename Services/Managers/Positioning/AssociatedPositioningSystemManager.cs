@@ -2,6 +2,7 @@
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.DependencyInjection;
 using Services.Managers.Base;
+using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Services.Managers.Positioning
         {
             IList<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
 
-            tSituation situation = InstanceManager.Singleton<tSituation>().GetInstance();
+            tSituation situation = InstanceManager.Singleton<IMSpoorReadingService>().GetInstance().situation;
             RailImplementation implementation = situation.RailInfrastructure.RailImplementation;
 
             TrackPhysicalView trackPhysicalView = null;

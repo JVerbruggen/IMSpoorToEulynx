@@ -1,4 +1,5 @@
-﻿using Services.DependencyInjection.Abstract;
+﻿using Models.Base;
+using Services.DependencyInjection.Abstract;
 using Services.Factory.Base;
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,21 @@ namespace Services.DependencyInjection
     public static class InstanceManager
     {
         private static IList<IInstanceSupplier> instanceSuppliers = new List<IInstanceSupplier>();
-        private static IList<IFactory<object>> factories = new List<IFactory<object>>();
+        private static IList<IFactory<IManageable>> factories = new List<IFactory<IManageable>>();
 
         /// <summary>
         /// Get factory that supplies given type
         /// </summary>
         /// <typeparam name="T">Type that factory must supply</typeparam>
         /// <returns>Found factory</returns>
-        public static IFactory<T> GetFactory<T>()
+        public static IFactory<T> GetFactory<T>() where T : IManageable
         {
-            IFactory<T> foundFactory = factories.Where(factory => factory.GetCreatingType() == typeof(T)).Cast<IFactory<T>>().First();
+            if (factories.Count == 0) return null;
+
+            var factoriesWType = factories.Where(factory => factory.CompareTo(typeof(T)));
+            if (factoriesWType.Count() == 0) return null;
+
+            IFactory<T> foundFactory = factoriesWType.Cast<IFactory<T>>()?.First();
             return foundFactory;
         }
 
@@ -27,7 +33,7 @@ namespace Services.DependencyInjection
         /// Register multiple factories
         /// </summary>
         /// <param name="factories">Factories to register</param>
-        public static void RegisterFactories(IEnumerable<IFactory<object>> factories)
+        public static void RegisterFactories(IEnumerable<IFactory<IManageable>> factories)
         {
             foreach(var factory in factories)
             {
@@ -41,12 +47,12 @@ namespace Services.DependencyInjection
         /// <typeparam name="T">Type the factory is supplying</typeparam>
         /// <param name="factory">The factory to register</param>
         /// <returns>True if registered, False if already existed</returns>
-        public static bool RegisterFactory<T>(IFactory<T> factory)
+        public static bool RegisterFactory<T>(IFactory<T> factory) where T : IManageable
         {
             IFactory<T> alreadyExistingFactory = GetFactory<T>();
-            if(alreadyExistingFactory != null)
+            if(alreadyExistingFactory == null)
             {
-                factories.Add((IFactory<object>)factory);
+                factories.Add((IFactory<IManageable>)factory);
                 return true;
             }
             return false;
@@ -93,8 +99,25 @@ namespace Services.DependencyInjection
         /// If not found, make a new InstanceSupplier with instance made by System.Activator class
         /// </summary>
         /// <returns>Found or new InstanceSupplier object</returns>
-        public static InstanceSupplier<T> Singleton<T>()
+        public static InstanceSupplier<T> Singleton<T>() where T : IManageable
         {
+            InstanceSupplier<T> instanceSupplier = GetInstanceSupplier<T>();
+            if (instanceSupplier != null) return instanceSupplier;
+
+            IFactory<T> factory = GetFactory<T>();
+            if(factory != null)
+            {
+                instanceSupplier = new InstanceSupplier<T>(factory.CreateDefault());
+                AddInstanceSupplier(instanceSupplier);
+                return instanceSupplier;
+            }
+
+            Type t = typeof(T);
+            if (t.GetConstructor(Type.EmptyTypes) == null || t.IsAbstract)
+            {
+                throw new Exception("Singleton of abstract object has not been instantiated");
+            }
+
             return Singleton((T)Activator.CreateInstance(typeof(T)));
         }
 

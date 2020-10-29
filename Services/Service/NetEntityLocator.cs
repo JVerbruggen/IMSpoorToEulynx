@@ -1,6 +1,7 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Models.TopoModels.Eulynx.NetEntity;
+using Models.Translation;
 using Services.DependencyInjection;
 using Services.Managers.Location;
 using Services.Managers.NetEntity;
@@ -12,7 +13,7 @@ using System.Text;
 
 namespace Services.Service
 {
-    public class NetEntityLocator
+    public class NetEntityLocator : IService
     {
         public LocatedNetEntity[] GetAssetsOnPath(PositioningNetElement[] orderedPath, BaseLocation[] allLocations, LocatedNetEntity[] allNetEntities)
         {

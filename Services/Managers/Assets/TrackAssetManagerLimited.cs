@@ -16,7 +16,7 @@ namespace Services.Managers.Assets
         {
             List<TrackAsset> trackAssets = new List<TrackAsset>();
 
-            Signal[] signals = eulynx.ownsRtmEntities.ownsSignal.Select(s => InstanceManager.Singleton<SignalFactory>().GetInstance().GetSignal(s)).ToArray(); // Should be, when available, signallingEntities.ownsSignal
+            Signal[] signals = eulynx.ownsRtmEntities.ownsSignal.Select(s => InstanceManager.Singleton<Signal>().GetInstance()).ToArray(); // Should be, when available, signallingEntities.ownsSignal
 
             trackAssets.AddRange(eulynx.ownsSignallingEntities.ownsSignal);
 

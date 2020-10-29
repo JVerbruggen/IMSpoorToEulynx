@@ -1,11 +1,12 @@
 ﻿using Models.TopoModels.IMSpoor.V1_3_0;
+using Models.Translation;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Services.Service
 {
-    public class GeometryDeserializer
+    public class GeometryDeserializer : IService
     {
 
         private float[] GetCoordinate(string[] csplit)

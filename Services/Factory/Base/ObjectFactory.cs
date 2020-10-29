@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Services.Factory.Base
 {
-    public class ObjectFactory<T> : Factory<T>, IObjectFactory<T>
+    public abstract class ObjectFactory<T> : Factory<T>, IObjectFactory<T>
         where T : BaseObject
     {
     }

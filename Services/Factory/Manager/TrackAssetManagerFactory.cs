@@ -9,9 +9,19 @@ namespace Services.Factory.Manager
 {
     public class TrackAssetManagerFactory : ManagerFactory<TrackAssetManager, TrackAsset>
     {
-        public override TrackAssetManager GetManager()
+        public override TrackAssetManager CreateDefault()
         {
             return new TrackAssetManagerLimited();
         }
+
+        //public Type GetCreatingType()
+        //{
+        //    return typeof(TrackAsset);
+        //}
+
+        //public TrackAssetManager GetManager()
+        //{
+        //    return CreateDefault();
+        //}
     }
 }

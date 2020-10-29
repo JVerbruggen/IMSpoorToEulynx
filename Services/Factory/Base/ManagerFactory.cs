@@ -6,12 +6,12 @@ using System.Text;
 
 namespace Services.Factory.Base
 {
-    public abstract class ManagerFactory<T, U> : Factory<T>, IManagerFactory<T, U>
+    public abstract class ManagerFactory<T, U> : Factory<T>, IManagerFactory<T, U>, IFactory<T>
         where T : IItemManager<U>
     {
         public virtual T GetManager()
         {
-            return (T)Activator.CreateInstance(typeof(T));
+            return CreateDefault();
         }
     }
 }
