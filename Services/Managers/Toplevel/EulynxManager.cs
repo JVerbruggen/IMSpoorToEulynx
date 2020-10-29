@@ -1,5 +1,5 @@
 ﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
-using Models.TopoModels.IMSpoor.V1_3_0;
+using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.DependencyInjection.Abstract;
 using Services.Managers.Base;
@@ -26,8 +26,8 @@ namespace Services.Managers.Toplevel
 
             Version v = InstanceManager.Singleton<VersionManager>().GetInstance().GetVersion(imSpoor);
             eulynx.isReleaseVersion = v;
+            
             tSituation situation;
-
             if (item is tSituation)
             {
                 situation = (tSituation)item;

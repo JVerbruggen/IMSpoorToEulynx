@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 sp1 (http://www.altova.com) by XMLSpy 2011 Professional Ed. Release 3, Installed for 50 users (with SMP from 2011-10-18 to 2013-10-18) (Movares Group B.V.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.prorail.nl/IMSpoor" targetNamespace="http://www.prorail.nl/IMSpoor">
+	<xs:include schemaLocation="IMSpoor-1.2.3-BGTObjects.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-Communication.xsd"/>
+</xs:schema>

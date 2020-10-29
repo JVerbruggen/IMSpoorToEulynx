@@ -1,5 +1,5 @@
 ﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.IMSpoor.V1_3_0;
+using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.Managers.Base;
 using System;
 using System.Collections.Generic;
@@ -114,8 +114,8 @@ namespace Services.Managers.Topology
                 if (tToGoTo == currentTrack) continue; // u cant go towards yourself weirdo that'd be very weird
 
                 PositionedRelation trackRelation = new PositionedRelation();
-                trackRelation.elementA = new tElementWithIDref() { @ref = currentTrack.trackFunctionalViewRef };
-                trackRelation.elementB = new tElementWithIDref() { @ref = tToGoTo.trackFunctionalViewRef };
+                trackRelation.elementA = new tElementWithIDref() { @ref = currentTrack.railConnectionRef };
+                trackRelation.elementB = new tElementWithIDref() { @ref = tToGoTo.railConnectionRef };
                 trackRelation.name = "-";
                 trackRelation.navigability = tToGoToRelation.Navigability;
                 trackRelation.positionOnA = relationDirection == RelationDirection.ONWARDS ? Usage.start : Usage.end; // Current track

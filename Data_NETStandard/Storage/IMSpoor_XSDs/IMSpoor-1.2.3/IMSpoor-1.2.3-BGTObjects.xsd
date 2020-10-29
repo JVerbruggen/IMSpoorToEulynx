@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:gml3="http://www.opengis.net/gml3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-BasicTypes.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml3" schemaLocation="IMSpoor-1.2.3-gml3.xsd"/>
+	<xs:element name="BGT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Ramps" minOccurs="0"/>
+				<xs:element ref="Elevators" minOccurs="0"/>
+				<xs:element ref="Escalators" minOccurs="0"/>
+				<xs:element ref="StationTunnels" minOccurs="0"/>
+				<xs:element ref="FootBridges" minOccurs="0"/>
+				<xs:element ref="PlatformRoofs" minOccurs="0"/>
+				<xs:element ref="BicycleParkingStations" minOccurs="0"/>
+				<xs:element ref="Shelters" minOccurs="0"/>
+				<xs:element ref="AntiTrespassPanels" minOccurs="0"/>
+				<xs:element ref="VegetationControlMats" minOccurs="0"/>
+				<xs:element ref="SlopeStairsCollection" minOccurs="0"/>
+				<xs:element ref="BGTAreas" minOccurs="0"/>
+				<xs:element ref="ServicePlatforms" minOccurs="0"/>
+				<xs:element ref="Trees" minOccurs="0"/>
+				<xs:element ref="IMGeoObjects" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IMGeoObjects">
+		<xs:annotation>
+			<xs:documentation>Een verzameling generieke IMGeo objecten gemodelleerd in de stijl van IMSpoor</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PlantCover" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="BgtCivilConstructionPart" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="LandUse" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="AuxiliaryWaterBody" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="AuxiliaryTrafficArea" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="BridgePart" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="OtherConstruction" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Building" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Barrier" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TunnelPart" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="WaterBody" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TrafficArea" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Railway" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Hedge" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="BuildingInstallation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="RoadFurnishingElement" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BuildingInstallation">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Gebouwinstallatie</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoadFurnishingElement">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Weginrichtingselement</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PlantCover">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">BegroeidTerreinDeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject">
+					<xs:sequence>
+						<xs:element name="CrestLine" type="tGml3GeographicLocation" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Kruinlijn begroeid terreindeel</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BgtCivilConstructionPart">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Kunstwerkdeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LandUse">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">OnbegroeidTerreinDeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject">
+					<xs:sequence>
+						<xs:element name="CrestLine" type="tGml3GeographicLocation" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Kruinlijn onbegroeid terreindeel</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AuxiliaryWaterBody">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">OndersteunendWaterdeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AuxiliaryTrafficArea">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">OndersteunendWegdeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject">
+					<xs:sequence>
+						<xs:element name="CrestLine" type="tGml3GeographicLocation" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Kruinlijn ondersteunend wegdeel</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BridgePart">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">OverbruggingsDeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherConstruction">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">OverigBouwwerk</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Building">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Pand</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Barrier">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Scheiding</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TunnelPart">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">TunnelDeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WaterBody">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Waterdeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TrafficArea">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Wegdeel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject">
+					<xs:sequence>
+						<xs:element name="CrestLine" type="tGml3GeographicLocation" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Kruinlijn wegdeel</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Railway">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Overig Spoor</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Hedge">
+		<xs:annotation>
+			<xs:documentation xml:lang="NL">Haag</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGenericIMGeoObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Ramps">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Hellingbanen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Ramp" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Ramp">
+		<xs:annotation>
+			<xs:documentation>Een hellingbaan is een schuin op-/aflopende baan aan het perron, waarover rolvoertuigen
+omhoog of omlaag (van en naar het perron) kunnen bewegen.</xs:documentation>
+			<xs:documentation xml:lang="NL">Hellingbaan</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtTransportObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Elevators">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Lift-transfers.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Elevator" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Elevator">
+		<xs:annotation>
+			<xs:documentation>Een lifttransfer is een niet-verplaatsbaar hefwerktuig met vaste stopplaatsen, bedoeld voor het
+verticaal vervoer van personen en/of goederen.</xs:documentation>
+			<xs:documentation xml:lang="NL">Lift</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtTransportObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Escalators">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Roltrappen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Escalator" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Escalator">
+		<xs:annotation>
+			<xs:documentation>Een roltrap is een voetpad op een verkeersinfrastructureel transportsysteem bestaande uit een
+constructie van automatisch omhoog- of omlaagschuivende treden, waarop men een hoger of
+lager gelegen plaats kan bereiken.</xs:documentation>
+			<xs:documentation xml:lang="NL">Roltrap</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtTransportObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StationTunnels">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Stationstunnels.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="StationTunnel" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StationTunnel">
+		<xs:annotation>
+			<xs:documentation>Een stationstunnel is een kunstwerk, onder het spoor door, dat twee of meer perrons met
+elkaar verbindt.</xs:documentation>
+			<xs:documentation xml:lang="NL">Stationstunnel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtKunstwerk"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FootBridges">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Traverses.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FootBridge" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FootBridge">
+		<xs:annotation>
+			<xs:documentation>Een traverse (of een stationsbrug) is veelal een grote/brede ongelijkvloerse
+voetgangersoversteek over het spoor, waar vaak plaats is voor winkels, horeca en dergelijke.</xs:documentation>
+			<xs:documentation xml:lang="NL">Traverse/Stationsbrug</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtKunstwerk"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PlatformRoofs">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Perronoverkappingen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PlatformRoof" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PlatformRoof">
+		<xs:annotation>
+			<xs:documentation>Een perronoverkapping is een afzonderlijk staande overdekking van (een gedeelte van) een
+perron, rustend op kolommen.</xs:documentation>
+			<xs:documentation xml:lang="NL">Perronoverkapping</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtConstruction"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BicycleParkingStations">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Rijwielstallingen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BicycleParkingStation" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BicycleParkingStation">
+		<xs:annotation>
+			<xs:documentation>Een rijwielstalling is een overdekte plaats waar (brom)fietsen gestald of in bewaring gegeven
+kunnen worden.</xs:documentation>
+			<xs:documentation xml:lang="NL">Rijwielstalling</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtConstruction"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Shelters">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Abris.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Shelter" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Shelter">
+		<xs:annotation>
+			<xs:documentation>Een abri is een overdekte wachtplaats voor passagiers van het openbaar vervoer.</xs:documentation>
+			<xs:documentation xml:lang="NL">Abri</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtConstruction"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AntiTrespassPanels">
+		<xs:annotation>
+			<xs:documentation>Een verzameling AntiLoopmatten.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AntiTrespassPanel" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AntiTrespassPanel">
+		<xs:annotation>
+			<xs:documentation>Een anti-loopmat is een voorziening bij overwegen die het betreden van de spoorbaan
+bemoeilijkt.</xs:documentation>
+			<xs:documentation xml:lang="NL">Anti-Loopmat</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGml3PolygonObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VegetationControlMats">
+		<xs:annotation>
+			<xs:documentation>Een verzameling AntiVegetatiematten.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VegetationControlMat" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VegetationControlMat">
+		<xs:annotation>
+			<xs:documentation>Een antivegetatiemat heeft als doel het vermijden van ongewenste plantengroei.</xs:documentation>
+			<xs:documentation xml:lang="NL">Antivegetatiemat</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGml3PolygonObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SlopeStairsCollection">
+		<xs:annotation>
+			<xs:documentation>Een verzameling TaludTrappen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SlopeStairs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SlopeStairs">
+		<xs:annotation>
+			<xs:documentation>Een taludtrap is een trap die het hoogteverschil tussen de spoorbaan en de naastliggende
+omgeving overbrugt.</xs:documentation>
+			<xs:documentation xml:lang="NL">Taludtrap</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtTransportObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BGTAreas">
+		<xs:annotation>
+			<xs:documentation>Een verzameling BGTvlakken.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BGTArea" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BGTArea">
+		<xs:annotation>
+			<xs:documentation>BGTVlak</xs:documentation>
+			<xs:documentation xml:lang="NL">Werk in uitvoering / Niet te zien</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGml3PolygonObject">
+					<xs:sequence>
+						<xs:element name="LandUseCrestLine" type="tGml3GeographicLocation" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Kruislijn onbegroeid terreindeel</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="bgtAreaType" type="tBgtAreaTypeEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>werk in uitvoering of niet te zien</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="isLandUseOnSlope" type="tTrueFalseEnum" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ServicePlatforms">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Serviceperrons.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ServicePlatform" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ServicePlatform">
+		<xs:annotation>
+			<xs:documentation>Serviceperron.</xs:documentation>
+			<xs:documentation xml:lang="NL">Serviceperron</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBgtKunstwerk"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Trees">
+		<xs:annotation>
+			<xs:documentation>Een verzameling Bomen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Tree" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Tree">
+		<xs:annotation>
+			<xs:documentation>Boom</xs:documentation>
+			<xs:documentation xml:lang="NL">Boom</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tGml3PointObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tBgtConstruction">
+		<xs:complexContent>
+			<xs:extension base="tGml3PolygonObject">
+				<xs:attribute name="otherConstructionType" type="tBGTSubTypeEnum" use="required">
+					<xs:annotation>
+						<xs:documentation>typeOverigBouwwerk</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tBgtKunstwerk">
+		<xs:complexContent>
+			<xs:extension base="tGml3PolygonObject"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tBgtTransportObject">
+		<xs:complexContent>
+			<xs:extension base="tGml3PolygonObject">
+				<xs:sequence>
+					<xs:element name="CrestLine" type="tGml3GeographicLocation" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Kruinlijn wegdeel</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="applicationPropertyOfTrafficArea" type="tBGTSubTypeEnum" use="required">
+					<xs:annotation>
+						<xs:documentation>Fysiek Voorkomen Wegdeel</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="isTrafficAreaOnSlope" type="tTrueFalseEnum" use="required">
+					<xs:annotation>
+						<xs:documentation>Wegdeel op talud</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tGml3PointObject">
+		<xs:annotation>
+			<xs:documentation>Generiek type voor object met een punt locatie.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="Location" type="tGml3PointLocation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tGml3PolygonObject">
+		<xs:annotation>
+			<xs:documentation>Generiek type voor object met een polygoon locatie.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="Location" type="tGml3PolygonLocation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tGml3PointLocation">
+		<xs:sequence>
+			<xs:element name="GeographicLocation">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="tGeometry">
+							<xs:sequence>
+								<xs:element ref="gml3:Point"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="KmRibbonLocation" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGml3PolygonLocation">
+		<xs:sequence>
+			<xs:element name="GeographicLocation">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="tGeometry">
+							<xs:sequence>
+								<xs:element ref="gml3:Polygon"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="KmRibbonLocation" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGml3GeographicLocation">
+		<xs:complexContent>
+			<xs:extension base="tGeometry">
+				<xs:choice>
+					<xs:element ref="gml3:Point"/>
+					<xs:element ref="gml3:LineString"/>
+					<xs:element ref="gml3:Polygon"/>
+					<xs:element ref="gml3:MultiSurface"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tGml3GenericLocation">
+		<xs:sequence>
+			<xs:element name="GeographicLocation" type="tGml3GeographicLocation"/>
+			<xs:element ref="KmRibbonLocation" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGenericIMGeoObject">
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="Location" type="tGml3GenericLocation"/>
+					<xs:element ref="Attribute" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="imgeoType" type="tBGTSubTypeEnum">
+					<xs:annotation>
+						<xs:documentation>Het sub-type van het IMGEO object.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Attribute">
+		<xs:annotation>
+			<xs:documentation>Een lijst van generieke attributen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="name" type="tString50" use="required">
+				<xs:annotation>
+					<xs:documentation>De naam van het attribuut.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="value" type="tDescriptionString" use="required">
+				<xs:annotation>
+					<xs:documentation>De waarde van het attribuut.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tBGTSubTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tBgtAreaTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NotVisible">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Niet Zichtbaar</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WorkInProgress">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Werk in uitvoering</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

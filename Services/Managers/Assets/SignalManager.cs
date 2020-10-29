@@ -14,10 +14,10 @@ namespace Services.Managers.Assets
 {
     public class SignalManager : ItemManager<Signal>
     {
-        public Signal[] GetSignals(Models.TopoModels.IMSpoor.V1_3_0.Signal[] imspoorSignals)
+        public Signal[] GetSignals(Models.TopoModels.IMSpoor.V1_2_3.Signal[] imspoorSignals)
         {
             IList<Signal> signalsConverted = new List<Signal>();
-            foreach (Models.TopoModels.IMSpoor.V1_3_0.Signal imspoorSignal in imspoorSignals)
+            foreach (Models.TopoModels.IMSpoor.V1_2_3.Signal imspoorSignal in imspoorSignals)
             {
                 SpotLocationManager spotLocationManager = InstanceManager.Singleton<SpotLocationManager>().GetInstance();
                 SignalFrameManager signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();

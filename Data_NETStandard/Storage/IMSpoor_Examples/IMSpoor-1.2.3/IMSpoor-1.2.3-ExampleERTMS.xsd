@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.prorail.nl/IMSpoor" targetNamespace="http://www.prorail.nl/IMSpoor">
+	<xs:include schemaLocation="IMSpoor-1.2.3-ERTMS.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-Communication.xsd"/>
+</xs:schema>

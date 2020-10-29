@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opengis.net/gml" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Point">
+		<xs:annotation>
+			<xs:documentation>Een punt in RD-coordinaten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:coordinates"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LineString">
+		<xs:annotation>
+			<xs:documentation>Een lijn in RD-coordinaten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:coordinates"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Polygon">
+		<xs:annotation>
+			<xs:documentation>Een enkelvoudige veelhoek, met donuts in RD-coordinaten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:outerBoundaryIs"/>
+				<xs:element ref="gml:innerBoundaryIs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="coordinates" type="xs:string"/>
+	<xs:element name="MultiPoint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:pointMember" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pointMember">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:Point"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MultiLineString">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:lineStringMember" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="lineStringMember">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:LineString"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MultiPolygon">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:polygonMember" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="polygonMember">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:Polygon"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearRing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:coordinates"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="innerBoundaryIs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:LinearRing"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="outerBoundaryIs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gml:LinearRing"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
