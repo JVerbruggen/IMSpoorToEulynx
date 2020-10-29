@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:gml="http://www.opengis.net/gml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="IMSpoor-1.2.3-gml.xsd"/>
+	<xs:complexType name="tBaseObject">
+		<xs:annotation>
+			<xs:documentation>Base type voor alle spoorse objecten.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="Metadata" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="baseId"/>
+	</xs:complexType>
+	<xs:element name="Metadata">
+		<xs:complexType>
+			<xs:attribute name="originType" type="tSourceOriginEnum" use="required">
+				<xs:annotation>
+					<xs:documentation>Geeft aan voor gemeenschappelijke objecttypes  of het object alleen in BBK, alleen in IA of in allebei voorkwam</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="objectBeginTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Datum waarop het object bij de bronhouder is ontstaan. Onderdeel van levensduur van het object.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="objectEndTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Datum waarop het object bij de bronhouder niet meer geldig is. Onderdeel van levensduur van het object.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="source" type="tString100">
+				<xs:annotation>
+					<xs:documentation>De aanleverende partij van de gegevens van dit object.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="sourceDataOwner" type="tString100">
+				<xs:annotation>
+					<xs:documentation>De bronhoudercode van het object. Per object (dus niet per objecttype) moet de bronhouder worden vastgelegd, zodat hieraan kan worden  gerefereerd bij terugmeldingen. Een object valt altijd geheel binnen het gebied van één bronhouder.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="registrationTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Tijdstip waarop deze instantie van het object is opgenomen door de bronhouder. Als een mutatie niet resulteert in een nieuw object, dan ontstaat een nieuwe versie van het object. In deze situatie verandert de tijdstipRegistratie van het object, terwijl de objectBeginTijd gelijk blijft. Tijdstip vanaf wanneer deze versie geldig is.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="lifeCycleStatus" type="tLifeCycleStatusEnum" use="required">
+				<xs:annotation>
+					<xs:documentation>De Levenscyclus-status van een object.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="relativeElevation" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Aanduiding voor de relatieve hoogte van het object.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="localID" type="tString50">
+				<xs:annotation>
+					<xs:documentation>BGT. Het vierde deel moet het object per bronhouder uniek identificeren. Hiervoor dient gebruik gemaakt te worden van een UUID. Dit is een getal van 32 cijfers (plus eventueel vier streepjes), opgedeeld in een opeenvolging van hexadecimale noteringen (0-9 en a-f).</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isInService" type="tTrueFalseEnum" use="required">
+				<xs:annotation>
+					<xs:documentation>Indicatie of het object in gebruik is. False wanneer het object niet in gebruik is, bijvoorbeeld afgekruist of vergrendeld.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tPointObject">
+		<xs:annotation>
+			<xs:documentation>Generiek type voor object met een punt locatie.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="Location" type="tPointLocation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tLineObject">
+		<xs:annotation>
+			<xs:documentation>Generiek type voor object met een lijn locatie.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="Location" type="tLineLocation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tMultiLineObject">
+		<xs:annotation>
+			<xs:documentation>Generiek type voor object met een multi-lijn locatie.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="Location" type="tMultiLineLocation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tPolygonObject">
+		<xs:annotation>
+			<xs:documentation>Generiek type voor object met een polygoon locatie.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="Location" type="tPolygonLocation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tMultiPolygonObject">
+		<xs:annotation>
+			<xs:documentation>Generiek type voor object met een multi-polygoon locatie.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="Location" type="tMultiPolygonLocation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="KmRibbonLocation">
+		<xs:annotation>
+			<xs:documentation>De locatie op basis van kilometerlinten</xs:documentation>
+			<xs:documentation>Let op dat deze vorm van linear referencing uitsluitend bedoeld is om legacy informatie over de locatie rechtstreeks uit InfraAtlas over te nemen, ook al is bekend dat de waardes niet (volledig) correct zijn. Het element kan worden uitgegeven, maar zou nooit moeten worden ingenomen, anders dan via de harmoniseringssoftware van Naiade. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Positie aanduiding in een kilometerlintstelsel.</xs:documentation>
+			</xs:annotation>
+			<xs:attribute name="kmRibbonRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>PUIC verwijzging naar het kilometerlint.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="value" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>Een waarde (measure) op het bijbehorende kilometerlint.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tPointLocation">
+		<xs:annotation>
+			<xs:documentation>Abstracte klasse voor een punt-positie in een willekeurig stelsel</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GeographicLocation" type="tPoint"/>
+			<xs:element ref="KmRibbonLocation" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tLineLocation">
+		<xs:annotation>
+			<xs:documentation>Abstracte klasse voor een punt-positie in een willekeurig stelsel</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GeographicLocation" type="tLine"/>
+			<xs:element ref="KmRibbonLocation" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tMultiLineLocation">
+		<xs:annotation>
+			<xs:documentation>Abstracte klasse voor een punt-positie in een willekeurig stelsel</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GeographicLocation" type="tMultiLineString"/>
+			<xs:element ref="KmRibbonLocation" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tPolygonLocation">
+		<xs:annotation>
+			<xs:documentation>Abstracte klasse voor een punt-positie in een willekeurig stelsel</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GeographicLocation" type="tPolygon"/>
+			<xs:element ref="KmRibbonLocation" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tMultiPolygonLocation">
+		<xs:annotation>
+			<xs:documentation>Abstracte klasse voor een punt-positie in een willekeurig stelsel</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GeographicLocation" type="tMultiPolygon"/>
+			<xs:element ref="KmRibbonLocation" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGeometry">
+		<xs:annotation>
+			<xs:documentation>Abstract type voor een GML geometrie, verrijkt met onder meer een aanduiding voor de inwinningsmethode.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="dataAcquisitionMethod" type="tDataAcquisitionMethodEnum" use="required">
+			<xs:annotation>
+				<xs:documentation>Een indicatie van de kwaliteit en nauwkeurigheid van de geometrische data.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="azimuth" type="xs:double">
+			<xs:annotation>
+				<xs:documentation>De orientatie van een object. Vastgelegd in het aantal graden vanaf het noorden.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="accuracy" type="xs:double">
+			<xs:annotation>
+				<xs:documentation>De positionele nauwkeurigheid in millimeters.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="tPoint">
+		<xs:annotation>
+			<xs:documentation>Wrappertype voor een puntgeometrie.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tGeometry">
+				<xs:sequence>
+					<xs:element ref="gml:Point"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tLine">
+		<xs:annotation>
+			<xs:documentation>Wrappertype voor een lijn(string)geometrie.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tGeometry">
+				<xs:sequence>
+					<xs:element ref="gml:LineString"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tPolygon">
+		<xs:annotation>
+			<xs:documentation>Wrappertype voor een vlakgeometrie.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tGeometry">
+				<xs:sequence>
+					<xs:element ref="gml:Polygon"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tMultiPolygon">
+		<xs:annotation>
+			<xs:documentation>Wrappertype voor een multivlakgeometrie.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tGeometry">
+				<xs:sequence>
+					<xs:element ref="gml:MultiPolygon"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tMultiLineString">
+		<xs:annotation>
+			<xs:documentation>Wrappertype voor een multilijn, i.e. een verzameling linestrings</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tGeometry">
+				<xs:sequence>
+					<xs:element ref="gml:MultiLineString"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GeographicLocation" type="tGeographicLocation"/>
+	<xs:complexType name="tGeographicLocation">
+		<xs:complexContent>
+			<xs:extension base="tGeometry">
+				<xs:choice>
+					<xs:element ref="gml:Point"/>
+					<xs:element ref="gml:LineString"/>
+					<xs:element ref="gml:Polygon"/>
+					<xs:element ref="gml:MultiLineString"/>
+					<xs:element ref="gml:MultiPolygon"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="tTimerValue">
+		<xs:annotation>
+			<xs:documentation>Een indicatie van tijd voor aankondigingen en timers uitgedrukt in seconden.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="tUUID">
+		<xs:annotation>
+			<xs:documentation>Type voor een universally unique identifier.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="36" fixed="true"/>
+			<xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[8-9a-bA-B][0-9a-fA-F]{3}-[0-9a-fA-F]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tUUIDRef">
+		<xs:annotation>
+			<xs:documentation>Type voor referentie naar een universally unique identifier.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="tUUID"/>
+	</xs:simpleType>
+	<xs:simpleType name="tDataAcquisitionMethodEnum">
+		<xs:annotation>
+			<xs:documentation>Enumeratie van inwinningsmethodes.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Design">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">De geometrie is van een bouwtekening afgeleid.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Sketch">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Schets, mag in principe niet worden toegepast)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Constructed">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">De geometrie is in een GIS of CAD systeem geconstrueerd.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Photogrammetry">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">De geometrie is ingewonnen vanaf daartoe geschikte (digitale) foto's, meestal luchtfoto's.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PanoramicPhotogrammetry">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">De geometrie is vanaf panoramafoto's ingewonnen.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Terrestrial">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">De geometrie is ingewonnen middels terreinbezoek.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ManuallyDigitized">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">De geometrie is handmatig van analoog naar digitale informatie omgezet. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AutomaticallyDigitized">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">De geometrie is geautomatiseerd van analoog naar digitale informatie omgezet. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GPS">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Global Positioning System.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DGPS">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Differential Global Positioning System (GPS, met berekende differentiaalcorrecties om de positienauwkeurigheid te verbeteren).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RTK">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Real Time Kinematic (een speciale vorm van DGPS, waarbij ook de fasen van de satellietsignalen worden gebruikt voor een nog hogere positienauwkeurigheid dan DGPS).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Laser">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">De geometrie is met behulp van een laserscanner ingewonnen.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Estimate">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Schatting, nodig voor conversieproces oude bronsystemen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DerivedFromRibbon">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Afgeleid van kilometerlint, nodig voor conversieproces oude bronsystemen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tDoubleList">
+		<xs:annotation>
+			<xs:documentation>Type voor een lijst van reële getallen</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="tUUIDRefList">
+		<xs:annotation>
+			<xs:documentation>Type voor een lijst PUICs</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="tUUIDRef"/>
+	</xs:simpleType>
+	<xs:simpleType name="tTrueFalseEnum">
+		<xs:annotation>
+			<xs:documentation>Enumeratie voor waar, niet waar of onbekend.(Vervanging van xs:boolean)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="True">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Ja</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="False">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Nee</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tYesNoPartialEnum">
+		<xs:annotation>
+			<xs:documentation>Enumeratie voor waar, niet waar of gedeeltelijk.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Yes">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Ja</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="No">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Nee</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Partial">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Gedeeltelijk</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tVersionString">
+		<xs:restriction base="xs:string">
+			<xs:length value="5" fixed="true"/>
+			<xs:pattern value="[0-9]\.[0-9]\.[0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tString20">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tString50">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tString100">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tString150">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="150"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tNameString">
+		<xs:restriction base="tString50"/>
+	</xs:simpleType>
+	<xs:simpleType name="tAbbreviationString">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tRemarksString">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tDescriptionString">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tLifeCycleStatusEnum">
+		<xs:annotation>
+			<xs:documentation>'bestaand' (as built) . Aanvullend IMSpoor: 'voorlopig ontwerp ', 'definitief  ontwerp' en 'Gesloopt' (was built). De statusovergang naar 'bestaand' (as built) vindt plaats nadat de gemeten geometrie is opgeleverd. Voor 'Bouwfase' en 'Buiten Exploitatie' geldt: Het object is aanwezig, maar zichtbaar of geregistreerd als niet in gebruik, bijvoorbeeld afgekruist of vergrendeld.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProvisionalDesign">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Voorlopig ontwerp</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FinalDesign">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Definitief ontwerp</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Existing">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Bestaand</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Removed">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Gesloopt</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tSourceOriginEnum">
+		<xs:annotation>
+			<xs:documentation>
+			Geeft aan of een objecttype gedeeld was tussen IA en BBK en of de objectinstantie in beide system voorkwam. Dit is een tijdelijke veld ten behoeve van harmonisatie van de legacysystemen.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IA">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Objecten die alleen in InfraAtlas voorkomen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BBK">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Objecten die alleen in Basis Beheer Kaart voorkomen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SharedMatched">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Gemeenschappelijke objecten (IA+BBK) die via PUIC een gelijke identificatie (match).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SharedIAOnly">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Gemeenschappelijke objecten (IA+BBK) waarvan alleen voor InfraAtlas een PUIC is gevonden (geen match).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SharedBBKOnly">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Gemeenschappelijke objecten (IA+BBK) waarvan alleen voor BBK een PUIC is gevonden (geen match).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GEOPOORT">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Objecten die alleen GEO Poort voorkomen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SharedGEOPOORTOnly">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Gemeenschappelijke objecten (IA+GEOPOORT) waarvan alleen voor GEOPOORT een PUIC is gevonden (geen match).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Other">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Overig</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tVoltageClassEnum">
+		<xs:annotation>
+			<xs:documentation>Enumeratie van spanningsklassen</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VMixed">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Mixed</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="V0">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Geen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="V1500">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1500 Volt</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="V3000">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">3kV</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="V15000">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">15kV</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="V25000">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">25kV</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="baseId">
+		<xs:attribute name="puic" type="tUUID" use="required">
+			<xs:annotation>
+				<xs:documentation>UUID om het object gedurende de levensduur te kunnen identificeren en om naar te refereren.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="tNameString">
+			<xs:annotation>
+				<xs:documentation>Niet unieke menselijk leesbare identificatie van het object, zoals installatienummer, balisecode en seinnummer.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+</xs:schema>

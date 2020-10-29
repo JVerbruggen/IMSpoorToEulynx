@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IMSpoor xmlns="http://www.prorail.nl/IMSpoor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.prorail.nl/IMSpoor IMSpoor-1.2.3-ExampleIAUF_UIT.xsd" imxVersion="1.2.3">
+	<Situation referenceDate="2016-12-12T00:00:00+02:00" perspectiveDate="2015-12-12T00:00:00+02:00">
+		<Extensions>
+			<Legacy>
+				<InfraAtlasAreas>
+					<InfraAtlasArea puic="14131aa6-3d32-48e1-8fde-438b51060362" name="Amf" description="Amersfoort" infraAtlasAreaType="Connection">
+						<OperationalPointRefs>03c45666-6513-404b-92ec-83bbb87955a9</OperationalPointRefs>
+						<OpenLineRefs>c7872c84-61d7-4879-8e68-8b70c88f52ac 441ee759-e701-48ba-82e3-246de8d534cb</OpenLineRefs>
+					</InfraAtlasArea>
+				</InfraAtlasAreas>
+			</Legacy>
+			<SchemaLayout>
+				<Design puic="bfea7113-fc83-497a-bafe-c79fafeb08b3">
+					<RailConnectionLayouts>
+						<RailConnectionLayout railConnectionRef="909b5544-029b-4220-a817-7196e2b1239b">
+							<SchemaLocation dataAcquisitionMethod="Design">
+								<gml:LineString>
+									<gml:coordinates>290.0,-10.0 326.25,-10.0</gml:coordinates>
+								</gml:LineString>
+							</SchemaLocation>
+						</RailConnectionLayout>
+					</RailConnectionLayouts>
+					<ObjectLayouts>
+						<ObjectLayout objectRef="ceb38f3e-87a4-43f4-97a9-a6e1c9f9338f">
+							<SchemaLocation dataAcquisitionMethod="Design">
+								<gml:Point>
+									<gml:coordinates>290.0,-10.0</gml:coordinates>
+								</gml:Point>
+							</SchemaLocation>
+						</ObjectLayout>
+					</ObjectLayouts>
+					<Extent dataAcquisitionMethod="Design">
+						<gml:Polygon>
+							<gml:outerBoundaryIs>
+								<gml:LinearRing>
+									<gml:coordinates>202922.9,437108 203018.2,437082.7 202984.8,437475.7 202945.4,437490.1 202922.9,437108</gml:coordinates>
+								</gml:LinearRing>
+							</gml:outerBoundaryIs>
+						</gml:Polygon>
+					</Extent>
+				</Design>
+			</SchemaLayout>
+		</Extensions>
+	</Situation>
+</IMSpoor>

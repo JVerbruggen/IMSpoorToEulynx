@@ -1,5 +1,5 @@
 ﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
-using Models.TopoModels.IMSpoor.V1_3_0;
+using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.Managers.Base;
 using System;
 using System.Collections.Generic;

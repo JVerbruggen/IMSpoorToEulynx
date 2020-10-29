@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.prorail.nl/IMSpoor" xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-BasicTypes.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="IMSpoor-1.2.3-gml.xsd"/>
+	<xs:element name="SchemaLayout">
+		<xs:annotation>
+			<xs:documentation>In deze XSD kunnen schematische representaties van object en topologie aan IMX objecten worden gekoppeld.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Design" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Design">
+		<xs:annotation>
+			<xs:documentation>De schematische representatie van een ontwerp. Ook wel bekend als een CAD-tekening of kaartblad.</xs:documentation>
+			<xs:documentation xml:lang="NL">Schema</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBaseObject">
+					<xs:sequence>
+						<xs:element ref="RailConnectionLayouts"/>
+						<xs:element ref="ObjectLayouts"/>
+						<xs:element name="Extent" type="tPolygon" minOccurs="1">
+							<xs:annotation>
+								<xs:documentation>De bladcontour in GIS context.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="designType" type="tNameString" use="optional">
+						<xs:annotation>
+							<xs:documentation>Het type of domein van het schematische ontwerp. Bijvoorbeeld; OBE, OR of OS</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="designNumber" type="tNameString" use="optional">
+						<xs:annotation>
+							<xs:documentation>Het identificatienummer van het schematische ontwerp.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="version" type="tNameString" use="optional">
+						<xs:annotation>
+							<xs:documentation>De versie van het schematische ontwerp.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObjectLayouts">
+		<xs:annotation>
+			<xs:documentation>Een lijst van schemamatische weergaves van objecten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ObjectLayout" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObjectLayout">
+		<xs:annotation>
+			<xs:documentation>Een objectlayout is een schematische representatie van een object zoals deze op ontwerptekeningen worden gebruikt.</xs:documentation>
+			<xs:documentation xml:lang="NL">Object Layout</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tSchemaObject">
+					<xs:sequence>
+						<xs:element name="SchemaLocation" type="tPoint">
+							<xs:annotation>
+								<xs:documentation>De schematische locatie van de object. De gebruikte coordinaten zijn alleen in context van een tekening te gebruiken.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="Symbol" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>De schematische weergave van het object.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="objectRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Referentie naar object van deze representatie</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Symbol">
+		<xs:annotation>
+			<xs:documentation>De schematische weergave van het object. Hierbij wordt aangenomen dat het symbool een vectortekening is welke op basis van een affiene transformaties (translate, rotate en scale) kan worden afgebeeld in de schematische representatie.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="symbolRef" type="tString50" use="required">
+				<xs:annotation>
+					<xs:documentation>Referentie naar een symbool van een symbolenbibliotheek.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="translate" type="tString50" use="required">
+				<xs:annotation>
+					<xs:documentation>De verschuiving van het symbool in de X-as of Y-as</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="rotate" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>De rotatie van het symbool in graden. Het draaipunt is het 0-punt van het symbool.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="scale" type="tString50" use="required">
+				<xs:annotation>
+					<xs:documentation>De schaal van het symbool in de X-as en Y-as. Hiermeer kan het symbool zowel in de X-as als de Y-as worden gespiegeld.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RailConnectionLayouts">
+		<xs:annotation>
+			<xs:documentation>Een lijst van schematische weergaves van spoortakken</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RailConnectionLayout" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RailConnectionLayout">
+		<xs:annotation>
+			<xs:documentation>Een spoortaklayout is een schematische representatie van een functionele-spoortak zoals deze op ontwerptekeningen worden gebruikt.</xs:documentation>
+			<xs:documentation xml:lang="NL">Spoortak Layout</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tSchemaObject">
+					<xs:sequence>
+						<xs:element name="SchemaLocation" type="tLine">
+							<xs:annotation>
+								<xs:documentation>De schematische weergave van de spoortak. De gebruikte coordinaten zijn alleen in context van een tekening te gebruiken.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="CalibrationPoints" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="railConnectionRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Referentie naar de functionele-spoortak van deze representatie</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CalibrationPoints">
+		<xs:annotation>
+			<xs:documentation>Een verzameling calibratiepunten.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CalibrationPoint" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CalibrationPoint">
+		<xs:annotation>
+			<xs:documentation>Een calibratiepunt binnen een schema-lijnstuk. Hiermee kan de niet monotone schaal van een schematische tekening worden vastgelegd en kunnen geolocaties naar schematische locaties worden geinterpoleerd.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="geographicMeasure" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>De positie van het event op het lijnstuk. Het aantal meters vanaf het begin van de lijn.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="schematicMeasure" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>De positie van het event op het lijnstuk. Het aantal 'schema-eenheden' vanaf het begin van de lijn.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tSchemaObject">
+		<xs:annotation>
+			<xs:documentation>Abstract type voor de schematische representatie van een object.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+</xs:schema>
