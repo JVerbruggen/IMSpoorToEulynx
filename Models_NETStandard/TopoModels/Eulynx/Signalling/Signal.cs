@@ -33,7 +33,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_Signalling
             this.showsDefaultMessage = showsDefaultMessage;
         }
 
-        public override BaseLocation GetLocation(BaseLocation[] allLocations)
+        public override BaseLocation GetLocation(IEnumerable<BaseLocation> allLocations)
         {
             tElementWithIDref location = this.hasLocation;
             BaseLocation bl = BaseLocation.Find(allLocations, location);

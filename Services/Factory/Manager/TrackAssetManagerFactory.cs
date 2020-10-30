@@ -11,7 +11,7 @@ namespace Services.Factory.Manager
     {
         public override TrackAssetManager CreateDefault()
         {
-            return new TrackAssetManagerLimited();
+            return new TrackAssetManagerDefault();
         }
     }
 }

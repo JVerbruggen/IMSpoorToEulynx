@@ -7,7 +7,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_Signalling
 {
     public partial class TrackAsset
     {
-        public virtual BaseLocation GetLocation(BaseLocation[] allLocations)
+        public virtual BaseLocation GetLocation(IEnumerable<BaseLocation> allLocations)
         {
             return null;
         }

@@ -30,7 +30,13 @@ namespace Services.Managers.Assets
                 rtmSignal.uuid = UUIDService.NewFakeUUID(rtmSignal);
                 signalRTMManager.Register(rtmSignal);
 
-                spotLocation.netElement = rtmSignal;
+                var imspoorRailconnectionInfo = imspoorSignal.RailConnectionInfo;
+                if(imspoorRailconnectionInfo.Length >= 2)
+                {
+                    throw new NotImplementedException("Een sein met meerdere rail connecties!");
+                }
+
+                spotLocation.netElement = new tElementWithIDref(imspoorRailconnectionInfo[0].railConnectionRef);
 
                 SignalFrame[] signalFrames = signalFrameManager.GetSignalFrames();
                 tElementWithIDref[] signalFramesRefs = tElementWithIDref.GetTElementsWithIDref(signalFrames);
@@ -39,6 +45,7 @@ namespace Services.Managers.Assets
                 string uuid = imspoorSignal.puic;
                 Signal signal = new Signal(uuid, null, spotLocation, signalFramesRefs, FixingTypes.foundation, null, rtmSignal, null, null);
                 signalsConverted.Add(signal);
+                this.Register(signal);
             }
             return signalsConverted.ToArray();
         }

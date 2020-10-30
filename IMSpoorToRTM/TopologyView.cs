@@ -157,9 +157,9 @@ namespace FormsApp
         private void button_netEntities_Click(object sender, EventArgs e)
         {
             if (this.paintedPath == null) return;
-            var allPSCoords = eulynx.ownsRtmEntities.usesPositioningSystemCoordinate;
 
             TrackAssetManager trackAssetManager = InstanceManager.Singleton<TrackAssetManager>().GetInstance();
+            var t = trackAssetManager.GetTrackAssets(eulynx);
 
             //BaseLocation[] allLocations = this.eulynx.ownsRtmEntities.usesSpotLocation.Where(sl => sl is SpotLocationCoordinate).Cast<SpotLocationCoordinate>().ToArray();
             //LocatedNetEntity[] allNetEntities = this.eulynx.ownsRtmEntities.ownsSignal;

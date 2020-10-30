@@ -15,15 +15,17 @@ namespace Services.Managers.Assets
 
         //public abstract TrackAsset[] GetTrackAssets<T>(Eulynx eulynx) where T : BaseObject;
 
-        public virtual TrackAsset[] GetTrackAssets(Eulynx eulynx, PositioningNetElement[] path)
+        public TrackAsset[] GetTrackAssets(IEnumerable<TrackAsset> allTrackAssets, IEnumerable<BaseLocation> allSpotLocations, PositioningNetElement[] path)
         {
+            if (allTrackAssets == null
+                || allSpotLocations == null
+                || path == null) return null;
+
             IList<TrackAsset> foundAssets = new List<TrackAsset>();
 
-            BaseLocation[] allLocations = eulynx.ownsRtmEntities.usesSpotLocation;
-            TrackAsset[] allAssets = GetTrackAssets(eulynx);
-            foreach (TrackAsset asset in allAssets)
+            foreach (TrackAsset asset in allTrackAssets)
             {
-                BaseLocation location = asset.GetLocation(allLocations);
+                BaseLocation location = asset.GetLocation(allSpotLocations);
 
                 if (location is SpotLocation)
                 {
@@ -36,10 +38,22 @@ namespace Services.Managers.Assets
                     }
 
                     var found = BaseLocation.Find(path, spotLocationRef);
+                    if (found != null)
+                    {
+                        foundAssets.Add(asset);
+                    }
                 }
             }
 
             return foundAssets.ToArray();
+        }
+
+        public virtual TrackAsset[] GetTrackAssets(Eulynx eulynx, PositioningNetElement[] path)
+        {
+            BaseLocation[] allLocations = eulynx.ownsRtmEntities.usesSpotLocation;
+            TrackAsset[] allAssets = GetTrackAssets(eulynx);
+
+            return GetTrackAssets(allAssets, allLocations, path);
         }
     }
 }
