@@ -1,4 +1,5 @@
-﻿using Models.Translation;
+﻿using Models.TopoModels.Eulynx.Common;
+using Models.Translation;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -56,7 +57,20 @@ namespace Services.Service
                 var val = prop.GetValue(obj, null);
                 if(val != null)
                 {
-                    seed += val.ToString();
+                    string add = "";
+                    if(val is BaseObject)
+                    {
+                        add = ((BaseObject)val).uuid;
+                    }
+                    else if(val is tElementWithIDref)
+                    {
+                        add = ((tElementWithIDref)val).@ref;
+                    }
+                    else
+                    {
+                        add = val.ToString();
+                    }
+                    seed += add;
                 }
             }
 

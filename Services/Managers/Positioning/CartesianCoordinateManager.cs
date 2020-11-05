@@ -11,6 +11,8 @@ namespace Services.Managers.Positioning
     public class CartesianCoordinateManager : UUIDObjectManager<CartesianCoordinate>
     {
 
+
+
         public CartesianCoordinate GetCartesianCoordinate(double x, double y, tElementWithIDref positioningSystem)
         {
             string uuid = UUIDService.NewFakeUUID(x + "" + y + positioningSystem.@ref, typeof(CartesianCoordinate));

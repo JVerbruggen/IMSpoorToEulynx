@@ -1,6 +1,7 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
+using Services.Extensions;
 using Services.Managers.Base;
 using Services.Service;
 using System;
@@ -12,9 +13,56 @@ namespace Services.Managers.Positioning
 {
     public class AssociatedPositioningSystemManager : UUIDObjectManager<AssociatedPositioningSystem>
     {
-        public AssociatedPositioningSystem[] GetAssociatedPositioningSystems(string trackRef)
+
+        public AssociatedPositioningSystem GetAssociatedGeometricPositioningSystem(LineString lineString)
+        {
+            PositioningSystemManager positioningSystemManager = InstanceManager.Singleton<PositioningSystemManager>().GetInstance();
+            IntrinsicCoordinateManager intrinsicCoordinateManager = InstanceManager.Singleton<IntrinsicCoordinateManager>().GetInstance();
+
+            GeometricPositioningSystem geometricPositioningSystem = positioningSystemManager.GetGeometricPositioningSystem(PositioningSystemTypes.RD);
+            IntrinsicCoordinate[] intrinsicCoordinates = intrinsicCoordinateManager.GetIntrinsicCoordinates(geometricPositioningSystem, lineString);
+
+            var ps = new AssociatedPositioningSystem(intrinsicCoordinates, geometricPositioningSystem);
+            ps.AllocateUUID();
+            return ps;
+        }
+
+        public AssociatedPositioningSystem GetAssociatedLinearPositioningSystem(int measure, LinearPositioningSystem lps)
+        {
+            PositioningSystemManager positioningSystemManager = InstanceManager.Singleton<PositioningSystemManager>().GetInstance();
+            IntrinsicCoordinateManager intrinsicCoordinateManager = InstanceManager.Singleton<IntrinsicCoordinateManager>().GetInstance();
+
+            IntrinsicCoordinate[] intrinsicCoordinate = new IntrinsicCoordinate[] { intrinsicCoordinateManager.GetIntrinsicCoordinate(measure) };
+
+            var ps = new AssociatedPositioningSystem(intrinsicCoordinate, lps);
+            ps.AllocateUUID();
+            return ps;
+        }
+
+
+        public IEnumerable<AssociatedPositioningSystem> GetAssociatedPositioningSystems(tLineLocation location)
         {
             IList<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
+
+            tLine geographicLocation = location.GeographicLocation;
+            KmRibbonLocation kmRibbonLocation = location.KmRibbonLocation;
+
+            var lps = new LinearPositioningSystem(0, 555);
+            lps.AllocateUUID();
+
+            AssociatedPositioningSystem associatedLinearPositioningSystem = GetAssociatedLinearPositioningSystem(55, lps);
+            AssociatedPositioningSystem associatedGeometricPositioningSystem = GetAssociatedGeometricPositioningSystem(geographicLocation.LineString);
+
+            associatedPositioningSystems.Add(associatedLinearPositioningSystem);
+            associatedPositioningSystems.Add(associatedGeometricPositioningSystem);
+
+            return associatedPositioningSystems;
+        }
+
+
+        public AssociatedPositioningSystem[] GetAssociatedPositioningSystems(string trackRef)
+        {
+            List<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
 
             tSituation situation = InstanceManager.Singleton<IMSpoorReadingService>().GetInstance().situation;
             RailImplementation implementation = situation.RailInfrastructure.RailImplementation;
@@ -30,27 +78,11 @@ namespace Services.Managers.Positioning
             }
             if (foundTrack != null)
             {
-                tLineLocation location = foundTrack.Location;
-                tLine geographicLocation = location.GeographicLocation;
-                KmRibbonLocation kmRibbonLocation = location.KmRibbonLocation;
+                var a = GetAssociatedPositioningSystems(foundTrack.Location);
 
-                PositioningSystemManager positioningSystemManager = InstanceManager.Singleton<PositioningSystemManager>().GetInstance();
-                GeometricPositioningSystem geometricPositioningSystem = positioningSystemManager.GetGeometricPositioningSystem(PositioningSystemTypes.RD);
-                LinearPositioningSystem linearPositioningSystem = new LinearPositioningSystem(0, 2222);
+                associatedPositioningSystems.AddRange(a);
 
-                LineString lineString = geographicLocation.LineString;
-                tElementWithIDref geometricPositioningSystemRef = tElementWithIDref.GetTElementWithIDref(geometricPositioningSystem);
-                IntrinsicCoordinate[] intrinsicCoordinates = InstanceManager.Singleton<IntrinsicCoordinateManager>().GetInstance().GetIntrinsicCoordinates(geometricPositioningSystemRef, lineString);
-
-                tElementWithIDref linearPositioningSystemRef = tElementWithIDref.GetTElementWithIDref(linearPositioningSystem);
-
-                AssociatedPositioningSystem associatedLinearPositioningSystem = new AssociatedPositioningSystem(null, linearPositioningSystemRef);
-                AssociatedPositioningSystem associatedGeometricPositioningSystem = new AssociatedPositioningSystem(intrinsicCoordinates, geometricPositioningSystemRef);
-
-                associatedPositioningSystems.Add(associatedLinearPositioningSystem);
-                associatedPositioningSystems.Add(associatedGeometricPositioningSystem);
             }
-
 
             return associatedPositioningSystems.ToArray();
         }

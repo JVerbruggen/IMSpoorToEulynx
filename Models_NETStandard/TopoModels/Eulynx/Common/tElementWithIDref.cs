@@ -78,6 +78,15 @@ namespace Models.TopoModels.Eulynx.Common
             return GetTElementsWithIDreflist(tElementWithIDref).ToArray();
         }
 
+        public bool Equals(tElementWithIDref @ref)
+        {
+            return this.Equals(@ref.@ref);
+        }
+
+        public bool Equals(string @ref)
+        {
+            return this.@ref.Equals(@ref);
+        }
 
     }
 }

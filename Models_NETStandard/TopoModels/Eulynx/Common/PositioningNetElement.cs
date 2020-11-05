@@ -1,5 +1,5 @@
 ﻿using Models.TopoModels.IMSpoor;
-using Models.TopoModels.IMSpoor.V1_3_0;
+using Models.TopoModels.IMSpoor.V1_2_3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,11 @@ namespace Models.TopoModels.Eulynx.Common
 {
     public partial class PositioningNetElement
     {
+        public PositioningNetElement()
+        {
+
+        }
+
         public double Distance(PositioningNetElement otherNetElement)
         {
             return 1;
@@ -32,6 +37,8 @@ namespace Models.TopoModels.Eulynx.Common
 
             return localRelations.ToArray();
         }
+
+        
 
 
     }

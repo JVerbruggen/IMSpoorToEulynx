@@ -1,4 +1,5 @@
 ﻿using Models.TopoModels.Eulynx.EULYNX_Signalling;
+using Services.Extensions;
 using Services.Factory.Base;
 using Services.Service;
 using System;
@@ -12,7 +13,7 @@ namespace Services.Factory.Assets
         public Signal GetSignal(Models.TopoModels.Eulynx.Signalling.Signal rtmSignal)
         {
             Signal signal = new Signal("", null, null, null, FixingTypes.foundation, null, rtmSignal, null, null);
-            signal.uuid = UUIDService.NewFakeUUID(signal);
+            signal.AllocateUUID();
             return signal;
         }
     }

@@ -17,6 +17,11 @@ namespace Models.TopoModels.Eulynx.Signalling
             this.locations = tElementWithIDref.GetTElementsWithIDref(location);
         }
 
+        public Signal(tElementWithIDref[] locations)
+        {
+            this.locations = locations;
+        }
+
         public SpotLocationCoordinate GetLocation(BaseLocation[] allLocations)
         {
             var locationRefs = this.locations;

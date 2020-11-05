@@ -114,6 +114,8 @@ namespace FormsApp
 
             foreach (PositioningNetElement pathElement in allElements)
             {
+                if (this.graph.FindNode(pathElement.uuid) == null) continue;
+
                 if (path.Contains(pathElement))
                 {
                     this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
@@ -169,7 +171,10 @@ namespace FormsApp
 
             listBox_content.Items.Clear(); 
             //listBox_content.Items.AddRange(netEntities);
-            listBox_content.Items.AddRange(pathTrackAssets);
+            if(pathTrackAssets != null)
+            {
+                listBox_content.Items.AddRange(pathTrackAssets);
+            }
         }
     }
 }

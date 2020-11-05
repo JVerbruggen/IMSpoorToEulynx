@@ -46,6 +46,16 @@ namespace Models.TopoModels.Eulynx.Common
             return new tElementWithIDref(bo.uuid);
         }
 
+        public static implicit operator tElementWithIDref[](BaseObject bo)
+        {
+            return new tElementWithIDref[] { new tElementWithIDref(bo.uuid) };
+        }
+
+        public static implicit operator BaseObject[](BaseObject bo)
+        {
+            return new BaseObject[] { bo };
+        }
+
         public override int GetHashCode()
         {
             return base.GetHashCode();

@@ -2,6 +2,7 @@
 using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Services.DependencyInjection;
+using Services.Extensions;
 using Services.Managers.Base;
 using Services.Managers.Location;
 using Services.Service;
@@ -23,11 +24,12 @@ namespace Services.Managers.Assets
                 SignalFrameManager signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();
                 SignalRTMManager signalRTMManager = InstanceManager.Singleton<SignalRTMManager>().GetInstance();
 
-                SpotLocation spotLocation = spotLocationManager.GetGeoLocation(imspoorSignal.Location);
-                spotLocationManager.Register(spotLocation);
+                SpotLocation geoSpotLocation = spotLocationManager.GetGeoLocation(imspoorSignal.Location);
 
-                var rtmSignal = new Models.TopoModels.Eulynx.Signalling.Signal(spotLocation);
-                rtmSignal.uuid = UUIDService.NewFakeUUID(rtmSignal);
+                spotLocationManager.Register(geoSpotLocation);
+
+                var rtmSignal = new Models.TopoModels.Eulynx.Signalling.Signal(geoSpotLocation);
+                rtmSignal.AllocateUUID();
                 signalRTMManager.Register(rtmSignal);
 
                 var imspoorRailconnectionInfo = imspoorSignal.RailConnectionInfo;
@@ -36,14 +38,14 @@ namespace Services.Managers.Assets
                     throw new NotImplementedException("Een sein met meerdere rail connecties!");
                 }
 
-                spotLocation.netElement = new tElementWithIDref(imspoorRailconnectionInfo[0].railConnectionRef);
+                geoSpotLocation.netElement = new tElementWithIDref(imspoorRailconnectionInfo[0].railConnectionRef);
 
                 SignalFrame[] signalFrames = signalFrameManager.GetSignalFrames();
                 tElementWithIDref[] signalFramesRefs = tElementWithIDref.GetTElementsWithIDref(signalFrames);
                 signalFrameManager.Register(signalFrames);
 
                 string uuid = imspoorSignal.puic;
-                Signal signal = new Signal(uuid, null, spotLocation, signalFramesRefs, FixingTypes.foundation, null, rtmSignal, null, null);
+                Signal signal = new Signal(uuid, null, geoSpotLocation, signalFramesRefs, FixingTypes.foundation, null, rtmSignal, null, null);
                 signalsConverted.Add(signal);
                 this.Register(signal);
             }

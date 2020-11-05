@@ -14,7 +14,7 @@ namespace Services.Managers.Topology
         public TrackTopology GetTrackTopology(RailTopology railTopology)
         {
             PositionedRelation[] positionedRelations = InstanceManager.Singleton<PositionedRelationManager>().GetInstance().GetPositionedRelations(railTopology);
-            PositioningNetElement[] positioningNetElements = InstanceManager.Singleton<PositioningNetElementManager>().GetInstance().GetPositioningNetElements(railTopology.MicroLinks);
+            PositioningNetElement[] positioningNetElements = InstanceManager.Singleton<PositioningNetElementManager>().GetInstance().GetPositioningNetElements(railTopology.MicroLinks, positionedRelations);
 
             TrackTopology trackTopology = new TrackTopology(positionedRelations, positioningNetElements);
 

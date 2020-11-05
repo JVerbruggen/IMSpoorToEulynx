@@ -1,4 +1,5 @@
 ﻿using Models.TopoModels.Eulynx.Common;
+using Services.Extensions;
 using Services.Managers.Base;
 using Services.Service;
 using System;
@@ -30,6 +31,14 @@ namespace Services.Managers.Positioning
                 this.Register(found);
             }
             return found;
+        }
+
+        public LinearPositioningSystem GetLinearPositioningSystem(int startMeasure, int endMeasure)
+        {
+            var lps = new LinearPositioningSystem(startMeasure, endMeasure);
+            lps.AllocateUUID();
+
+            return lps;
         }
     }
 }

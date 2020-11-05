@@ -12,10 +12,15 @@ namespace Models.TopoModels.Eulynx.Common
 
         }
 
-        public IntrinsicCoordinate(tElementWithIDref[] cartesianCoordinates, string uuid)
+        public IntrinsicCoordinate(tElementWithIDref[] positioningSystemCoordinates, string uuid)
         {
-            this.coordinates = cartesianCoordinates;
+            this.coordinates = positioningSystemCoordinates;
             this.uuid = uuid;
+        }
+
+        public IntrinsicCoordinate(tElementWithIDref[] positioningSystemCoordinates)
+        {
+            this.coordinates = positioningSystemCoordinates;
         }
     }
 }
