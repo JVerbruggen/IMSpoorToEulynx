@@ -1,0 +1,50 @@
+$bases=%ClassInherits%
+%if $bases != ""%
+$bases=" "+$bases
+%endIf%
+$generic = %list="ClassParameter" @separator=","%
+%if $generic != ""%
+$generic = "<" + $generic + ">"
+%endIf%
+$genericConstraints = %list="ClassParameterConstraint" @separator="\n\t"%
+$genericConstraintsTag = %classTag:"genericConstraints"%
+%if $genericConstraintsTag != ""%
+$genericConstraints = $genericConstraints + " " + $genericConstraintsTag
+%endIf%
+
+%if classTag:"Attribute" != ""%
+%REPLACE(classTag:"Attribute", ";", "\n")%
+%endIf%
+%PI=" "%
+%if elemType == "Interface"%
+%classTag:"unsafe"=="true" ? "unsafe" : ""%
+%CONVERT_SCOPE(classScope)%
+%classTag:"new"=="true" ? "new" : ""%
+%classTag:"partial"=="true" ? "partial"%
+%PI=""%
+interface %className%$generic$bases
+ $genericConstraints
+%endTemplate%
+
+%classTag:"unsafe"=="true" ? "unsafe" : ""%
+%CONVERT_SCOPE(classScope)%
+%classTag:"new"=="true" ? "new" : ""%
+%classAbstract=="T" ? "abstract" : ""%
+%classIsLeaf=="T" ? "sealed" : ""%
+%classTag:"static"=="true" ? "static"%
+%classTag:"partial"=="true" ? "partial"%
+%PI=""%
+
+%if genOptStmCSharpUseNewTemplate == "T" and stmContextHasStatemachine == "T"%
+%if $bases == ""%
+$bases = " : StateMachineContext"
+%else%
+$bases = $bases + ", StateMachineContext"
+%endIf%
+%endIf%
+
+class %className%$generic$bases
+%if $genericConstraints !=""%
+\n\t$genericConstraints
+%endIf%
+

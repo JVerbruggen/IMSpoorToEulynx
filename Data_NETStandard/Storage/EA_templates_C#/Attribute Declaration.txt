@@ -1,0 +1,44 @@
+%if attTag:"Attribute" != ""%
+//attribute tag: %REPLACE(attTag:"Attribute", ";", "\n")%
+%endIf%
+
+%if classStereotype == "enumeration"%
+%PI=""%
+%attName%
+%attInitial ? " = " value%
+%endTemplate%
+
+%PI=" "%
+%CONVERT_SCOPE(attScope)%
+%attStatic=="T" ? "static" : ""%
+%attConst=="T" ? "readonly" : ""%
+%attVolatile=="T" ? "volatile" : ""%
+%attTag:"const" ? "const" : ""%
+$qualtype = %RESOLVE_QUALIFIED_TYPE(".", "int")%
+%if attLowerBound=="0" and $qualtype !="string"%
+$qualtype?
+%else%
+$qualtype
+%endIf%
+%if attCollection == "T" and attContainerType != ""%
+%attContainerType%
+%endIf%
+
+%PI=""%
+%attName%
+%attInitial ? " = " value%
+
+ { get; set; }
+
+%PI=""%
+%if attStereotype == "property"%
+$Value = %attTag:"Automatic" ? value%
+%if attTag:"readonly"=="true"%
+{%attTag:"GetScope"% get;} 
+%elseIf attTag:"writeonly"=="true"%
+{%attTag:"SetScope"% set;} 
+%else%
+{%attTag:"GetScope"% get; %attTag:"SetScope"% set;} 
+%endIf%
+%endTemplate%
+

@@ -1,0 +1,10 @@
+%PI=""%
+$bases=%list="ClassBase" @separator=", "%
+$interfaces=%list="ClassInterface" @separator=", "%
+%if $bases != "" and $interfaces != ""%
+: $bases, $interfaces
+%elseIf $bases != ""%
+: $bases
+%elseIf $interfaces != ""%
+: $interfaces
+%endIf%
