@@ -10,14 +10,6 @@
 %list="InnerClass" @separator="\n\n" @indent="\t"%
 %list="Attribute" @separator="\n" @indent="\t"%
 
-$ops=""
-%if genOptGenConstructor == "T" and classHasConstructor != "T"%
-$ops+="\tpublic "+%className%+"(){\n\n\t}"
-%endIf%
-
-%if genOptGenDestructor == "T" and classHasDestructor != "T" and classHasFinalizer != "T"%
-$ops+="\n\n\t~"+%className%+"(){\n\n\t}"
-%endIf%
 
 %if genOptCSGenDispose == "T" and classHasDispose != "T"%
 $ops+="\n\n\tpublic "

@@ -1,4 +1,5 @@
 %OperationNotes%
+[XmlElementAttribute("%opName%")]
 %PI=""%
-%OperationDeclaration%
-%OperationBody%
+%OperationDeclaration%\n
+{ get; set; }

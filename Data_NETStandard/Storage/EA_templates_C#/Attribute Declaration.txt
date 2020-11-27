@@ -1,5 +1,5 @@
 %if attTag:"Attribute" != ""%
-//attribute tag: %REPLACE(attTag:"Attribute", ";", "\n")%
+%REPLACE(attTag:"Attribute", ";", "\n")%
 %endIf%
 
 %if classStereotype == "enumeration"%
@@ -7,28 +7,31 @@
 %attName%
 %attInitial ? " = " value%
 %endTemplate%
-
+%Attribute__XSDattribute%
 %PI=" "%
 %CONVERT_SCOPE(attScope)%
 %attStatic=="T" ? "static" : ""%
 %attConst=="T" ? "readonly" : ""%
 %attVolatile=="T" ? "volatile" : ""%
 %attTag:"const" ? "const" : ""%
-$qualtype = %RESOLVE_QUALIFIED_TYPE(".", "int")%
-%if attLowerBound=="0" and $qualtype !="string"%
-$qualtype?
-%else%
-$qualtype
-%endIf%
+%attTag:"fixed" ? "fixed" : ""%
+%RESOLVE_QUALIFIED_TYPE(".", "int")%
+
+%if attTag:"fixed"=="true"%
+%PI=""%
+%attName%
 %if attCollection == "T" and attContainerType != ""%
 %attContainerType%
 %endIf%
-
+%else%
+%if attCollection == "T" and attContainerType != ""%
+%attContainerType%
+%endIf%
 %PI=""%
 %attName%
-%attInitial ? " = " value%
+%endIf%
 
- { get; set; }
+%attInitial ? " = " value%
 
 %PI=""%
 %if attStereotype == "property"%
@@ -38,7 +41,7 @@ $Value = %attTag:"Automatic" ? value%
 %elseIf attTag:"writeonly"=="true"%
 {%attTag:"SetScope"% set;} 
 %else%
-{%attTag:"GetScope"% get; %attTag:"SetScope"% set;} 
+{%attTag:"GetScope"% get; %attTag:"SetScope"% set;}
 %endIf%
 %endTemplate%
-
+;

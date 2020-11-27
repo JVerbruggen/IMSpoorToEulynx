@@ -1,4 +1,6 @@
 %ClassNotes%
+//Standaard attributen XSD attributes:\n
+%Class__XSDattribute%
 %PI=" "%
 %ClassDeclaration%
 %ClassBody%

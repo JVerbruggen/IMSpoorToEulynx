@@ -1,3 +1,5 @@
+// linked attribute %linkAttRole%
+// public 
 $type=%linkAttQualName%
 
 %if linkAttCollectionClass != "" and linkCard != "" and linkCard != "0" and linkCard != "0..1" and linkCard != "1"%
