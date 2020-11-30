@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Models.Translation;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Models.File
 {
-    public interface IReadFileService<T>
+    public interface IReadFileService<T> : IService
     {
         /// <summary>
         /// Read a readable file and returns type T model for that file

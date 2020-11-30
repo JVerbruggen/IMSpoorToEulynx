@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-BasicTypes.xsd"/>
+	<xs:element name="AlignmentData">
+		<xs:annotation>
+			<xs:documentation>De alignement elementen dienen binnen het traject te worden aangeleverd met de oriëntering, gelijk aan de oriëntering van de spoortak waartoe deze behoren. De volgorde van de alignement elementen is gelijk aan de volgorde waarin zij gezamenlijk de vorm van de spoortak beschrijven. De elementen liggen dus “kop-staart”. Deze eis geldt ook voor de gerelateerde elementen van het lengteprofiel, het verkanting schema en het snelheidschema.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="1" maxOccurs="unbounded">
+				<xs:element ref="HorizontalStraightPath"/>
+				<xs:element ref="HorizontalTransitionCurve"/>
+				<xs:element ref="HorizontalCurve"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HorizontalStraightPath">
+		<xs:annotation>
+			<xs:documentation>Horizontale Rechtstand</xs:documentation>
+			<xs:documentation xml:lang="NL">Horizontale Rechtstand</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tHorizontalTrackElement"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HorizontalCurve">
+		<xs:annotation>
+			<xs:documentation>Horizontale Boog</xs:documentation>
+			<xs:documentation xml:lang="NL">Horizontale Boog</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tHorizontalTrackElement">
+					<xs:attribute name="radius" type="xs:double" use="required">
+						<xs:annotation>
+							<xs:documentation>De straal in meters. Een positieve radius: CW. Negatieve radius: CCW.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HorizontalTransitionCurve">
+		<xs:annotation>
+			<xs:documentation>Horizontale Overgangsboog (Clothoïde)</xs:documentation>
+			<xs:documentation xml:lang="NL">Horizontale Overgangsboog (Clothoïde)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tHorizontalTrackElement">
+					<xs:attribute name="startRadius" type="xs:double" use="required">
+						<xs:annotation>
+							<xs:documentation>De beginstraal in meters. Een positieve radius: CW. Negatieve radius: CCW.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="endRadius" type="xs:double" use="required">
+						<xs:annotation>
+							<xs:documentation>De eindstraal in meters. Een positieve radius: CW. Negatieve radius: CCW.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tHorizontalTrackElement">
+		<xs:annotation>
+			<xs:documentation>Generiek onderdeel van een horizontaal alignement</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tBaseObject">
+				<xs:sequence>
+					<xs:element name="VerticalAlignment">
+						<xs:annotation>
+							<xs:documentation>Verticale alignementen dienen binnen het horizontale alignement element te worden aangeleverd met de oriëntering, gelijk aan de oriëntering van de horizontale alignement element waartoe deze behoren. Deze gegevens dienen beschikbaar te zijn voor de volledige lengte van het element waartoe deze behoren.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:choice minOccurs="1" maxOccurs="unbounded">
+								<xs:element ref="VerticalStraightPath"/>
+								<xs:element ref="VerticalCurve"/>
+							</xs:choice>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="CantValues"/>
+					<xs:element ref="DesignSpeedValues"/>
+				</xs:sequence>
+				<xs:attribute name="startX" type="xs:double" use="required">
+					<xs:annotation>
+						<xs:documentation>x-coordinaat van het startpunt, in RD</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="startY" type="xs:double" use="required">
+					<xs:annotation>
+						<xs:documentation>y-coordinaat van het startpunt, in RD</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="endX" type="xs:double" use="required">
+					<xs:annotation>
+						<xs:documentation>x-coordinaat van het eindpunt, in RD</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="endY" type="xs:double" use="required">
+					<xs:annotation>
+						<xs:documentation>y-coordinaat van het eindpunt, in RD</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="startAngle" type="tAngle" use="required">
+					<xs:annotation>
+						<xs:documentation>De beginhoek in radialen</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="endAngle" type="tAngle" use="required">
+					<xs:annotation>
+						<xs:documentation>De eindhoek in radialen</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="length" type="xs:double" use="required">
+					<xs:annotation>
+						<xs:documentation>De ontwikkelde lengte in het horizontale vlak in meters</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CantValues">
+		<xs:annotation>
+			<xs:documentation>Een lijst van verkantingen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CantValue" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CantValue">
+		<xs:annotation>
+			<xs:documentation>Verkantingen dienen binnen het horizontale alignement element te worden aangeleverd met de oriëntering, gelijk aan de oriëntering van de horizontale alignement element waartoe deze behoren. Deze gegevens dienen beschikbaar te zijn voor de volledige lengte van het element waartoe deze behoren.</xs:documentation>
+			<xs:documentation xml:lang="NL">Verkanting</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="startM" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>Begin metrering van de verkanting ten opzichte van het horizontale element. Eenheid in meters</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="endM" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>Begin metrering van de verkanting ten opzichte van het horizontale element. Eenheid in meters</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="startValue" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>De beginwaarde van de verkanting in millimeters. Voor verkanting wordt altijd een positieve waarde ingevoerd, met uitzondering voor tegenverkanting. Indien de verkanting wordt doorgezet in de rechtstand, krijgen de verkantingwaarden in de rechtstand hetzelfde teken ( + of - ) als de verkantingwaarden van de aansluitende boogelementen</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="endValue" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>De eindwaarde van de verkanting in millimeters. Voor verkanting wordt altijd een positieve waarde ingevoerd, met uitzondering voor tegenverkanting. Indien de verkanting wordt doorgezet in de rechtstand, krijgen de verkantingwaarden in de rechtstand hetzelfde teken ( + of - ) als de verkantingwaarden van de aansluitende boogelementen</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DesignSpeedValues">
+		<xs:annotation>
+			<xs:documentation>Een lijst van ontwerpsnelheden</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DesignSpeedValue" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DesignSpeedValue">
+		<xs:annotation>
+			<xs:documentation>De ontwerpsnelheid van het allignement, deze dienen binnen het horizontale alignement element te worden aangeleverd met de oriëntering, gelijk aan de oriëntering van de horizontale alignement element waartoe deze behoren. Deze gegevens dienen beschikbaar te zijn voor de volledige lengte van het element waartoe deze behoren.</xs:documentation>
+			<xs:documentation xml:lang="NL">Ontwerpsnelheid</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="startM" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>x-coordinaat van het startpunt, in RD</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="endM" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>y-coordinaat van het startpunt, in RD</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="value" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>De ontwerpsnelheid in kilometers per uur.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tVerticalTrackElement">
+		<xs:annotation>
+			<xs:documentation>Generiek onderdeel van een verticaal alignement</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="startM" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Begin metrering van het verticale element ten opzichte van het horizontale element. Eenheid in meters</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="endM" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Eind metrering van het verticale element ten opzichte van het horizontale element. Eenheid in meters</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="startZ" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>z-coordinaat van het beginpunt, in NAP</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="endZ" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>z-coordinaat van het eindpunt, in NAP</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="startAngle" type="tAngle" use="required">
+			<xs:annotation>
+				<xs:documentation>De beginhoek in radialen</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="endAngle" type="tAngle" use="required">
+			<xs:annotation>
+				<xs:documentation>De eindhoek in radialen</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="length" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>De ontwikkelde lengte in het verticale vlak in meters</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="horizontalLength" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>De ontwikkelde lengte in het horizontale vlak in meters</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="VerticalStraightPath">
+		<xs:annotation>
+			<xs:documentation>Verticale Rechtstand</xs:documentation>
+			<xs:documentation xml:lang="NL">Verticale Rechtstand</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tVerticalTrackElement"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VerticalCurve">
+		<xs:annotation>
+			<xs:documentation>Verticale Boog</xs:documentation>
+			<xs:documentation xml:lang="NL">Verticale Boog</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tVerticalTrackElement">
+					<xs:attribute name="radius" type="xs:double" use="required">
+						<xs:annotation>
+							<xs:documentation>De straal in meters. Een positieve radius: CW. Negatieve radius: CCW.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tAngle">
+		<xs:annotation>
+			<xs:documentation>
+	De hoek gerekend vanaf de positieve X-as. De rotatie is tegen de richting van de klok in.<br/>
+Voor de horizontale elementen kom je uit op de volgende waarden:<br/>
+Richting Oost = 0 = 2 PI<br/>
+Richting Noord = ½ PI<br/>
+Richting West = PI<br/>
+Richting Zuid = 1 ½ PI<br/>
+Voor verticale elementen:<br/>
+Waterpas = 0<br/>
+0 &lt; Stijgende helling &lt; 0.1<br/>
+(2 PI – 0.1) &lt; Dalende helling &lt; 2 PI
+	</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="6.283185307179586">
+				<xs:annotation>
+					<xs:documentation>2 x Pi</xs:documentation>
+				</xs:annotation>
+			</xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

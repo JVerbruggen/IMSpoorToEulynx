@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-Alignment.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-TrackAssets.xsd"/>
+	<xs:annotation>
+		<xs:documentation>De elementen in deze XSD vormen de kern van IMSpoorXML. Ze beschrijven de abstracte railtopologie, de geografie en de fysieke implementatie door spoortakken en wissels. Iedere spoortak of wissel/kruisingbeen kan refereren naar de samenstellende alignementsgegevens.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:element name="RailInfrastructure">
+		<xs:annotation>
+			<xs:documentation>Wrapper voor de netwerktopologie en de implementatie ervan.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RailTopology"/>
+				<xs:element ref="RailImplementation"/>
+				<xs:element ref="TrackAssets"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RailTopology">
+		<xs:annotation>
+			<xs:documentation>Wrapper voor de pure spoornetwerktopologie in knopen (Nodes) en verbindingen (Links).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MicroNodes"/>
+				<xs:element ref="MicroLinks"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RailImplementation">
+		<xs:annotation>
+			<xs:documentation>Wrapper  voor de object verzamelingen die de netwerktopologie implementeren (spoortakken, wissels en kruisingen, wisseldoorrijdbaarheid).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Junctions" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="Tracks" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="RailConnections" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Junctions">
+		<xs:annotation>
+			<xs:documentation>Een verzameling implementaties van knooppunten.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Crossing"/>
+				<xs:element ref="SingleSwitch"/>
+				<xs:element ref="DoubleDiamondCrossing"/>
+				<xs:element ref="SingleDiamondCrossing"/>
+				<xs:element ref="BufferStop"/>
+				<xs:element ref="TerraIncognita"/>
+				<xs:element ref="TrackEnd"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tJunction">
+		<xs:annotation>
+			<xs:documentation>Een abstracte implementatie van een knooppunt, zoals een wissel of stootjuk, inclusief de geografie ervan.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tPointObject"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tSwitch">
+		<xs:annotation>
+			<xs:documentation>Een abstracte implementatie van een knooppunt, welke het spoor splitst en laat afbuigen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tJunction">
+				<xs:sequence>
+					<xs:element ref="MathematicalPoint" minOccurs="0"/>
+					<xs:element ref="VCrossing" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Joint" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="SwitchBlades" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FoulingPoint" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="SwitchMechanism" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Passage" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="angleRatio" type="tAngleRatioEnum" use="required">
+					<xs:annotation>
+						<xs:documentation>De hoekverhouding van het Wissel</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="divergingSpeed" type="tDivergingSpeedEnum" use="required">
+					<xs:annotation>
+						<xs:documentation>De maximale snelheid door het wissel over het afbuigende been. In kilometers per uur.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="switchHeatingCabinetRef" type="tUUIDRef">
+					<xs:annotation>
+						<xs:documentation>PUIC relatie naar de WisselverwarmingKast-installatiekast.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="divergingDirection" type="tSwitchSideEnum" use="required">
+					<xs:annotation>
+						<xs:documentation>De richting van het afbuigende been van het wissel.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="switchDesignDocumentId" type="tString100">
+					<xs:annotation>
+						<xs:documentation>Het wisseltekeningnummer. Een verwijzing naar de generieke of locale constructie-tekening van het wissel.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MathematicalPoint">
+		<xs:annotation>
+			<xs:documentation>Mathematisch Punt
+			</xs:documentation>
+			<xs:documentation xml:lang="NL">Mathematisch-Punt</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPoint"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SingleSwitch">
+		<xs:annotation>
+			<xs:documentation>Een gewoon wissel is een Infraobject waarmee de fysieke vertakking in het spoorwegnet wordt gerealiseerd.</xs:documentation>
+			<xs:documentation xml:lang="NL">Gewoon Wissel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tSwitch">
+					<xs:attribute name="isSymmetric" type="tTrueFalseEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Indicatie of het wissel een symmetrische wissel betreft</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tCrossingSwitch">
+		<xs:complexContent>
+			<xs:extension base="tSwitch">
+				<xs:sequence>
+					<xs:element ref="KCrossing" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="DoubleDiamondCrossing">
+		<xs:annotation>
+			<xs:documentation>Een zg. heel engels wissel bestaat fysiek uit een kruising en vier gewone wissels die paarsgewijs gekoppeld zijn</xs:documentation>
+			<xs:documentation xml:lang="NL">Heel Engels Wissel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tCrossingSwitch"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SingleDiamondCrossing">
+		<xs:annotation>
+			<xs:documentation>Een zg. half engels wissel bestaat fysiek uit een kruising met twee gewone wissels.</xs:documentation>
+			<xs:documentation xml:lang="NL">Half Engel Wissel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tCrossingSwitch"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VCrossing">
+		<xs:annotation>
+			<xs:documentation>Een puntstuk is het fysiek metalen object waarmee de scherpe hoek tussen de twee snijdende spoorstaven van
+een wissel of een kruising is gerealiseerd.</xs:documentation>
+			<xs:documentation xml:lang="NL">Puntstuk</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject">
+					<xs:attribute name="isMovable" type="tTrueFalseEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Indicatie of het puntstuk beweegbaar is.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="KCrossing">
+		<xs:annotation>
+			<xs:documentation>Een kruisstuk is een onderdeel van het wissel nabij het puntstuk, dat het kruisen van wielen met de niet bereden
+spoorstaaf mogelijk maakt.</xs:documentation>
+			<xs:documentation xml:lang="NL">Kruisstuk</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Joint">
+		<xs:annotation>
+			<xs:documentation>ES-Las Wissel/kruising.</xs:documentation>
+			<xs:documentation xml:lang="NL">ES-Las Wissel/Kruising</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FoulingPoint">
+		<xs:annotation>
+			<xs:documentation>Een vrijbalk is meestal een betonnen balk die zich tussen twee samenlopende of elkaar kruisende sporen bevindt en de uiterste grens is waar railvoertuigen mogen worden geplaatst zonder de beweging van voertuigen op het andere spoor te hinderen.</xs:documentation>
+			<xs:documentation xml:lang="NL">Vrijbalk</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SwitchBlades">
+		<xs:annotation>
+			<xs:documentation>Een wisseltong is de door de wisselsteller beweegbare uiteinden aan beide zijden tussen de spoorstaven aan
+de voorkant van een wissel.</xs:documentation>
+			<xs:documentation xml:lang="NL">Tongbeweging</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SwitchMechanism">
+		<xs:annotation>
+			<xs:documentation>Een wisselsteller is een onderdeel van het bedieningsmechanisme van een wissel, dat de fysieke heen en weer
+beweging van de wisseltongen verzorgt.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointObject">
+					<xs:attribute name="switchMechanismType" type="tSwitchMechanismEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Het type steller waarmee het wissel gestuurd wordt.</xs:documentation>
+							<xs:documentation xml:lang="NL">Wisselsteller</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="normalPosition" type="tSwitchSideEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Geeft de normaal stand van het wissel aan.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="preferredPosition" type="tSwitchSideEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Geeft de voorkeursstand van het wissel aan.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="hasSwitchChecker" type="tTrueFalseEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Geeft aan of het wissel een tongcontrole heeft.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="isSpringSwitch" type="tTrueFalseEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Geeft aan of bij het wissel een mechanisme is geimplementeerd waarbij na passage het wissel naar de normaalstand terugloopt</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="lockType" type="tLockTypeEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Geeft of het wissel is vastgelegd en met welk type</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="switchConnectionCabinetRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>PUIC relatie naar een WAK (Wissel Aansluit Kast)</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="interconnectedSwitchMechanismRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>PUIC relatie naar een gekoppelde steller. Deze relatie is ook wel bekend als 'gekoppeld wissel'</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Crossing">
+		<xs:annotation>
+			<xs:documentation>Een gelijkvloerse kruising van spoorwegen</xs:documentation>
+			<xs:documentation xml:lang="NL">Kruising</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tJunction">
+					<xs:sequence>
+						<xs:element ref="MathematicalPoint" minOccurs="0"/>
+						<xs:element ref="VCrossing" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="KCrossing" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="Joint" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="SwitchMechanism" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="Passage" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="FoulingPoint" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="angleRatio" type="tAngleRatioEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>De hoekverhouding van het Kruis</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="switchHeatingCabinetRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>PUIC relatie naar de Wisselverwarming-installatiekast.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="hasMovableOverheadLine" type="tTrueFalseEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Een indicatie of er een beweegbare bovenleiding aanwezig is.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BufferStop">
+		<xs:annotation>
+			<xs:documentation>Een stootjuk is een constructie die als blokkade het fysieke einde van een spoortak markeert.</xs:documentation>
+			<xs:documentation xml:lang="NL">Stootjuk</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tJunction">
+					<xs:sequence>
+						<xs:element ref="ATPType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="signRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC relatie met een bijbehorend RS243 afsluitlantaarn stop</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TerraIncognita">
+		<xs:annotation>
+			<xs:documentation>TerraIncognita: Een administratief eindpunt nabij landsgrens en particulier terrein.</xs:documentation>
+			<xs:documentation xml:lang="NL">Terra incognita</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tJunction"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TrackEnd">
+		<xs:annotation>
+			<xs:documentation>Implementatie van een einde spoor.</xs:documentation>
+			<xs:documentation xml:lang="NL">Eindespoor</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tJunction"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Tracks">
+		<xs:annotation>
+			<xs:documentation>Een verzameling spoortakken, de implementatie van een edge</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Track" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Track">
+		<xs:annotation>
+			<xs:documentation>Een fysieke-spoortak, een implementatie van een edge, inclusief de geografie ervan.</xs:documentation>
+			<xs:documentation xml:lang="NL">Spoortak</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tLineObject">
+					<xs:sequence>
+						<xs:element ref="AlignmentData" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>De alignements-gegevens van de betreffende spoortak.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Passage">
+		<xs:annotation>
+			<xs:documentation>Een wissel-/kruisingbeen.</xs:documentation>
+			<xs:documentation xml:lang="NL">Wissel-/kruisingbeen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tLineObject">
+					<xs:sequence>
+						<xs:element ref="AlignmentData" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>De alignements-gegevens van het betreffende wissel- of kruis- been.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="sideTag" type="tSideTagEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Kantcode van het been. De lijst van opties is voorgedefiniëerd.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RailConnections">
+		<xs:annotation>
+			<xs:documentation>Een verzameling RailVerbindingen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RailConnection" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RailConnection">
+		<xs:annotation>
+			<xs:documentation>Een RailVerbinding is een relatieobject van spoortakken en wissel- of kruisbenen. Dit object vormt de basis waarmee objecten op het spoorsenetwerkk kunnen worden geprojecteerd.</xs:documentation>
+			<xs:documentation xml:lang="NL">RailVerbinding</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBaseObject">
+					<xs:attribute name="passageRefs" type="tUUIDRefList" use="optional">
+						<xs:annotation>
+							<xs:documentation>Optionele lijst van relaties tot de wissel- of kruisbenen.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="trackRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Optionele relatie tot de spoortak.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="functionalBegin" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>De measure van het functionele begin van de RailVerbinding. Alleen van toepassing bij de aanwezigheid van een stootjuk op de spoortak.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="functionalEnd" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>De measure van het functionele einde van de RailVerbinding. Alleen van toepassing bij de aanwezigheid van een stootjuk op de spoortak.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="voltageClass" type="tVoltageClassEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>De spanningsklasse van de spoortak.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="isElectrified" type="tYesNoPartialEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Indicatie of de spoortak elektrische tractie heeft. Letop: dit is een tijdelijk veld tbv data-migratie.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="hasInterlocking" type="tYesNoPartialEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Indicatie of de spoortak beveiligd is. Letop: dit is een tijdelijk veld tbv data-migratie.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="isSafetyTrack" type="tTrueFalseEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Indicatie of de spoortak een veiligheidskop is.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="trainType" type="tTrainTypeEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Type trein waar de spoortak voor bedoeld is. De lijst van opties is voorgedefiniëerd..</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tNodePort">
+		<xs:annotation>
+			<xs:documentation>Type voor referentie aan een node en de interne poort daarvan</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="nodeRef" type="tUUIDRef" use="required">
+			<xs:annotation>
+				<xs:documentation>Een referentie naar de Node in de RailTopology.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="portIndex" type="tPortIndex" use="required">
+			<xs:annotation>
+				<xs:documentation>Referentie naar de poort van de Node waarop de Edge koppelt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="tPortIndex">
+		<xs:annotation>
+			<xs:documentation>Type voor referentie naar een poort in een Node.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="MicroNodes">
+		<xs:annotation>
+			<xs:documentation>Een set knooppunten.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MicroNode" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MicroNode">
+		<xs:annotation>
+			<xs:documentation>Een knoop in het topologie netwerk.</xs:documentation>
+			<xs:documentation xml:lang="NL">Knoop</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Jumpers" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="junctionRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>PUIC verwijzing naar een bijbehorend Wissel of spoorbeeindigingsconstructie.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Jumpers">
+		<xs:annotation>
+			<xs:documentation>Een set interne verbindingen van een knooppunt.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Jumper" minOccurs="0" maxOccurs="6"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Jumper">
+		<xs:annotation>
+			<xs:documentation>Een interne verbinding tussen twee poorten op een knooppunt</xs:documentation>
+			<xs:documentation xml:lang="NL">Interne Verbinding</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="passageRefs" type="tUUIDRefList" use="required">
+				<xs:annotation>
+					<xs:documentation>De geordende lijst van PUIC referenties naar de wissel- of kruisbenen welke het pad van poort fromIndex  tot poort  toIndex beschrijven.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="fromIndex" type="tPortIndex" use="required">
+				<xs:annotation>
+					<xs:documentation>Het beginpunt van de interne verbinding</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="toIndex" type="tPortIndex" use="required">
+				<xs:annotation>
+					<xs:documentation>Het eindpunt van de interne verbinding</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isTwoWay" type="tTrueFalseEnum" use="required">
+				<xs:annotation>
+					<xs:documentation>Indicatie of de interne verbinding in beide richtingen te doorrijden is. Bij FALSE is er al een interne route van fromIndex naar toIndex</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isTraversible" type="tTrueFalseEnum" use="required">
+				<xs:annotation>
+					<xs:documentation>Indicatie dat een interne verbinding ook gebruikt mag worden voor routering. Bij een vastlegging van een wissel veronderstellen we dat er minimaal 1 Jumper niet doorrijdbaar is.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MicroLinks">
+		<xs:annotation>
+			<xs:documentation>Een verzameling verbindingen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MicroLink" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MicroLink">
+		<xs:annotation>
+			<xs:documentation>Een verbinding tussen twee knooppunten.</xs:documentation>
+			<xs:documentation xml:lang="NL">Verbinding</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FromMicroNode" type="tNodePort"/>
+				<xs:element name="ToMicroNode" type="tNodePort"/>
+			</xs:sequence>
+			<xs:attribute name="railConnectionRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>PUIC verwijzing naar de bijbehorende spoortak.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tAngleRatioEnum">
+		<xs:annotation>
+			<xs:documentation>Mogelijke hoekverhoudingen bij wissels en kruisingen</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:1,7">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:1,7</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:2">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:2</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:2,5">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:2,5</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:3,5">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:3,5</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:4">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:4</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:4,5">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:4,5</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:5">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:5</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:6">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:6</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:7">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:7</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:7,5">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:7,5</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:8">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:8</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:9">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:9</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:9K">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:9K</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:9L">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:9L</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:10">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:10</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:12">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:12</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:13,77">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:13,77</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:15">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:15</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:18">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:18</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:18,5">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:18,5</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:20">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:20</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:29">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:29</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:34,7">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:34,7</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:39">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:39</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1:39,1">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">1:39,1</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tTrainTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Cargo">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Goederen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Passenger">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Reizigers</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Both">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Beide. Goederen en Reizigers</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tDivergingSpeedEnum">
+		<xs:annotation>
+			<xs:documentation>Mogelijke snelheden bij een afbuigende stand van een wissel. In kilometers per uur</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">30 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">40 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="50">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">50 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="60">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">60 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="70">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">70 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="80">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">80 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="100">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">100 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="125">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">125 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="140">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">140 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="160">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">160 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="170">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">170 km/h</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tSwitchSideEnum">
+		<xs:annotation>
+			<xs:documentation>Mogelijke wisselstanden</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="None">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Geen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Left">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Linksleidend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Right">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Rechtsleidend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tLockTypeEnum">
+		<xs:annotation>
+			<xs:documentation>Mogelijke vormen van grendels.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="None">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Geen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SafetyLock">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Zekerheid</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CrankSafetyLock">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Kruk-Zekerheid</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ElectricLock">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Elektrisch bediend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tSideTagEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="L">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">L</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="P">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">P</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="P_Q">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">P-Q</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Q">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Q</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="R">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">R</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="S">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">S</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="S_T">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">S-T</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="T">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">T</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="V">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">V</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

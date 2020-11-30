@@ -1,7 +1,7 @@
 ﻿using Models.File;
 using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.Eulynx.EULYNX_XSD;
-using Models.TopoModels.IMSpoor.V1_3_0;
+using Models.TopoModels.IMSpoor.V1_2_3;
 using Models.Translation;
 using Services.DependencyInjection;
 using Services.Service;
@@ -31,8 +31,11 @@ namespace FormsApp
         {
             InitializeComponent();
 
-            textBox_IMSpoorXML.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\IMSpoor-1.3.0-actual.xml";
+            textBox_IMSpoorXML.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\IMSpoor-1.2.3-actual.xml";
             updateConversionButtonState();
+
+            Dependencies.RegisterFactories();
+            Dependencies.RegisterDependencies();
 
             //Signal signal = new Models.TopoModels.Eulynx.EULYNX_Signalling.Signal();
             //tElementWithIDref signalRef = signal;

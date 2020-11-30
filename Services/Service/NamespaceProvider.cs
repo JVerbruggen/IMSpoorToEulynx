@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Models.Translation;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Services.Service
 {
 
-    public class NamespaceProvider
+    public class NamespaceProvider : IService
     {
         public static Dictionary<string, string> GetEulynxNamespaces()
         {

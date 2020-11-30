@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:gml="http://www.opengis.net/gml" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-BasicTypes.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-Furniture.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-Infra.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-Groupings.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-TrainControl.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="IMSpoor-1.2.3-gml.xsd"/>
+	<xs:element name="IMSpoor">
+		<xs:annotation>
+			<xs:documentation>
+        Root element van een IMSpoorXML document (IMX)
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="Project"/>
+				<xs:element name="Situation" type="tSituation"/>
+			</xs:choice>
+			<xs:attribute name="imxVersion" type="tVersionString" use="required" fixed="1.2.3">
+				<xs:annotation>
+					<xs:documentation>Verplicht versienummer</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tSituation">
+		<xs:annotation>
+			<xs:documentation>
+        Abstract type voor een sectie met spoorse gegevens
+      </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="RailInfrastructure" minOccurs="0"/>
+			<xs:element ref="Groupings" minOccurs="0"/>
+			<xs:element ref="Furniture" minOccurs="0"/>
+			<xs:element ref="TrainControl" minOccurs="0"/>
+			<xs:element ref="Extensions" minOccurs="0"/>
+			<xs:element name="Remarks" type="tRemarksString" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Veld om eventuele opmerkingen te kunnen plaatsen.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="referenceDate" type="xs:dateTime" use="required">
+			<xs:annotation>
+				<xs:documentation>De datum waarop de (geconstrueerde) dateset geldig wordt binnen een bronsysteem. Niet te verwarren met Indienststellingdatum (IDS) of andere project mijlpalen.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="perspectiveDate" type="xs:dateTime">
+			<xs:annotation>
+				<xs:documentation>De datum van waaruit naar de toekomst wordt gekeken</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="SituationChanges">
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>
+          Type met samenvatting van Was/Wordt in de vorm van lijsten met UUIDs van de nieuwe, gewijzigde en verwijderde objecten.
+        </xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="Created" type="tUUIDRefList" minOccurs="0"/>
+				<xs:element name="Updated" type="tUUIDRefList" minOccurs="0"/>
+				<xs:element name="Deleted" type="tUUIDRefList" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Project">
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Type met informatie over een project. TODO</xs:documentation>
+				<xs:documentation xml:lang="NL">Project</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="InitialSituation" type="tSituation">
+					<xs:annotation>
+						<xs:documentation>De uitgangssituatie waarop een mutatie gemaakt moet worden.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NewSituation" type="tSituation" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>De nieuwe situatie na uitvoering project of correctie</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="SituationChanges"/>
+				<xs:element ref="ProjectMetadata" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="baseId"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProjectMetadata">
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Type voor metadata van een project.</xs:documentation>
+				<xs:documentation xml:lang="NL">ProjectMetadata</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="UserArea" type="tProjectArea">
+					<xs:annotation>
+						<xs:documentation>Het gebied wat door gebruiker is geselecteerd om te bewerken.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="WorkArea" type="tProjectArea" minOccurs="0"/>
+				<xs:element name="ContextArea" type="tProjectArea" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Het contextgebied van het project. Dit gebied wordt bepaald op basis de relaties met objecten uit het WorkArea</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ChangeableTypes" type="tObjectTypeList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Een lijst van Objecttypes welke zijn toegestaan om aan te passen binnen de dataset.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ChangeableObjects" type="tUUIDRefList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Een lijst van PUIC-nummers welke zijn toegestaan om aan te passen binnen de dataset.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NoneChangeableObjects" type="tUUIDRefList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Een lijst van Objecttypes welke niet zijn toegestaan om aan te passen binnen de dataset.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="externalProjectReference" type="tNameString">
+				<xs:annotation>
+					<xs:documentation>Verwijzing naar extern </xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="projectName" type="tString50">
+				<xs:annotation>
+					<xs:documentation>Projectnaam overgenomen uit een bronsysteem.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="projectType" type="tProjectTypeEnum" use="required">
+				<xs:annotation>
+					<xs:documentation>Het type van het wijzigingsproject.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="createdDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>De datum/tijd waarop de dataset is aangemaakt in een systeem.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="plannedDeliveryDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>De geplande opleverdatum van de dataset.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Extensions">
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>
+          Reservering voor eventuele uitbreidingen die niet tot de kern van IMSpoor behoren. Op dit moment vallen hier de domeinen ERTMS en BGT onder.
+        </xs:documentation>
+				<xs:documentation xml:lang="NL">Extensies</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:any maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tProjectTypeEnum">
+		<xs:annotation>
+			<xs:documentation>Enumeratie voor type van Projecten waaraan verschillende permissies verbonden kunnen zijn.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Proces niet onder te brengen onder een specifieke type</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StandardVerificationSurvey">
+				<xs:annotation>
+					<xs:documentation>Standaard verificatie proces</xs:documentation>
+					<xs:documentation xml:lang="NL">Standaard verificatie proces</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NonStandardVerificationSurvey">
+				<xs:annotation>
+					<xs:documentation>Ad hoc projecten proces</xs:documentation>
+					<xs:documentation xml:lang="NL">Ad hoc projecten proces</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Design">
+				<xs:annotation>
+					<xs:documentation>Ontwerp proces</xs:documentation>
+					<xs:documentation xml:lang="NL">Ontwerp proces</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AreaUpdate">
+				<xs:annotation>
+					<xs:documentation>beheer van gebieden proces</xs:documentation>
+					<xs:documentation xml:lang="NL">beheer van gebieden proces</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tObjectTypeList">
+		<xs:annotation>
+			<xs:documentation>Type voor een lijst Object types in een situatie</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="tProjectArea">
+		<xs:sequence>
+			<xs:element ref="gml:Polygon"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

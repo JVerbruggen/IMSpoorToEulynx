@@ -1,5 +1,5 @@
 ﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.IMSpoor.V1_3_0;
+using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Managers.Base;
 using Services.Managers.Location;
@@ -20,9 +20,9 @@ namespace Services.Managers.Topology
             foreach (MicroLink microLink in microLinks)
             {
                 LinearElement linearElement = new LinearElement();
-                linearElement.uuid = microLink.trackFunctionalViewRef;
+                linearElement.uuid = microLink.railConnectionRef;
                 linearElement.name = "-";
-                linearElement.associatedPositioningSystems = InstanceManager.Singleton<AssociatedPositioningSystemManager>().GetInstance().GetAssociatedPositioningSystems(microLink.trackFunctionalViewRef);
+                linearElement.associatedPositioningSystems = InstanceManager.Singleton<AssociatedPositioningSystemManager>().GetInstance().GetAssociatedPositioningSystems(microLink.railConnectionRef);
 
                 positioningNetElements.Add(linearElement);
             }

@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-ERTMS-variables.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-ERTMS-packets.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-Infra.xsd"/>
+	<xs:include schemaLocation="IMSpoor-1.2.3-Groupings.xsd"/>
+	<xs:element name="ERTMS">
+		<xs:annotation>
+			<xs:documentation>Root element voor de beschrijving van een ERTMS ontwerp.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="TrackConditionMarkers" minOccurs="0"/>
+				<xs:element ref="SpeedChangeMarkers" minOccurs="0"/>
+				<xs:element ref="TransitionMarkers" minOccurs="0"/>
+				<xs:element ref="GradientMarkers" minOccurs="0"/>
+				<xs:element ref="NationalValueSets" minOccurs="0"/>
+				<xs:element ref="TextMessageMarkers" minOccurs="0"/>
+				<xs:element ref="ConditionalEmergencyStopMarkers" minOccurs="0"/>
+				<xs:element ref="NationalValueSetMarkers" minOccurs="0"/>
+				<xs:element ref="GeoPosMarkers" minOccurs="0"/>
+				<xs:element ref="ERTMSLevelCrossings" minOccurs="0"/>
+				<xs:element ref="ERTMSSignals" minOccurs="0"/>
+				<xs:element ref="DepartureTracks" minOccurs="0"/>
+				<xs:element ref="CombinationTracks" minOccurs="0"/>
+				<xs:element ref="ERTMSSwitches" minOccurs="0"/>
+				<xs:element ref="ERTMSBaliseGroups" minOccurs="0"/>
+				<xs:element ref="ERTMSRoutes" minOccurs="0"/>
+				<xs:element ref="BigMetalMasses" minOccurs="0"/>
+				<xs:element ref="CentralSafetySystemAreas" minOccurs="0"/>
+				<xs:element ref="ErtmsAreas" minOccurs="0"/>
+				<xs:element ref="RadioBlockCenters" minOccurs="0"/>
+				<xs:element ref="PositionReportParametersAreas" minOccurs="0"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tERTMSExtension">
+		<xs:annotation>
+			<xs:documentation>Een lege abstractie om aan te geven dat het object alleen aanvullende ERTMS-informatie bevat bovenop het 'hoofd-object'.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:element name="ERTMSRoutes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ERTMSRoute" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSRoute">
+		<xs:annotation>
+			<xs:documentation>Aanvullende informatie bij een route voor toepassing bij ERTMS</xs:documentation>
+			<xs:documentation xml:lang="NL">ERTMS Route</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tERTMSExtension">
+					<xs:sequence>
+						<xs:element name="BaliseGroupRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>De lijst van balisegroepen die meegestuurd kunnen worden met een SR-autorisatie. Ook wel als BaliseList.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="singularRouteRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de volledige enkelvoudige route</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSBaliseGroup">
+		<xs:annotation>
+			<xs:documentation>Aanvullende informatie bij een balise groep voor toepassing bij ERTMS</xs:documentation>
+			<xs:documentation xml:lang="NL">ERTMS BaliseGroup</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tERTMSExtension">
+					<xs:sequence>
+						<xs:element ref="M_VERSION"/>
+						<xs:element ref="NID_C"/>
+						<xs:element ref="Q_LINK"/>
+						<xs:element ref="EuroBalise" maxOccurs="8"/>
+						<xs:element ref="NID_BG"/>
+						<xs:element ref="Q_UPDOWN"/>
+						<xs:element ref="Q_MEDIA"/>
+						<xs:element ref="M_MCOUNT"/>
+					</xs:sequence>
+					<xs:attribute name="balisegroupName" type="tNameString" use="optional"/>
+					<xs:attribute name="baliseGroupref" type="tUUIDRef" use="optional">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de volledige BaliseGroup</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSBaliseGroups">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ERTMSBaliseGroup" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CantDeficiencySpeed">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert de toegestane snelheid (V_DIFF) per verkantingstekortcategorie(NC_CDDIFF).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NC_CDDIFF" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="speed" type="xs:int" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SpeedChangeConditions">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert de eventuele condities die gelden voor toepassing van de snelheidsverandering. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SwitchCondition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="SignalCondition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="WorkzoneCondition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="OtherCondition" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Conditions">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert de eventuele condities die gelden voor toepassing van de tekstbericht. De condities bestaan uit nul of meer wisselstand-, seinbeeld- en overige condities. De condities kunnen ook gemengd zijn, dus bijvoorbeeld zowel een wisselstand als een seinbeeld definieren.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SwitchCondition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="SignalCondition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="WorkzoneCondition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TemporaryShuntingCondition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="OtherCondition" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DangerPoint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dangerPointLocation" type="tRailConnectionInfo">
+					<xs:annotation>
+						<xs:documentation>Distance from the End of Authority to danger point (D_DP)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="TrainCategorySpeed" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CombinationTrack">
+		<xs:annotation>
+			<xs:documentation>Een combineerspoor is het stuk spoor (al dan niet bestaande uit meerdere sporen) dat gebruikt kan worden om te combineren.</xs:documentation>
+			<xs:documentation xml:lang="NL">Combineerspoor</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTrackAggregation">
+					<xs:sequence>
+						<xs:element name="SectionRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst van PUIC Referenties naar secties.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="UsefulLength" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="timerValue" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De timerwaarde in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DepartureTrack">
+		<xs:annotation>
+			<xs:documentation>Een vertrekspoor in de context van ERTMS is een spoor waarbij een Movement Authority nodig is voor een vertrek op basis van een vervolgrijweg (in dezelfde richting of voor een kerende trein).
+Een spoor – en daarmee ook een vertrekspoor – bestaat uit een verzameling secties en een sein dat de begrenzing van het vertrekspoor vormt.</xs:documentation>
+			<xs:documentation xml:lang="NL">DepartureTrack</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTrackAggregation">
+					<xs:sequence>
+						<xs:element name="SectionRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst van PUIC Referenties naar secties.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="DepartureTrackExtension"/>
+						<xs:element ref="UsefulLength" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="signalRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Referentie naar het (vertrek)sein. Hiermee wordt de rijrichting bepaald.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="isReverseTrack" type="tTrueFalseEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Indicatie of het vertrekspoor ook als keerspoor kan worden gebruikt.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="driveBySightPossible" type="tTrueFalseEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Indicatie of het vertrekspoor een ROZ-Rijweg mogelijkheid heeft.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="timerValue" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De timerwaarde in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DepartureTrackExtension">
+		<xs:annotation>
+			<xs:documentation>Een vertrekspooruitbreiding breidt een vertrekspoor uit. Het spoorgedeelte mag maximaal één sectie ten behoeve van treindetectie bevatten. Er mogen wissels in voorkomen, maar geen overwegen of beweegbare bruggen.</xs:documentation>
+			<xs:documentation xml:lang="NL">Vertrekspoor Uitbreiding</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TrackFragments" type="tTrackFragments"/>
+			</xs:sequence>
+			<xs:attribute name="timerValue" type="tTimerValue" use="required">
+				<xs:annotation>
+					<xs:documentation>De timerwaarde in seconden</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DepartureTracks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DepartureTrack" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CombinationTracks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CombinationTrack" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EndConditions">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert de eindcondities voor het tonen van een bericht. De eindcondities bestaan uit een afstand, eem duur en een ERTMS level. In de TextMessageMarker wordt gedefinieerd of aan één conditie of aan alle condities voldaan moet worden voor het doven van het bericht (Q_TEXTDISPLAY).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LevelCondition" minOccurs="0"/>
+				<xs:element ref="L_TEXTDISPLAY" minOccurs="0"/>
+				<xs:element ref="T_TEXTDISPLAY" minOccurs="0"/>
+				<xs:element ref="M_MODETEXTDISPLAY" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BigMetalMasses">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Big Metal Masses</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BigMetalMass" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BigMetalMass">
+		<xs:annotation>
+			<xs:documentation>Een big metal mass (BMM) is een gebied waarbinnen electronische apparatuur verstoort zou kunnen worden als gevolg van de aanwezigheid van een grote massa aan staal.</xs:documentation>
+			<xs:documentation xml:lang="NL">Big Metal Mass</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tObjectDemarcation">
+					<xs:sequence>
+						<xs:element name="TC67_BigMetalMassRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst van PUIC verwijzingen naar de TC67 markers.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CentralSafetySystemAreas">
+		<xs:annotation>
+			<xs:documentation>Een lijst van CentralSafetySystemAreas</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CentralSafetySystemArea" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CentralSafetySystemArea">
+		<xs:annotation>
+			<xs:documentation>Central Safety System (CSS) Area</xs:documentation>
+			<xs:documentation xml:lang="NL">Central Safety System Area</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointDemarcation">
+					<xs:sequence>
+						<xs:element name="RadioBlockCenterRefs" type="tUUIDRefList" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Een PUIC verwijzing naar een of meer RBC's</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="InterlockingAreaRefs" type="tUUIDRefList" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Een PUIC verwijzing naar een of meer Interlocking gebieden</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="restartTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>de tijdvertraging die benodigd is om het Central-Safety-System-Gebied weer veilig op te starten na uitvallen. Tijd in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ErtmsAreas">
+		<xs:annotation>
+			<xs:documentation>Een lijst van ERTMS-gebieden</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ErtmsArea" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ErtmsArea">
+		<xs:annotation>
+			<xs:documentation>Een gebied waarbinnen de treinbeinvloeding wordt bestuurd door een ERTMS systeem. De punt-afbakening is het beinvloedingsgebied. De transitiemarkers geven de systeemgrenzen aan.</xs:documentation>
+			<xs:documentation xml:lang="NL">ERTMS-gebied</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointDemarcation">
+					<xs:sequence>
+						<xs:element name="LevelTransitionRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst van PUIC verwijzingen naar LevelTranstion Markers welke de systeemgrens van het gebied vormen.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="level" type="tErtmsLevel" use="required">
+						<xs:annotation>
+							<xs:documentation>Het ERTMS-level van het gebied.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RadioBlockCenters">
+		<xs:annotation>
+			<xs:documentation>Een lijst van Radio Block Centers (RBC's)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RadioBlockCenter" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RadioBlockCenter">
+		<xs:annotation>
+			<xs:documentation>Het is een gebied op de spoortak die gedekt is door een apartuur.</xs:documentation>
+			<xs:documentation xml:lang="NL">Radio Block Center</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tObjectDemarcation">
+					<xs:sequence>
+						<xs:element name="MarkerRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst van PUIC verwijzingen naar de TransitieMarkeringen (type RBC-RBC) of LevelTransitieMarkeringen. Dit zijn de grenzen bij dit gebied.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="acknowledgementTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De waarde van de Acknowledgement-Timer in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="generalMessageIntervalTimer" type="tTimerValue" use="required">
+						<xs:annotation>
+							<xs:documentation>De waarde van de General-Message-Interval-Timer in seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="minimalUserDataRate" type="xs:int" use="required">
+						<xs:annotation>
+							<xs:documentation>De waarde van de Minimal-User-Data-Rate in bytes per seconden</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="nid_rbc" type="uint14" use="required">
+						<xs:annotation>
+							<xs:documentation>Het identificatie-nummer van de RBC</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PositionReportParametersAreas">
+		<xs:annotation>
+			<xs:documentation>Een lijst van PositionReportParameters gebieden.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PositionReportParametersArea" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PositionReportParametersArea">
+		<xs:annotation>
+			<xs:documentation>Het gebied waarin de trein zijn positie moet rapporteren conform de gegeven parameters.</xs:documentation>
+			<xs:documentation xml:lang="NL">Positie rapport parameters gebied</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointDemarcation">
+					<xs:attribute name="timeInterval" type="xs:int" use="required">
+						<xs:annotation>
+							<xs:documentation>Tijdsinterval tussen twee positie rapporten door de trein (T_CYCLOC).</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSSwitch">
+		<xs:annotation>
+			<xs:documentation>Dit object bevat de ERTMS-specifieke eisen voor een wissel.</xs:documentation>
+			<xs:documentation xml:lang="NL">ERTMS wissel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tERTMSExtension">
+					<xs:sequence>
+						<xs:element ref="PassageSpeed" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="switchRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar het volledige wissel.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSSwitches">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ERTMSSwitch" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSLevel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="M_LEVELTR"/>
+				<xs:element ref="NID_NTC" minOccurs="0"/>
+				<xs:element ref="L_ACKLEVELTR"/>
+			</xs:sequence>
+			<xs:attribute name="acknowledgementTime" type="xs:int" use="optional">
+				<xs:annotation>
+					<xs:documentation>acknowledgementTime binnen het L2 gebied. In seconden</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StoppingArea">
+		<xs:annotation>
+			<xs:documentation>Dit is een punt of een gebied op een overwegspoor aan weerszijden van de overweg.</xs:documentation>
+			<xs:documentation xml:lang="NL">StoppingArea</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tRailConnectionInfo"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSLevelCrossing">
+		<xs:annotation>
+			<xs:documentation>De ERTMS-parameters voor een level crossing. De ERTMS Level Crossing verwijst naar een TrackAssets/LevelCrossing. In dit object wordt de locatie (D_LX) van de level crossing gedefinieerd.
+Een ERTMS Level Crossing bevat nul of meer stopping areas (voor iedere spoortak over de level crossing een).</xs:documentation>
+			<xs:documentation xml:lang="NL">ERTMS-overweg</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tERTMSExtension">
+					<xs:sequence>
+						<xs:element ref="LevelCrossingMalfunction" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="StopZone" type="tRailConnectionInfo" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="DepartureDetectionMarker" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="speedRestriction" type="xs:int" use="optional">
+						<xs:annotation>
+							<xs:documentation>Speed at which the LX can be passed when it is not protected (V_LX)</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="levelCrossingRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de volledige overweg.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SpeedRestrictedArea" type="tRailConnectionInfo">
+		<xs:annotation>
+			<xs:documentation>Het gebied (over de overweg) waarvoor de aangegeven snelheidsbeperking (het attribuut speedRestriction) geldt (L_LX).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="LevelCrossingMalfunction">
+		<xs:annotation>
+			<xs:documentation>Gedrag-configuratie bij het defect raken van een overweg.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SpeedRestrictedArea"/>
+				<xs:element ref="StoppingArea" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSLevelCrossings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ERTMSLevelCrossing" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DepartureDetectionMarker">
+		<xs:annotation>
+			<xs:documentation>Vertrekdetectiepunt (VD-punt)</xs:documentation>
+			<xs:documentation xml:lang="NL">Vertrekdetectiepunt</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointTrackAsset">
+					<xs:attribute name="speedRestrictionLength" type="xs:int" use="required">
+						<xs:annotation>
+							<xs:documentation>De lengte van de conditionele snelheidsbeperking naar de overweg van het vertrekdetectiepunt (S_LX10).</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="operationalPointTrackRef" type="tUUIDRef" use="optional">
+						<xs:annotation>
+							<xs:documentation>De PUIC verwijzing naar het dienstregelpuntspoor (perronspoor) waar vanuit de trein vertrekt.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TAA">
+		<xs:annotation>
+			<xs:documentation>Treinlengte Afhankelijke Autorisatie (TAA) kan worden geprojecteerd in situaties waarbij er in een route onvoldoende afstand is tussen een dwangpunt en een SMB of sein (dwangpuntsafstand).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Path" type="tTrackFragments" minOccurs="1" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>De mogelijke padden van dwangpunt naar SMB of Transitiesein ten behoeve van afstandsbepaling.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="forcedPointRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar een dwangpunt. De dwangpunten zijn; De afrijdlas van een brugsectie, de afrijdlas van een overweg of een open span inrichting</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LongRangeApproach">
+		<xs:annotation>
+			<xs:documentation>Lange nadering afstand voor het tijdloos vrijmaken van de rijweg</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Path" type="tTrackFragments" minOccurs="1" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>De mogelijke paden van sectiebegrenzer naar lichtsein of SMB ten behoeve van afstandsbepaling.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="blockDemarcationRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar een sectie-begrenzer</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="distance" type="xs:decimal" use="required">
+				<xs:annotation>
+					<xs:documentation>De afstand in meters</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSSignal">
+		<xs:annotation>
+			<xs:documentation>Een ERTMSignal is een stopmarkeerbord, een lichtsein, een bord met stopopdracht, Afsluitlantaren  (RS 243) of een bord "Einde beveiliging". Een ERTMSStopSignal heeft een danger point en een overlap. Het object bevat een MASection (alleen de eerste section van de MA), een danger point en een overlap.</xs:documentation>
+			<xs:documentation xml:lang="NL">ERTMS Sein</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tERTMSExtension">
+					<xs:sequence>
+						<xs:element ref="MASection" minOccurs="0"/>
+						<xs:element ref="DangerPoint" minOccurs="0"/>
+						<xs:element ref="Overlap" minOccurs="0"/>
+						<xs:element ref="V_EMA" minOccurs="0"/>
+						<xs:element ref="TAA" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Een of meer TAA's</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="SR_Distance" type="xs:double" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>SR-Naderingsafstand voor het tijdloos vrijmaken van een rijweg. In meters.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="LongRangeApproach" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Lange nadering afstand voor het tijdloos vrijmaken van de rijwegen</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="BaliseList" type="tUUIDRefList" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Een ontworpen lijst van Balisegroepen.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="Q_MAMODE" minOccurs="0"/>
+						<xs:element ref="L_ACKMAMODE" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="signalRef" type="tUUIDRef" use="required">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar het volledige Stop Marker Board, Lichtsein of een Bord.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="baliseGroupRefs" type="tUUIDRefList">
+						<xs:annotation>
+							<xs:documentation>Een lijst met PUIC verwijzingen balise groepen</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ERTMSSignals">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ERTMSSignal" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EuroBalise">
+		<xs:annotation>
+			<xs:documentation>Aanvullende informatie bij een balise voor toepassing bij ERTMS</xs:documentation>
+			<xs:documentation xml:lang="NL">ERTMS Balise</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tERTMSExtension">
+					<xs:sequence>
+						<xs:element ref="M_DUP"/>
+						<xs:element ref="Telegram" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="baliseRef" type="tUUIDRef" use="optional"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GradientMarkers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GradientMarker" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GradientMarker">
+		<xs:annotation>
+			<xs:documentation>Een punt op een spoortak waarop een nieuwe gradient start. De gradient bestaat uit het promillage van de helling (G_A) en de opwaarts/neerwaarts bepaling (Q_GDIR).</xs:documentation>
+			<xs:documentation xml:lang="NL">GradientMarker</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointTrackAsset">
+					<xs:sequence>
+						<xs:element ref="Q_GDIR"/>
+						<xs:element ref="G_A"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConditionalEmergencyStopMarkers">
+		<xs:annotation>
+			<xs:documentation>Een lijst van CES markeringen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ConditionalEmergencyStopMarker" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SectionCondition">
+		<xs:annotation>
+			<xs:documentation>Een of meer secties waarvan de (volgordelijke) bezetting conditioneel is voor het afgeven van de CES</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="sectionRef" type="tUUIDRef">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar een sectie</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConditionalEmergencyStopMarker">
+		<xs:annotation>
+			<xs:documentation>Dit is een marker in het spoor gekoppeld aan (o.a.) toestand van sectie(bezetting), toestand van seinen, bruggen (scheiding landhoofd en beweegbaar deel) =brugovergang</xs:documentation>
+			<xs:documentation xml:lang="NL">Conditional Emergency Stop</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointTrackAsset">
+					<xs:sequence>
+						<xs:element ref="SwitchCondition" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Een verwijzing naar een wissel waarvan de stand conditioneel is voor het afgeven van de CES.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="SectionCondition" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Een of meer secties waarvan de (volgordelijke) bezetting conditioneel is voor het afgeven van de CES</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="signalRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar een lichtsein of SMB waarvoor de CES van toepassing is</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="sectionRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar de beschermde sectie</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="floodBarrierRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar een waterkering waarvan de toestand van invloed is op het afgeven van de CES</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="radioBlockCenterRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar een RBC waaraan de CES moet worden doorgegeven voorbij een RBC-RBC grens.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LevelCondition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="M_LEVELTEXTDISPLAY"/>
+				<xs:element ref="NID_NTC" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkzoneCondition">
+		<xs:complexType>
+			<xs:attribute name="workzoneRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar een werkzone (Workzone).</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TemporaryShuntingCondition">
+		<xs:complexType>
+			<xs:attribute name="temporaryShuntingAreaRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Een PUIC verwijzing naar een vrijgave rangeergebied</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LevelTransition">
+		<xs:annotation>
+			<xs:documentation>Een punt op een spoortak waarop een transitie naar een ander ERTMS level plaatsvindt. Een transitie kan afhankelijk zijn van een of meer wisselstanden.
+
+Het element bevat zowel een acknowledgementTime als een acknowledgementAreaLength. Daarbij is de acknowledgementAreaLength een afgeleide van de acknowledgementTime.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ERTMSLevel"/>
+				<xs:element ref="PriorityList" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="conditional" type="xs:boolean" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MASection">
+		<xs:annotation>
+			<xs:documentation>Een MA is opgebouwd uit een aantal sections (niet te verwarren met secties ten behoeve van treindetectie. Dit object beschrijft de eerste sectie van de MA, beginnend bij het sein.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>The ERTMS variables for the first section in an MA from the specified signal.</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="sectionEnd" type="tRailConnectionInfo">
+					<xs:annotation>
+						<xs:documentation>Length of section in the MA (L_SECTION)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="sectionTimerStopLocation" type="tRailConnectionInfo">
+					<xs:annotation>
+						<xs:documentation>Distance from beginning of section to the Section Time-out stop location (D_SECTIONTIMERSTOPLOC)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="T_SECTIONTIMER" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModeTransition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="M_MAMODE"/>
+				<xs:element ref="Q_MAMODE"/>
+				<xs:element ref="V_MAMODE"/>
+				<xs:element ref="L_MAMODE"/>
+				<xs:element ref="L_ACKMAMODE"/>
+			</xs:sequence>
+			<xs:attribute name="acknowledgementTime" type="xs:int" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NationalValueSet">
+		<xs:annotation>
+			<xs:documentation>Een punt op een spoortak waarop een verzameling national values voor een bepaalde regio of een bepaald land vankracht wordt. Een national value bestaat uit een variabele (de key) en de waarde.</xs:documentation>
+			<xs:documentation xml:lang="NL">NationalValueSet</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tBaseObject">
+					<xs:sequence>
+						<xs:element ref="Variable" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="VariableSet" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NationalValueSets">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NationalValueSet" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NationalValueSetMarker">
+		<xs:annotation>
+			<xs:documentation>Een punt op een spoortak waarop een verzameling national values voor een bepaalde regio of een bepaald land van kracht wordt. Een national value bestaat uit een variabele (de key) en de waarde.</xs:documentation>
+			<xs:documentation xml:lang="NL">NationalValueSetMarker</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointTrackAsset">
+					<xs:attribute name="nationalValueSetRef" type="tUUIDRef" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NationalValueSetMarkers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NationalValueSetMarker" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherCondition">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert een andere conditie dan een wisselstand of een seinbeeld. De conditie bestaat uit de referentie naar een object (objectRef) en een waarde (value).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="value" type="tString50" use="optional"/>
+			<xs:attribute name="objectRef" type="tUUIDRef" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Overlap">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OverlapEnd" type="tRailConnectionInfo">
+					<xs:annotation>
+						<xs:documentation>The distance from the End of Authority to the end of overlap (D_OL)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OverlapTimerStartLocation" type="tRailConnectionInfo">
+					<xs:annotation>
+						<xs:documentation>Distance from overlap timer start location to End of Authority (D_STARTOL)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="T_OL"/>
+				<xs:element ref="TrainCategorySpeed" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PassageSpeed">
+		<xs:complexType>
+			<xs:attribute name="basicSpeed" type="xs:int" use="optional"/>
+			<xs:attribute name="unrestricted" type="xs:boolean" use="optional"/>
+			<xs:attribute name="passageRef" type="tUUIDRef" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PriorityList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ERTMSLevel" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RBC-RBCTransition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NID_C"/>
+				<xs:element ref="NID_RBC"/>
+				<xs:element ref="NID_RADIO"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SignalCondition">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert een seinbeeldconditie. De conditie bestaat uit de referentie naar een sein (signalRef) en een seinbeeld (signalAspectColor en speed).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="speed" type="xs:int" use="optional"/>
+			<xs:attribute name="flashingSpeedindication" type="xs:boolean" use="optional"/>
+			<xs:attribute name="signalRef" type="tUUIDRef" use="optional"/>
+			<xs:attribute name="signalAspectColor" type="tSignalAspectColorEnum" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SpeedChangeMarker">
+		<xs:annotation>
+			<xs:documentation>Een punt op een spoortak waarop de toegestane snelheid verandert. Eventueel op basis van de treincategorie of verkantingstekort.</xs:documentation>
+			<xs:documentation xml:lang="NL">SpeedChangeMarker</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointTrackAsset">
+					<xs:sequence>
+						<xs:element ref="Q_FRONT"/>
+						<xs:element ref="Q_DIFF"/>
+						<xs:element ref="TrainCategorySpeed" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="CantDeficiencySpeed" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="SpeedChangeConditions" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="basicSpeed" type="xs:int" use="optional"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SpeedChangeMarkers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SpeedChangeMarker" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StartLocation" type="tRailConnectionInfo"/>
+	<xs:element name="StartConditions">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert de startcondities voor het tonen van een bericht. De startcondities bestaan uit een locatie, een ERTMS level en een mode. In de TextMessageMarker wordt gedefinieerd of aan één conditie of aan alle condities voldaan moet worden voor het tonen van het bericht (Q_TEXTDISPLAY).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="StartLocation" minOccurs="0"/>
+				<xs:element ref="LevelCondition" minOccurs="0"/>
+				<xs:element ref="M_MODETEXTDISPLAY" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SwitchCondition">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert een wisselstandconditie. De conditie bestaat uit de referentie naar een wisselsteller en een wisselstand.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="switchMechanismRef" type="tUUIDRef" use="optional"/>
+			<xs:attribute name="switchPosition" type="tSwitchSideEnum" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TC39_ChangeOfTractionSystem">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert een Track Condition Change of traction system (packet 39).</xs:documentation>
+			<xs:documentation xml:lang="NL">Change of traction system</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTrackCondition">
+					<xs:sequence>
+						<xs:element ref="M_VOLTAGE"/>
+						<xs:element ref="NID_CTRACTION" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TC40_ChangeOfAllowedCurrentConsumption">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert een Track Condition Change of allowed current consumption (packet 40).</xs:documentation>
+			<xs:documentation xml:lang="NL">allowed current consumption</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTrackCondition">
+					<xs:sequence>
+						<xs:element ref="M_CURRENT"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TC67_BigMetalMass">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert een Track Condition Big Metal Masses (packet 67).</xs:documentation>
+			<xs:documentation xml:lang="NL">BigMetalMass</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTrackCondition"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TC68">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert een Track Condition (packet 68).</xs:documentation>
+			<xs:documentation xml:lang="NL">Track Condition</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTrackCondition">
+					<xs:sequence>
+						<xs:element ref="M_TRACKCOND"/>
+					</xs:sequence>
+					<xs:attribute name="phaseBreakRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar een fasescheiding</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="tunnelTubeRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar een tunnelbuis waarin de stopzone ligt</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TC69_StationPlatforms">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert een Track Condition Station Platforms (packet 69).</xs:documentation>
+			<xs:documentation xml:lang="NL">StationPlatform</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTrackCondition">
+					<xs:sequence>
+						<xs:element ref="M_PLATFORM"/>
+						<xs:element ref="Q_PLATFORM"/>
+					</xs:sequence>
+					<xs:attribute name="platformRef" type="tUUIDRef">
+						<xs:annotation>
+							<xs:documentation>Een PUIC verwijzing naar het perron</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Telegram">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Packet" maxOccurs="unbounded"/>
+				<xs:element ref="Conditions" minOccurs="0"/>
+				<xs:element name="MarkerRefs" type="tUUIDRef" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Een lijst van PUIC verwijzingen naar markeringen welke invloed hebben op de inhoud van Telegram. Hiermee kan indirect verwezen worden naar een national value set, maar kan ook verwezen worden naar hellingmarkeringen en verschillende vormen van transition markers zoals RBC-RBC transition en level transition markers.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GeoPosMarkers">
+		<xs:annotation>
+			<xs:documentation>Een verzameling GeoPosMarkers</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GeoPosMarker" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GeoPosMarker">
+		<xs:annotation>
+			<xs:documentation>Een GeoPosMarker legt de relatie tussen een hectometeraanduiding in een kilometerlint en zijn positie op een spoortak.</xs:documentation>
+			<xs:documentation xml:lang="NL">GeoPos Marker</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointTrackAsset">
+					<xs:sequence>
+						<xs:element ref="KilometerRibbonMeasure" minOccurs="1" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Een of meer kilometreringswaarden welke van kracht zijn op de positie op de spoortak.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="KilometerRibbonMeasure">
+		<xs:complexType>
+			<xs:attribute name="kilometerRibbonRef" type="tUUIDRef" use="required">
+				<xs:annotation>
+					<xs:documentation>Referentie naar het kilometerlint</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="measure" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>De hectomeraanduiding in het kilometerlint die vanaf deze positie geldt.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TextMessageMarker">
+		<xs:annotation>
+			<xs:documentation>Een punt op een spoortak waarop een tekstbericht naar de trein van kracht wordt. Een textMessagemarker definieert naast de klasse van het bericht, het al dan niet bevestigd moeten worden van het bericht en het bericht zelf, ook de start en stop condities voor het tonen van het bericht.</xs:documentation>
+			<xs:documentation xml:lang="NL">TextMessageMarker</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tPointTrackAsset">
+					<xs:sequence>
+						<xs:element ref="Q_TEXTCLASS"/>
+						<xs:element ref="Q_TEXTDISPLAY"/>
+						<xs:element ref="StartConditions"/>
+						<xs:element ref="EndConditions"/>
+						<xs:element ref="Q_TEXTCONFIRM"/>
+						<xs:element ref="Q_CONFTEXTDISPLAY" minOccurs="0"/>
+						<xs:element ref="Q_TEXTREPORT" minOccurs="0"/>
+						<xs:element ref="NID_C" minOccurs="0"/>
+						<xs:element ref="X_TEXT" minOccurs="0"/>
+						<xs:element ref="Q_TEXT" minOccurs="0"/>
+						<xs:element ref="NID_TEXTMESSAGE" minOccurs="0"/>
+						<xs:element ref="NID_RBC" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TextMessageMarkers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TextMessageMarker" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TrackConditionMarkers">
+		<xs:annotation>
+			<xs:documentation>Een punt op een spoortak vanaf waar een bepaalde track condition geldt. Een TrackConditionMarker definieert een Track Condition (packet 68), een Track Condition Station Platforms (packet 69), een Track Condition Change of traction system (packet 39), een Track Condition Change of allowed current consumption (packet 40) of een Track Condition Big Metal Masses (packet 67).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TC68" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TC69_StationPlatforms" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TC40_ChangeOfAllowedCurrentConsumption" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TC39_ChangeOfTractionSystem" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TC67_BigMetalMass" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TrainCategorySpeed">
+		<xs:annotation>
+			<xs:documentation>Dit element definieert de toegestane snelheid (V_DIFF) per treincategorie (NC_DIFF).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NC_DIFF"/>
+			</xs:sequence>
+			<xs:attribute name="speed" type="xs:int" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransitionMarker">
+		<xs:annotation>
+			<xs:documentation>Een punt op een spoortak waarop een transitie naar een ander ERTMS level, mode, TSI-CCS of RBC plaatsvindt. Een transitie kan afhankelijk zijn van een of meer wisselstanden.</xs:documentation>
+			<xs:documentation xml:lang="NL">TransitionMarker</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tTransitionMarker">
+					<xs:choice>
+						<xs:element ref="LevelTransition" minOccurs="0"/>
+						<xs:element ref="ModeTransition" minOccurs="0"/>
+						<xs:element ref="TSI-CCSTransition" minOccurs="0"/>
+						<xs:element ref="RBC-RBCTransition" minOccurs="0"/>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransitionMarkers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TransitionMarker" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TSI-CCSTransition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="M_VERSION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tTrackCondition">
+		<xs:annotation>
+			<xs:documentation>Basis type voor het beschrijven van een TrackCondition voor ERTMS</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="tPointTrackAsset">
+				<xs:sequence>
+					<xs:element name="TrackFragments" type="tTrackFragments">
+						<xs:annotation>
+							<xs:documentation>Een lijst van Spoortak-fragmenten. De fragmenten geven aan over welk deel van de topologie de Track Conditie van kracht is.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="tTransitionMarker">
+		<xs:complexContent>
+			<xs:extension base="tPointTrackAsset">
+				<xs:sequence>
+					<xs:element ref="SwitchCondition" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Variable">
+		<xs:annotation>
+			<xs:documentation>Een National Value bestaat uit een variable (de naam van de national value) en value of een reeks values. Reeksen van values kunnen gebruikt worden voor het definieren van de Kv_int en Kr_int national values. Omdat een value op zijn beurt weer reeksen kan bevatten kunnen ook meer-dimensionale reeksen gedefinieerd worden. Daarmee kunnen Kv_int waarden voor verschillende treintypes gedefinieerd worden.
+
+Een array is een een- of meerdimensionaal array met 
+Een array bestaat uit nul of meer variabelen.  elementen. Het array bevat geen indices, de volgorde van de elementen is significant!</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="TextString">
+					<xs:attribute name="name" type="xs:string" use="optional"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VariableSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Variable" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tErtmsLevel">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tBaliseGroupFunction">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

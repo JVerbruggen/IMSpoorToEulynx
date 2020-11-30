@@ -9,14 +9,14 @@ using System.Xml.Serialization;
 
 namespace Services.Service
 {
-    public class ReadIMSpoorFileService : IReadFileService<Models.TopoModels.IMSpoor.V1_3_0.IMSpoor>
+    public class ReadIMSpoorFileService : IReadFileService<Models.TopoModels.IMSpoor.V1_2_3.IMSpoor>
     {
-        public Models.TopoModels.IMSpoor.V1_3_0.IMSpoor Read(String filePath)
+        public Models.TopoModels.IMSpoor.V1_2_3.IMSpoor Read(String filePath)
         {
             XMLSerializeService xmlSerializeService = InstanceManager.Singleton<XMLSerializeService>().GetInstance();
 
             var d = XDocument.Load(filePath);
-            Models.TopoModels.IMSpoor.V1_3_0.IMSpoor imSpoor = xmlSerializeService.DeserializeObject<Models.TopoModels.IMSpoor.V1_3_0.IMSpoor>(d.ToString());
+            Models.TopoModels.IMSpoor.V1_2_3.IMSpoor imSpoor = xmlSerializeService.DeserializeObject<Models.TopoModels.IMSpoor.V1_2_3.IMSpoor>(d.ToString());
 
             return imSpoor;
         }

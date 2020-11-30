@@ -1,7 +1,8 @@
 ﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.IMSpoor.V1_3_0;
+using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Managers.Base;
+using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,25 +12,25 @@ namespace Services.Managers.Positioning
 {
     public class AssociatedPositioningSystemManager : UUIDObjectManager<AssociatedPositioningSystem>
     {
-        public AssociatedPositioningSystem[] GetAssociatedPositioningSystems(string trackFunctionalViewRef)
+        public AssociatedPositioningSystem[] GetAssociatedPositioningSystems(string trackRef)
         {
             IList<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
 
-            tSituation situation = InstanceManager.Singleton<tSituation>().GetInstance();
+            tSituation situation = InstanceManager.Singleton<IMSpoorReadingService>().GetInstance().situation;
             RailImplementation implementation = situation.RailInfrastructure.RailImplementation;
 
-            TrackPhysicalView trackPhysicalView = null;
-            foreach (TrackPhysicalView view in implementation.TrackPhysicalViews)
+            Track foundTrack = null;
+            foreach (Track track in implementation.Tracks)
             {
-                if (view.puic == trackFunctionalViewRef)
+                if (track.puic == trackRef)
                 {
-                    trackPhysicalView = view;
+                    foundTrack = track;
                     break;
                 }
             }
-            if (trackPhysicalView != null)
+            if (foundTrack != null)
             {
-                tLineLocation location = trackPhysicalView.Location;
+                tLineLocation location = foundTrack.Location;
                 tLine geographicLocation = location.GeographicLocation;
                 KmRibbonLocation kmRibbonLocation = location.KmRibbonLocation;
 

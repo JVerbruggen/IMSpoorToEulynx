@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-Groupings.xsd"/>
+	<xs:element name="TrainControl">
+		<xs:annotation>
+			<xs:documentation>De elementen in deze XSD hebben betrekkeing op treinbeheersing.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FlankProtectionConfigurations" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FlankProtectionConfigurations">
+		<xs:annotation>
+			<xs:documentation>Een verzameling eis- en verzoek wissel configuraties.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FlankProtectionConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FlankProtectionConfiguration">
+		<xs:annotation>
+			<xs:documentation>Een eis- en/of verzoek wissel configuratie.</xs:documentation>
+			<xs:documentation xml:lang="NL">Flankbeveiliging Configuratie</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tSwitchMechanismPosition">
+					<xs:sequence>
+						<xs:element ref="MandatoryFlankProtection" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="OptionalFlankProtection" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

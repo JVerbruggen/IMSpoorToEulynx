@@ -1,0 +1,2045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.prorail.nl/IMSpoor" targetNamespace="http://www.prorail.nl/IMSpoor">
+	<xs:element name="A_NVMAXREDADH1">
+		<xs:annotation>
+			<xs:documentation>Maximum deceleration under reduced adhesion conditions (1)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tDecelaration"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="A_NVMAXREDADH2">
+		<xs:annotation>
+			<xs:documentation>Maximum deceleration under reduced adhesion conditions (2)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tDecelaration"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="A_NVMAXREDADH3">
+		<xs:annotation>
+			<xs:documentation>Maximum deceleration under reduced adhesion conditions (3)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tDecelaration"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="A_NVP12">
+		<xs:annotation>
+			<xs:documentation>Lower deceleration limit to determine the set of Kv to be used</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tDecelaration"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="A_NVP23">
+		<xs:annotation>
+			<xs:documentation>Upper deceleration limit to determine the set of Kv to be used</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tDecelaration"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_ADHESION">
+		<xs:annotation>
+			<xs:documentation>Distance to start of area with reduced adhesion factor</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_AXLELOAD">
+		<xs:annotation>
+			<xs:documentation>Incremental distance to the start of the next Axle load speed profile</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_CURRENT">
+		<xs:annotation>
+			<xs:documentation>Distance to change of allowed current consumption</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_CYCLOC">
+		<xs:annotation>
+			<xs:documentation>Distance between two position reports from the train</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_DP">
+		<xs:annotation>
+			<xs:documentation>Distance from the End of Movement Authority to danger point</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_ENDTIMERSTARTLOC">
+		<xs:annotation>
+			<xs:documentation>Distance from the End section timer start location to the End of Movement Authority</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_GRADIENT">
+		<xs:annotation>
+			<xs:documentation>Incremental distance to next change of gradient.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_INFILL">
+		<xs:annotation>
+			<xs:documentation>Distance to location where to connect/disconnect to a radio infill unit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_LEVELTR">
+		<xs:annotation>
+			<xs:documentation>Distance to level transition</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_LINK">
+		<xs:annotation>
+			<xs:documentation>Incremental linking distance to next linked balise group</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_LOC">
+		<xs:annotation>
+			<xs:documentation>Incremental distance between locations where the train has to report its position.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_LOOP">
+		<xs:annotation>
+			<xs:documentation>Distance between EOLM and start of loop</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_LX">
+		<xs:annotation>
+			<xs:documentation>Distance to LX start location</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_MAMODE">
+		<xs:annotation>
+			<xs:documentation>Incremental distance to the start of the next Mode Profile</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_NVOVTRP">
+		<xs:annotation>
+			<xs:documentation>Maximum distance for overriding the train trip</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_NVPOTRP">
+		<xs:annotation>
+			<xs:documentation>Maximum distance for reversing in Post Trip mode</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_NVROLL">
+		<xs:annotation>
+			<xs:documentation>Roll away distance limit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_NVSTFF">
+		<xs:annotation>
+			<xs:documentation>Maximum distance for running in Staff Responsible mode</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_OL">
+		<xs:annotation>
+			<xs:documentation>The distance from the End of Movement Authority to the end of overlap</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_PBD">
+		<xs:annotation>
+			<xs:documentation>Permitted Braking Distance</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_PBDSR">
+		<xs:annotation>
+			<xs:documentation>Incremental distance to the start of the next speed restriction to ensure permitted braking distance</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_POSOFF">
+		<xs:annotation>
+			<xs:documentation>Offset from the location reference of the geographical position reference balise group to the related track kilometre reference.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_RBCTR">
+		<xs:annotation>
+			<xs:documentation>Distance to RBC transition</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_REVERSE">
+		<xs:annotation>
+			<xs:documentation>Maximum distance to run in RV mode</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_SECTIONTIMERSTOPLOC">
+		<xs:annotation>
+			<xs:documentation>Distance from beginning of section to the Section Time-out stop location</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_SR">
+		<xs:annotation>
+			<xs:documentation>Distance in SR mode</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_STARTOL">
+		<xs:annotation>
+			<xs:documentation>Distance from the overlap timer start location to the End of Movement Authority</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_STARTREVERSE">
+		<xs:annotation>
+			<xs:documentation>Distance to start of reversing permitted area</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_STATIC">
+		<xs:annotation>
+			<xs:documentation>Incremental distance to next discontinuity in a international SSP profile</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_SUITABILITY">
+		<xs:annotation>
+			<xs:documentation>Distance to change in route suitability</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_TEXTDISPLAY">
+		<xs:annotation>
+			<xs:documentation>Distance from where on a text shall be displayed</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_TRACKCOND">
+		<xs:annotation>
+			<xs:documentation>Track condition distance</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_TRACKINIT">
+		<xs:annotation>
+			<xs:documentation>Distance to start of empty profile</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_TRACTION">
+		<xs:annotation>
+			<xs:documentation>Distance to change of traction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_TSR">
+		<xs:annotation>
+			<xs:documentation>Distance to beginning of temporary speed restriction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="G_A">
+		<xs:annotation>
+			<xs:documentation>Gradient</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="G_PBDSR">
+		<xs:annotation>
+			<xs:documentation>Default gradient for PBD Speed restriction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="G_TSR">
+		<xs:annotation>
+			<xs:documentation>Default gradient for TSR supervision</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_ACKLEVELTR">
+		<xs:annotation>
+			<xs:documentation>Length of the acknowledgement area in rear of the required level</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_ACKMAMODE">
+		<xs:annotation>
+			<xs:documentation>Length of the acknowledgement area in rear of the start of the required mode</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_ADHESION">
+		<xs:annotation>
+			<xs:documentation>Length of reduced adhesion</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_AXLELOAD">
+		<xs:annotation>
+			<xs:documentation>Length of speed restriction due to Axle load</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_ENDSECTION">
+		<xs:annotation>
+			<xs:documentation>Length of the End section in the MA</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_LOOP">
+		<xs:annotation>
+			<xs:documentation>Length of loop</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_LX">
+		<xs:annotation>
+			<xs:documentation>Length of the LX area</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_MAMODE">
+		<xs:annotation>
+			<xs:documentation>Length of the area of the required mode</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_NVKRINT">
+		<xs:annotation>
+			<xs:documentation>Train length step used to define the integrated correction factor Kr</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint5"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_PACKET">
+		<xs:annotation>
+			<xs:documentation>Packet length</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint13"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_PBDSR">
+		<xs:annotation>
+			<xs:documentation>Length of speed restriction to ensure permitted braking distance</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_REVERSEAREA">
+		<xs:annotation>
+			<xs:documentation>Length of the reversing permitted area</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_SECTION">
+		<xs:annotation>
+			<xs:documentation>Length of section in the MA</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_STOPLX">
+		<xs:annotation>
+			<xs:documentation>Length of the stopping area in rear of the start location of the LX area</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_TEXT">
+		<xs:annotation>
+			<xs:documentation>Length of text string</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_TEXTDISPLAY">
+		<xs:annotation>
+			<xs:documentation>Length on which a text shall be displayed</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_TRACKCOND">
+		<xs:annotation>
+			<xs:documentation>Length for which the defined track condition is valid</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="L_TSR">
+		<xs:annotation>
+			<xs:documentation>Length of the temporary speed restriction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_ADHESION">
+		<xs:annotation>
+			<xs:documentation>Adhesion factor</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_AXLELOADCAT">
+		<xs:annotation>
+			<xs:documentation>Axle load category</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint7"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_CURRENT">
+		<xs:annotation>
+			<xs:documentation>Allowed current consumption</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tCurrent"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_DUP">
+		<xs:annotation>
+			<xs:documentation>Duplicate balise</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_LEVELTEXTDISPLAY">
+		<xs:annotation>
+			<xs:documentation>Onboard operating level for text display</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint3"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_LEVELTR">
+		<xs:annotation>
+			<xs:documentation>Required level</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint3"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_LINEGAUGE">
+		<xs:annotation>
+			<xs:documentation>Line gauge</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_LOC">
+		<xs:annotation>
+			<xs:documentation>Special location/moment where the train has to report its position</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint3"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_MAMODE">
+		<xs:annotation>
+			<xs:documentation>Required mode for a part of the MA</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_MCOUNT">
+		<xs:annotation>
+			<xs:documentation>Message counter</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_MODETEXTDISPLAY">
+		<xs:annotation>
+			<xs:documentation>Onboard operating mode for text display</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint4"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_NVAVADH">
+		<xs:annotation>
+			<xs:documentation>Weighting factor for available wheel/rail adhesion</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="udec5"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_NVCONTACT">
+		<xs:annotation>
+			<xs:documentation>T_NVCONTACT reaction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_NVDERUN">
+		<xs:annotation>
+			<xs:documentation>Entry of Driver ID permitted while running</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_NVEBCL">
+		<xs:annotation>
+			<xs:documentation>Confidence level for emergency brake safe deceleration on dry rails</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint4"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_NVKRINT">
+		<xs:annotation>
+			<xs:documentation>Integrated correction factor Kr</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="udec5"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_NVKTINT">
+		<xs:annotation>
+			<xs:documentation>Integrated correction factor Kt</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="udec5"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_NVKVINT">
+		<xs:annotation>
+			<xs:documentation>Integrated correction factor Kv</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="udec7"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_PLATFORM">
+		<xs:annotation>
+			<xs:documentation>Type of platform</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint4"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_TRACKCOND">
+		<xs:annotation>
+			<xs:documentation>Type of track condition</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint4"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_VERSION" type="uint7">
+		<xs:annotation>
+			<xs:documentation>Version of ETCS system</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="M_VOLTAGE">
+		<xs:annotation>
+			<xs:documentation>Traction System voltage</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint4"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="N_ITER">
+		<xs:annotation>
+			<xs:documentation>Number of iterations of a data set following this variable in a packet</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint5"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NC_CDDIFF">
+		<xs:annotation>
+			<xs:documentation>Cant Deficiency SSP category</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint4"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NC_DIFF">
+		<xs:annotation>
+			<xs:documentation>Other specific SSP category</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint4"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_BG">
+		<xs:annotation>
+			<xs:documentation>Identity number of the balise group</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint14"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_CTRACTION">
+		<xs:annotation>
+			<xs:documentation>Country identifier of the traction system</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint10"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_LOOP">
+		<xs:annotation>
+			<xs:documentation>Identity number of the loop</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint14"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_LX">
+		<xs:annotation>
+			<xs:documentation>Identity number of the Level Crossing.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_MN">
+		<xs:annotation>
+			<xs:documentation>Identity of Radio Network</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="digit6"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_NTC">
+		<xs:annotation>
+			<xs:documentation>National System identity</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_OPERATIONAL">
+		<xs:annotation>
+			<xs:documentation>Train Running Number</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="digit8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_PACKET">
+		<xs:annotation>
+			<xs:documentation>Packet identifier</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_RADIO">
+		<xs:annotation>
+			<xs:documentation>Radio subscriber number.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="digit16"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_RBC">
+		<xs:annotation>
+			<xs:documentation>RBC ETCS identity number</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint14"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_RIU">
+		<xs:annotation>
+			<xs:documentation>Identity of radio infill unit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint14"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_TEXTMESSAGE">
+		<xs:annotation>
+			<xs:documentation>Text message identifier</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_TSR">
+		<xs:annotation>
+			<xs:documentation>Identity number of Temporary Speed Restriction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_VBCMK">
+		<xs:annotation>
+			<xs:documentation>Marker for Virtual Balise Cover</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint6"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_XUSER">
+		<xs:annotation>
+			<xs:documentation>Identity of user system</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint9"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_ASPECT">
+		<xs:annotation>
+			<xs:documentation>Aspect of 'danger for shunting' signal</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_CONFTEXTDISPLAY">
+		<xs:annotation>
+			<xs:documentation>Qualifier for text confirmation versus end of text display</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_DANGERPOINT">
+		<xs:annotation>
+			<xs:documentation>Qualifier for danger point description.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_DIFF">
+		<xs:annotation>
+			<xs:documentation>Qualifier for specific SSP categories.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_DIR">
+		<xs:annotation>
+			<xs:documentation>Validity direction of transmitted data</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_ENDTIMER">
+		<xs:annotation>
+			<xs:documentation>Qualifier to indicate whether end section timer information exists for the End section in the MA</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_FRONT">
+		<xs:annotation>
+			<xs:documentation>Qualifier for validity end point of profile element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_GDIR">
+		<xs:annotation>
+			<xs:documentation>Qualifier for gradient slope.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_LGTLOC">
+		<xs:annotation>
+			<xs:documentation>Qualifier for the specified report location</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_LINK">
+		<xs:annotation>
+			<xs:documentation>Link Qualifier</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_LINKORIENTATION">
+		<xs:annotation>
+			<xs:documentation>Qualifier for the direction of the linked balise group</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_LINKREACTION">
+		<xs:annotation>
+			<xs:documentation>linking reaction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_LOCACC">
+		<xs:annotation>
+			<xs:documentation>Accuracy of the balise location</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint6"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_LOOPDIR">
+		<xs:annotation>
+			<xs:documentation>Qualifier to indicate the direction of the loop</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_LSSMA">
+		<xs:annotation>
+			<xs:documentation>Qualifier for the LSSMA display</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_LXSTATUS">
+		<xs:annotation>
+			<xs:documentation>LX Protection Status</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_MAMODE">
+		<xs:annotation>
+			<xs:documentation>Qualifier to indicate the supervision of the beginning of the mode profile</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_MEDIA">
+		<xs:annotation>
+			<xs:documentation>Qualifier to indicate the type of media</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_MPOSITION">
+		<xs:annotation>
+			<xs:documentation>Qualifier for track kilometre direction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NEWCOUNTRY">
+		<xs:annotation>
+			<xs:documentation>New Country Qualifier</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVDRIVER_ADHES">
+		<xs:annotation>
+			<xs:documentation>Qualifier for the modification of trackside adhesion factor by driver</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVEMRRLS">
+		<xs:annotation>
+			<xs:documentation>Qualifier Emergency Brake Release</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVGUIPERM">
+		<xs:annotation>
+			<xs:documentation>Permission to use the guidance curve</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVINHSMICPERM">
+		<xs:annotation>
+			<xs:documentation>Permission to inhibit the compensation of the speed measurement inaccuracy</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVKINT">
+		<xs:annotation>
+			<xs:documentation>Qualifier for integrated correction factors</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVKVINTSET">
+		<xs:annotation>
+			<xs:documentation>Type of Kv_int set</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVLOCACC">
+		<xs:annotation>
+			<xs:documentation>Default accuracy of the balise location (absolute value)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint6"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVSBFBPERM">
+		<xs:annotation>
+			<xs:documentation>Permission to use the service brake feedback</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_NVSBTSMPERM">
+		<xs:annotation>
+			<xs:documentation>Permission to use service brake in target speed monitoring</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_OVERLAP">
+		<xs:annotation>
+			<xs:documentation>Qualifier to tell whether there is an overlap</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_PBDSR">
+		<xs:annotation>
+			<xs:documentation>Qualifier for Permitted Braking Distance</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_PLATFORM">
+		<xs:annotation>
+			<xs:documentation>Platform position (relative to direction of authorised movement)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_RBC">
+		<xs:annotation>
+			<xs:documentation>Qualifier for communication session order</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_RIU">
+		<xs:annotation>
+			<xs:documentation>Qualifier for communication session order</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_SCALE">
+		<xs:annotation>
+			<xs:documentation>Qualifier for the distance scale.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_SECTIONTIMER">
+		<xs:annotation>
+			<xs:documentation>Qualifier to indicate whether there is a Section Time-Out related to the section</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_SLEEPSESSION">
+		<xs:annotation>
+			<xs:documentation>Session management for sleeping equipment</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_SRSTOP">
+		<xs:annotation>
+			<xs:documentation>Stop if in Staff Responsible' information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_SSCODE">
+		<xs:annotation>
+			<xs:documentation>Spread Spectrum Code for Euroloop</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint4"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_STOPLX">
+		<xs:annotation>
+			<xs:documentation>Qualifier for stopping in rear of the LX</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_SUITABILITY">
+		<xs:annotation>
+			<xs:documentation>Type of route suitability data</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_TEXT">
+		<xs:annotation>
+			<xs:documentation>Fixed message to be displayed.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_TEXTCLASS">
+		<xs:annotation>
+			<xs:documentation>Class of message to be displayed.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_TEXTCONFIRM">
+		<xs:annotation>
+			<xs:documentation>Qualifier for text confirmation</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint2"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_TEXTDISPLAY">
+		<xs:annotation>
+			<xs:documentation>Qualifier for the combination of text message eventss</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_TEXTREPORT">
+		<xs:annotation>
+			<xs:documentation>Qualifier for reporting acknowledgement of text by driver</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_TRACKINIT">
+		<xs:annotation>
+			<xs:documentation>Qualifier for resuming the initial states of the related track description of the packet.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_UPDOWN">
+		<xs:annotation>
+			<xs:documentation>Balise telegram transmission direction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Q_VBCO">
+		<xs:annotation>
+			<xs:documentation>Qualifier for Virtual Balise Cover order</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="boolean"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_CYCLOC">
+		<xs:annotation>
+			<xs:documentation>Time Interval between two position reports sent by the train</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_CYCRQST">
+		<xs:annotation>
+			<xs:documentation>Time between two cyclic requests for a movement authority</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_ENDTIMER">
+		<xs:annotation>
+			<xs:documentation>Validity time for the End section in the MA</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint10"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_LSSMA">
+		<xs:annotation>
+			<xs:documentation>Delay to toggle on the LSSMA display</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_MAR">
+		<xs:annotation>
+			<xs:documentation>Time before reaching the perturbation location</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_NVCONTACT">
+		<xs:annotation>
+			<xs:documentation>Maximal time without new 'safe' message.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_NVOVTRP">
+		<xs:annotation>
+			<xs:documentation>Maximum time for overriding the train trip</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_OL">
+		<xs:annotation>
+			<xs:documentation>Overlap validity time</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint10"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_SECTIONTIMER">
+		<xs:annotation>
+			<xs:documentation>Validity time of a section in the MA</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint10"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_TEXTDISPLAY">
+		<xs:annotation>
+			<xs:documentation>Duration for which a text shall be displayed</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint10"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_TIMEOUTRQST">
+		<xs:annotation>
+			<xs:documentation>Time before any section timer expires or the LOA speed timer expires</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint10"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_VBC">
+		<xs:annotation>
+			<xs:documentation>VBC validity period</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint8"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_AXLELOAD">
+		<xs:annotation>
+			<xs:documentation>Speed restriction related to axleload</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_DIFF">
+		<xs:annotation>
+			<xs:documentation>Absolute Positive Speed associated to a train category.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_EMA">
+		<xs:annotation>
+			<xs:documentation>Permitted speed at the End of Movement Authority</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_LX">
+		<xs:annotation>
+			<xs:documentation>Permitted speed for the LX speed restriction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_MAIN">
+		<xs:annotation>
+			<xs:documentation>Signalling related speed restriction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_MAMODE">
+		<xs:annotation>
+			<xs:documentation>Required mode related speed</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVALLOWOVTRP">
+		<xs:annotation>
+			<xs:documentation>Speed limit allowing the driver to select the 'override' function</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVKVINT">
+		<xs:annotation>
+			<xs:documentation>Speed step used to define the integrated correction factor Kv</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVLIMSUPERV">
+		<xs:annotation>
+			<xs:documentation>Limited Supervision mode speed limit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVONSIGHT">
+		<xs:annotation>
+			<xs:documentation>On Sight mode speed limit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVREL">
+		<xs:annotation>
+			<xs:documentation>Release Speed</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVSHUNT">
+		<xs:annotation>
+			<xs:documentation>Shunting mode speed limit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVSTFF">
+		<xs:annotation>
+			<xs:documentation>Staff Responsible mode speed limit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVSUPOVTRP">
+		<xs:annotation>
+			<xs:documentation>Override speed limit to be supervised when the 'override' function is active</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_NVUNFIT">
+		<xs:annotation>
+			<xs:documentation>Unfitted mode speed limit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_RELEASEDP">
+		<xs:annotation>
+			<xs:documentation>Release speed associated with the danger point</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_RELEASEOL">
+		<xs:annotation>
+			<xs:documentation>Release speed associated with the overlap</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_REVERSE">
+		<xs:annotation>
+			<xs:documentation>Reversing mode speed limit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_STATIC">
+		<xs:annotation>
+			<xs:documentation>Basic static speed profile</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_TSR">
+		<xs:annotation>
+			<xs:documentation>Permitted speed for the temporary speed restriction</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="X_TEXT">
+		<xs:annotation>
+			<xs:documentation>Text String Element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="TextString"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="D_VALIDV">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tLength"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="M_POSTION">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint24"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NID_C">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint10"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="T_LOA">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="uint10"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="V_LOA">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="tSpeed"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tDecelaration">
+		<xs:annotation>
+			<xs:documentation>A decelaration, with a range from 0..3.15 m/s^2 and a step size of 0.05 m/s^2.]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:maxInclusive value="3.15"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tLength">
+		<xs:annotation>
+			<xs:documentation>A length in meters with a step size of 10 cm. The allowed range is 0.. 327670 meters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:maxInclusive value="327670"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint8">
+		<xs:annotation>
+			<xs:documentation>[0,255]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="255"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint10">
+		<xs:annotation>
+			<xs:documentation>[0,1023]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="1023"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint13">
+		<xs:annotation>
+			<xs:documentation> [0,8191]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="8191"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="udec5">
+		<xs:annotation>
+			<xs:documentation>[0,1.55]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:maxInclusive value="1.55"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="udec7">
+		<xs:annotation>
+			<xs:documentation>[0,2.54]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:maxInclusive value="2.54"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digit6">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{0,6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digit16">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{0,16}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digit8">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{0,8}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint24">
+		<xs:annotation>
+			<xs:documentation>[0,16777215]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="16777215"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint14">
+		<xs:annotation>
+			<xs:documentation>[0,16383]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="16383"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint9">
+		<xs:annotation>
+			<xs:documentation>[0,511]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="511"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint6">
+		<xs:annotation>
+			<xs:documentation>[0,63]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="63"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tSpeed">
+		<xs:annotation>
+			<xs:documentation>A speed in km/h, ranging from 0-600 km/h, with a step size of 5 km/h. Allowed values are: 0, 5, 10, 15 ... 600.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-6]?[0-9]?[0,5]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tCurrent">
+		<xs:annotation>
+			<xs:documentation>An electric current in amperes, ranging from 0..10000, with a step size of 10A.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="100000"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint5">
+		<xs:annotation>
+			<xs:documentation>[0,1,2,3 ...........31]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="31"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint3">
+		<xs:annotation>
+			<xs:documentation>[0,7]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="7"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint4">
+		<xs:annotation>
+			<xs:documentation>[0,15]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="15"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint2">
+		<xs:annotation>
+			<xs:documentation>[0,3]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="3"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="uint7">
+		<xs:annotation>
+			<xs:documentation>[0,127]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="127"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TextString">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="boolean">
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+</xs:schema>

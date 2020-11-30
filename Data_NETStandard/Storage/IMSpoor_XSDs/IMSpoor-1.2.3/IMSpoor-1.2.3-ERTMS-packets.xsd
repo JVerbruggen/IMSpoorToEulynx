@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 sp1 (http://www.altova.com) by XMLSpy 2011 Professional Ed. Release 3, Installed for 50 users (with SMP from 2011-10-18 to 2013-10-18) (Movares Group B.V.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.prorail.nl/IMSpoor" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-ERTMS-variables.xsd"/>
+	<xs:element name="Packet">
+		<xs:annotation>
+			<xs:documentation>packet (root element)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="NID_PACKET" minOccurs="1" maxOccurs="1"/>
+							<xs:element ref="Q_DIR" minOccurs="0" maxOccurs="1"/>
+							<xs:element ref="L_PACKET" minOccurs="0" maxOccurs="1"/>
+							<xs:element ref="Q_SCALE" minOccurs="0" maxOccurs="1"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Content">
+					<xs:complexType>
+						<xs:choice minOccurs="0">
+							<xs:group ref="PacketFormat_0" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_2" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_3" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_5" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_6" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_12" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_15" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_16" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_21" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_27" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_39" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_40" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_41" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_42" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_45" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_46" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_57" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_58" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_67" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_71" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_80" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_88" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_131" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_132" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_134" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_137" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_138" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_139" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_141" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_180" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_65" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_72_OR_76" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_44" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_140" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_68_OR_69_OR_70_OR_52_OR_51" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_13" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_49_OR_63" minOccurs="1" maxOccurs="1"/>
+							<xs:group ref="PacketFormat_133" minOccurs="1" maxOccurs="1"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Name" type="xs:string" use="required"/>
+			<xs:attribute name="Description" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="Resolution" type="xs:string"/>
+	<xs:attribute name="Length" type="xs:integer"/>
+	<xs:attribute name="Name" type="xs:string"/>
+	<xs:attribute name="Description" type="xs:string"/>
+	<xs:attribute name="Unit" type="xs:string"/>
+	<xs:group name="PacketFormat_5">
+		<xs:sequence>
+			<xs:group ref="Packet5Group" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_6">
+		<xs:sequence>
+			<xs:element ref="Q_VBCO" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_VBCMK" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_VBC" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_12">
+		<xs:sequence>
+			<xs:element ref="V_MAIN" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_LOA" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_LOA" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet12SubGroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="L_ENDSECTION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_SECTIONTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_SECTIONTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_SECTIONTIMERSTOPLOC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_ENDTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_ENDTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_ENDTIMERSTARTLOC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_DANGERPOINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_DP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_RELEASEDP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_OVERLAP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_STARTOL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_OL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_OL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_RELEASEOL" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_15">
+		<xs:sequence>
+			<xs:element ref="V_LOA" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_LOA" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet12SubGroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="L_ENDSECTION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_SECTIONTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_SECTIONTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_SECTIONTIMERSTOPLOC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_ENDTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_ENDTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_ENDTIMERSTARTLOC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_DANGERPOINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_DP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_RELEASEDP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_OVERLAP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_STARTOL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_OL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_OL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_RELEASEOL" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_16">
+		<xs:sequence>
+			<xs:element ref="L_SECTION" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_21">
+		<xs:sequence>
+			<xs:element ref="D_GRADIENT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_GDIR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="G_A" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet21SubGroup" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_27">
+		<xs:sequence>
+			<xs:group ref="Packet27SubGroup2" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_39">
+		<xs:sequence>
+			<xs:element ref="D_TRACTION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_VOLTAGE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_CTRACTION" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_40">
+		<xs:sequence>
+			<xs:element ref="D_CURRENT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_CURRENT" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_41">
+		<xs:sequence>
+			<xs:element ref="D_LEVELTR" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet41SubGroup" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_42">
+		<xs:sequence>
+			<xs:element ref="Q_RBC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_RBC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_RADIO" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_SLEEPSESSION" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_45">
+		<xs:sequence>
+			<xs:element ref="NID_MN" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_46">
+		<xs:sequence>
+			<xs:group ref="Packet46SubGroup" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_57">
+		<xs:sequence>
+			<xs:element ref="T_MAR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_TIMEOUTRQST" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_CYCRQST" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_58">
+		<xs:sequence>
+			<xs:element ref="T_CYCLOC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_CYCLOC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_LOC" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet58SubGroup" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_64">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="PacketFormat_67">
+		<xs:sequence>
+			<xs:group ref="Packet67Group" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_68">
+		<xs:sequence>
+			<xs:element ref="M_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet68Group" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_71">
+		<xs:sequence>
+			<xs:element ref="D_ADHESION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_ADHESION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_ADHESION" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_80">
+		<xs:sequence>
+			<xs:group ref="Packet80Group" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_88">
+		<xs:sequence>
+			<xs:element ref="NID_LX" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_LX" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_LX" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_LXSTATUS" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet88group" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_131">
+		<xs:sequence>
+			<xs:element ref="D_RBCTR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_RBC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_RADIO" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_SLEEPSESSION" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_132">
+		<xs:sequence>
+			<xs:element ref="Q_ASPECT" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_134">
+		<xs:sequence>
+			<xs:element ref="NID_LOOP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_LOOP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_LOOP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_LOOPDIR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_SSCODE" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_135">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="PacketFormat_137">
+		<xs:sequence>
+			<xs:element ref="Q_SRSTOP" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_133">
+		<xs:sequence>
+			<xs:element ref="Q_RIU" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_RIU" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_RADIO" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="PacketSubFormat_133" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_255">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="PacketFormat_72_OR_76">
+		<xs:sequence>
+			<xs:element ref="Q_TEXTCLASS" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_TEXTDISPLAY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_TEXTDISPLAY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_LEVELTEXTDISPLAY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_NTC" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="L_TEXTDISPLAY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_TEXTDISPLAY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_LEVELTEXTDISPLAY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_NTC" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="Q_TEXTCONFIRM" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_CONFTEXTDISPLAY" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="Q_TEXTREPORT" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NID_TEXTMESSAGE" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NID_RBC" minOccurs="0" maxOccurs="1"/>
+			<xs:group ref="Packet_72_OR_76_Choice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_68_OR_69_OR_70_OR_52_OR_51">
+		<xs:sequence>
+			<xs:element ref="Q_TRACKINIT" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet_68_OR_69_OR_70_OR_52_OR_51_choice1" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_65">
+		<xs:sequence>
+			<xs:element ref="NID_TSR" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="PacketSubFormat_65" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_140">
+		<xs:sequence>
+			<xs:element ref="NID_OPERATIONAL" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_44">
+		<xs:sequence>
+			<xs:element ref="NID_XUSER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="OTHER_DATA" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_NTC" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_49_OR_63">
+		<xs:sequence>
+			<xs:element ref="N_ITER" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="PacketSubFormat_49_OR_63" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_13">
+		<xs:sequence>
+			<xs:element ref="Q_NEWCOUNTRY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NID_BG" minOccurs="1" maxOccurs="1"/>
+			<xs:choice minOccurs="0">
+				<xs:group ref="PacketSubFormat_13" minOccurs="1" maxOccurs="1"/>
+				<xs:group ref="PacketSubFormat_79" minOccurs="1" maxOccurs="1"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_13">
+		<xs:sequence>
+			<xs:group ref="Packet13Group" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_51">
+		<xs:sequence>
+			<xs:group ref="Packet51Group" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_52">
+		<xs:sequence>
+			<xs:group ref="Packet52Group" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_65">
+		<xs:sequence>
+			<xs:element ref="D_TSR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_TSR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_FRONT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_TSR" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_66">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="PacketSubFormat_69">
+		<xs:sequence>
+			<xs:element ref="M_PLATFORM" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_PLATFORM" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet69Group" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_70">
+		<xs:sequence>
+			<xs:group ref="Packet70Group" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_72">
+		<xs:sequence>
+			<xs:element ref="L_TEXT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="X_TEXT" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_76">
+		<xs:sequence>
+			<xs:element ref="Q_TEXT" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_79">
+		<xs:sequence>
+			<xs:element ref="D_POSOFF" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_MPOSITION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_POSTION" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet79Group" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_133">
+		<xs:sequence>
+			<xs:element ref="D_INFILL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_BG" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketSubFormat_143">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="PacketSubFormat_90_OR_136">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="PacketSubFormat_49_OR_63">
+		<xs:sequence>
+			<xs:element ref="Q_NEWCOUNTRY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NID_BG" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketsubFormat_68_OR_69">
+		<xs:sequence>
+			<xs:element ref="D_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet_68_OR_69_Choice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet3SubGroup1">
+		<xs:sequence>
+			<xs:element ref="A_NVP12" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="A_NVP23" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet3SubGroup2">
+		<xs:sequence>
+			<xs:element ref="Q_NVKVINTSET" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet3SubGroup1" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="V_NVKVINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVKVINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVKVINT" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet3SubGroup3">
+		<xs:sequence>
+			<xs:element ref="V_NVKVINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVKVINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVKVINT" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet3SubGroup4">
+		<xs:sequence>
+			<xs:group ref="Packet3SubGroup2" minOccurs="0" maxOccurs="1"/>
+			<xs:group ref="Packet3SubGroup3" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet3SubGroup5">
+		<xs:sequence>
+			<xs:element ref="L_NVKRINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVKRINT" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet5Group">
+		<xs:sequence>
+			<xs:element ref="D_LINK" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NEWCOUNTRY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NID_BG" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_LINKORIENTATION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_LINKREACTION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_LOCACC" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet12SubGroup">
+		<xs:sequence>
+			<xs:element ref="L_SECTION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_SECTIONTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_SECTIONTIMER" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_SECTIONTIMERSTOPLOC" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet21SubGroup">
+		<xs:sequence>
+			<xs:element ref="D_GRADIENT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_GDIR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="G_A" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet27SubGroup1">
+		<xs:sequence>
+			<xs:element ref="Q_DIFF" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NC_CDDIFF" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NC_DIFF" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="V_DIFF" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet80Group">
+		<xs:sequence>
+			<xs:element ref="D_MAMODE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_MAMODE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_MAMODE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_MAMODE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_ACKMAMODE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_MAMODE" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet88group">
+		<xs:sequence>
+			<xs:element ref="V_LX" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_STOPLX" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_STOPLX" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet_65">
+		<xs:choice>
+			<xs:group ref="PacketSubFormat_65" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="Packet_72_OR_76_Choice">
+		<xs:choice>
+			<xs:group ref="PacketSubFormat_72" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="PacketSubFormat_76" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="Packet68Group">
+		<xs:sequence>
+			<xs:element ref="D_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet69Group">
+		<xs:sequence>
+			<xs:element ref="D_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_PLATFORM" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_PLATFORM" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet_68_OR_69_Choice">
+		<xs:choice>
+			<xs:group ref="PacketSubFormat_68" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="PacketSubFormat_69" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="Packet70SubGroup">
+		<xs:sequence>
+			<xs:element ref="M_VOLTAGE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_CTRACTION" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet70Choice">
+		<xs:choice>
+			<xs:element ref="M_LINEGAUGE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_AXLELOADCAT" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet70SubGroup" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="Packet70Group">
+		<xs:sequence>
+			<xs:element ref="D_SUITABILITY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_SUITABILITY" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet70Choice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet52Group">
+		<xs:sequence>
+			<xs:element ref="D_PBD" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_GDIR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="G_PBDSR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_PBDSR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_PBDSR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_PBDSR" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet51SubGroup">
+		<xs:sequence>
+			<xs:element ref="M_AXLELOADCAT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_AXLELOAD" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet51Group">
+		<xs:sequence>
+			<xs:element ref="D_AXLELOAD" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_AXLELOAD" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_FRONT" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet51SubGroup" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet_68_OR_69_OR_70_OR_52_OR_51_choice2">
+		<xs:choice>
+			<xs:group ref="PacketsubFormat_68_OR_69" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="PacketSubFormat_70" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="PacketSubFormat_52" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="PacketSubFormat_51" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="Packet_68_OR_69_OR_70_OR_52_OR_51_choice1">
+		<xs:choice>
+			<xs:element ref="D_TRACKINIT" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet_68_OR_69_OR_70_OR_52_OR_51_choice2" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="Packet13Group">
+		<xs:sequence>
+			<xs:element ref="Q_NEWCOUNTRY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NID_BG" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_SR" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet79Group">
+		<xs:sequence>
+			<xs:element ref="Q_NEWCOUNTRY" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="NID_BG" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_POSOFF" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_MPOSITION" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_POSTION" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet_13">
+		<xs:choice>
+			<xs:group ref="PacketSubFormat_13" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="Packet_133">
+		<xs:choice>
+			<xs:group ref="PacketSubFormat_133" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:group>
+	<xs:element name="OTHER_DATA">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="PacketFormat_0">
+		<xs:sequence>
+			<xs:element ref="NID_VBCMK" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_2">
+		<xs:sequence>
+			<xs:element ref="M_VERSION" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_3">
+		<xs:sequence>
+			<xs:element ref="D_VALIDV" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_C" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element ref="V_NVSHUNT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_NVSTFF" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_NVONSIGHT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_NVLIMSUPERV" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_NVUNFIT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_NVREL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_NVROLL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NVSBTSMPERM" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NVEMRRLS" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NVGUIPERM" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NVSBFBPERM" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NVINHSMICPERM" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_NVALLOWOVTRP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_NVSUPOVTRP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_NVOVTRP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_NVOVTRP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_NVPOTRP" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVCONTACT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_NVCONTACT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVDERUN" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="D_NVSTFF" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NVDRIVER_ADHES" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="A_NVMAXREDADH1" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="A_NVMAXREDADH2" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="A_NVMAXREDADH3" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NVLOCACC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVAVADH" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVEBCL" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_NVKINT" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet3SubGroup2" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="N_ITER" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet3SubGroup3" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="N_ITER" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet3SubGroup4" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="L_NVKRINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVKRINT" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="N_ITER" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet3SubGroup5" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="M_NVKTINT" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_138">
+		<xs:sequence>
+			<xs:element ref="D_STARTREVERSE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_REVERSEAREA" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_139">
+		<xs:sequence>
+			<xs:element ref="D_REVERSE" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_REVERSE" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_141">
+		<xs:sequence>
+			<xs:element ref="Q_GDIR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="G_TSR" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_145">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="PacketFormat_180">
+		<xs:sequence>
+			<xs:element ref="Q_LSSMA" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="T_LSSMA" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PacketFormat_181">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="PacketFormat_254">
+		<xs:sequence/>
+	</xs:group>
+	<xs:group name="Packet27SubGroup2">
+		<xs:sequence>
+			<xs:element ref="D_STATIC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="V_STATIC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_FRONT" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="Packet27SubGroup1" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet41SubGroup">
+		<xs:sequence>
+			<xs:element ref="M_LEVELTR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_NTC" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="L_ACKLEVELTR" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet46SubGroup">
+		<xs:sequence>
+			<xs:element ref="M_LEVELTR" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="NID_NTC" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet58SubGroup">
+		<xs:sequence>
+			<xs:element ref="D_LOC" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="Q_LGTLOC" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Packet67Group">
+		<xs:sequence>
+			<xs:element ref="D_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="L_TRACKCOND" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+</xs:schema>

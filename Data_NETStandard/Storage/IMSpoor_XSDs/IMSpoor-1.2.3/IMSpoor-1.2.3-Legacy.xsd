@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.prorail.nl/IMSpoor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://www.prorail.nl/IMSpoor" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IMSpoor-1.2.3-Groupings.xsd"/>
+	<xs:element name="Legacy">
+		<xs:annotation>
+			<xs:documentation>De elementen in deze XSD hebben alleen waarde in de context van oude modellen en systemen welke geen ondersteuning voor IMX gaan hebben.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="InfraAtlasAreas" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InfraAtlasAreas">
+		<xs:annotation>
+			<xs:documentation>Een verzameling InfraAtlas-gebieden</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="InfraAtlasArea" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InfraAtlasArea">
+		<xs:annotation>
+			<xs:documentation>Een InfraAtlas-gebied (IA-gebied) is een systeem specifieke gebiedsafbakening. Binnen dit gebied geldt dat de namen van objecten uniek zijn.</xs:documentation>
+			<xs:documentation xml:lang="NL">IA-Gebied</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tDemarcationAggregation">
+					<xs:sequence>
+						<xs:element name="OperationalPointRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst PUIC verwijzingen naar dienstregelpunten waaruit het IA-gebied is opgebouwd</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="OpenLineRefs" type="tUUIDRefList">
+							<xs:annotation>
+								<xs:documentation>Een lijst PUIC verwijzingen naar vrijebanen waaruit het IA-gebied is opgebouwd</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="infraAtlasAreaType" type="tInfraAtlasAreaTypeEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>Type InfraAtlas-gebied (IA-gebied). De lijst van opties is voorgedefinieerd.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tInfraAtlasAreaTypeEnum">
+		<xs:annotation>
+			<xs:documentation>Enumeratie van typen InfraAtlas-gebieden (IA-gebieden).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">Onbekend</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Switch">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">IA Wisselgebied</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Connection">
+				<xs:annotation>
+					<xs:documentation xml:lang="NL">IA Verbinding</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

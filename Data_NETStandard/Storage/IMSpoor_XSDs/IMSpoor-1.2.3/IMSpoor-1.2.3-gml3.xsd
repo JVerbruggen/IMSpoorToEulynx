@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) by Software Licensing (Movares Nederland B.V.) -->
+<xs:schema xmlns="http://www.opengis.net/gml3" xmlns:gml3="http://www.opengis.net/gml3" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opengis.net/gml3" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Point">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="pos"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LineString">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="posList"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Curve">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="segments"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Surface">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="patches"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Polygon">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="exterior"/>
+				<xs:element ref="interior" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MultiPoint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="pointMember" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MultiSurface">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="surfaceMember" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MultiCurve">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="curveMember" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="patches">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PolygonPatch"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PolygonPatch">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="exterior"/>
+				<xs:element ref="interior" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="srsName" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Het gewenste coordinatenstelsel</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="lineStringMember">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LineString"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Arc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="posList"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Circle">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="posList"/>
+			</xs:sequence>
+			<xs:attribute name="numArc" type="xs:integer" fixed="1">
+				<xs:annotation>
+					<xs:documentation>
+Since this type describes always a single arc, the attribute is fixed to "1".
+</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CircleByCenterPoint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="pos"/>
+				<xs:element name="radius" type="xs:double">
+					<xs:annotation>
+						<xs:documentation>The radius of the arc.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="numArc" type="xs:integer" use="required" fixed="1">
+				<xs:annotation>
+					<xs:documentation>
+Since this type describes always a single arc, the attribute is fixed to "1".
+</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LineStringSegment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="posList"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearRing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="posList"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Ring">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="curveMember" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="exterior">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="LinearRing"/>
+				<xs:element ref="Ring"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="interior">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="LinearRing"/>
+				<xs:element ref="Ring"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pos">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="posList">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="segments">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="Arc"/>
+				<xs:element ref="Circle"/>
+				<xs:element ref="CircleByCenterPoint"/>
+				<xs:element ref="LineStringSegment"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pointMember">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Point"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="curveMember">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="LineString"/>
+				<xs:element ref="Curve"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="surfaceMember">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="Polygon"/>
+				<xs:element ref="Surface"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

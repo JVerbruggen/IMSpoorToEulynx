@@ -1,5 +1,6 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.Eulynx.EULYNX_Signalling;
+using Models.TopoModels.Eulynx.EULYNX_XSD;
 using Services.DependencyInjection;
 using Services.Managers.Base;
 using Services.Managers.Location;
@@ -13,10 +14,10 @@ namespace Services.Managers.Assets
 {
     public class SignalManager : ItemManager<Signal>
     {
-        public Signal[] GetSignals(Models.TopoModels.IMSpoor.V1_3_0.Signal[] imspoorSignals)
+        public Signal[] GetSignals(Models.TopoModels.IMSpoor.V1_2_3.Signal[] imspoorSignals)
         {
             IList<Signal> signalsConverted = new List<Signal>();
-            foreach (Models.TopoModels.IMSpoor.V1_3_0.Signal imspoorSignal in imspoorSignals)
+            foreach (Models.TopoModels.IMSpoor.V1_2_3.Signal imspoorSignal in imspoorSignals)
             {
                 SpotLocationManager spotLocationManager = InstanceManager.Singleton<SpotLocationManager>().GetInstance();
                 SignalFrameManager signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();
@@ -40,6 +41,22 @@ namespace Services.Managers.Assets
                 signalsConverted.Add(signal);
             }
             return signalsConverted.ToArray();
+        }
+
+        public BaseLocation GetLocation(Signal signal)
+        {
+            tElementWithIDref rtmSignalRef = signal.refersToRtmSignal;
+
+            Eulynx eulynx = InstanceManager.Singleton<Eulynx>().GetInstance();
+            var rtmSignals = eulynx.ownsRtmEntities.ownsSignal;
+
+            var spotLocations = eulynx.ownsRtmEntities.usesSpotLocation;
+
+            var rtmSignal = BaseObject.Find(rtmSignals, rtmSignalRef);
+            var rtmSignalLocationsRef = rtmSignal.locations;
+            var rtmSignalSpotLocation = rtmSignal.GetLocation(spotLocations);
+
+            return rtmSignalSpotLocation;
         }
 
     }
