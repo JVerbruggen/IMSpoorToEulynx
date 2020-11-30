@@ -88,5 +88,10 @@ namespace Models.TopoModels.Eulynx.Common
             return this.@ref.Equals(@ref);
         }
 
+        public static bool Equals(tElementWithIDref a, tElementWithIDref b)
+        {
+            return a.Equals(b);
+        }
+
     }
 }

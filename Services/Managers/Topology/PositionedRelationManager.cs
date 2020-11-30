@@ -152,14 +152,20 @@ namespace Services.Managers.Topology
             return sourceList;
         }
 
-        public PositionedRelation GetRelation(PositioningNetElement a, PositioningNetElement b)
+        public PositionedRelation GetRelation(PositioningNetElement a, PositioningNetElement b, PositionedRelation[] allRelations)
         {
             PositionedRelation foundRelation = null;
 
             foreach(var relationId in a.relation){
-                if (b.relation.Where)
+                var rel = b.relation.Where(r => r.Equals(relationId)).FirstOrDefault();
+                if(rel != default)
                 {
-
+                    var found = this.Find(allRelations, rel);
+                    if(found != null)
+                    {
+                        foundRelation = found;
+                        break;
+                    }
                 }
             }
 

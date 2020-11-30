@@ -175,6 +175,21 @@ namespace FormsApp
             PositioningNetElement[] allNetElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
 
             paintFoundPath(shortestPath, allNetElements);
+
+            if(shortestPath.Length == 0)
+            {
+                listbox_show(new String[] { "No paths found" });
+            }
+        }
+
+        private void listbox_show(object[] objects)
+        {
+            listBox_content.Items.Clear();
+
+            if(objects != null)
+            {
+                listBox_content.Items.AddRange(objects);
+            }
         }
 
         private void button_netEntities_Click(object sender, EventArgs e)
@@ -190,12 +205,7 @@ namespace FormsApp
 
             //LocatedNetEntity[] netEntities = netEntityLocator.GetAssetsOnPath(this.paintedPath, allLocations, allNetEntities);
 
-            listBox_content.Items.Clear(); 
-            //listBox_content.Items.AddRange(netEntities);
-            if(pathTrackAssets != null)
-            {
-                listBox_content.Items.AddRange(pathTrackAssets);
-            }
+            listbox_show(pathTrackAssets);
         }
 
         private void groupBox_drawing_Paint(object sender, PaintEventArgs e)

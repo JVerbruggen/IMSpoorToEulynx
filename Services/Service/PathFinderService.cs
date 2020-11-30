@@ -47,7 +47,7 @@ namespace Services.Service
             PositioningNetElement[] neighborNetElements;
             if(this.Prev != null)
             {
-                Usage cameFrom = getCameFrom(this.Prev);
+                Usage cameFrom = getCameFrom(this.Prev, allRelations);
                 neighborNetElements = this.positioningNetElement.GetRelationsTraversable(allRelations, allNetElements, cameFrom);
             }
             else
@@ -70,9 +70,23 @@ namespace Services.Service
             return neighborVertices.ToArray();
         }
 
-        public Usage getCameFrom(Vertex previous)
+        public Usage getCameFrom(Vertex previous, PositionedRelation[] allRelations)
         {
-            GetRelat
+            Usage cameFrom;
+
+            var prm = InstanceManager.Singleton<PositionedRelationManager>().GetInstance();
+            var relation = prm.GetRelation(this.positioningNetElement, previous.positioningNetElement, allRelations);
+
+            if (this.positioningNetElement.Equals(relation.elementA))
+            {
+                cameFrom = relation.positionOnA;
+            }
+            else
+            {
+                cameFrom = relation.positionOnB;
+            }
+
+            return cameFrom;
         }
 
         public double Length(Vertex neighbor)
@@ -123,6 +137,8 @@ namespace Services.Service
             while(vertices.Count != 0)
             {
                 u = minDist(vertices.ToArray());
+
+                if (u == null) break;
 
                 vertices.Remove(u);
 

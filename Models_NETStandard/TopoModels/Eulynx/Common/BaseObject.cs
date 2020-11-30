@@ -25,7 +25,7 @@ namespace Models.TopoModels.Eulynx.Common
             return !(baseObject1 == baseObject2);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(Object obj)
         {
             return this.Equals(obj as BaseObject);
         }
