@@ -10,6 +10,8 @@ namespace Models.TopoModels.Eulynx.Common
         {
             PositioningSystemCoordinate[] positioningSystemCoordinates = { };
 
+            PositioningSystemCoordinate psc = new PositioningSystemCoordinate();
+
             return positioningSystemCoordinates;
         }
 

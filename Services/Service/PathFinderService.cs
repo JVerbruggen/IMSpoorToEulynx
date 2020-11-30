@@ -13,6 +13,11 @@ namespace Services.Service
     {
         public PositioningNetElement positioningNetElement { get; }
         public double Dist { get; set; }
+
+        /// <summary>
+        /// Vertex where path finding previously was
+        /// This will lead back to source
+        /// </summary>
         public Vertex Prev { get; set; }
 
         public Vertex()
@@ -38,7 +43,18 @@ namespace Services.Service
         {
             PositioningNetElement[] allNetElements = allVertices.Select(x => x.positioningNetElement).ToArray();
 
-            PositioningNetElement[] neighborNetElements = positioningNetElement.GetRelations(allRelations, allNetElements);
+
+            PositioningNetElement[] neighborNetElements;
+            if(this.Prev != null)
+            {
+                Usage cameFrom = getCameFrom(this.Prev);
+                neighborNetElements = this.positioningNetElement.GetRelationsTraversable(allRelations, allNetElements, cameFrom);
+            }
+            else
+            {
+                neighborNetElements = this.positioningNetElement.GetRelations(allRelations, allNetElements);
+            }
+
             IList<Vertex> neighborVertices = new List<Vertex>();
 
             foreach(PositioningNetElement neighborNetElement in neighborNetElements)
@@ -52,6 +68,11 @@ namespace Services.Service
             }
 
             return neighborVertices.ToArray();
+        }
+
+        public Usage getCameFrom(Vertex previous)
+        {
+            GetRelat
         }
 
         public double Length(Vertex neighbor)
@@ -82,7 +103,7 @@ namespace Services.Service
             return min;
         }
 
-        public PositioningNetElement[] FindShortestPath(PositionedRelation[] positionedRelations, PositioningNetElement[] positioningNetElements, PositioningNetElement start, PositioningNetElement end)
+        public PositioningNetElement[] FindShortestPath(PositionedRelation[] allPositionedRelations, PositioningNetElement[] positioningNetElements, PositioningNetElement start, PositioningNetElement end)
         {
             IList<PositioningNetElement> shortestPath = new List<PositioningNetElement>();
 
@@ -105,7 +126,7 @@ namespace Services.Service
 
                 vertices.Remove(u);
 
-                if(u == endVertex)
+                if(u == endVertex) // If reached destination
                 {
                     u = endVertex;
                     if (u.Prev != null || u == startVertex)
@@ -116,10 +137,10 @@ namespace Services.Service
                             u = u.Prev;
                         }
                     }
-                    break;
+                    break; // end of algorithm
                 }
 
-                Vertex[] neighbors = u.GetNeighbors(positionedRelations, vertices.ToArray());
+                Vertex[] neighbors = u.GetNeighbors(allPositionedRelations, vertices.ToArray());
                 foreach(Vertex neighbor in neighbors)
                 {
                     var alt = u.Dist + u.Length(neighbor);

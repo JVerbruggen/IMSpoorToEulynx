@@ -38,12 +38,30 @@ namespace FormsApp
         {
             this.eulynx = eulynx;
 
+            InitMsagl(this.eulynx);
+            //InitDrawing(this.eulynx);
+        }
+
+        private void InitDrawing(Eulynx eulynx)
+        {
+            using (var g = this.CreateGraphics())
+            {
+                using (Pen pen = new Pen(System.Drawing.Color.Black, 5))
+                {
+                    var pt1 = new System.Drawing.Point(0, 0);
+                    var pt2 = new System.Drawing.Point(100, 100);
+                    g.DrawLine(pen, pt1, pt2);
+                }
+            }
+        }
+
+        private void InitMsagl(Eulynx eulynx)
+        {
             this.viewer = new GViewer();
             this.graph = new Graph("MyGraph");
 
             var rtmEntities = eulynx?.ownsRtmEntities;
             var trackTopo = rtmEntities?.usesTrackTopology;
-
             if (rtmEntities != null && trackTopo != null)
             {
                 foreach (PositioningNetElement netElement in trackTopo.usesPositioningNetElement)
@@ -60,7 +78,10 @@ namespace FormsApp
 
                     if (refA == null || refB == null) continue;
 
-                    this.graph.AddEdge(refA, refB);
+                    Edge e = this.graph.AddEdge(refA, refB);
+
+                    e.Attr.ArrowheadAtSource = relation.positionOnA == Usage.start ? ArrowStyle.Diamond : ArrowStyle.None;
+                    e.Attr.ArrowheadAtTarget = relation.positionOnB == Usage.start ? ArrowStyle.Diamond : ArrowStyle.None;
                 }
             }
 
@@ -174,6 +195,20 @@ namespace FormsApp
             if(pathTrackAssets != null)
             {
                 listBox_content.Items.AddRange(pathTrackAssets);
+            }
+        }
+
+        private void groupBox_drawing_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            using(Brush brush = new SolidBrush(System.Drawing.Color.Black))
+            {
+                using (Pen pen = new Pen(brush, 5))
+                {
+                    var pt1 = new System.Drawing.Point(0, 0);
+                    var pt2 = new System.Drawing.Point(100, 100);
+                    g.DrawLine(pen, pt1, pt2);
+                }
             }
         }
     }

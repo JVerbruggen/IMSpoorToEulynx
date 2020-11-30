@@ -49,6 +49,7 @@
             this.groupBox_drawing.TabIndex = 0;
             this.groupBox_drawing.TabStop = false;
             this.groupBox_drawing.Text = "Overview";
+            this.groupBox_drawing.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox_drawing_Paint);
             this.groupBox_drawing.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox1

@@ -38,7 +38,32 @@ namespace Models.TopoModels.Eulynx.Common
             return localRelations.ToArray();
         }
 
-        
+        public PositioningNetElement[] GetRelationsTraversable(PositionedRelation[] allRelations, PositioningNetElement[] allNetElements, Usage cameFrom)
+        {
+            IList<PositioningNetElement> localRelations = new List<PositioningNetElement>();
+
+            foreach(PositionedRelation relation in allRelations)
+            {
+                if (relation.elementA.Equals(this))
+                {
+                    if(relation.positionOnA != cameFrom)
+                    {
+                        localRelations.Add(relation.GetElementB(allNetElements));
+                    }
+                }
+                else if (relation.elementB.Equals(this))
+                {
+                    if (relation.positionOnB != cameFrom)
+                    {
+                        localRelations.Add(relation.GetElementA(allNetElements));
+                    }
+                }
+            }
+
+            return localRelations.ToArray();
+        }
+
+
 
 
     }

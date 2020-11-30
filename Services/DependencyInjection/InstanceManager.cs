@@ -10,7 +10,7 @@ namespace Services.DependencyInjection
 {
     public static class InstanceManager
     {
-        private static IList<IInstanceSupplier> instanceSuppliers = new List<IInstanceSupplier>();
+        private static IList<IAbstractInstanceSupplier> instanceSuppliers = new List<IAbstractInstanceSupplier>();
         private static IList<IFactory<IManageable>> factories = new List<IFactory<IManageable>>();
 
         /// <summary>
@@ -62,10 +62,10 @@ namespace Services.DependencyInjection
         /// Get an InstanceSupplier<T> object that was previously registered
         /// </summary>
         /// <returns>Found InstanceSupplier<T>, null if not found</returns>
-        private static InstanceSupplier<T> GetInstanceSupplier<T>()
+        private static InstanceSupplier<T> GetInstanceSupplier<T>() where T : IManageable
         {
             InstanceSupplier<T> found = null;
-            foreach(IInstanceSupplier instanceSupplier in instanceSuppliers)
+            foreach(IAbstractInstanceSupplier instanceSupplier in instanceSuppliers)
             {
                 if (instanceSupplier.GetType() == typeof(InstanceSupplier<T>))
                 {
@@ -83,7 +83,7 @@ namespace Services.DependencyInjection
         /// </summary>
         /// <param name="t">Instance to supply if no InstanceSupplier was found</param>
         /// <returns>Found or new InstanceSupplier object</returns>
-        public static InstanceSupplier<T> Singleton<T>(T t)
+        public static InstanceSupplier<T> Singleton<T>(T t) where T : IManageable
         {
             InstanceSupplier<T> instanceSupplier = GetInstanceSupplier<T>();
             if(instanceSupplier == null)
@@ -125,9 +125,9 @@ namespace Services.DependencyInjection
         /// Add an InstanceSupplier to the registry
         /// </summary>
         /// <param name="instanceSupplier">InstanceSupplier to add</param>
-        public static void AddInstanceSupplier<T>(InstanceSupplier<T> instanceSupplier)
+        public static void AddInstanceSupplier<T>(IInstanceSupplier<T> instanceSupplier) where T : IManageable
         {
-            instanceSuppliers.Add((IInstanceSupplier)instanceSupplier);
+            instanceSuppliers.Add(instanceSupplier);
         }   
     }
 }

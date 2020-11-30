@@ -94,11 +94,11 @@
       <eurtm:usesPositioningNetElement xsi:type="rtmCommon:LinearElement" uuid="4c61f54d-bfe3-4c09-a362-d8125428af84">
         <rtmCommon:relation ref="74f29a74-10f1-39ba-d1a8-5fc052d298ee" />
         <rtmCommon:relation ref="75d77579-52c3-f2cb-5ce9-8741d96f94ee" />
-        <rtmCommon:associatedPositioningSystems uuid="7e0b1981-d45a-2c17-4166-a636f1b020a0">
+        <rtmCommon:associatedPositioningSystems uuid="34e8142e-c3ec-490d-9264-914dad6326f6">
           <rtmCommon:intrinsicCoordinates uuid="cd6fca71-0e06-709f-39d3-daf3bee17a2d" intrinsicCoord="0">
             <rtmCommon:coordinates />
           </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="newid?" />
+          <rtmCommon:positioningSystem ref="aaf00714-25ce-0bd8-6043-2b0269fc3471" />
         </rtmCommon:associatedPositioningSystems>
         <rtmCommon:associatedPositioningSystems uuid="9d1795f2-9096-9fb5-50b7-871bbee3c9f4">
           <rtmCommon:intrinsicCoordinates uuid="eb1692c5-7e83-dd60-22b5-8900ba611add" intrinsicCoord="0">
@@ -113,11 +113,11 @@
       <eurtm:usesPositioningNetElement xsi:type="rtmCommon:LinearElement" uuid="6244d378-9652-4af3-8ab7-bb1e141f6755">
         <rtmCommon:relation ref="74f29a74-10f1-39ba-d1a8-5fc052d298ee" />
         <rtmCommon:relation ref="dccd3303-68e1-fca5-f838-8c260666c8f4" />
-        <rtmCommon:associatedPositioningSystems uuid="7e0b1981-d45a-2c17-4166-a636f1b020a0">
+        <rtmCommon:associatedPositioningSystems uuid="34e8142e-c3ec-490d-9264-914dad6326f6">
           <rtmCommon:intrinsicCoordinates uuid="cd6fca71-0e06-709f-39d3-daf3bee17a2d" intrinsicCoord="0">
             <rtmCommon:coordinates />
           </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="newid?" />
+          <rtmCommon:positioningSystem ref="aaf00714-25ce-0bd8-6043-2b0269fc3471" />
         </rtmCommon:associatedPositioningSystems>
         <rtmCommon:associatedPositioningSystems uuid="9d1795f2-9096-9fb5-50b7-871bbee3c9f4">
           <rtmCommon:intrinsicCoordinates uuid="eb1692c5-7e83-dd60-22b5-8900ba611add" intrinsicCoord="0">
@@ -131,11 +131,11 @@
       </eurtm:usesPositioningNetElement>
       <eurtm:usesPositioningNetElement xsi:type="rtmCommon:LinearElement" uuid="04a152db-f5f2-4d24-99e4-a8e844f5d79b">
         <rtmCommon:relation ref="75d77579-52c3-f2cb-5ce9-8741d96f94ee" />
-        <rtmCommon:associatedPositioningSystems uuid="7e0b1981-d45a-2c17-4166-a636f1b020a0">
+        <rtmCommon:associatedPositioningSystems uuid="34e8142e-c3ec-490d-9264-914dad6326f6">
           <rtmCommon:intrinsicCoordinates uuid="cd6fca71-0e06-709f-39d3-daf3bee17a2d" intrinsicCoord="0">
             <rtmCommon:coordinates />
           </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="newid?" />
+          <rtmCommon:positioningSystem ref="aaf00714-25ce-0bd8-6043-2b0269fc3471" />
         </rtmCommon:associatedPositioningSystems>
         <rtmCommon:associatedPositioningSystems uuid="9d1795f2-9096-9fb5-50b7-871bbee3c9f4">
           <rtmCommon:intrinsicCoordinates uuid="8a0f9ca4-e356-4656-ac14-4404e5afc257" intrinsicCoord="0">
@@ -149,11 +149,11 @@
       </eurtm:usesPositioningNetElement>
       <eurtm:usesPositioningNetElement xsi:type="rtmCommon:LinearElement" uuid="0fd0059b-58d1-4799-9001-881a3f9445e5">
         <rtmCommon:relation ref="dccd3303-68e1-fca5-f838-8c260666c8f4" />
-        <rtmCommon:associatedPositioningSystems uuid="7e0b1981-d45a-2c17-4166-a636f1b020a0">
+        <rtmCommon:associatedPositioningSystems uuid="34e8142e-c3ec-490d-9264-914dad6326f6">
           <rtmCommon:intrinsicCoordinates uuid="cd6fca71-0e06-709f-39d3-daf3bee17a2d" intrinsicCoord="0">
             <rtmCommon:coordinates />
           </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="newid?" />
+          <rtmCommon:positioningSystem ref="aaf00714-25ce-0bd8-6043-2b0269fc3471" />
         </rtmCommon:associatedPositioningSystems>
         <rtmCommon:associatedPositioningSystems uuid="9d1795f2-9096-9fb5-50b7-871bbee3c9f4">
           <rtmCommon:intrinsicCoordinates uuid="a1de5d8b-513e-ba32-26e3-79ad41c73bdd" intrinsicCoord="0">

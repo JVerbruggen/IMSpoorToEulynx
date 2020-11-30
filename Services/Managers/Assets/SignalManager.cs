@@ -25,10 +25,11 @@ namespace Services.Managers.Assets
                 SignalRTMManager signalRTMManager = InstanceManager.Singleton<SignalRTMManager>().GetInstance();
 
                 SpotLocation geoSpotLocation = spotLocationManager.GetGeoLocation(imspoorSignal.Location);
+                //SpotLocation linearSpotLocation = spotLocationManager.GetLineLocation(imspoorSignal.Location);
 
                 spotLocationManager.Register(geoSpotLocation);
 
-                var rtmSignal = new Models.TopoModels.Eulynx.Signalling.Signal(geoSpotLocation);
+                var rtmSignal = new Models.TopoModels.Eulynx.Signalling.Signal((tElementWithIDref)geoSpotLocation);
                 rtmSignal.AllocateUUID();
                 signalRTMManager.Register(rtmSignal);
 

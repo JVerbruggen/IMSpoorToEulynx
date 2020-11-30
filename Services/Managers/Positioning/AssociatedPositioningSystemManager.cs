@@ -64,7 +64,9 @@ namespace Services.Managers.Positioning
         {
             List<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
 
-            tSituation situation = InstanceManager.Singleton<IMSpoorReadingService>().GetInstance().situation;
+            IMSpoorReadingService imSpoorReadingService = InstanceManager.Singleton<IMSpoorReadingService>().GetInstance();
+
+            tSituation situation = imSpoorReadingService.situation;
             RailImplementation implementation = situation.RailInfrastructure.RailImplementation;
 
             Track foundTrack = null;

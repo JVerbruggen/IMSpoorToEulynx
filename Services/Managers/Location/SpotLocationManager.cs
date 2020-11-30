@@ -19,6 +19,11 @@ namespace Services.Managers.Location
         {
             KmRibbonLocation kmRibbonLocation = pointLocation.KmRibbonLocation;
 
+            PositioningSystemManager positioningSystemManager = InstanceManager.Singleton<PositioningSystemManager>().GetInstance();
+            //positioningSystemManager.GetLinearPositioningSystem()
+
+            //SpotLocation linearSpotLocation = new SpotLocationCoordinate()
+
             throw new NotImplementedException();
         }
 
@@ -32,6 +37,7 @@ namespace Services.Managers.Location
 
             GeometryDeserializer geometryDeserializer = InstanceManager.Singleton<GeometryDeserializer>().GetInstance();
             float[] xy = geometryDeserializer.GetCoordinate(geoLocation.Point);
+
             CartesianCoordinate positioningSystemCoordinate = new CartesianCoordinate(xy[0], xy[1], gps, "");
             positioningSystemCoordinate.AllocateUUID();
 
