@@ -1,0 +1,3 @@
+$order=%MATH_ADD($order,1)%
+// XSDproperty van qualified type: %RESOLVE_QUALIFIED_TYPE()%
+[XmlElementAttribute(%qt%%packageTag:"targetnamespaceURL"%:%attName%%qt%, Order=$order)]

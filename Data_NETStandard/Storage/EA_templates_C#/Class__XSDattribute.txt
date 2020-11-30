@@ -1,0 +1,10 @@
+$bases=%list="ClassBase" @separator=", "%
+%list="AttributeDeclaration" @separator="\n"%
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+[Serializable]
+%if classStereotype!="enumeration"%
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+%endIf%
+[XmlTypeAttribute(Namespace="%packageTag:"targetnamespaceURL"%"]
+[XmlRootAttribute("%className%", Namespace="%packageTag:"targetnamespaceURL"%", IsNullable=false)]
+%list="Connector__Specialisation_XSDattribute" @separator="\n"%

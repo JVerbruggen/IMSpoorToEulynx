@@ -1,0 +1,14 @@
+%PI=""%
+$bases=%list="ClassBase" @separator=", "%
+$interfaces=%list="ClassInterface" @separator=", "%
+%if $bases != "" and $interfaces != ""%
+: $bases, $interfaces
+%elseIf $bases != ""%
+: 
+$prefix=%REPLACE(fileImports, "using ",  "")%
+$prefix=%REPLACE($prefix,  ";", "")%
+%REPLACE($prefix, "\n", "")%.
+$bases
+%elseIf $interfaces != ""%
+: $interfaces
+%endIf%

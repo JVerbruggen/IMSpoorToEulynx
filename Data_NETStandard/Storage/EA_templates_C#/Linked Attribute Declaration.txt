@@ -1,0 +1,21 @@
+// linked attribute %linkAttRole%
+// public 
+$type=%linkAttQualName%
+
+%if linkAttCollectionClass != "" and linkCard != "" and linkCard != "0" and linkCard != "0..1" and linkCard != "1"%
+$type=%linkAttCollectionClass%
+%elseIf linkIsBound == "T"%
+$type = $type + "<" + %linkParamSubs% + ">"
+%endIf%
+
+%PI=" "%
+%CONVERT_SCOPE(linkAttAccess)%
+%linkAttTargetScope=="classifier" ? "static" : ""%
+$type
+%PI=""%
+
+%if linkAttRole != ""%
+%linkAttRole%;
+%else%
+%REPLACE(genOptDefaultAssocAttName,"$LinkClass",linkAttName)%;
+%endIf%

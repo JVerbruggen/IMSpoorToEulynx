@@ -1,0 +1,35 @@
+%if elemType == "Interface"%
+{\n
+%list="Operation" @separator="\n\n" @indent="\t"%
+%PI=""%
+}//end %className%
+%endTemplate%
+
+{\n
+%PI="\n\n"%
+%list="InnerClass" @separator="\n\n" @indent="\t"%
+%list="Attribute" @separator="\n" @indent="\t"%
+
+
+%if genOptCSGenDispose == "T" and classHasDispose != "T"%
+$ops+="\n\n\tpublic "
+$ops+=%classHasParent=="T" ? "override " : "virtual "%
+$ops+="void Dispose(){\n\n\t}"
+%endIf%
+
+%if genOptCSGenFinalizer == "T" and genOptGenDestructor != "T" and classHasFinalizer != "T" and classHasDestructor != "T"%
+$ops+="\n\n\tprotected "
+$ops+=%classHasParent=="T" ? "override " : "virtual "%
+$ops+="void Finalize(){\n"
+$ops+=%classHasParent=="T" ? "\t\tbase.Finalize();" : ""% + "\n\t}"
+%endIf%
+
+%if genOptGenCopyConstructor == "T" and classHasCopyConstructor != "T"%
+$ops+="\n\n\tpublic "
+$ops+=%className%+"("+%className%+" the"+%className%+"){\n\n\t}"
+%endIf%
+
+$ops
+%list="Operation" @separator="\n\n" @indent="\t"%
+
+}//end %className%
