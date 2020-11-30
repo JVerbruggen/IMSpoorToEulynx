@@ -5,7 +5,15 @@ $interfaces=%list="ClassInterface" @separator=", "%
 : $bases, $interfaces
 %elseIf $bases != ""%
 : 
-$prefix=%REPLACE(fileImports, "using ",  "")%
+$findIndex = %FIND(fileImports, "\n")%
+
+%if $findIndex != "-1"%
+$prefix = %LEFT(fileImports, $findIndex)%
+%else%
+$prefix = %fileImports%
+%endIf%
+
+$prefix=%REPLACE($prefix, "using ",  "")%
 $prefix=%REPLACE($prefix,  ";", "")%
 %REPLACE($prefix, "\n", "")%.
 $bases
