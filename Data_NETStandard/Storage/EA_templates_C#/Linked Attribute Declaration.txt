@@ -1,3 +1,4 @@
+%endTemplate%
 // linked attribute %linkAttRole%
 // public 
 $type=%linkAttQualName%
