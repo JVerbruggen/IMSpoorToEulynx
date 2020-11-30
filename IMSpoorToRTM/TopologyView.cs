@@ -180,6 +180,10 @@ namespace FormsApp
             {
                 listbox_show(new String[] { "No paths found" });
             }
+            else
+            {
+                listbox_show(new String[] { "" });
+            }
         }
 
         private void listbox_show(object[] objects)
