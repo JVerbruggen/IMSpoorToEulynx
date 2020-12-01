@@ -38,6 +38,8 @@
             this.listBox_content = new System.Windows.Forms.ListBox();
             this.button_netEntities = new System.Windows.Forms.Button();
             this.groupBox_info = new System.Windows.Forms.GroupBox();
+            this.button_details = new System.Windows.Forms.Button();
+            this.checkBox_includePassedElements = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox_info.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.checkBox_includePassedElements);
             this.groupBox1.Controls.Add(this.button_reset);
             this.groupBox1.Controls.Add(this.button_possiblePaths);
             this.groupBox1.Controls.Add(this.button_findPathSubmit);
@@ -140,7 +143,7 @@
             // button_netEntities
             // 
             this.button_netEntities.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_netEntities.Location = new System.Drawing.Point(440, 26);
+            this.button_netEntities.Location = new System.Drawing.Point(440, 59);
             this.button_netEntities.Name = "button_netEntities";
             this.button_netEntities.Size = new System.Drawing.Size(127, 29);
             this.button_netEntities.TabIndex = 3;
@@ -151,6 +154,7 @@
             // groupBox_info
             // 
             this.groupBox_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox_info.Controls.Add(this.button_details);
             this.groupBox_info.Controls.Add(this.listBox_content);
             this.groupBox_info.Controls.Add(this.button_netEntities);
             this.groupBox_info.Location = new System.Drawing.Point(450, 315);
@@ -159,6 +163,26 @@
             this.groupBox_info.TabIndex = 4;
             this.groupBox_info.TabStop = false;
             this.groupBox_info.Text = "Info";
+            // 
+            // button_details
+            // 
+            this.button_details.Location = new System.Drawing.Point(440, 26);
+            this.button_details.Name = "button_details";
+            this.button_details.Size = new System.Drawing.Size(127, 29);
+            this.button_details.TabIndex = 4;
+            this.button_details.Text = "Details";
+            this.button_details.UseVisualStyleBackColor = true;
+            this.button_details.Click += new System.EventHandler(this.button_details_Click);
+            // 
+            // checkBox_includePassedElements
+            // 
+            this.checkBox_includePassedElements.AutoSize = true;
+            this.checkBox_includePassedElements.Location = new System.Drawing.Point(6, 118);
+            this.checkBox_includePassedElements.Name = "checkBox_includePassedElements";
+            this.checkBox_includePassedElements.Size = new System.Drawing.Size(193, 24);
+            this.checkBox_includePassedElements.TabIndex = 5;
+            this.checkBox_includePassedElements.Text = "Include passed elements";
+            this.checkBox_includePassedElements.UseVisualStyleBackColor = true;
             // 
             // TopologyView
             // 
@@ -171,6 +195,7 @@
             this.Name = "TopologyView";
             this.Text = "Net entities";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox_info.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -188,5 +213,7 @@
         private System.Windows.Forms.Button button_possiblePaths;
         private System.Windows.Forms.Button button_reset;
         private System.Windows.Forms.GroupBox groupBox_info;
+        private System.Windows.Forms.Button button_details;
+        private System.Windows.Forms.CheckBox checkBox_includePassedElements;
     }
 }

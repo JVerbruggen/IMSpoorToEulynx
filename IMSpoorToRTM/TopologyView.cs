@@ -8,6 +8,7 @@ using Services.Managers.Assets;
 using Services.Service;
 using Services.Service.PathFinding;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace FormsApp
         private DestinationFinderService DestinationFinderService;
         private NetEntityLocator netEntityLocator;
 
-        private PositioningNetElement[] paintedPath;
+        private Path paintedPath;
 
         public TopologyView()
         {
@@ -133,7 +134,7 @@ namespace FormsApp
 
         private void paintFoundPath(PositioningNetElement[] path, PositioningNetElement[] allElements)
         {
-            this.paintedPath = path;
+            this.paintedPath = new Path(path);
 
             foreach (PositioningNetElement pathElement in allElements)
             {
@@ -162,31 +163,66 @@ namespace FormsApp
 
         private void button_findPathSubmit_Click(object sender, EventArgs e)
         {
+            findPath();
+            showDetails();
+        }
+
+        private void button_possiblePaths_Click(object sender, EventArgs e)
+        {
+            fillPossiblePaths();
+        }
+
+        private void findPath()
+        {
             string uuidStart = comboBox_pathFindStart.SelectedItem?.ToString();
             string uuidEnd = comboBox_pathFindEnd.SelectedItem?.ToString();
 
             if (uuidStart != null && uuidEnd != null)
             {
-                FindShortestPath(this.eulynx, uuidStart, uuidEnd);
+                PositioningNetElement[] shortestPath = FindShortestPath(this.eulynx, uuidStart, uuidEnd);
+                PositioningNetElement[] allNetElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
+
+                paintFoundPath(shortestPath, allNetElements);
+
+                if (shortestPath.Length == 0)
+                {
+                    listbox_show(new[] { "No paths found" });
+                }
+                else
+                {
+                    listbox_show(new[] { "" });
+                }
             }
         }
 
-        private void button_possiblePaths_Click(object sender, EventArgs e)
+        private void fillPossiblePaths()
         {
             string uuidStart = comboBox_pathFindStart.SelectedItem?.ToString();
 
-            if(uuidStart != null)
+            if (uuidStart != null)
             {
-                PositioningNetElement[] foundDestinations = FindPossibleDestinations(this.eulynx, uuidStart);
+                PositioningNetElement[] foundDestinations = FindPossibleDestinations(this.eulynx, uuidStart, checkBox_includePassedElements.Checked);
 
-                if(foundDestinations.Length > 0)
+                if (foundDestinations.Length > 0)
                 {
                     comboBox_pathFindEnd.Items.Clear();
                     comboBox_pathFindEnd.Items.AddRange(foundDestinations.Select(d => d.uuid).ToArray());
                     comboBox_pathFindEnd.SelectedItem = null;
                     comboBox_pathFindEnd.Text = null;
 
-                    listbox_show(new[] { "Found " + foundDestinations.Length + " destinations" });
+                    List<string> contents = new List<string>();
+                    contents.AddRange(new[]
+                    {
+                        "Found destinations: " + foundDestinations.Length,
+                        "Including passed elements: " + checkBox_includePassedElements.Checked,
+                        "Destinations:"
+                    });
+                    foreach (var el in foundDestinations)
+                    {
+                        contents.Add("- " + el.uuid);
+                    }
+
+                    listbox_show(contents.ToArray());
                 }
                 else
                 {
@@ -195,28 +231,18 @@ namespace FormsApp
             }
         }
 
-        private PositioningNetElement[] FindPossibleDestinations(Eulynx eulynx, string uuidStart)
+        private PositioningNetElement[] FindPossibleDestinations(Eulynx eulynx, string uuidStart, bool includePassed)
         {
-            PositioningNetElement[] foundDestinations = DestinationFinderService.FindPossibleDestinations_DeepOnly(eulynx, uuidStart);
+            PositioningNetElement[] foundDestinations = DestinationFinderService.FindPossibleDestinations(eulynx, uuidStart, includePassed);
 
             return foundDestinations;
         }
 
-        private void FindShortestPath(Eulynx eulynx, string uuidStart, string uuidEnd)
+        private PositioningNetElement[] FindShortestPath(Eulynx eulynx, string uuidStart, string uuidEnd)
         {
             PositioningNetElement[] shortestPath = PathFinderService.FindShortestPath(eulynx, uuidStart, uuidEnd);
-            PositioningNetElement[] allNetElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
 
-            paintFoundPath(shortestPath, allNetElements);
-
-            if(shortestPath.Length == 0)
-            {
-                listbox_show(new []{ "No paths found" });
-            }
-            else
-            {
-                listbox_show(new []{ "" });
-            }
+            return shortestPath;
         }
 
         private void listbox_show(object[] objects)
@@ -231,18 +257,7 @@ namespace FormsApp
 
         private void button_netEntities_Click(object sender, EventArgs e)
         {
-            if (this.paintedPath == null) return;
-
-            TrackAssetManager trackAssetManager = InstanceManager.Singleton<TrackAssetManager>().GetInstance();
-            var t = trackAssetManager.GetTrackAssets(eulynx);
-
-            //BaseLocation[] allLocations = this.eulynx.ownsRtmEntities.usesSpotLocation.Where(sl => sl is SpotLocationCoordinate).Cast<SpotLocationCoordinate>().ToArray();
-            //LocatedNetEntity[] allNetEntities = this.eulynx.ownsRtmEntities.ownsSignal;
-            TrackAsset[] pathTrackAssets = trackAssetManager.GetTrackAssets(eulynx, this.paintedPath);
-
-            //LocatedNetEntity[] netEntities = netEntityLocator.GetAssetsOnPath(this.paintedPath, allLocations, allNetEntities);
-
-            listbox_show(pathTrackAssets);
+            showNetEntities();
         }
 
         private void groupBox_drawing_Paint(object sender, PaintEventArgs e)
@@ -261,6 +276,11 @@ namespace FormsApp
 
         private void button_reset_Click(object sender, EventArgs e)
         {
+            resetInfobox();
+        }
+
+        private void resetInfobox()
+        {
             var trackTopo = this.eulynx?.ownsRtmEntities?.usesTrackTopology;
             if (trackTopo == null) return;
 
@@ -274,7 +294,46 @@ namespace FormsApp
             PositioningNetElement[] allNetElements = this.eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
             paintFoundPath(new PositioningNetElement[] { }, allNetElements);
 
-            listbox_show(new []{ "" });
+            listbox_show(new[] { "" });
+        }
+
+        private void showNetEntities()
+        {
+            if (this.paintedPath == null) return;
+
+            TrackAssetManager trackAssetManager = InstanceManager.Singleton<TrackAssetManager>().GetInstance();
+            var t = trackAssetManager.GetTrackAssets(eulynx);
+
+            TrackAsset[] pathTrackAssets = trackAssetManager.GetTrackAssets(eulynx, this.paintedPath.elements);
+
+            listbox_show(pathTrackAssets);
+        }
+
+        private void showDetails()
+        {
+            if (this.paintedPath == null || this.paintedPath.elements.Length == 0) return;
+
+            List<string> contents = new List<string>();
+
+            int steps = this.paintedPath.GetSteps();
+
+            contents.AddRange(new[]{
+                "Start: " + this.paintedPath.elements.FirstOrDefault().uuid,
+                "End: " + this.paintedPath.elements.LastOrDefault().uuid,
+                "Distance: " + steps + " step" + (steps == 1 ? "" : "s"),
+                "Path: "});
+
+            foreach (var el in this.paintedPath.elements)
+            {
+                contents.Add("- " + el.uuid);
+            }
+
+            listbox_show(contents.ToArray());
+        }
+
+        private void button_details_Click(object sender, EventArgs e)
+        {
+            showDetails();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Services.Service.PathFinding
             this.positioningNetElementManager = InstanceManager.Singleton<PositioningNetElementManager>().GetInstance();
         }
 
-        public PositioningNetElement[] FindPossibleDestinations_DeepOnly(Eulynx eulynx, string uuidStart)
+        public PositioningNetElement[] FindPossibleDestinations(Eulynx eulynx, string uuidStart, bool includePassed)
         {
             if (eulynx == null || uuidStart == null) return null;
 
@@ -28,10 +28,10 @@ namespace Services.Service.PathFinding
 
             PositioningNetElement startNetElement = positioningNetElementManager.Find(netElements, uuidStart);
 
-            return FindPossibleDestinations_DeepOnly(startNetElement, netElements, relations);
+            return FindPossibleDestinations(startNetElement, netElements, relations, includePassed);
         }
 
-        public PositioningNetElement[] FindPossibleDestinations_DeepOnly(PositioningNetElement start, PositioningNetElement[] positioningNetElements, PositionedRelation[] allPositionedRelations)
+        public PositioningNetElement[] FindPossibleDestinations(PositioningNetElement start, PositioningNetElement[] positioningNetElements, PositionedRelation[] allPositionedRelations, bool includePassed)
         {
             List<PositioningNetElement> foundDestinations = new List<PositioningNetElement>();
 
@@ -53,7 +53,14 @@ namespace Services.Service.PathFinding
                 vertices.Remove(u);
 
                 PathFindingVertex[] neighbors = u.GetNeighbors(allPositionedRelations, vertices.ToArray());
-                if(neighbors.Length == 0 || neighbors.Any(n => savedVertices.Contains(n)) == false)
+                if (includePassed)
+                {
+                    if (!u.positioningNetElement.Equals(start))
+                    {
+                        foundDestinations.Add(u.positioningNetElement);
+                    }
+                }
+                else if(neighbors.Length == 0 || neighbors.Any(n => savedVertices.Contains(n)) == false)
                 {
                     // u is a destination
                     foundDestinations.Add(u.positioningNetElement);
