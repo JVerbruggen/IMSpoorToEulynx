@@ -3,18 +3,14 @@ using Microsoft.Msagl.GraphViewerGdi;
 using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Models.TopoModels.Eulynx.EULYNX_XSD;
-using Models.TopoModels.Eulynx.NetEntity;
 using Services.DependencyInjection;
 using Services.Managers.Assets;
-using Services.Managers.Topology;
 using Services.Service;
+using Services.Service.PathFinding;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FormsApp
@@ -25,6 +21,7 @@ namespace FormsApp
         private Graph graph;
         private GViewer viewer;
         private PathFinderService PathFinderService;
+        private DestinationFinderService DestinationFinderService;
         private NetEntityLocator netEntityLocator;
 
         private PositioningNetElement[] paintedPath;
@@ -64,11 +61,8 @@ namespace FormsApp
             var trackTopo = rtmEntities?.usesTrackTopology;
             if (rtmEntities != null && trackTopo != null)
             {
-                foreach (PositioningNetElement netElement in trackTopo.usesPositioningNetElement)
-                {
-                    comboBox_pathFindStart.Items.Add(netElement.uuid);
-                    comboBox_pathFindEnd.Items.Add(netElement.uuid);
-                }
+                comboBox_pathFindStart.Items.AddRange(trackTopo.usesPositioningNetElement.Select(n => n.uuid).ToArray());
+                fillComboBoxPathFindEnd(trackTopo.usesPositioningNetElement.Select(n => n.uuid).ToArray());
 
                 PositionedRelation[] relations = trackTopo.usesPositionedRelation;
                 foreach (PositionedRelation relation in relations)
@@ -92,6 +86,12 @@ namespace FormsApp
             this.viewer.Dock = DockStyle.Fill;
             this.groupBox_drawing.Controls.Add(this.viewer);
             this.ResumeLayout();
+        }
+
+        private void fillComboBoxPathFindEnd(object[] items)
+        {
+            comboBox_pathFindEnd.Items.Clear();
+            comboBox_pathFindEnd.Items.AddRange(items);
         }
 
         public void ViewerNodeClickEvent(object sender, EventArgs e)
@@ -119,6 +119,7 @@ namespace FormsApp
             {
                 comboBox_pathFindStart.SelectedItem = label;
                 comboBox_pathFindEnd.SelectedItem = null;
+                comboBox_pathFindEnd.Text = null;
             }
         }
 
@@ -126,6 +127,7 @@ namespace FormsApp
         {
             this.PathFinderService = InstanceManager.Singleton<PathFinderService>().GetInstance();
             this.netEntityLocator = InstanceManager.Singleton<NetEntityLocator>().GetInstance();
+            this.DestinationFinderService = InstanceManager.Singleton<DestinationFinderService>().GetInstance();
             InitializeComponent();
         }
 
@@ -163,10 +165,41 @@ namespace FormsApp
             string uuidStart = comboBox_pathFindStart.SelectedItem?.ToString();
             string uuidEnd = comboBox_pathFindEnd.SelectedItem?.ToString();
 
-            if(uuidStart != null && uuidEnd != null)
+            if (uuidStart != null && uuidEnd != null)
             {
                 FindShortestPath(this.eulynx, uuidStart, uuidEnd);
             }
+        }
+
+        private void button_possiblePaths_Click(object sender, EventArgs e)
+        {
+            string uuidStart = comboBox_pathFindStart.SelectedItem?.ToString();
+
+            if(uuidStart != null)
+            {
+                PositioningNetElement[] foundDestinations = FindPossibleDestinations(this.eulynx, uuidStart);
+
+                if(foundDestinations.Length > 0)
+                {
+                    comboBox_pathFindEnd.Items.Clear();
+                    comboBox_pathFindEnd.Items.AddRange(foundDestinations.Select(d => d.uuid).ToArray());
+                    comboBox_pathFindEnd.SelectedItem = null;
+                    comboBox_pathFindEnd.Text = null;
+
+                    listbox_show(new[] { "Found " + foundDestinations.Length + " destinations" });
+                }
+                else
+                {
+                    listbox_show(new[] { "Found no destinations" });
+                }
+            }
+        }
+
+        private PositioningNetElement[] FindPossibleDestinations(Eulynx eulynx, string uuidStart)
+        {
+            PositioningNetElement[] foundDestinations = DestinationFinderService.FindPossibleDestinations_DeepOnly(eulynx, uuidStart);
+
+            return foundDestinations;
         }
 
         private void FindShortestPath(Eulynx eulynx, string uuidStart, string uuidEnd)
@@ -178,11 +211,11 @@ namespace FormsApp
 
             if(shortestPath.Length == 0)
             {
-                listbox_show(new String[] { "No paths found" });
+                listbox_show(new []{ "No paths found" });
             }
             else
             {
-                listbox_show(new String[] { "" });
+                listbox_show(new []{ "" });
             }
         }
 
@@ -224,6 +257,24 @@ namespace FormsApp
                     g.DrawLine(pen, pt1, pt2);
                 }
             }
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            var trackTopo = this.eulynx?.ownsRtmEntities?.usesTrackTopology;
+            if (trackTopo == null) return;
+
+            fillComboBoxPathFindEnd(trackTopo.usesPositioningNetElement.Select(n => n.uuid).ToArray());
+
+            comboBox_pathFindStart.SelectedItem = null;
+            comboBox_pathFindStart.Text = null;
+            comboBox_pathFindEnd.SelectedItem = null;
+            comboBox_pathFindEnd.Text = null;
+
+            PositioningNetElement[] allNetElements = this.eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
+            paintFoundPath(new PositioningNetElement[] { }, allNetElements);
+
+            listbox_show(new []{ "" });
         }
     }
 }
