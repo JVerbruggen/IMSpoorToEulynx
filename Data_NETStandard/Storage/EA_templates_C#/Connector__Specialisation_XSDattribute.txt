@@ -1,4 +1,4 @@
 %if connectorType=="Generalization" and className!=connectorSourceElemName%
-$pad=%packageTag:"targetnamespaceURL"%
-[XmlIncludeAttribute(typeof($pad:%connectorSourceElemName%))]
+$pad=%packageTag:"targetnamespace"%
+[XmlIncludeAttribute(typeof($pad.%connectorSourceElemName%))]
 %endIf%
