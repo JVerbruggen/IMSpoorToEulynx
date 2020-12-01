@@ -13,13 +13,6 @@ namespace Models.TopoModels.Eulynx.EULYNX_Signalling
 
         }
 
-        public Signal(IMSpoor.V1_3_0.Signal imspoorSignal, Signalling.Signal rtmSignal, tElementWithIDref[] signalFrames)
-        {
-            this.uuid = imspoorSignal.puic;
-            this.refersToRtmSignal = new tElementWithIDref(rtmSignal.uuid);
-            this.hasSignalFrame = signalFrames;
-        }
-
         public Signal(string uuid, LocalDatum hasLocalDatum, tElementWithIDref hasLocation, tElementWithIDref[] hasSignalFrame, FixingTypes isOfFixingType, tElementWithIDref[] refersToOverlapsForDisplay, tElementWithIDref refersToRtmSignal, tElementWithIDref[] refersToSafetyDistance, tElementWithIDref showsDefaultMessage)
         {
             this.uuid = uuid;
@@ -33,7 +26,7 @@ namespace Models.TopoModels.Eulynx.EULYNX_Signalling
             this.showsDefaultMessage = showsDefaultMessage;
         }
 
-        public override BaseLocation GetLocation(BaseLocation[] allLocations)
+        public override BaseLocation GetLocation(IEnumerable<BaseLocation> allLocations)
         {
             tElementWithIDref location = this.hasLocation;
             BaseLocation bl = BaseLocation.Find(allLocations, location);

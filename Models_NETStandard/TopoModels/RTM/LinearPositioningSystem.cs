@@ -13,7 +13,6 @@ namespace Models.TopoModels.Eulynx.Common
 
         public LinearPositioningSystem(int startMeasure, int endMeasure)
         {
-            this.uuid = "newid?";
             this.startMeasure = new Length(startMeasure);
             this.endMeasure = new Length(endMeasure);
             this.name = "someName";

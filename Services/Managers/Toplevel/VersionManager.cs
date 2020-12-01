@@ -15,7 +15,7 @@ namespace Services.Managers.Toplevel
             Version version = new Version();
 
             XsdGeneratorVersion xsdGeneratorVersion = new XsdGeneratorVersion();
-            xsdGeneratorVersion.generatedByTool = "IMSpoor-1.3.0 to EULYNX Converter tool";
+            xsdGeneratorVersion.generatedByTool = "IMSpoor-1.2.3 to EULYNX Converter tool";
             xsdGeneratorVersion.generatedByToolVersion = "0.1";
             XsdGeneratorVersion[] generatedByTool = new XsdGeneratorVersion[] { xsdGeneratorVersion };
 

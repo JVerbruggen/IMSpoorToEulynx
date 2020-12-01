@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Models.Base;
 
 namespace Services.DependencyInjection.Abstract
 {
-    public interface IInstanceSupplier
+    public interface IInstanceSupplier<T> : IAbstractInstanceSupplier
+        where T : IManageable
     {
+        T GetInstance();
+
+        IInstanceSupplier<IManageable> GetManageable();
     }
 }

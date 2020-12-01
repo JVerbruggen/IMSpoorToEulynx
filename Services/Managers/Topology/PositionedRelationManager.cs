@@ -1,5 +1,6 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.IMSpoor.V1_2_3;
+using Services.Extensions;
 using Services.Managers.Base;
 using System;
 using System.Collections.Generic;
@@ -121,6 +122,8 @@ namespace Services.Managers.Topology
                 trackRelation.positionOnA = relationDirection == RelationDirection.ONWARDS ? Usage.start : Usage.end; // Current track
                 trackRelation.positionOnB = tToGoToRelation.RelationDirection == RelationDirection.ONWARDS ? Usage.start : Usage.end;
 
+                trackRelation.AllocateUUID();
+
                 positionedRelations.Add(trackRelation);
             }
 
@@ -149,7 +152,25 @@ namespace Services.Managers.Topology
             return sourceList;
         }
 
+        public PositionedRelation GetRelation(PositioningNetElement a, PositioningNetElement b, PositionedRelation[] allRelations)
+        {
+            PositionedRelation foundRelation = null;
 
+            foreach(var relationId in a.relation){
+                var rel = b.relation.Where(r => r.Equals(relationId)).FirstOrDefault();
+                if(rel != default)
+                {
+                    var found = this.Find(allRelations, rel);
+                    if(found != null)
+                    {
+                        foundRelation = found;
+                        break;
+                    }
+                }
+            }
+
+            return foundRelation;
+        }
 
         public PositionedRelation[] GetPositionedRelations(RailTopology railTopology)
         {

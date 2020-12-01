@@ -1,6 +1,7 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
+using Services.Extensions;
 using Services.Managers.Base;
 using Services.Managers.Positioning;
 using Services.Service;
@@ -18,6 +19,11 @@ namespace Services.Managers.Location
         {
             KmRibbonLocation kmRibbonLocation = pointLocation.KmRibbonLocation;
 
+            PositioningSystemManager positioningSystemManager = InstanceManager.Singleton<PositioningSystemManager>().GetInstance();
+            //positioningSystemManager.GetLinearPositioningSystem()
+
+            //SpotLocation linearSpotLocation = new SpotLocationCoordinate()
+
             throw new NotImplementedException();
         }
 
@@ -31,8 +37,9 @@ namespace Services.Managers.Location
 
             GeometryDeserializer geometryDeserializer = InstanceManager.Singleton<GeometryDeserializer>().GetInstance();
             float[] xy = geometryDeserializer.GetCoordinate(geoLocation.Point);
+
             CartesianCoordinate positioningSystemCoordinate = new CartesianCoordinate(xy[0], xy[1], gps, "");
-            positioningSystemCoordinate.uuid = UUIDService.NewFakeUUID(positioningSystemCoordinate);
+            positioningSystemCoordinate.AllocateUUID();
 
             positioningSystemCoordinateManager.Register(positioningSystemCoordinate);
 
@@ -42,6 +49,7 @@ namespace Services.Managers.Location
             SpotLocationCoordinate spotLocationCoordinate = new SpotLocationCoordinate(positioningSystemCoordinateRef, uuid);
             return spotLocationCoordinate;
         }
+
         
         public tElementWithIDref GetGeoLocationRef(tPointLocation pointLocation)
         {

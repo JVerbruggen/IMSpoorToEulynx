@@ -1,6 +1,7 @@
 ﻿using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
+using Services.Extensions;
 using Services.Managers.Base;
 using Services.Service;
 using System;
@@ -12,6 +13,16 @@ namespace Services.Managers.Positioning
 {
     public class IntrinsicCoordinateManager : UUIDObjectManager<IntrinsicCoordinate>
     {
+        public IntrinsicCoordinate GetIntrinsicCoordinate(double linearMeasure)
+        {
+            LinearCoordinate lc = new LinearCoordinate(new Length(0), linearMeasure, new Length(0));
+
+            var intrinsicCoordinate = new IntrinsicCoordinate(lc);
+            intrinsicCoordinate.AllocateUUID();
+
+            return intrinsicCoordinate;
+        }
+
         public IntrinsicCoordinate GetIntrinsicCoordinate(double x, double y, tElementWithIDref geometricPositioningSystem)
         {
             CartesianCoordinate cartesianCoordinate = InstanceManager.Singleton<CartesianCoordinateManager>().GetInstance().GetCartesianCoordinate(x, y, geometricPositioningSystem);
@@ -28,7 +39,7 @@ namespace Services.Managers.Positioning
         {
             GeometryDeserializer geometryDeserializer = InstanceManager.Singleton<GeometryDeserializer>().GetInstance();
 
-            float[,] coords = geometryDeserializer.GetCoordinates(lineString.coordinates);
+            float[,] coords = geometryDeserializer.Get3Coordinates(lineString.coordinates);
 
             IList<IntrinsicCoordinate> intrinsicCoordinates = new List<IntrinsicCoordinate>();
             for (int i = 0; i < coords.GetLength(0); i++)
