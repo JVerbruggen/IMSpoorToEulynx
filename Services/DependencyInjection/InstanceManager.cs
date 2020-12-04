@@ -1,6 +1,7 @@
 ﻿using Models.Base;
 using Services.DependencyInjection.Abstract;
 using Services.Factory.Base;
+using Services.Mapping.Assets.LevelCrossing;
 using Services.Mapping.Base;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Services.DependencyInjection
     {
         private static IList<IAbstractInstanceSupplier> instanceSuppliers = new List<IAbstractInstanceSupplier>();
         private static IList<IFactory<IManageable>> factories = new List<IFactory<IManageable>>();
-        private static IList<IMappingSelector<IMappable, IMappable>> mappingSelectors = new List<IMappingSelector<IMappable, IMappable>>();
+        private static IList<IMappingSelector> mappingSelectors = new List<IMappingSelector>();
 
         /// <summary>
         /// Get factory that supplies given type
@@ -73,20 +74,6 @@ namespace Services.DependencyInjection
             where U : IMappable
         {
             IMappingSelector<T, U> alreadyExistingMappingSelector = GetMappingSelector<T, U>();
-            if(alreadyExistingMappingSelector == null)
-            {
-                mappingSelectors.Add(mappingSelector.GetMappables());
-                return true;
-            }
-            return false;
-        }
-
-        public static bool RegisterMappingSelectorB(IMappingSelector<IMappable, IMappable> mappingSelector)
-        {
-            Type t = mappingSelector.GetInput();
-            Type u = mappingSelector.GetOutput();
-
-            IMappingSelector<IMappable, IMappable> alreadyExistingMappingSelector = mappingSelectors.Where(ms => ms.CompareTo(t)).First();
             if (alreadyExistingMappingSelector == null)
             {
                 mappingSelectors.Add(mappingSelector);
@@ -95,9 +82,15 @@ namespace Services.DependencyInjection
             return false;
         }
 
+        /// <summary>
+        /// Get a mapping selector that was previously registered
+        /// </summary>
+        /// <typeparam name="T">Input type of mapping</typeparam>
+        /// <typeparam name="U">Output type of mapping</typeparam>
+        /// <returns>Found MappingSelector<T,U>, null if not found</returns>
         public static IMappingSelector<T, U> GetMappingSelector<T, U>()
-            where T : IMappable
-            where U : IMappable
+           where T : IMappable
+           where U : IMappable
         {
             if (mappingSelectors.Count == 0) return null;
 

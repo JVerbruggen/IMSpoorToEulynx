@@ -5,7 +5,11 @@ using System.Text;
 
 namespace Services.Mapping.Base
 {
-    public interface IMappingSelector<T, U> : Models.Base.IComparable
+    public interface IMappingSelector : Models.Base.IComparable
+    {
+    }
+
+    public interface IMappingSelector<T, U> : IMappingSelector
         where T : IMappable
         where U : IMappable
     {

@@ -6,12 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data_NETStandard\3.0. Data.csproj" />
-    <ProjectReference Include="..\Models_NETStandard\4.0. Models.csproj" />
+    <Compile Remove="Factory\Toplevel\**" />
+    <EmbeddedResource Remove="Factory\Toplevel\**" />
+    <None Remove="Factory\Toplevel\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Factory\Toplevel\" />
+    <ProjectReference Include="..\Data_NETStandard\3.0. Data.csproj" />
+    <ProjectReference Include="..\Models_NETStandard\4.0. Models.csproj" />
   </ItemGroup>
 
 </Project>

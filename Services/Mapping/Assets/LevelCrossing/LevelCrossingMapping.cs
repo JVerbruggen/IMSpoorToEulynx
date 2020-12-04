@@ -1,4 +1,5 @@
-﻿using Models.TopoModels.Eulynx.EULYNX_Signalling;
+﻿using Models.Base;
+using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.Mapping.Base;
 using System;
@@ -25,6 +26,11 @@ namespace Services.Mapping.Assets.LevelCrossing
                 mapping = new LevelCrossingMappingDefault();
             }
             return mapping;
+        }
+
+        public IMapping<IMappable, IMappable> Select(IMappable input)
+        {
+            throw new NotImplementedException();
         }
     }
 }

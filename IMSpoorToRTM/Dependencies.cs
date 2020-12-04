@@ -30,8 +30,8 @@ namespace FormsApp
 
         public static void RegisterMappingSelectors()
         {
-            InstanceManager.RegisterMappingSelectorB(new LevelCrossingMapping());
-            InstanceManager.RegisterMappingSelectorB(new SignalMapping());
+            InstanceManager.RegisterMappingSelector(new LevelCrossingMapping());
+            InstanceManager.RegisterMappingSelector(new SignalMapping());
         }
     }
 }
