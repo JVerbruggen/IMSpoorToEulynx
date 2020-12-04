@@ -1,6 +1,8 @@
 ﻿using Models.Base;
 using Services.DependencyInjection.Abstract;
 using Services.Factory.Base;
+using Services.Mapping.Assets.LevelCrossing;
+using Services.Mapping.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,7 @@ namespace Services.DependencyInjection
     {
         private static IList<IAbstractInstanceSupplier> instanceSuppliers = new List<IAbstractInstanceSupplier>();
         private static IList<IFactory<IManageable>> factories = new List<IFactory<IManageable>>();
+        private static IList<IMappingSelector> mappingSelectors = new List<IMappingSelector>();
 
         /// <summary>
         /// Get factory that supplies given type
@@ -47,7 +50,8 @@ namespace Services.DependencyInjection
         /// <typeparam name="T">Type the factory is supplying</typeparam>
         /// <param name="factory">The factory to register</param>
         /// <returns>True if registered, False if already existed</returns>
-        public static bool RegisterFactory<T>(IFactory<T> factory) where T : IManageable
+        public static bool RegisterFactory<T>(IFactory<T> factory) 
+            where T : IManageable
         {
             IFactory<T> alreadyExistingFactory = GetFactory<T>();
             if(alreadyExistingFactory == null)
@@ -56,6 +60,45 @@ namespace Services.DependencyInjection
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Registers a mapping selector
+        /// </summary>
+        /// <typeparam name="T">Mapping input type</typeparam>
+        /// <typeparam name="U">Mapping output type</typeparam>
+        /// <param name="mappingSelector">The mapping selector to register</param>
+        /// <returns>True if registered, False if already existed</returns>
+        public static bool RegisterMappingSelector<T, U>(IMappingSelector<T, U> mappingSelector)
+            where T : IMappable
+            where U : IMappable
+        {
+            IMappingSelector<T, U> alreadyExistingMappingSelector = GetMappingSelector<T, U>();
+            if (alreadyExistingMappingSelector == null)
+            {
+                mappingSelectors.Add(mappingSelector);
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Get a mapping selector that was previously registered
+        /// </summary>
+        /// <typeparam name="T">Input type of mapping</typeparam>
+        /// <typeparam name="U">Output type of mapping</typeparam>
+        /// <returns>Found MappingSelector<T,U>, null if not found</returns>
+        public static IMappingSelector<T, U> GetMappingSelector<T, U>()
+           where T : IMappable
+           where U : IMappable
+        {
+            if (mappingSelectors.Count == 0) return null;
+
+            var mappingSelectorsWType = mappingSelectors.Where(ms => ms.CompareTo(typeof(T)));
+            if (mappingSelectorsWType.Count() == 0) return null;
+
+            IMappingSelector<T, U> foundMappingSelector = mappingSelectorsWType.Cast<IMappingSelector<T, U>>()?.First();
+            return foundMappingSelector;
         }
 
         /// <summary>

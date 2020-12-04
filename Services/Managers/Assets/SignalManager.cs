@@ -13,32 +13,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SignalIMSpoor = Models.TopoModels.IMSpoor.V1_2_3.Signal;
+using SignalEULYNX = Models.TopoModels.Eulynx.EULYNX_Signalling.Signal;
 
 namespace Services.Managers.Assets
 {
-    public class SignalManager : ItemManager<Signal>
+    public class SignalManager : ItemManager<SignalEULYNX>
     {
-        public IMapping<SignalIMSpoor, Signal> GetMapping(SignalIMSpoor imspoorSignal)
-        {
-            IMapping<SignalIMSpoor, Signal> mapping;
-            if (imspoorSignal.signalType == Models.TopoModels.IMSpoor.V1_2_3.tSignalEnum.Controlled)
-            {
-                mapping = new SignalMappingControlled();
-            }
-            else
-            {
-                mapping = new SignalMappingDefault();
-            }
-            return mapping;
-        }
 
-        public Signal[] GetSignals(SignalIMSpoor[] imspoorSignals)
+        public SignalEULYNX[] GetSignals(SignalIMSpoor[] imspoorSignals)
         {
-            IList<Signal> signalsConverted = new List<Signal>();
+            IList<SignalEULYNX> signalsConverted = new List<SignalEULYNX>();
             foreach (SignalIMSpoor imspoorSignal in imspoorSignals)
             {
-                IMapping<SignalIMSpoor, Signal> mapping = GetMapping(imspoorSignal);
-                Signal signal = mapping.Map(imspoorSignal);
+                IMapping<SignalIMSpoor, SignalEULYNX> mapping = InstanceManager.GetMappingSelector<SignalIMSpoor, SignalEULYNX>().Select(imspoorSignal);
+                SignalEULYNX signal = mapping.Map(imspoorSignal);
 
                 if (signal == null) continue;
 
@@ -48,7 +36,7 @@ namespace Services.Managers.Assets
             return signalsConverted.ToArray();
         }
 
-        public BaseLocation GetLocation(Signal signal)
+        public BaseLocation GetLocation(SignalEULYNX signal)
         {
             tElementWithIDref rtmSignalRef = signal.refersToRtmSignal;
 
