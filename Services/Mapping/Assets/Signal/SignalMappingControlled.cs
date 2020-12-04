@@ -15,7 +15,7 @@ namespace Services.Mapping.Assets.Signal
     {
         public Models.TopoModels.Eulynx.EULYNX_Signalling.Signal Map(Models.TopoModels.IMSpoor.V1_2_3.Signal input)
         {
-            return input;
+            return null;
         }
     }
 }
