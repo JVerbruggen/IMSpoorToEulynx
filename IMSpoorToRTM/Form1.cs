@@ -36,6 +36,7 @@ namespace FormsApp
 
             Dependencies.RegisterFactories();
             Dependencies.RegisterDependencies();
+            Dependencies.RegisterMappingSelectors();
 
             //Signal signal = new Models.TopoModels.Eulynx.EULYNX_Signalling.Signal();
             //tElementWithIDref signalRef = signal;

@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Models.Base
 {
-    public interface IManageable : IMappable
+    public interface IComparable
     {
+        bool CompareTo(object o);
+        bool CompareTo(Type t);
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Models.Base
 {
-    public interface IManageable : IMappable
+    public interface IMappable
     {
     }
 }

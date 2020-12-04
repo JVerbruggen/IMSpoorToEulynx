@@ -5,6 +5,8 @@ using Services.DependencyInjection;
 using Services.Factory.Assets;
 using Services.Factory.Manager;
 using Services.Managers.Assets;
+using Services.Mapping.Assets.LevelCrossing;
+using Services.Mapping.Assets.Signal;
 using Services.Mapping.Base;
 
 namespace FormsApp
@@ -24,6 +26,12 @@ namespace FormsApp
 
             //InstanceManager.Singleton<TrackAssetManager>(new TrackAssetManagerLimited());
 
+        }
+
+        public static void RegisterMappingSelectors()
+        {
+            InstanceManager.RegisterMappingSelectorB(new LevelCrossingMapping());
+            InstanceManager.RegisterMappingSelectorB(new SignalMapping());
         }
     }
 }
