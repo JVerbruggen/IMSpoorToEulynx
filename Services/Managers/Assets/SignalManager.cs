@@ -5,48 +5,43 @@ using Services.DependencyInjection;
 using Services.Extensions;
 using Services.Managers.Base;
 using Services.Managers.Location;
+using Services.Mapping.Assets.Signal;
+using Services.Mapping.Base;
 using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SignalIMSpoor = Models.TopoModels.IMSpoor.V1_2_3.Signal;
 
 namespace Services.Managers.Assets
 {
     public class SignalManager : ItemManager<Signal>
     {
-        public Signal[] GetSignals(Models.TopoModels.IMSpoor.V1_2_3.Signal[] imspoorSignals)
+        public IMapping<SignalIMSpoor, Signal> GetMapping(SignalIMSpoor imspoorSignal)
+        {
+            IMapping<SignalIMSpoor, Signal> mapping;
+            if (imspoorSignal.signalType == Models.TopoModels.IMSpoor.V1_2_3.tSignalEnum.Controlled)
+            {
+                mapping = new SignalMappingControlled();
+            }
+            else
+            {
+                mapping = new SignalMappingDefault();
+            }
+            return mapping;
+        }
+
+        public Signal[] GetSignals(SignalIMSpoor[] imspoorSignals)
         {
             IList<Signal> signalsConverted = new List<Signal>();
-            foreach (Models.TopoModels.IMSpoor.V1_2_3.Signal imspoorSignal in imspoorSignals)
+            foreach (SignalIMSpoor imspoorSignal in imspoorSignals)
             {
-                SpotLocationManager spotLocationManager = InstanceManager.Singleton<SpotLocationManager>().GetInstance();
-                SignalFrameManager signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();
-                SignalRTMManager signalRTMManager = InstanceManager.Singleton<SignalRTMManager>().GetInstance();
+                IMapping<SignalIMSpoor, Signal> mapping = GetMapping(imspoorSignal);
+                Signal signal = mapping.Map(imspoorSignal);
 
-                SpotLocation geoSpotLocation = spotLocationManager.GetGeoLocation(imspoorSignal.Location);
-                //SpotLocation linearSpotLocation = spotLocationManager.GetLineLocation(imspoorSignal.Location);
+                if (signal == null) continue;
 
-                spotLocationManager.Register(geoSpotLocation);
-
-                var rtmSignal = new Models.TopoModels.Eulynx.Signalling.Signal((tElementWithIDref)geoSpotLocation);
-                rtmSignal.AllocateUUID();
-                signalRTMManager.Register(rtmSignal);
-
-                var imspoorRailconnectionInfo = imspoorSignal.RailConnectionInfo;
-                if(imspoorRailconnectionInfo.Length >= 2)
-                {
-                    throw new NotImplementedException("Een sein met meerdere rail connecties!");
-                }
-
-                geoSpotLocation.netElement = new tElementWithIDref(imspoorRailconnectionInfo[0].railConnectionRef);
-
-                SignalFrame[] signalFrames = signalFrameManager.GetSignalFrames();
-                tElementWithIDref[] signalFramesRefs = tElementWithIDref.GetTElementsWithIDref(signalFrames);
-                signalFrameManager.Register(signalFrames);
-
-                string uuid = imspoorSignal.puic;
-                Signal signal = new Signal(uuid, null, geoSpotLocation, signalFramesRefs, FixingTypes.foundation, null, rtmSignal, null, null);
                 signalsConverted.Add(signal);
                 this.Register(signal);
             }

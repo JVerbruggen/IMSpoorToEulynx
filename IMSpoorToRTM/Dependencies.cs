@@ -1,8 +1,13 @@
-﻿using Models.TopoModels.Eulynx.EULYNX_Signalling;
+﻿using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.Eulynx.EULYNX_Signalling;
+using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Factory.Assets;
 using Services.Factory.Manager;
 using Services.Managers.Assets;
+using Services.Managers.Mapping;
+using Services.Mapping.Asset.Signal;
+using Services.Mapping.Base;
 
 namespace FormsApp
 {
@@ -21,6 +26,13 @@ namespace FormsApp
 
             //InstanceManager.Singleton<TrackAssetManager>(new TrackAssetManagerLimited());
 
+        }
+
+        public static void RegisterMappings()
+        {
+            MappingManager mappingManager = InstanceManager.Singleton<MappingManager>().GetInstance();
+
+            mappingManager.Register((IMapping<tBaseObject>)new SignalControlled());
         }
     }
 }
