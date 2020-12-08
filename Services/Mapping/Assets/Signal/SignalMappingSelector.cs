@@ -8,7 +8,7 @@ using Models.TopoModels.IMSpoor.V1_2_3;
 
 namespace Services.Mapping.Assets.Signal
 {
-    public class SignalMapping : MappingSelector<SignalIMSpoor, SignalEULYNX>
+    public class SignalMappingSelector : MappingSelector<SignalIMSpoor, SignalEULYNX>
     {
         public override IMapping<SignalIMSpoor, SignalEULYNX> Select(SignalIMSpoor input)
         {

@@ -15,9 +15,12 @@ namespace Services.Mapping.Base
     {
         IMapping<T, U> Select(T input);
 
+        [Obsolete]
         IMappingSelector<IMappable, IMappable> GetMappables();
 
+        [Obsolete]
         Type GetInput();
+        [Obsolete]
         Type GetOutput();
     }
 }

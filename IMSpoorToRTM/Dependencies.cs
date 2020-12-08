@@ -1,13 +1,18 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.Base;
+using Models.Mapping.Topology;
+using Models.TopoModels.Eulynx.Common;
 using Models.TopoModels.Eulynx.EULYNX_Signalling;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Factory.Assets;
 using Services.Factory.Manager;
 using Services.Managers.Assets;
+using Services.Managers.Positioning;
+using Services.Managers.Topology;
 using Services.Mapping.Assets.LevelCrossing;
 using Services.Mapping.Assets.Signal;
 using Services.Mapping.Base;
+using Services.Mapping.Topology;
 
 namespace FormsApp
 {
@@ -24,14 +29,19 @@ namespace FormsApp
             // Add abstract singletons here with implementing type
             // Registering here will override a factory with the same type
 
-            //InstanceManager.Singleton<TrackAssetManager>(new TrackAssetManagerLimited());
-
+            // InstanceManager.Singleton<TrackAssetManager>(new TrackAssetManagerLimited());
         }
 
         public static void RegisterMappingSelectors()
         {
-            InstanceManager.RegisterMappingSelector(new LevelCrossingMapping());
-            InstanceManager.RegisterMappingSelector(new SignalMapping());
+            var associatedPositioningSystemManager = InstanceManager.Singleton<AssociatedPositioningSystemManager>().GetInstance();
+            var positionedRelationManager = InstanceManager.Singleton<PositionedRelationManager>().GetInstance();
+
+            InstanceManager.RegisterMappingSelector(new PositioningNetElementMappingSelector(associatedPositioningSystemManager));
+            InstanceManager.RegisterMappingSelector(new PositionedRelationMappingSelector(positionedRelationManager));
+
+            InstanceManager.RegisterMappingSelector(new LevelCrossingMappingSelector());
+            InstanceManager.RegisterMappingSelector(new SignalMappingSelector());
         }
     }
 }

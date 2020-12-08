@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Services.Mapping.Assets.LevelCrossing
 {
-    public class LevelCrossingMapping : MappingSelector<Models.TopoModels.IMSpoor.V1_2_3.LevelCrossing, LevelCrossingSystem>
+    public class LevelCrossingMappingSelector : MappingSelector<Models.TopoModels.IMSpoor.V1_2_3.LevelCrossing, LevelCrossingSystem>
     {
         public override IMapping<Models.TopoModels.IMSpoor.V1_2_3.LevelCrossing, LevelCrossingSystem> Select(Models.TopoModels.IMSpoor.V1_2_3.LevelCrossing input)
         {
@@ -26,11 +26,6 @@ namespace Services.Mapping.Assets.LevelCrossing
                 mapping = new LevelCrossingMappingDefault();
             }
             return mapping;
-        }
-
-        public IMapping<IMappable, IMappable> Select(IMappable input)
-        {
-            throw new NotImplementedException();
         }
     }
 }
