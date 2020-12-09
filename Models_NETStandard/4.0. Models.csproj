@@ -5,8 +5,4 @@
     <RootNamespace>Models</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="TopoModels\Generated\Eulynx\" />
-  </ItemGroup>
-
 </Project>

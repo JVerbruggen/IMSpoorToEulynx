@@ -13,7 +13,20 @@ namespace Services.Mapping.Base
         where T : IMappable
         where U : IMappable
     {
+        /// <summary>
+        /// Select specific mapping for a certain input object.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         IMapping<T, U> Select(T input);
+
+        /// <summary>
+        /// Map object to output.
+        /// Uses Select(T input) function to select a mapping
+        /// </summary>
+        /// <param name="input">Object to map</param>
+        /// <returns>Mapped object</returns>
+        U Map(T input);
 
         [Obsolete]
         IMappingSelector<IMappable, IMappable> GetMappables();

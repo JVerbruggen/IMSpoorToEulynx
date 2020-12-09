@@ -38,5 +38,11 @@ namespace Services.Mapping.Base
         }
 
         public abstract IMapping<T, U> Select(T input);
+
+        public U Map(T input)
+        {
+            var mapping = Select(input);
+            return mapping.Map(input);
+        }
     }
 }

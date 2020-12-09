@@ -25,8 +25,7 @@ namespace Services.Managers.Assets
             IList<SignalEULYNX> signalsConverted = new List<SignalEULYNX>();
             foreach (SignalIMSpoor imspoorSignal in imspoorSignals)
             {
-                IMapping<SignalIMSpoor, SignalEULYNX> mapping = InstanceManager.GetMappingSelector<SignalIMSpoor, SignalEULYNX>().Select(imspoorSignal);
-                SignalEULYNX signal = mapping.Map(imspoorSignal);
+                SignalEULYNX signal = InstanceManager.GetMappingSelector<SignalIMSpoor, SignalEULYNX>().Map(imspoorSignal);
 
                 if (signal == null) continue;
 
