@@ -6,6 +6,10 @@ using System.Text;
 
 namespace Services.Factory.Base
 {
+    /// <summary>
+    /// Creates a Manageable object
+    /// </summary>
+    /// <typeparam name="T">Object to be created</typeparam>
     public abstract class Factory<T> : IFactory<T>
         where T : IManageable
     {

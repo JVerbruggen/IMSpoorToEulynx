@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Services.Factory.Base
 {
+
     public interface IFactory<out T> : Models.Base.IComparable
         where T : IManageable
     {

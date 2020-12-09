@@ -5,6 +5,10 @@ using System.Text;
 
 namespace Models.File
 {
+    /// <summary>
+    /// Object to read a file
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IReadFileService<T> : IService
     {
         /// <summary>

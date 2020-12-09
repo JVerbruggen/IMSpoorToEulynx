@@ -8,6 +8,10 @@ namespace Services.Extensions
 {
     public static class BaseObjectExtension
     {
+        /// <summary>
+        /// Reset UUID and allocate a new UUID based on object type and its properties.
+        /// </summary>
+        /// <param name="bo"></param>
         public static void AllocateUUID(this BaseObject bo)
         {
             bo.uuid = default;

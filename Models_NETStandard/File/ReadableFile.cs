@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Models.File
 {
+    [Obsolete]
     public class ReadableFile : IReadableFile
     {
         public string FilePath { get; }

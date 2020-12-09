@@ -5,6 +5,7 @@ using System.Xml.Linq;
 
 namespace Models.Data
 {
+    [Obsolete]
     public interface IDataSource
     {
         String FileName { get; }
