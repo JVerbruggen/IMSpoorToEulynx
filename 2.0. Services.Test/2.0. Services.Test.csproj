@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Service\" />
+    <ProjectReference Include="..\Services\2.0. Services.csproj" />
   </ItemGroup>
 
 </Project>

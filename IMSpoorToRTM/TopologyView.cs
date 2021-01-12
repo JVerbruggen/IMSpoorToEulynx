@@ -262,16 +262,16 @@ namespace FormsApp
 
         private void groupBox_drawing_Paint(object sender, PaintEventArgs e)
         {
-            var g = e.Graphics;
-            using(Brush brush = new SolidBrush(System.Drawing.Color.Black))
-            {
-                using (Pen pen = new Pen(brush, 5))
-                {
-                    var pt1 = new System.Drawing.Point(0, 0);
-                    var pt2 = new System.Drawing.Point(100, 100);
-                    g.DrawLine(pen, pt1, pt2);
-                }
-            }
+            //var g = e.Graphics;
+            //using(Brush brush = new SolidBrush(System.Drawing.Color.Black))
+            //{
+            //    using (Pen pen = new Pen(brush, 5))
+            //    {
+            //        var pt1 = new System.Drawing.Point(0, 0);
+            //        var pt2 = new System.Drawing.Point(100, 100);
+            //        g.DrawLine(pen, pt1, pt2);
+            //    }
+            //}
         }
 
         private void button_reset_Click(object sender, EventArgs e)

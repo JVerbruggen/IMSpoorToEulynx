@@ -30,6 +30,7 @@
         {
             this.groupBox_drawing = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_includePassedElements = new System.Windows.Forms.CheckBox();
             this.button_reset = new System.Windows.Forms.Button();
             this.button_possiblePaths = new System.Windows.Forms.Button();
             this.button_findPathSubmit = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.button_netEntities = new System.Windows.Forms.Button();
             this.groupBox_info = new System.Windows.Forms.GroupBox();
             this.button_details = new System.Windows.Forms.Button();
-            this.checkBox_includePassedElements = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox_info.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Path finder";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
+            // 
+            // checkBox_includePassedElements
+            // 
+            this.checkBox_includePassedElements.AutoSize = true;
+            this.checkBox_includePassedElements.Location = new System.Drawing.Point(6, 118);
+            this.checkBox_includePassedElements.Name = "checkBox_includePassedElements";
+            this.checkBox_includePassedElements.Size = new System.Drawing.Size(193, 24);
+            this.checkBox_includePassedElements.TabIndex = 5;
+            this.checkBox_includePassedElements.Text = "Include passed elements";
+            this.checkBox_includePassedElements.UseVisualStyleBackColor = true;
             // 
             // button_reset
             // 
@@ -174,16 +184,6 @@
             this.button_details.UseVisualStyleBackColor = true;
             this.button_details.Click += new System.EventHandler(this.button_details_Click);
             // 
-            // checkBox_includePassedElements
-            // 
-            this.checkBox_includePassedElements.AutoSize = true;
-            this.checkBox_includePassedElements.Location = new System.Drawing.Point(6, 118);
-            this.checkBox_includePassedElements.Name = "checkBox_includePassedElements";
-            this.checkBox_includePassedElements.Size = new System.Drawing.Size(193, 24);
-            this.checkBox_includePassedElements.TabIndex = 5;
-            this.checkBox_includePassedElements.Text = "Include passed elements";
-            this.checkBox_includePassedElements.UseVisualStyleBackColor = true;
-            // 
             // TopologyView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -193,7 +193,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox_drawing);
             this.Name = "TopologyView";
-            this.Text = "Net entities";
+            this.Text = "Topology View";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox_info.ResumeLayout(false);

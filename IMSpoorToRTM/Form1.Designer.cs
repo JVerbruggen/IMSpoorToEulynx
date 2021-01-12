@@ -184,7 +184,7 @@
             this.Controls.Add(this.groupBox_IMSpoorXML);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "IMSpoorToEulynx";
             this.groupBox_IMSpoorXML.ResumeLayout(false);
             this.groupBox_IMSpoorXML.PerformLayout();
             this.groupBox_eulynxXML.ResumeLayout(false);
