@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Extensions;
@@ -28,20 +28,20 @@ namespace Services.Managers.Positioning
             CartesianCoordinate cartesianCoordinate = InstanceManager.Singleton<CartesianCoordinateManager>().GetInstance().GetCartesianCoordinate(x, y, geometricPositioningSystem);
             tElementWithIDref[] cartesianCoordinateRef = tElementWithIDref.GetTElementsWithIDref(cartesianCoordinate);
 
-            string uuid = UUIDService.NewFakeUUID("intrinsic:" + x + y + geometricPositioningSystem.@ref);
+            string uuid = UUIDService.NewFakeUUID("intrinsic:" + x + y + geometricPositioningSystem.GetRef());
 
             IntrinsicCoordinate intrinsicCoordinate = new IntrinsicCoordinate(cartesianCoordinateRef, uuid);
 
             return intrinsicCoordinate;
         }
 
-        public IntrinsicCoordinate[] GetIntrinsicCoordinates(tElementWithIDref geometricPositioningSystem, LineString lineString)
+        public List<IntrinsicCoordinate> GetIntrinsicCoordinates(tElementWithIDref geometricPositioningSystem, LineString lineString)
         {
             GeometryDeserializer geometryDeserializer = InstanceManager.Singleton<GeometryDeserializer>().GetInstance();
 
             float[,] coords = geometryDeserializer.Get3Coordinates(lineString.coordinates);
 
-            IList<IntrinsicCoordinate> intrinsicCoordinates = new List<IntrinsicCoordinate>();
+            List<IntrinsicCoordinate> intrinsicCoordinates = new List<IntrinsicCoordinate>();
             for (int i = 0; i < coords.GetLength(0); i++)
             {
                 double x = coords[i, 0];
@@ -51,7 +51,7 @@ namespace Services.Managers.Positioning
                 intrinsicCoordinates.Add(intrinsicCoordinate);
             }
 
-            return intrinsicCoordinates.ToArray();
+            return intrinsicCoordinates;
         }
     }
 }

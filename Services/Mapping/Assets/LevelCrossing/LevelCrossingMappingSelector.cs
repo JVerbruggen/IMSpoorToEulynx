@@ -1,5 +1,5 @@
 ﻿using Models.Base;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
+using Models.TopoModels.EULYNX.sig;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.Mapping.Base;
 using System;

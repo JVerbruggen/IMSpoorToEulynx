@@ -1,6 +1,5 @@
 ﻿using Models.File;
-using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
+using Models.TopoModels.EULYNX.dp;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Models.Translation;
 using Services.DependencyInjection;
@@ -20,12 +19,12 @@ namespace FormsApp
 {
     public partial class Form1 : Form
     {
-        private ITranslationService<IMSpoor, Eulynx> imspoorToEulynxTranslationService = new IMSpoorToEulynxTranslationService();
+        private ITranslationService<IMSpoor, EulynxDataPrep> imspoorToEulynxTranslationService = new IMSpoorToEulynxTranslationService();
         [Obsolete]
         private IReadFileService<IMSpoor> imSpoorFileReadService = new ReadIMSpoorFileService();
-        private IReadFileService<Eulynx> eulynxFileReadService = new ReadEulynxFileService();
+        private IReadFileService<EulynxDataPrep> eulynxFileReadService = new ReadEulynxFileService();
         private IReadFileService<IEnumerable<XElement>> xmlFileReadService;
-        private IXDocSerializer<Eulynx> eulynxSerializer = new XDocSerializeService();
+        private IXDocSerializer<EulynxDataPrep> eulynxSerializer = new XDocSerializeService();
 
         public Form1()
         {
@@ -37,11 +36,6 @@ namespace FormsApp
             Dependencies.RegisterFactories();
             Dependencies.RegisterDependencies();
             Dependencies.RegisterMappingSelectors();
-
-            //Signal signal = new Models.TopoModels.Eulynx.EULYNX_Signalling.Signal();
-            //tElementWithIDref signalRef = signal;
-
-            
         }
 
         private void button_chooseIMSpoorXML_Click(object sender, EventArgs e)
@@ -62,7 +56,7 @@ namespace FormsApp
             button_startConversion.Enabled = File.Exists(filePath);
         }
 
-        private void saveEulynx(Eulynx eulynx)
+        private void saveEulynx(EulynxDataPrep eulynx)
         {
             XDocument eulynxDoc = eulynxSerializer.Serialize(eulynx);
 
@@ -85,7 +79,7 @@ namespace FormsApp
             }
 
             IMSpoor imSpoor = imSpoorFileReadService.Read(filePath);
-            Eulynx eulynx = imspoorToEulynxTranslationService.Translate(imSpoor);
+            EulynxDataPrep eulynx = imspoorToEulynxTranslationService.Translate(imSpoor);
 
             saveEulynx(eulynx);
             showTopology(eulynx);
@@ -133,7 +127,7 @@ namespace FormsApp
 
         }
 
-        private void showTopology(Eulynx eulynx)
+        private void showTopology(EulynxDataPrep eulynx)
         {
             TopologyView topologyView = new TopologyView(eulynx);
             topologyView.Show();
@@ -158,7 +152,7 @@ namespace FormsApp
                 return;
             }
 
-            Eulynx eulynx = eulynxFileReadService.Read(filePath);
+            EulynxDataPrep eulynx = eulynxFileReadService.Read(filePath);
 
             showTopology(eulynx);
         }

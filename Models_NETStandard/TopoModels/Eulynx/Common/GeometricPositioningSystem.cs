@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.Common
+namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public partial class GeometricPositioningSystem
     {
@@ -11,10 +11,10 @@ namespace Models.TopoModels.Eulynx.Common
 
         }
 
-        public GeometricPositioningSystem(string type, string uuid)
+        public GeometricPositioningSystem(string type, string id)
         {
             this.crsDefinition = type;
-            this.uuid = uuid;
+            this.id = id;
         }
     }
 }

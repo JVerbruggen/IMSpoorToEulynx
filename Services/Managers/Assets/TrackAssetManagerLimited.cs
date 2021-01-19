@@ -1,6 +1,5 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
+using Models.TopoModels.EULYNX.sig;
 using Services.DependencyInjection;
 using Services.Factory.Assets;
 using System;
@@ -12,7 +11,7 @@ namespace Services.Managers.Assets
 {
     public class TrackAssetManagerLimited : TrackAssetManager
     {
-        public override TrackAsset[] GetTrackAssets(Eulynx eulynx)
+        public override List<TrackAsset> GetTrackAssets(EulynxDataPrep eulynx)
         {
             List<TrackAsset> trackAssets = new List<TrackAsset>();
 
@@ -20,7 +19,7 @@ namespace Services.Managers.Assets
 
             trackAssets.AddRange(signals);
 
-            return trackAssets.ToArray();
+            return trackAssets;
         }
     }
 }

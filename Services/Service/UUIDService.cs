@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using Models.Translation;
 using System;
 using System.Collections.Generic;
@@ -60,11 +60,11 @@ namespace Services.Service
                     string add = "";
                     if(val is BaseObject)
                     {
-                        add = ((BaseObject)val).uuid;
+                        add = ((BaseObject)val).id;
                     }
                     else if(val is tElementWithIDref)
                     {
-                        add = ((tElementWithIDref)val).@ref;
+                        add = ((tElementWithIDref)val).GetRef();
                     }
                     else
                     {

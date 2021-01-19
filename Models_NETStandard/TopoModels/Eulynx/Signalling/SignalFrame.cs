@@ -1,9 +1,9 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.EULYNX_Signalling
+namespace Models.TopoModels.EULYNX.sig
 {
     public partial class SignalFrame
     {
@@ -12,11 +12,11 @@ namespace Models.TopoModels.Eulynx.EULYNX_Signalling
 
         }
 
-        public SignalFrame(tElementWithIDref[] aspects, SignalFrameTypes signalFrameType, string uuid)
+        public SignalFrame(tElementWithIDref[] aspects, SignalFrameTypes signalFrameType, string id)
         {
             this.hasAspect = aspects;
             this.isOfSignalFrameType = signalFrameType;
-            this.uuid = uuid;
+            this.id = id;
         }
     }
 }

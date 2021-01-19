@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.Common
+namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public partial class LinearElement
     {
@@ -12,24 +12,20 @@ namespace Models.TopoModels.Eulynx.Common
 
         }
 
-        public LinearElement(AssociatedPositioningSystem[] associatedPositioningSystems)
+        public LinearElement(List<AssociatedPositioningSystem> associatedPositioningSystems)
         {
             this.associatedPositioningSystems = associatedPositioningSystems;
         }
 
-        public LinearElement(string uuid, AssociatedPositioningSystem[] associatedPositioningSystems)
+        public LinearElement(string id, List<AssociatedPositioningSystem> associatedPositioningSystems)
         {
-            this.uuid = uuid;
+            this.id = id;
             this.associatedPositioningSystems = associatedPositioningSystems;
         }
 
         public void AddRelation(tElementWithIDref relation)
         {
-            IList<tElementWithIDref> relations = this.relation;
-            if (relations == null) relations = new List<tElementWithIDref>();
-
-            relations.Add(relation);
-            this.relation = relations.ToArray();
+            this.relation.Add(relation);
         }
     }
 }

@@ -13,11 +13,16 @@ namespace Services.Managers.Base
     /// <typeparam name="T">Object to be managed</typeparam>
     public abstract class ItemManager<T> : IItemManager<T>
     {
-        private IList<T> SavedItems = new List<T>();
+        private List<T> SavedItems = new List<T>();
 
-        public T[] GetAll()
+        public T[] GetArray()
         {
             return SavedItems.ToArray();
+        }
+
+        public List<T> GetAll()
+        {
+            return SavedItems;
         }
 
         public void Register(T t)

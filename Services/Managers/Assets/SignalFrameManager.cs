@@ -1,5 +1,5 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
+using Models.TopoModels.EULYNX.sig;
 using Services.Managers.Base;
 using Services.Service;
 using System;

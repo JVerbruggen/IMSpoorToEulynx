@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.Common
+namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public partial class LinearPositioningSystem
     {

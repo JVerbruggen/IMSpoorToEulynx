@@ -1,11 +1,9 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.IMSpoor;
-using Models.TopoModels.IMSpoor.V1_3_0;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.EULYNX_Signalling
+namespace Models.TopoModels.EULYNX.sig
 {
     public partial class MainSignalProtectedLevelCrossing
     {
@@ -14,10 +12,10 @@ namespace Models.TopoModels.Eulynx.EULYNX_Signalling
 
         }
 
-        public MainSignalProtectedLevelCrossing(tElementWithIDref protectsTrackCrossing, string uuid, bool dependsOnRoadTrafficLights)
+        public MainSignalProtectedLevelCrossing(tElementWithIDref protectsTrackCrossing, string id, bool dependsOnRoadTrafficLights)
         {
             this.protectsTrackCrossing = protectsTrackCrossing;
-            this.uuid = uuid;
+            this.id = id;
             this.dependsOnRoadTrafficLights = dependsOnRoadTrafficLights;
         }
     }

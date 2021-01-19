@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Services.Managers.Assets
 {
-    public class SignalRTMManager : ItemManager<Models.TopoModels.Eulynx.Signalling.Signal>
+    public class SignalRTMManager : ItemManager<Models.TopoModels.EULYNX.rtmSig.Signal>
     {
     }
 }

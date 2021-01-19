@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.DependencyInjection.Abstract;
@@ -7,15 +7,15 @@ using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Version = Models.TopoModels.Eulynx.EULYNX_XSD.Version;
+using Version = Models.TopoModels.EULYNX.dp.Version;
 
 namespace Services.Managers.Toplevel
 {
-    public class EulynxManager : AbstractManager<Eulynx>
+    public class EulynxManager : AbstractManager<EulynxDataPrep>
     {
-        public Eulynx GetEulynx(IMSpoor imSpoor)
+        public EulynxDataPrep GetEulynx(IMSpoor imSpoor)
         {
-            Eulynx eulynx = new Eulynx();
+            EulynxDataPrep eulynx = new EulynxDataPrep();
 
             //InstanceManager.AddInstanceSupplier(new InstanceSupplier<IMSpoor>(imSpoor));
 

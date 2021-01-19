@@ -1,28 +1,22 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
-using Services.DependencyInjection;
-using Services.Extensions;
+﻿using Services.DependencyInjection;
 using Services.Managers.Base;
-using Services.Managers.Location;
-using Services.Mapping.Assets.Signal;
-using Services.Mapping.Base;
-using Services.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SignalIMSpoor = Models.TopoModels.IMSpoor.V1_2_3.Signal;
-using SignalEULYNX = Models.TopoModels.Eulynx.EULYNX_Signalling.Signal;
+using SignalEULYNX = Models.TopoModels.EULYNX.sig.Signal;
+using Models.TopoModels.EULYNX.rtmCommon;
+using Models.TopoModels.EULYNX.dp;
 
 namespace Services.Managers.Assets
 {
     public class SignalManager : ItemManager<SignalEULYNX>
     {
 
-        public SignalEULYNX[] GetSignals(SignalIMSpoor[] imspoorSignals)
+        public List<SignalEULYNX> GetSignals(SignalIMSpoor[] imspoorSignals)
         {
-            IList<SignalEULYNX> signalsConverted = new List<SignalEULYNX>();
+            List<SignalEULYNX> signalsConverted = new List<SignalEULYNX>();
             foreach (SignalIMSpoor imspoorSignal in imspoorSignals)
             {
                 SignalEULYNX signal = InstanceManager.GetMappingSelector<SignalIMSpoor, SignalEULYNX>().Map(imspoorSignal);
@@ -32,23 +26,25 @@ namespace Services.Managers.Assets
                 signalsConverted.Add(signal);
                 this.Register(signal);
             }
-            return signalsConverted.ToArray();
+            return signalsConverted;
         }
 
+        [Obsolete("SpotLocationCoordinate is obsolete")]
         public BaseLocation GetLocation(SignalEULYNX signal)
         {
-            tElementWithIDref rtmSignalRef = signal.refersToRtmSignal;
+            tElementWithIDref rtmSignalRef = signal.refersToRsmSignal; 
 
-            Eulynx eulynx = InstanceManager.Singleton<Eulynx>().GetInstance();
+            EulynxDataPrep eulynx = InstanceManager.Singleton<EulynxDataPrep>().GetInstance();
             var rtmSignals = eulynx.ownsRtmEntities.ownsSignal;
 
             var spotLocations = eulynx.ownsRtmEntities.usesSpotLocation;
 
             var rtmSignal = BaseObject.Find(rtmSignals, rtmSignalRef);
             var rtmSignalLocationsRef = rtmSignal.locations;
-            var rtmSignalSpotLocation = rtmSignal.GetLocation(spotLocations);
+            //var rtmSignalSpotLocation = rtmSignal.GetLocation(spotLocations);
 
-            return rtmSignalSpotLocation;
+            //return rtmSignalSpotLocation;
+            return null;
         }
 
     }

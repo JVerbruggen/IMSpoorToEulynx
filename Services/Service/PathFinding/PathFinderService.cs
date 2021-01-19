@@ -1,5 +1,5 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
+using Models.TopoModels.EULYNX.rtmCommon;
 using Models.Translation;
 using Services.DependencyInjection;
 using Services.Managers.Topology;
@@ -11,11 +11,11 @@ namespace Services.Service.PathFinding
 {
     public class PathFinderService : IService
     {
-        public PositioningNetElement[] FindShortestPath(PositionedRelation[] allPositionedRelations, PositioningNetElement[] positioningNetElements, PositioningNetElement start, PositioningNetElement end)
+        public List<PositioningNetElement> FindShortestPath(List<PositionedRelation> allPositionedRelations, List<PositioningNetElement> positioningNetElements, PositioningNetElement start, PositioningNetElement end)
         {
-            IList<PositioningNetElement> shortestPath = new List<PositioningNetElement>();
+            List<PositioningNetElement> shortestPath = new List<PositioningNetElement>();
 
-            IList<PathFindingVertex> vertices = positioningNetElements.Select(x => new PathFindingVertex(x)).ToList();
+            List<PathFindingVertex> vertices = positioningNetElements.Select(x => new PathFindingVertex(x)).ToList();
             PathFindingVertex[] savedVertices = new PathFindingVertex[vertices.Count];
             vertices.CopyTo(savedVertices, 0);
 
@@ -49,7 +49,7 @@ namespace Services.Service.PathFinding
                     break; // end of algorithm
                 }
 
-                PathFindingVertex[] neighbors = u.GetNeighbors(allPositionedRelations, vertices.ToArray());
+                List<PathFindingVertex> neighbors = u.GetNeighbors(allPositionedRelations, vertices);
                 foreach(PathFindingVertex neighbor in neighbors)
                 {
                     var alt = u.Dist + u.Length(neighbor);
@@ -65,22 +65,22 @@ namespace Services.Service.PathFinding
             double[] dist = savedVertices.Select(x => x.Dist).ToArray();
             PathFindingVertex[] prev = savedVertices.Select(x => x.Prev).ToArray();
 
-            return shortestPath.ToArray();
+            return shortestPath;
         }
 
-        public PositioningNetElement[] FindShortestPath(Eulynx eulynx, string refStartNetElement, string refEndNetElement)
+        public List<PositioningNetElement> FindShortestPath(EulynxDataPrep eulynx, string refStartNetElement, string refEndNetElement)
         {
             if (eulynx == null) return null;
 
             PositioningNetElementManager positioningNetElementManager = InstanceManager.Singleton<PositioningNetElementManager>().GetInstance();
 
-            PositionedRelation[] relations = eulynx.ownsRtmEntities.usesTrackTopology.usesPositionedRelation;
-            PositioningNetElement[] netElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
+            List<PositionedRelation> relations = eulynx.ownsRtmEntities.usesTrackTopology.usesPositionedRelation;
+            List<PositioningNetElement> netElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
 
             PositioningNetElement startNetElement = positioningNetElementManager.Find(netElements, refStartNetElement);
             PositioningNetElement endNetElement = positioningNetElementManager.Find(netElements, refEndNetElement);
 
-            PositioningNetElement[] shortestPath = FindShortestPath(relations, netElements, startNetElement, endNetElement);
+            List<PositioningNetElement> shortestPath = FindShortestPath(relations, netElements, startNetElement, endNetElement);
 
             return shortestPath;
         }

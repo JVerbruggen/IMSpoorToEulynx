@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.EULYNX_Signalling;
+﻿using Models.TopoModels.EULYNX.sig;
 using Services.Managers.Base;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace Services.Managers.Assets
     {
         public TrackCrossing[] GetTrackCrossings()
         {
-            return GetAll();
+            return GetArray();
         }
 
     }

@@ -1,5 +1,5 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
+using Models.TopoModels.EULYNX.sig;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Managers.Assets;
@@ -21,12 +21,12 @@ namespace Services.Mapping.Assets.LevelCrossing
             string streetName = input.locationIndication;
             string type = input.levelCrossingType.ToString();
             tElementWithIDref[] isLocatedAt = tElementWithIDref.GetTElementsWithIDref(spotLocationManager.GetGeoLocationRef(input.Location));
-            string uuid = UUIDService.NewFakeUUID(isLocatedAt + streetName + type);
-            TrackCrossing trackCrossing = new TrackCrossing(isLocatedAt, streetName, type, uuid);
+            string id = UUIDService.NewFakeUUID(isLocatedAt + streetName + type);
+            TrackCrossing trackCrossing = new TrackCrossing(isLocatedAt, streetName, type, id);
 
             InstanceManager.Singleton<TrackCrossingManager>().GetInstance().Register(trackCrossing);
 
-            tElementWithIDref protectsTrackCrossing = new tElementWithIDref(trackCrossing.uuid);
+            tElementWithIDref protectsTrackCrossing = new tElementWithIDref(trackCrossing.id);
             bool dependsOnRoadTrafficLights = input.isConnectedToTrafficControlInstallation == tTrueFalseEnum.True;
             string levelCrossingUUID = input.puic;
 

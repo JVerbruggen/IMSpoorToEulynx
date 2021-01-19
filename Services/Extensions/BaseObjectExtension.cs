@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using Services.Service;
 using System;
 using System.Collections.Generic;
@@ -14,9 +14,9 @@ namespace Services.Extensions
         /// <param name="bo"></param>
         public static void AllocateUUID(this BaseObject bo)
         {
-            bo.uuid = default;
+            bo.id = default;
 
-            bo.uuid = UUIDService.NewFakeUUID(bo);
+            bo.id = UUIDService.NewFakeUUID(bo);
         }
     }
 }

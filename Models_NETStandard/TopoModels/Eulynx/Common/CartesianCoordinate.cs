@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.Common
+namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public partial class CartesianCoordinate
     {
@@ -11,12 +11,12 @@ namespace Models.TopoModels.Eulynx.Common
 
         }
 
-        public CartesianCoordinate(double x, double y, tElementWithIDref positioningSystem, string uuid)
+        public CartesianCoordinate(double x, double y, tElementWithIDref positioningSystem, string id)
         {
             this.x = x;
             this.y = y;
             this.positioningSystem = positioningSystem;
-            this.uuid = uuid;
+            this.id = id;
         }
     }
 }

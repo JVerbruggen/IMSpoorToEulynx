@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.DB
+namespace Models.TopoModels.EULYNX.db
 {
     public partial class DualFlankProtection
     {

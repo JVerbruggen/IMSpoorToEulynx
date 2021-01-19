@@ -1,14 +1,16 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.IMSpoor;
-using Models.TopoModels.IMSpoor.V1_3_0;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.EULYNX_XSD
+namespace Models.TopoModels.EULYNX.dp
 {
+    [Obsolete("use Topology")]
     public partial class TrackTopology
     {
+        private PositionedRelation[] usesPositionedRelation;
+        private PositioningNetElement[] usesPositioningNetElement;
+
         public TrackTopology()
         {
 

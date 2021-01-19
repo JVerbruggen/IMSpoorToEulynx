@@ -1,8 +1,8 @@
 ﻿using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
-using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
+using Models.TopoModels.EULYNX.dp;
+using Models.TopoModels.EULYNX.rtmCommon;
+using Models.TopoModels.EULYNX.sig;
 using Services.DependencyInjection;
 using Services.Managers.Assets;
 using Services.Service;
@@ -14,11 +14,14 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+using Node = Microsoft.Msagl.Drawing.Node;
+using Edge = Microsoft.Msagl.Drawing.Edge;
+
 namespace FormsApp
 {
     public partial class TopologyView : Form
     {
-        private Eulynx eulynx = null;
+        private EulynxDataPrep eulynx = null;
         private Graph graph;
         private GViewer viewer;
         private PathFinderService PathFinderService;
@@ -32,7 +35,7 @@ namespace FormsApp
             Initialize();
         }
 
-        public TopologyView(Eulynx eulynx) : this()
+        public TopologyView(EulynxDataPrep eulynx) : this()
         {
             this.eulynx = eulynx;
 
@@ -40,7 +43,7 @@ namespace FormsApp
             //InitDrawing(this.eulynx);
         }
 
-        private void InitDrawing(Eulynx eulynx)
+        private void InitDrawing(EulynxDataPrep eulynx)
         {
             using (var g = this.CreateGraphics())
             {
@@ -53,7 +56,7 @@ namespace FormsApp
             }
         }
 
-        private void InitMsagl(Eulynx eulynx)
+        private void InitMsagl(EulynxDataPrep eulynx)
         {
             this.viewer = new GViewer();
             this.graph = new Graph("MyGraph");
@@ -62,8 +65,8 @@ namespace FormsApp
             var trackTopo = rtmEntities?.usesTrackTopology;
             if (rtmEntities != null && trackTopo != null)
             {
-                comboBox_pathFindStart.Items.AddRange(trackTopo.usesPositioningNetElement.Select(n => n.uuid).ToArray());
-                fillComboBoxPathFindEnd(trackTopo.usesPositioningNetElement.Select(n => n.uuid).ToArray());
+                comboBox_pathFindStart.Items.AddRange(trackTopo.usesPositioningNetElement.Select(n => n.id).ToArray());
+                fillComboBoxPathFindEnd(trackTopo.usesPositioningNetElement.Select(n => n.id).ToArray());
 
                 PositionedRelation[] relations = trackTopo.usesPositionedRelation;
                 foreach (PositionedRelation relation in relations)
@@ -107,7 +110,7 @@ namespace FormsApp
 
         private void fillPathFindPath(string label)
         {
-            if (!eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement.Any(item => item.uuid == label)) return;
+            if (!eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement.Any(item => item.id == label)) return;
 
             if(comboBox_pathFindStart.Text == "")
             {
@@ -138,15 +141,15 @@ namespace FormsApp
 
             foreach (PositioningNetElement pathElement in allElements)
             {
-                if (this.graph.FindNode(pathElement.uuid) == null) continue;
+                if (this.graph.FindNode(pathElement.id) == null) continue;
 
                 if (path.Contains(pathElement))
                 {
-                    this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                    this.graph.FindNode(pathElement.id).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
                 }
                 else
                 {
-                    this.graph.FindNode(pathElement.uuid).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
+                    this.graph.FindNode(pathElement.id).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
                 }
             }
         }
@@ -206,7 +209,7 @@ namespace FormsApp
                 if (foundDestinations.Length > 0)
                 {
                     comboBox_pathFindEnd.Items.Clear();
-                    comboBox_pathFindEnd.Items.AddRange(foundDestinations.Select(d => d.uuid).ToArray());
+                    comboBox_pathFindEnd.Items.AddRange(foundDestinations.Select(d => d.id).ToArray());
                     comboBox_pathFindEnd.SelectedItem = null;
                     comboBox_pathFindEnd.Text = null;
 
@@ -219,7 +222,7 @@ namespace FormsApp
                     });
                     foreach (var el in foundDestinations)
                     {
-                        contents.Add("- " + el.uuid);
+                        contents.Add("- " + el.id);
                     }
 
                     listbox_show(contents.ToArray());
@@ -231,14 +234,14 @@ namespace FormsApp
             }
         }
 
-        private PositioningNetElement[] FindPossibleDestinations(Eulynx eulynx, string uuidStart, bool includePassed)
+        private PositioningNetElement[] FindPossibleDestinations(EulynxDataPrep eulynx, string uuidStart, bool includePassed)
         {
             PositioningNetElement[] foundDestinations = DestinationFinderService.FindPossibleDestinations(eulynx, uuidStart, includePassed);
 
             return foundDestinations;
         }
 
-        private PositioningNetElement[] FindShortestPath(Eulynx eulynx, string uuidStart, string uuidEnd)
+        private PositioningNetElement[] FindShortestPath(EulynxDataPrep eulynx, string uuidStart, string uuidEnd)
         {
             PositioningNetElement[] shortestPath = PathFinderService.FindShortestPath(eulynx, uuidStart, uuidEnd);
 
@@ -284,7 +287,7 @@ namespace FormsApp
             var trackTopo = this.eulynx?.ownsRtmEntities?.usesTrackTopology;
             if (trackTopo == null) return;
 
-            fillComboBoxPathFindEnd(trackTopo.usesPositioningNetElement.Select(n => n.uuid).ToArray());
+            fillComboBoxPathFindEnd(trackTopo.usesPositioningNetElement.Select(n => n.id).ToArray());
 
             comboBox_pathFindStart.SelectedItem = null;
             comboBox_pathFindStart.Text = null;
@@ -318,14 +321,14 @@ namespace FormsApp
             int steps = this.paintedPath.GetSteps();
 
             contents.AddRange(new[]{
-                "Start: " + this.paintedPath.elements.FirstOrDefault().uuid,
-                "End: " + this.paintedPath.elements.LastOrDefault().uuid,
+                "Start: " + this.paintedPath.elements.FirstOrDefault().id,
+                "End: " + this.paintedPath.elements.LastOrDefault().id,
                 "Distance: " + steps + " step" + (steps == 1 ? "" : "s"),
                 "Path: "});
 
             foreach (var el in this.paintedPath.elements)
             {
-                contents.Add("- " + el.uuid);
+                contents.Add("- " + el.id);
             }
 
             listbox_show(contents.ToArray());

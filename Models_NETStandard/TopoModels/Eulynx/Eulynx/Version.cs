@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.EULYNX_XSD
+namespace Models.TopoModels.EULYNX.dp
 {
     public partial class Version
     {

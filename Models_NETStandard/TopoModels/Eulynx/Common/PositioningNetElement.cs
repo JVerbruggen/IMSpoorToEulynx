@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.Common
+namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public partial class PositioningNetElement
     {
@@ -19,28 +19,28 @@ namespace Models.TopoModels.Eulynx.Common
             return 1;
         }
 
-        public PositioningNetElement[] GetRelations(PositionedRelation[] allRelations, PositioningNetElement[] allNetElements)
+        public List<PositioningNetElement> GetRelations(List<PositionedRelation> allRelations, List<PositioningNetElement> allNetElements)
         {
-            IList<PositioningNetElement> localRelations = new List<PositioningNetElement>();
+            List<PositioningNetElement> localRelations = new List<PositioningNetElement>();
 
             foreach(PositionedRelation relation in allRelations)
             {
-                if(relation.elementA.@ref == this.uuid)
+                if(relation.elementA.GetRef() == this.id)
                 {
                     localRelations.Add(relation.GetElementB(allNetElements));
                 }
-                else if(relation.elementB.@ref == this.uuid)
+                else if(relation.elementB.GetRef() == this.id)
                 {
                     localRelations.Add(relation.GetElementA(allNetElements));
                 }
             }
 
-            return localRelations.ToArray();
+            return localRelations;
         }
 
-        public PositioningNetElement[] GetRelationsTraversable(PositionedRelation[] allRelations, PositioningNetElement[] allNetElements, Usage cameFrom)
+        public List<PositioningNetElement> GetRelationsTraversable(List<PositionedRelation> allRelations, List<PositioningNetElement> allNetElements, Usage cameFrom)
         {
-            IList<PositioningNetElement> localRelations = new List<PositioningNetElement>();
+            List<PositioningNetElement> localRelations = new List<PositioningNetElement>();
 
             foreach(PositionedRelation relation in allRelations)
             {
@@ -60,7 +60,7 @@ namespace Models.TopoModels.Eulynx.Common
                 }
             }
 
-            return localRelations.ToArray();
+            return localRelations;
         }
 
 

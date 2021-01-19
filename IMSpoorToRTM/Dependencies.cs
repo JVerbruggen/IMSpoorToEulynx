@@ -1,17 +1,11 @@
-﻿using Models.Base;
-using Models.Mapping.Topology;
-using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
-using Models.TopoModels.IMSpoor.V1_2_3;
+﻿using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Factory.Assets;
 using Services.Factory.Manager;
-using Services.Managers.Assets;
 using Services.Managers.Positioning;
 using Services.Managers.Topology;
 using Services.Mapping.Assets.LevelCrossing;
 using Services.Mapping.Assets.Signal;
-using Services.Mapping.Base;
 using Services.Mapping.Topology;
 
 namespace FormsApp

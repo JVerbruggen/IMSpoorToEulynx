@@ -1,10 +1,9 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.IMSpoor.V1_3_0;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.EULYNX_Signalling
+namespace Models.TopoModels.EULYNX.sig
 {
     public partial class TrackCrossing
     {
@@ -12,12 +11,12 @@ namespace Models.TopoModels.Eulynx.EULYNX_Signalling
         {
 
         }
-        public TrackCrossing(tElementWithIDref[] isLocatedAt, string streetName, string type, string uuid)
+        public TrackCrossing(tElementWithIDref[] isLocatedAt, string streetName, string type, string id)
         {
             this.isLocatedAt = isLocatedAt;
             this.streetName = streetName;
             this.type = type;
-            this.uuid = uuid;
+            this.id = id;
         }
     }
 }

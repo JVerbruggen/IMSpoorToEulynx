@@ -1,5 +1,5 @@
 ﻿using Models.Mapping.Topology;
-using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.EULYNX.rtmCommon;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Managers.Positioning;

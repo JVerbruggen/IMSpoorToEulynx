@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SignalIMSpoor = Models.TopoModels.IMSpoor.V1_2_3.Signal;
-using SignalEULYNX = Models.TopoModels.Eulynx.EULYNX_Signalling.Signal;
+using SignalEULYNX = Models.TopoModels.EULYNX.sig.Signal;
 using Models.TopoModels.IMSpoor.V1_2_3;
 
 namespace Services.Mapping.Assets.Signal

@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.EULYNX_Signalling;
+﻿using Models.TopoModels.EULYNX.sig;
 using Models.TopoModels.IMSpoor.V1_3_0;
 using Services.Managers.Base;
 using System;
@@ -15,17 +15,17 @@ namespace Services.Managers.Assets
 
             if(junction is SingleSwitch)
             {
-                var crossing = new Models.TopoModels.Eulynx.EULYNX_Signalling.Crossing();
+                var crossing = new Models.TopoModels.EULYNX.sig.Crossing();
                 crossing.isOfCrossingType = CrossingTypes.simple;
             }
             else if(junction is DoubleDiamondCrossing)
             {
-                var crossing = new Models.TopoModels.Eulynx.EULYNX_Signalling.Crossing();
+                var crossing = new Models.TopoModels.EULYNX.sig.Crossing();
                 crossing.isOfCrossingType = CrossingTypes.doubleSlip;
             }
             else if(junction is SingleDiamondCrossing)
             {
-                var crossing = new Models.TopoModels.Eulynx.EULYNX_Signalling.Crossing();
+                var crossing = new Models.TopoModels.EULYNX.sig.Crossing();
                 crossing.isOfCrossingType = CrossingTypes.singleSlip;
             }
             else if(junction is Models.TopoModels.IMSpoor.V1_3_0.Crossing)

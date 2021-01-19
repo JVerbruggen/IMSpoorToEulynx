@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Extensions;
@@ -20,7 +20,7 @@ namespace Services.Managers.Positioning
             IntrinsicCoordinateManager intrinsicCoordinateManager = InstanceManager.Singleton<IntrinsicCoordinateManager>().GetInstance();
 
             GeometricPositioningSystem geometricPositioningSystem = positioningSystemManager.GetGeometricPositioningSystem(PositioningSystemTypes.RD);
-            IntrinsicCoordinate[] intrinsicCoordinates = intrinsicCoordinateManager.GetIntrinsicCoordinates(geometricPositioningSystem, lineString);
+            List<IntrinsicCoordinate> intrinsicCoordinates = intrinsicCoordinateManager.GetIntrinsicCoordinates(geometricPositioningSystem, lineString);
 
             var ps = new AssociatedPositioningSystem(intrinsicCoordinates, geometricPositioningSystem);
             ps.AllocateUUID();
@@ -32,7 +32,7 @@ namespace Services.Managers.Positioning
             PositioningSystemManager positioningSystemManager = InstanceManager.Singleton<PositioningSystemManager>().GetInstance();
             IntrinsicCoordinateManager intrinsicCoordinateManager = InstanceManager.Singleton<IntrinsicCoordinateManager>().GetInstance();
 
-            IntrinsicCoordinate[] intrinsicCoordinate = new IntrinsicCoordinate[] { intrinsicCoordinateManager.GetIntrinsicCoordinate(measure) };
+            List<IntrinsicCoordinate> intrinsicCoordinate = new List<IntrinsicCoordinate> { intrinsicCoordinateManager.GetIntrinsicCoordinate(measure) };
 
             var ps = new AssociatedPositioningSystem(intrinsicCoordinate, lps);
             ps.AllocateUUID();

@@ -1,11 +1,10 @@
 ﻿using Models.Base;
-using Models.TopoModels.Eulynx.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.Common
+namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public abstract partial class BaseObject : IManageable
     {
@@ -33,22 +32,22 @@ namespace Models.TopoModels.Eulynx.Common
         public bool Equals(BaseObject baseObject)
         {
             if (baseObject == null) return false;
-            return this.uuid == baseObject.uuid;
+            return this.id == baseObject.id;
         }
 
         public bool Equals(tElementWithIDref idRef)
         {
-            return this.uuid == idRef.@ref;
+            return this.id == idRef.GetRef();
         }
 
         public static implicit operator tElementWithIDref(BaseObject bo)
         {
-            return new tElementWithIDref(bo.uuid);
+            return new tElementWithIDref(bo.id);
         }
 
         public static implicit operator tElementWithIDref[](BaseObject bo)
         {
-            return new tElementWithIDref[] { new tElementWithIDref(bo.uuid) };
+            return new tElementWithIDref[] { new tElementWithIDref(bo.id) };
         }
 
         public static implicit operator BaseObject[](BaseObject bo)
@@ -79,11 +78,11 @@ namespace Models.TopoModels.Eulynx.Common
         public static T[] Find<T>(T[] allElements, tElementWithIDref[] needles) where T : BaseObject
         {
             var allElementsList = allElements.ToList();
-            var e = needles.Any(idRef => idRef.@ref == "ff442c00-0082-496f-9f41-461ac9cb55ab");
+            var e = needles.Any(idRef => idRef.GetRef() == "ff442c00-0082-496f-9f41-461ac9cb55ab");
 
             //allElementsList.Where(element => needles.Any(needle => element.uuid == needle.@ref))
 
-            var filtered = allElements.ToList().Where(element => (needles.Any(idRef => idRef.@ref.Equals(element.uuid))));
+            var filtered = allElements.ToList().Where(element => (needles.Any(idRef => idRef.GetRef().Equals(element.id))));
             if (filtered == null) return null;
 
             return filtered.ToArray();
@@ -91,16 +90,16 @@ namespace Models.TopoModels.Eulynx.Common
 
         public static T[] FindWithDuplicates<T>(T[] allElements, tElementWithIDref needle) where T : BaseObject
         {
-            if (needle == null || needle.@ref == null) return null;
-            var filtered = allElements.ToList().Where(element => needle.@ref.Equals(element.uuid));
+            if (needle == null || needle.GetRef() == null) return null;
+            var filtered = allElements.ToList().Where(element => needle.GetRef().Equals(element.id));
             if (filtered == null) return null;
             return filtered.ToArray();
         }
 
         public static T Find<T>(T[] allElements, tElementWithIDref needle) where T : BaseObject
         {
-            if (needle == null || needle.@ref == null) return null;
-            var filtered = allElements.ToList().Where(element => needle.@ref.Equals(element.uuid));
+            if (needle == null || needle.GetRef() == null) return null;
+            var filtered = allElements.ToList().Where(element => needle.GetRef().Equals(element.id));
             if (filtered == null || filtered.Count() == 0) return null;
             return filtered.First();
         }

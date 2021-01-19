@@ -1,6 +1,6 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
+using Models.TopoModels.EULYNX.rtmCommon;
+using Models.TopoModels.EULYNX.sig;
 using Services.Managers.Base;
 using System;
 using System.Collections.Generic;
@@ -11,17 +11,17 @@ namespace Services.Managers.Assets
 {
     public abstract class TrackAssetManager : ItemManager<TrackAsset>
     {
-        public abstract TrackAsset[] GetTrackAssets(Eulynx eulynx);
+        public abstract List<TrackAsset> GetTrackAssets(EulynxDataPrep eulynx);
 
         //public abstract TrackAsset[] GetTrackAssets<T>(Eulynx eulynx) where T : BaseObject;
 
-        public TrackAsset[] GetTrackAssets(IEnumerable<TrackAsset> allTrackAssets, IEnumerable<BaseLocation> allSpotLocations, PositioningNetElement[] path)
+        public List<TrackAsset> GetTrackAssets(IEnumerable<TrackAsset> allTrackAssets, IEnumerable<BaseLocation> allSpotLocations, List<PositioningNetElement> path)
         {
             if (allTrackAssets == null
                 || allSpotLocations == null
                 || path == null) return null;
 
-            IList<TrackAsset> foundAssets = new List<TrackAsset>();
+            List<TrackAsset> foundAssets = new List<TrackAsset>();
 
             foreach (TrackAsset asset in allTrackAssets)
             {
@@ -31,7 +31,7 @@ namespace Services.Managers.Assets
                 {
                     tElementWithIDref spotLocationRef = (location as SpotLocation).netElement;
 
-                    bool c = path.Any(netElement => netElement.uuid.Equals(spotLocationRef.@ref));
+                    bool c = path.Any(netElement => netElement.id.Equals(spotLocationRef.GetRef()));
                     if (c)
                     {
                         bool a = false;
@@ -45,13 +45,13 @@ namespace Services.Managers.Assets
                 }
             }
 
-            return foundAssets.ToArray();
+            return foundAssets;
         }
 
-        public virtual TrackAsset[] GetTrackAssets(Eulynx eulynx, PositioningNetElement[] path)
+        public virtual List<TrackAsset> GetTrackAssets(EulynxDataPrep eulynx, List<PositioningNetElement> path)
         {
-            BaseLocation[] allLocations = eulynx.ownsRtmEntities.usesSpotLocation;
-            TrackAsset[] allAssets = GetTrackAssets(eulynx);
+            List<BaseLocation> allLocations = eulynx.ownsRtmEntities.usesSpotLocation.Cast<BaseLocation>().ToList();
+            List<TrackAsset> allAssets = GetTrackAssets(eulynx);
 
             return GetTrackAssets(allAssets, allLocations, path);
         }

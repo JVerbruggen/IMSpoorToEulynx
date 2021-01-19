@@ -1,5 +1,5 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.NetEntity;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
+using Models.TopoModels.EULYNX.rtmNE;
 using Services.DependencyInjection;
 using Services.Managers.Base;
 using Services.Managers.Location;

@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using Services.DependencyInjection;
 using Services.Managers.Topology;
 using System;
@@ -55,12 +55,12 @@ namespace Services.Service.PathFinding
             return min;
         }
 
-        public PathFindingVertex[] GetNeighbors(PositionedRelation[] allRelations, PathFindingVertex[] allVertices)
+        public List<PathFindingVertex> GetNeighbors(List<PositionedRelation> allRelations, List<PathFindingVertex> allVertices)
         {
-            PositioningNetElement[] allNetElements = allVertices.Select(x => x.positioningNetElement).ToArray();
+            List<PositioningNetElement> allNetElements = allVertices.Select(x => x.positioningNetElement).ToList();
 
 
-            PositioningNetElement[] neighborNetElements;
+            List<PositioningNetElement> neighborNetElements;
             if (this.Prev != null)
             {
                 Usage cameFrom = getCameFrom(this.Prev, allRelations);
@@ -71,7 +71,7 @@ namespace Services.Service.PathFinding
                 neighborNetElements = this.positioningNetElement.GetRelations(allRelations, allNetElements);
             }
 
-            IList<PathFindingVertex> neighborVertices = new List<PathFindingVertex>();
+            List<PathFindingVertex> neighborVertices = new List<PathFindingVertex>();
 
             foreach (PositioningNetElement neighborNetElement in neighborNetElements)
             {
@@ -83,10 +83,10 @@ namespace Services.Service.PathFinding
                 neighborVertices.Add(vertex);
             }
 
-            return neighborVertices.ToArray();
+            return neighborVertices;
         }
 
-        public Usage getCameFrom(PathFindingVertex previous, PositionedRelation[] allRelations)
+        public Usage getCameFrom(PathFindingVertex previous, List<PositionedRelation> allRelations)
         {
             Usage cameFrom;
 

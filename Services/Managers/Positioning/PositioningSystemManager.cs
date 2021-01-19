@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using Services.Extensions;
 using Services.Managers.Base;
 using Services.Service;
@@ -14,7 +14,7 @@ namespace Services.Managers.Positioning
         public GeometricPositioningSystem GetGeometricPositioningSystem(string type)
         {
             GeometricPositioningSystem found = null;
-            foreach(PositioningSystem positioningSystem in this.GetAll())
+            foreach(PositioningSystem positioningSystem in this.GetArray())
             {
                 if(positioningSystem is GeometricPositioningSystem)
                 {

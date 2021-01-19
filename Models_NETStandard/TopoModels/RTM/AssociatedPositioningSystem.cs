@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.Common
+namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public partial class AssociatedPositioningSystem
     {
@@ -14,7 +14,7 @@ namespace Models.TopoModels.Eulynx.Common
 
         }
 
-        public AssociatedPositioningSystem(IntrinsicCoordinate[] intrinsicCoordinates, tElementWithIDref positioningSystem)
+        public AssociatedPositioningSystem(List<IntrinsicCoordinate> intrinsicCoordinates, tElementWithIDref positioningSystem)
         {
             this.intrinsicCoordinates = intrinsicCoordinates;
             this.positioningSystem = positioningSystem;

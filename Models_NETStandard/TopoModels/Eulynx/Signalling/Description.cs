@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.EULYNX_Signalling
+namespace Models.TopoModels.EULYNX.sig
 {
     public partial class Description
     {

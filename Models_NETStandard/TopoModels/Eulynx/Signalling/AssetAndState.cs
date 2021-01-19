@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.EULYNX_Signalling
+namespace Models.TopoModels.EULYNX.sig
 {
     public partial class AssetAndState
     {
 
-        public static AssetAndState[] GetAssetAndStates()
+        public static List<AssetAndState> GetAssetAndStates()
         {
-            AssetAndState[] assetAndStates = { };
+            List<AssetAndState> assetAndStates = new List<AssetAndState>();
 
             return assetAndStates;
         }

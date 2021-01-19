@@ -1,5 +1,5 @@
 ﻿using Models.Mapping.Topology;
-using Models.TopoModels.Eulynx.Common;
+using Models.TopoModels.EULYNX.rtmCommon;
 using Services.Managers.Positioning;
 using Services.Mapping.Base;
 using System;

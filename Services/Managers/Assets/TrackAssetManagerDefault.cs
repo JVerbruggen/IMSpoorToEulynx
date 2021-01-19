@@ -1,6 +1,5 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_Signalling;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
+using Models.TopoModels.EULYNX.sig;
 using Services.DependencyInjection;
 using Services.Factory.Assets;
 using System;
@@ -12,7 +11,8 @@ namespace Services.Managers.Assets
 {
     public class TrackAssetManagerDefault : TrackAssetManager
     {
-        public override TrackAsset[] GetTrackAssets(Eulynx eulynx)
+        [Obsolete("ownsSignal no longer exists")]
+        public override List<TrackAsset> GetTrackAssets(EulynxDataPrep eulynx)
         {
             return eulynx.ownsSignallingEntities.ownsSignal;
         }

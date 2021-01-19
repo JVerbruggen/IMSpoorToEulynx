@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Models.Translation;
 using Services.DependencyInjection;
@@ -10,11 +10,11 @@ using System.Xml.Linq;
 
 namespace Services.Service
 {
-    public class IMSpoorToEulynxTranslationService : ITranslationService<IMSpoor, Eulynx>
+    public class IMSpoorToEulynxTranslationService : ITranslationService<IMSpoor, EulynxDataPrep>
     {
-        public Eulynx Translate(IMSpoor imSpoor)
+        public EulynxDataPrep Translate(IMSpoor imSpoor)
         {
-            Eulynx eulynx = InstanceManager.Singleton<EulynxManager>().GetInstance().GetEulynx(imSpoor);
+            EulynxDataPrep eulynx = InstanceManager.Singleton<EulynxManager>().GetInstance().GetEulynx(imSpoor);
             InstanceManager.Singleton(eulynx);
 
             return eulynx;

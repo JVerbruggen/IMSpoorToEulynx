@@ -1,10 +1,10 @@
-﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.Managers.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Version = Models.TopoModels.Eulynx.EULYNX_XSD.Version;
+using Version = Models.TopoModels.EULYNX.dp.Version;
 
 namespace Services.Managers.Toplevel
 {
@@ -17,12 +17,12 @@ namespace Services.Managers.Toplevel
             XsdGeneratorVersion xsdGeneratorVersion = new XsdGeneratorVersion();
             xsdGeneratorVersion.generatedByTool = "IMSpoor-1.2.3 to EULYNX Converter tool";
             xsdGeneratorVersion.generatedByToolVersion = "0.1";
-            XsdGeneratorVersion[] generatedByTool = new XsdGeneratorVersion[] { xsdGeneratorVersion };
+            List<XsdGeneratorVersion> generatedByTool = new List<XsdGeneratorVersion> { xsdGeneratorVersion };
 
             Baseline baseline = new Baseline();
             baseline.major = 0;
             baseline.minor = 1;
-            Baseline[] hasBaseline = new Baseline[] { baseline };
+            List<Baseline> hasBaseline = new List<Baseline> { baseline };
 
             version.generatedByTool = generatedByTool;
             version.hasBaseline = hasBaseline;

@@ -1,5 +1,5 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
+using Models.TopoModels.EULYNX.rtmCommon;
 using Models.Translation;
 using Services.DependencyInjection;
 using Services.Managers.Topology;
@@ -19,23 +19,23 @@ namespace Services.Service.PathFinding
             this.positioningNetElementManager = InstanceManager.Singleton<PositioningNetElementManager>().GetInstance();
         }
 
-        public PositioningNetElement[] FindPossibleDestinations(Eulynx eulynx, string uuidStart, bool includePassed)
+        public List<PositioningNetElement> FindPossibleDestinations(EulynxDataPrep eulynx, string uuidStart, bool includePassed)
         {
             if (eulynx == null || uuidStart == null) return null;
 
-            PositionedRelation[] relations = eulynx.ownsRtmEntities.usesTrackTopology.usesPositionedRelation;
-            PositioningNetElement[] netElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
+            List<PositionedRelation> relations = eulynx.ownsRtmEntities.usesTrackTopology.usesPositionedRelation;
+            List<PositioningNetElement> netElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
 
             PositioningNetElement startNetElement = positioningNetElementManager.Find(netElements, uuidStart);
 
             return FindPossibleDestinations(startNetElement, netElements, relations, includePassed);
         }
 
-        public PositioningNetElement[] FindPossibleDestinations(PositioningNetElement start, PositioningNetElement[] positioningNetElements, PositionedRelation[] allPositionedRelations, bool includePassed)
+        public List<PositioningNetElement> FindPossibleDestinations(PositioningNetElement start, List<PositioningNetElement> positioningNetElements, List<PositionedRelation> allPositionedRelations, bool includePassed)
         {
             List<PositioningNetElement> foundDestinations = new List<PositioningNetElement>();
 
-            IList<PathFindingVertex> vertices = positioningNetElements.Select(x => new PathFindingVertex(x)).ToList();
+            List<PathFindingVertex> vertices = positioningNetElements.Select(x => new PathFindingVertex(x)).ToList();
             PathFindingVertex[] savedVertices = new PathFindingVertex[vertices.Count];
             vertices.CopyTo(savedVertices, 0);
 
@@ -52,7 +52,7 @@ namespace Services.Service.PathFinding
 
                 vertices.Remove(u);
 
-                PathFindingVertex[] neighbors = u.GetNeighbors(allPositionedRelations, vertices.ToArray());
+                List<PathFindingVertex> neighbors = u.GetNeighbors(allPositionedRelations, vertices);
                 if (includePassed)
                 {
                     if (!u.positioningNetElement.Equals(start))
@@ -60,7 +60,7 @@ namespace Services.Service.PathFinding
                         foundDestinations.Add(u.positioningNetElement);
                     }
                 }
-                else if(neighbors.Length == 0 || neighbors.Any(n => savedVertices.Contains(n)) == false)
+                else if(neighbors.Count == 0 || neighbors.Any(n => savedVertices.Contains(n)) == false)
                 {
                     // u is a destination
                     foundDestinations.Add(u.positioningNetElement);
@@ -95,7 +95,7 @@ namespace Services.Service.PathFinding
                 }
             }
 
-            return foundDestinations.ToArray();
+            return foundDestinations;
         }
     }
 }

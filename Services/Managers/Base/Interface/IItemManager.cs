@@ -28,6 +28,6 @@ namespace Services.Managers.Base
         /// Get all instances of T previously registered to this manager
         /// </summary>
         /// <returns></returns>
-        T[] GetAll();
+        T[] GetArray();
     }
 }

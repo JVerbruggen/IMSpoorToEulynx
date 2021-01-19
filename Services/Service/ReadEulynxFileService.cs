@@ -1,5 +1,5 @@
 ﻿using Models.File;
-using Models.TopoModels.Eulynx.EULYNX_XSD;
+using Models.TopoModels.EULYNX.dp;
 using Services.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -8,14 +8,14 @@ using System.Xml.Linq;
 
 namespace Services.Service
 {
-    public class ReadEulynxFileService : IReadFileService<Eulynx>
+    public class ReadEulynxFileService : IReadFileService<EulynxDataPrep>
     {
-        public Eulynx Read(string filePath)
+        public EulynxDataPrep Read(string filePath)
         {
             XMLSerializeService xmlSerializeService = InstanceManager.Singleton<XMLSerializeService>().GetInstance();
 
             var d = XDocument.Load(filePath);
-            Eulynx eulynx = xmlSerializeService.DeserializeObject<Eulynx>(d.ToString());
+            EulynxDataPrep eulynx = xmlSerializeService.DeserializeObject<EulynxDataPrep>(d.ToString());
 
             return eulynx;
         }

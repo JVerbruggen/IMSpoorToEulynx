@@ -1,9 +1,8 @@
-﻿using Models.TopoModels.Eulynx.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.Common
+namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public partial class IntrinsicCoordinate
     {
@@ -12,13 +11,13 @@ namespace Models.TopoModels.Eulynx.Common
 
         }
 
-        public IntrinsicCoordinate(tElementWithIDref[] positioningSystemCoordinates, string uuid)
+        public IntrinsicCoordinate(List<tElementWithIDref> positioningSystemCoordinates, string id)
         {
             this.coordinates = positioningSystemCoordinates;
-            this.uuid = uuid;
+            this.id = id;
         }
 
-        public IntrinsicCoordinate(tElementWithIDref[] positioningSystemCoordinates)
+        public IntrinsicCoordinate(List<tElementWithIDref> positioningSystemCoordinates)
         {
             this.coordinates = positioningSystemCoordinates;
         }

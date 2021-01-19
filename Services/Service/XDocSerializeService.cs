@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.EULYNX_XSD;
+﻿using Models.TopoModels.EULYNX.dp;
 using System;
 using System.IO;
 using System.Text;
@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace Services.Service
 {
-    public class XDocSerializeService : IXDocSerializer<Eulynx>
+    public class XDocSerializeService : IXDocSerializer<EulynxDataPrep>
     {
         private XmlSerializerNamespaces GetNamespaces()
         {
@@ -40,12 +40,12 @@ namespace Services.Service
         }
 
 
-        private String SerializeToString(Eulynx eulynx)
+        private String SerializeToString(EulynxDataPrep eulynx)
         {
             XmlSerializerNamespaces xmlns = GetNamespaces();
             XmlWriterSettings writerSettings = GetWriterSettings();
 
-            XmlSerializer serializer = new XmlSerializer(typeof(Eulynx));
+            XmlSerializer serializer = new XmlSerializer(typeof(EulynxDataPrep));
             var xml = "";
 
             using (var sww = new StringWriter())
@@ -59,12 +59,12 @@ namespace Services.Service
             return xml;
         }
 
-        private String SerializeToFile(Eulynx eulynx, string path)
+        private String SerializeToFile(EulynxDataPrep eulynx, string path)
         {
             XmlSerializerNamespaces xmlns = GetNamespaces();
             XmlWriterSettings writerSettings = GetWriterSettings();
 
-            XmlSerializer serializer = new XmlSerializer(typeof(Eulynx));
+            XmlSerializer serializer = new XmlSerializer(typeof(EulynxDataPrep));
             var xml = "";
 
             using (XmlWriter writer = XmlWriter.Create(path, writerSettings))
@@ -74,7 +74,7 @@ namespace Services.Service
             return xml;
         }
 
-        public XDocument Serialize(Eulynx eulynx)
+        public XDocument Serialize(EulynxDataPrep eulynx)
         {
             String eulynxXml = this.SerializeToString(eulynx);
             XDocument eulynxDoc = XDocument.Parse(eulynxXml);
@@ -83,7 +83,7 @@ namespace Services.Service
             return eulynxDoc;
         }
 
-        public void Serialize(Eulynx eulynx, string path)
+        public void Serialize(EulynxDataPrep eulynx, string path)
         {
             SerializeToFile(eulynx, path);
         }

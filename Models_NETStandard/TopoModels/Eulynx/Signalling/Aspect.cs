@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models.TopoModels.Eulynx.EULYNX_Signalling
+namespace Models.TopoModels.EULYNX.sig
 {
     public partial class Aspect
     {
@@ -11,9 +11,9 @@ namespace Models.TopoModels.Eulynx.EULYNX_Signalling
 
         }
 
-        public static Aspect[] GetAspects()
+        public static List<Aspect> GetAspects()
         {
-            Aspect[] aspects = { };
+            List<Aspect> aspects = new List<Aspect>();
 
             return aspects;
         }

@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using Models.TopoModels.IMSpoor.V1_2_3;
 using Services.DependencyInjection;
 using Services.Extensions;
@@ -27,6 +27,7 @@ namespace Services.Managers.Location
             throw new NotImplementedException();
         }
 
+        [Obsolete("Uses spotlocationcoordinate, gone obsolete")]
         public SpotLocation GetGeoLocation(tPointLocation pointLocation)
         {
             tPoint geoLocation = pointLocation.GeographicLocation;
@@ -45,9 +46,10 @@ namespace Services.Managers.Location
 
             tElementWithIDref positioningSystemCoordinateRef = tElementWithIDref.GetTElementWithIDref(positioningSystemCoordinate);
 
-            string uuid = UUIDService.NewFakeUUID(positioningSystemCoordinateRef.@ref);
+            string uuid = UUIDService.NewFakeUUID(positioningSystemCoordinateRef.GetRef());
             SpotLocationCoordinate spotLocationCoordinate = new SpotLocationCoordinate(positioningSystemCoordinateRef, uuid);
-            return spotLocationCoordinate;
+            //return spotLocationCoordinate;
+            return null;
         }
 
         
@@ -56,7 +58,7 @@ namespace Services.Managers.Location
             SpotLocation spotLocation = GetGeoLocation(pointLocation);
             Register(spotLocation);
 
-            return new tElementWithIDref(spotLocation.uuid);
+            return new tElementWithIDref(spotLocation.id);
         }
 
     }

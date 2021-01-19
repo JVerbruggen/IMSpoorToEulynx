@@ -1,4 +1,4 @@
-﻿using Models.TopoModels.Eulynx.Common;
+﻿using Models.TopoModels.EULYNX.rtmCommon;
 using Services.DependencyInjection;
 using Services.Managers.Base;
 using Services.Service;
@@ -11,11 +11,9 @@ namespace Services.Managers.Positioning
     public class CartesianCoordinateManager : UUIDObjectManager<CartesianCoordinate>
     {
 
-
-
         public CartesianCoordinate GetCartesianCoordinate(double x, double y, tElementWithIDref positioningSystem)
         {
-            string uuid = UUIDService.NewFakeUUID(x + "" + y + positioningSystem.@ref, typeof(CartesianCoordinate));
+            string uuid = UUIDService.NewFakeUUID(x + "" + y + positioningSystem.GetRef(), typeof(CartesianCoordinate));
             CartesianCoordinate cartesianCoordinate = new CartesianCoordinate(x, y, positioningSystem, uuid);
             
             InstanceManager.Singleton<PositioningSystemCoordinateManager>().GetInstance().Register(cartesianCoordinate);
