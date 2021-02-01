@@ -12,7 +12,7 @@ namespace Models.TopoModels.EULYNX.sig
 
         }
 
-        public SignalFrame(tElementWithIDref[] aspects, SignalFrameTypes signalFrameType, string id)
+        public SignalFrame(List<tElementWithIDref> aspects, SignalFrameTypes signalFrameType, string id)
         {
             this.hasAspect = aspects;
             this.isOfSignalFrameType = signalFrameType;

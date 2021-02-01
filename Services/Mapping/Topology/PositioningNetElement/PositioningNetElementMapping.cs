@@ -25,14 +25,14 @@ namespace Services.Mapping.Topology
             return allRelations.Where(rel => rel.elementA.Equals(netElement) || rel.elementB.Equals(netElement));
         }
 
-        public PositioningNetElement GetPositioningNetElement(MicroLink microLink, PositionedRelation[] allRelations)
+        public PositioningNetElement GetPositioningNetElement(MicroLink microLink, IEnumerable<PositionedRelation> allRelations)
         {
             LinearElement linearElement = new LinearElement(microLink.railConnectionRef,
-                this.associatedPositioningSystemManager.GetAssociatedPositioningSystems(microLink.railConnectionRef));
+                this.associatedPositioningSystemManager.GetAssociatedPositioningSystems(microLink.railConnectionRef).ToList());
 
-            var relations = GetRelations(allRelations, linearElement).ToArray();
+            IEnumerable<PositionedRelation> relations = GetRelations(allRelations, linearElement);
 
-            linearElement.relation = tElementWithIDref.GetTElementsWithIDref(relations);
+            linearElement.relation = tElementWithIDref.GetTElementsWithIDref(relations.Cast<BaseObject>()).ToList();
 
             return linearElement;
         }

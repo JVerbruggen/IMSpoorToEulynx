@@ -13,7 +13,7 @@ namespace Models.TopoModels.EULYNX.sig
 
         }
 
-        public Signal(string id, rtmCommon.tElementWithIDref hasLocation, rtmCommon.tElementWithIDref[] hasSignalFrame, FixingTypes isDesignedForFixingType, rtmCommon.tElementWithIDref[] refersToOverlapsForDisplay, rtmCommon.tElementWithIDref refersToRsmSignal, rtmCommon.tElementWithIDref[] refersToSafetyDistance, rtmCommon.tElementWithIDref showsDefaultActiveAspectSet)
+        public Signal(string id, rtmCommon.tElementWithIDref hasLocation, List<tElementWithIDref> hasSignalFrame, FixingTypes isDesignedForFixingType, List<tElementWithIDref> refersToOverlapsForDisplay, rtmCommon.tElementWithIDref refersToRsmSignal, List<tElementWithIDref> refersToSafetyDistance, rtmCommon.tElementWithIDref showsDefaultActiveAspectSet)
         {
             this.id = id;
             this.hasLocation = hasLocation;
@@ -25,7 +25,7 @@ namespace Models.TopoModels.EULYNX.sig
             this.showsDefaultActiveAspectSet = showsDefaultActiveAspectSet;
         }
 
-        public Signal(tElementWithIDref hasLocation, tElementWithIDref[] hasSignalFrame, FixingTypes isDesignedForFixingType, tElementWithIDref[] refersToOverlapsForDisplay, tElementWithIDref refersToRsmSignal, tElementWithIDref[] refersToSafetyDistance, tElementWithIDref showsDefaultActiveAspectSet)
+        public Signal(tElementWithIDref hasLocation, List<tElementWithIDref> hasSignalFrame, FixingTypes isDesignedForFixingType, List<tElementWithIDref> refersToOverlapsForDisplay, tElementWithIDref refersToRsmSignal, List<tElementWithIDref> refersToSafetyDistance, tElementWithIDref showsDefaultActiveAspectSet)
         {
             this.hasLocation = hasLocation;
             this.hasSignalFrame = hasSignalFrame;

@@ -16,8 +16,10 @@ namespace Services.Managers.Positioning
         public IntrinsicCoordinate GetIntrinsicCoordinate(double linearMeasure)
         {
             LinearCoordinate lc = new LinearCoordinate(new Length(0), linearMeasure, new Length(0));
+            var lcs = new List<PositioningSystemCoordinate>() { lc };
+            var lcIds = tElementWithIDref.GetTElementsWithIDref(lcs);
 
-            var intrinsicCoordinate = new IntrinsicCoordinate(lc);
+            var intrinsicCoordinate = new IntrinsicCoordinate(lcIds.ToList());
             intrinsicCoordinate.AllocateUUID();
 
             return intrinsicCoordinate;
@@ -26,11 +28,11 @@ namespace Services.Managers.Positioning
         public IntrinsicCoordinate GetIntrinsicCoordinate(double x, double y, tElementWithIDref geometricPositioningSystem)
         {
             CartesianCoordinate cartesianCoordinate = InstanceManager.Singleton<CartesianCoordinateManager>().GetInstance().GetCartesianCoordinate(x, y, geometricPositioningSystem);
-            tElementWithIDref[] cartesianCoordinateRef = tElementWithIDref.GetTElementsWithIDref(cartesianCoordinate);
+            IEnumerable<tElementWithIDref> cartesianCoordinateRef = tElementWithIDref.GetTElementsWithIDref(cartesianCoordinate);
 
             string uuid = UUIDService.NewFakeUUID("intrinsic:" + x + y + geometricPositioningSystem.GetRef());
 
-            IntrinsicCoordinate intrinsicCoordinate = new IntrinsicCoordinate(cartesianCoordinateRef, uuid);
+            IntrinsicCoordinate intrinsicCoordinate = new IntrinsicCoordinate(cartesianCoordinateRef.ToList(), uuid);
 
             return intrinsicCoordinate;
         }

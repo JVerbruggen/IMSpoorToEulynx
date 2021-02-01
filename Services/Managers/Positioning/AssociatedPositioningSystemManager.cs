@@ -60,7 +60,7 @@ namespace Services.Managers.Positioning
         }
 
 
-        public AssociatedPositioningSystem[] GetAssociatedPositioningSystems(string trackRef)
+        public IEnumerable<AssociatedPositioningSystem> GetAssociatedPositioningSystems(string trackRef)
         {
             List<AssociatedPositioningSystem> associatedPositioningSystems = new List<AssociatedPositioningSystem>();
 
@@ -86,7 +86,7 @@ namespace Services.Managers.Positioning
 
             }
 
-            return associatedPositioningSystems.ToArray();
+            return associatedPositioningSystems;
         }
     }
 }

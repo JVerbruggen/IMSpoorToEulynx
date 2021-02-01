@@ -31,7 +31,7 @@ namespace Services.Managers.Toplevel
             rtmEntities.ownsSignal = InstanceManager.Singleton<SignalRTMManager>().GetInstance().GetAll();
             //rtmEntities.usesCablingTopology = CablingTopology.GetCablingTopology();
             //rtmEntities.usesLinearLocation = LinearLocation.GetLinearLocations();
-            rtmEntities.usesTrackTopology = InstanceManager.Singleton<TrackTopologyManager>().GetInstance().GetTopology(situation.RailInfrastructure.RailTopology);
+            rtmEntities.usesTrackTopology = InstanceManager.Singleton<TopologyManager>().GetInstance().GetTopology(situation.RailInfrastructure.RailTopology);
             rtmEntities.usesSpotLocation = InstanceManager.Singleton<SpotLocationManager>().GetInstance().GetAll();
             rtmEntities.usesPositioningSystem = InstanceManager.Singleton<PositioningSystemManager>().GetInstance().GetAll();
             rtmEntities.usesPositioningSystemCoordinate = InstanceManager.Singleton<PositioningSystemCoordinateManager>().GetInstance().GetAll();

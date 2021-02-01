@@ -17,7 +17,7 @@ namespace Services.Managers.Topology
 {
     public class PositioningNetElementManager : UUIDObjectManager<PositioningNetElement>
     {
-        public PositioningNetElement[] GetPositioningNetElements(MicroLink[] microLinks, PositionedRelation[] positionedRelations)
+        public IEnumerable<PositioningNetElement> GetPositioningNetElements(IEnumerable<MicroLink> microLinks, IEnumerable<PositionedRelation> positionedRelations)
         {
             IList<PositioningNetElement> positioningNetElements = new List<PositioningNetElement>();
 
@@ -32,7 +32,7 @@ namespace Services.Managers.Topology
                 positioningNetElements.Add(positioningNetElement);
             }
 
-            return positioningNetElements.ToArray();
+            return positioningNetElements;
         }
 
         public string GetUUIDFrom(MicroLink microLink)

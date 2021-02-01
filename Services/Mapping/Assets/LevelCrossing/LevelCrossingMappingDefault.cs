@@ -8,6 +8,7 @@ using Services.Mapping.Base;
 using Services.Service;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Services.Mapping.Assets.LevelCrossing
@@ -20,9 +21,9 @@ namespace Services.Mapping.Assets.LevelCrossing
 
             string streetName = input.locationIndication;
             string type = input.levelCrossingType.ToString();
-            tElementWithIDref[] isLocatedAt = tElementWithIDref.GetTElementsWithIDref(spotLocationManager.GetGeoLocationRef(input.Location));
+            IEnumerable<tElementWithIDref> isLocatedAt = tElementWithIDref.GetTElementsWithIDref(spotLocationManager.GetGeoLocationRef(input.Location));
             string id = UUIDService.NewFakeUUID(isLocatedAt + streetName + type);
-            TrackCrossing trackCrossing = new TrackCrossing(isLocatedAt, streetName, type, id);
+            TrackCrossing trackCrossing = new TrackCrossing(isLocatedAt.ToList(), streetName, type, id);
 
             InstanceManager.Singleton<TrackCrossingManager>().GetInstance().Register(trackCrossing);
 

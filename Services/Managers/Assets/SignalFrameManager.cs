@@ -12,18 +12,18 @@ namespace Services.Managers.Assets
     public class SignalFrameManager : ItemManager<SignalFrame>
     {
 
-        public SignalFrame[] GetSignalFrames()
+        public IEnumerable<SignalFrame> GetSignalFrames()
         {
             IList<tElementWithIDref> aspects = new List<tElementWithIDref>();
             SignalFrameTypes signalFrameType = SignalFrameTypes.main;
 
             string uuid = UUIDService.NewFakeUUID(aspects.ToString() + signalFrameType.ToString());
-            SignalFrame signalFrame = new SignalFrame(aspects.ToArray(), signalFrameType, uuid);
+            SignalFrame signalFrame = new SignalFrame(aspects.ToList(), signalFrameType, uuid);
 
             List<SignalFrame> signalFrames = new List<SignalFrame>();
             signalFrames.Add(signalFrame);
 
-            return signalFrames.ToArray();
+            return signalFrames;
         }
 
     }

@@ -15,7 +15,7 @@ namespace Services.Managers.Assets
 
         //public abstract TrackAsset[] GetTrackAssets<T>(Eulynx eulynx) where T : BaseObject;
 
-        public List<TrackAsset> GetTrackAssets(IEnumerable<TrackAsset> allTrackAssets, IEnumerable<BaseLocation> allSpotLocations, List<PositioningNetElement> path)
+        public List<TrackAsset> GetTrackAssets(IEnumerable<TrackAsset> allTrackAssets, IEnumerable<BaseLocation> allSpotLocations, IEnumerable<PositioningNetElement> path)
         {
             if (allTrackAssets == null
                 || allSpotLocations == null
@@ -48,7 +48,7 @@ namespace Services.Managers.Assets
             return foundAssets;
         }
 
-        public virtual List<TrackAsset> GetTrackAssets(EulynxDataPrep eulynx, List<PositioningNetElement> path)
+        public virtual List<TrackAsset> GetTrackAssets(EulynxDataPrep eulynx, IEnumerable<PositioningNetElement> path)
         {
             List<BaseLocation> allLocations = eulynx.ownsRtmEntities.usesSpotLocation.Cast<BaseLocation>().ToList();
             List<TrackAsset> allAssets = GetTrackAssets(eulynx);

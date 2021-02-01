@@ -2,6 +2,8 @@
 using Services.DependencyInjection;
 using Services.Factory.Assets;
 using Services.Factory.Manager;
+using Services.Managers.Assets;
+using Services.Managers.Location;
 using Services.Managers.Positioning;
 using Services.Managers.Topology;
 using Services.Mapping.Assets.LevelCrossing;
@@ -30,12 +32,15 @@ namespace FormsApp
         {
             var associatedPositioningSystemManager = InstanceManager.Singleton<AssociatedPositioningSystemManager>().GetInstance();
             var positionedRelationManager = InstanceManager.Singleton<PositionedRelationManager>().GetInstance();
+            var spotLocationManager = InstanceManager.Singleton<SpotLocationManager>().GetInstance();
+            var signalFrameManager = InstanceManager.Singleton<SignalFrameManager>().GetInstance();
+            var signalRTMManager = InstanceManager.Singleton<SignalRTMManager>().GetInstance();
 
             InstanceManager.RegisterMappingSelector(new PositioningNetElementMappingSelector(associatedPositioningSystemManager));
             InstanceManager.RegisterMappingSelector(new PositionedRelationMappingSelector(positionedRelationManager));
 
             InstanceManager.RegisterMappingSelector(new LevelCrossingMappingSelector());
-            InstanceManager.RegisterMappingSelector(new SignalMappingSelector());
+            InstanceManager.RegisterMappingSelector(new SignalMappingSelector(spotLocationManager, signalFrameManager, signalRTMManager));
         }
     }
 }

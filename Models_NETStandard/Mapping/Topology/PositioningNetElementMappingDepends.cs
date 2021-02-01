@@ -9,10 +9,10 @@ namespace Models.Mapping.Topology
 {
     public class PositioningNetElementMappingDepends : IMappingDepends<PositioningNetElement>
     {
-        public PositionedRelation[] PositionedRelations { get; }
+        public IEnumerable<PositionedRelation> PositionedRelations { get; }
         public MicroLink MicroLink { get; }
 
-        public PositioningNetElementMappingDepends(PositionedRelation[] positionedRelations, MicroLink microLink)
+        public PositioningNetElementMappingDepends(IEnumerable<PositionedRelation> positionedRelations, MicroLink microLink)
         {
             PositionedRelations = positionedRelations;
             MicroLink = microLink;

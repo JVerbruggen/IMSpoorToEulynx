@@ -9,7 +9,7 @@ namespace Services.Managers.Location
 {
     public class LinearLocationManager
     {
-        public LinearLocation GetLinearLocation(MicroLink microLink, RailConnection[] railConnections, Track[] tracks, PositioningNetElement netElement, PositionedRelation[] positionedRelations)
+        public LinearLocation GetLinearLocation(MicroLink microLink, IEnumerable<RailConnection> railConnections, IEnumerable<Track> tracks, PositioningNetElement netElement, IEnumerable<PositionedRelation> positionedRelations)
         {
             var ll = new LinearLocation();
 
@@ -20,8 +20,8 @@ namespace Services.Managers.Location
 
             var assElement = new AssociatedNetElementCoordinate(netElement);
 
-            var associatedElements = new AssociatedNetElement[]{ assElement };
-            ll.associatedElements = associatedElements;
+            IEnumerable<AssociatedNetElement> associatedElements = new AssociatedNetElement[]{ assElement };
+            ll.associatedElements = associatedElements.ToList();
 
             return ll;
         }

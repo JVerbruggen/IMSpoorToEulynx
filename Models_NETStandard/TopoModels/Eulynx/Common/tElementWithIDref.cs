@@ -7,7 +7,6 @@ namespace Models.TopoModels.EULYNX.rtmCommon
 {
     public partial class tElementWithIDref
     {
-        [Obsolete]
         public string @ref;
 
         public tElementWithIDref()
@@ -22,12 +21,12 @@ namespace Models.TopoModels.EULYNX.rtmCommon
 
         public string GetRef()
         {
-            return "";
+            return @ref;
         }
 
         public void SetRef(string @ref)
         {
-            
+            this.@ref = @ref;
         }
 
         public static tElementWithIDref GetTElementWithIDref(BaseObject baseObject)
@@ -59,8 +58,18 @@ namespace Models.TopoModels.EULYNX.rtmCommon
         /// <returns>UUID Refs of all objects</returns>
         public static List<tElementWithIDref> GetTElementsWithIDreflist(List<BaseObject> baseObjects)
         {
+            return GetTElementsWithIDref(baseObjects).ToList();
+        }
+
+        /// <summary>
+        /// Extract uuids from baseObjects and converts to refs
+        /// </summary>
+        /// <param name="baseObjects">Objects to convert to refs</param>
+        /// <returns>UUID Refs of all objects</returns>
+        public static IEnumerable<tElementWithIDref> GetTElementsWithIDref(IEnumerable<BaseObject> baseObjects)
+        {
             List<tElementWithIDref> tElementWithIDrefs = new List<tElementWithIDref>();
-            foreach(BaseObject bo in baseObjects)
+            foreach (BaseObject bo in baseObjects)
             {
                 tElementWithIDrefs.Add(new tElementWithIDref(bo.id));
             }

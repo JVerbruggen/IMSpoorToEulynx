@@ -42,6 +42,7 @@ namespace Models.TopoModels.EULYNX.rtmCommon
 
         public static implicit operator tElementWithIDref(BaseObject bo)
         {
+            if (bo == null) return null;
             return new tElementWithIDref(bo.id);
         }
 
@@ -65,7 +66,7 @@ namespace Models.TopoModels.EULYNX.rtmCommon
             return base.ToString();
         }
 
-        public static IEnumerable<T> Find<T>(IEnumerable<T> allElements, tElementWithIDref[] needles) where T : BaseObject
+        public static IEnumerable<T> Find<T>(IEnumerable<T> allElements, IEnumerable<tElementWithIDref> needles) where T : BaseObject
         {
             return Find(allElements.ToArray(), needles);
         }
@@ -75,7 +76,7 @@ namespace Models.TopoModels.EULYNX.rtmCommon
             return Find(allElements.ToArray(), needle);
         }
 
-        public static T[] Find<T>(T[] allElements, tElementWithIDref[] needles) where T : BaseObject
+        public static T[] Find<T>(T[] allElements, IEnumerable<tElementWithIDref> needles) where T : BaseObject
         {
             var allElementsList = allElements.ToList();
             var e = needles.Any(idRef => idRef.GetRef() == "ff442c00-0082-496f-9f41-461ac9cb55ab");

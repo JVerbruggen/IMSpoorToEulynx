@@ -22,7 +22,7 @@ namespace Services.Managers.Base
         /// Register multiple instances of T to this manager
         /// </summary>
         /// <param name="t">Instances to register</param>
-        void Register(T[] t);
+        void Register(IEnumerable<T> t);
 
         /// <summary>
         /// Get all instances of T previously registered to this manager

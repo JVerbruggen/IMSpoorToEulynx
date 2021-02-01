@@ -1,22 +1,23 @@
 ﻿using Models.TopoModels.EULYNX.rtmCommon;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Services.Service.PathFinding
 {
     public class Path
     {
-        public PositioningNetElement[] elements { get; set; }
+        public IEnumerable<PositioningNetElement> elements { get; set; }
 
-        public Path(PositioningNetElement[] elements)
+        public Path(IEnumerable<PositioningNetElement> elements)
         {
             this.elements = elements;
         }
 
         public int GetSteps()
         {
-            return elements.Length - 1;
+            return elements.Count() - 1;
         }
     }
 }

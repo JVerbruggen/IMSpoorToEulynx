@@ -68,7 +68,7 @@ namespace FormsApp
                 comboBox_pathFindStart.Items.AddRange(trackTopo.usesPositioningNetElement.Select(n => n.id).ToArray());
                 fillComboBoxPathFindEnd(trackTopo.usesPositioningNetElement.Select(n => n.id).ToArray());
 
-                PositionedRelation[] relations = trackTopo.usesPositionedRelation;
+                IEnumerable<PositionedRelation> relations = trackTopo.usesPositionedRelation;
                 foreach (PositionedRelation relation in relations)
                 {
                     string refA = relation.elementA.@ref;
@@ -135,7 +135,7 @@ namespace FormsApp
             InitializeComponent();
         }
 
-        private void paintFoundPath(PositioningNetElement[] path, PositioningNetElement[] allElements)
+        private void paintFoundPath(IEnumerable<PositioningNetElement> path, IEnumerable<PositioningNetElement> allElements)
         {
             this.paintedPath = new Path(path);
 
@@ -182,12 +182,12 @@ namespace FormsApp
 
             if (uuidStart != null && uuidEnd != null)
             {
-                PositioningNetElement[] shortestPath = FindShortestPath(this.eulynx, uuidStart, uuidEnd);
-                PositioningNetElement[] allNetElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
+                IEnumerable<PositioningNetElement> shortestPath = FindShortestPath(this.eulynx, uuidStart, uuidEnd);
+                IEnumerable<PositioningNetElement> allNetElements = eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
 
                 paintFoundPath(shortestPath, allNetElements);
 
-                if (shortestPath.Length == 0)
+                if (shortestPath.Count() == 0)
                 {
                     listbox_show(new[] { "No paths found" });
                 }
@@ -204,9 +204,10 @@ namespace FormsApp
 
             if (uuidStart != null)
             {
-                PositioningNetElement[] foundDestinations = FindPossibleDestinations(this.eulynx, uuidStart, checkBox_includePassedElements.Checked);
+                IEnumerable<PositioningNetElement> foundDestinations = FindPossibleDestinations(this.eulynx, uuidStart, checkBox_includePassedElements.Checked);
+                int fdcount = foundDestinations.Count();
 
-                if (foundDestinations.Length > 0)
+                if (fdcount > 0)
                 {
                     comboBox_pathFindEnd.Items.Clear();
                     comboBox_pathFindEnd.Items.AddRange(foundDestinations.Select(d => d.id).ToArray());
@@ -216,7 +217,7 @@ namespace FormsApp
                     List<string> contents = new List<string>();
                     contents.AddRange(new[]
                     {
-                        "Found destinations: " + foundDestinations.Length,
+                        "Found destinations: " + fdcount,
                         "Including passed elements: " + checkBox_includePassedElements.Checked,
                         "Destinations:"
                     });
@@ -234,27 +235,27 @@ namespace FormsApp
             }
         }
 
-        private PositioningNetElement[] FindPossibleDestinations(EulynxDataPrep eulynx, string uuidStart, bool includePassed)
+        private IEnumerable<PositioningNetElement> FindPossibleDestinations(EulynxDataPrep eulynx, string uuidStart, bool includePassed)
         {
-            PositioningNetElement[] foundDestinations = DestinationFinderService.FindPossibleDestinations(eulynx, uuidStart, includePassed);
+            IEnumerable<PositioningNetElement> foundDestinations = DestinationFinderService.FindPossibleDestinations(eulynx, uuidStart, includePassed);
 
             return foundDestinations;
         }
 
-        private PositioningNetElement[] FindShortestPath(EulynxDataPrep eulynx, string uuidStart, string uuidEnd)
+        private IEnumerable<PositioningNetElement> FindShortestPath(EulynxDataPrep eulynx, string uuidStart, string uuidEnd)
         {
-            PositioningNetElement[] shortestPath = PathFinderService.FindShortestPath(eulynx, uuidStart, uuidEnd);
+            IEnumerable<PositioningNetElement> shortestPath = PathFinderService.FindShortestPath(eulynx, uuidStart, uuidEnd);
 
             return shortestPath;
         }
 
-        private void listbox_show(object[] objects)
+        private void listbox_show(IEnumerable<object> objects)
         {
             listBox_content.Items.Clear();
 
             if(objects != null)
             {
-                listBox_content.Items.AddRange(objects);
+                listBox_content.Items.AddRange(objects.ToArray());
             }
         }
 
@@ -294,7 +295,7 @@ namespace FormsApp
             comboBox_pathFindEnd.SelectedItem = null;
             comboBox_pathFindEnd.Text = null;
 
-            PositioningNetElement[] allNetElements = this.eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
+            IEnumerable<PositioningNetElement> allNetElements = this.eulynx.ownsRtmEntities.usesTrackTopology.usesPositioningNetElement;
             paintFoundPath(new PositioningNetElement[] { }, allNetElements);
 
             listbox_show(new[] { "" });
@@ -307,14 +308,14 @@ namespace FormsApp
             TrackAssetManager trackAssetManager = InstanceManager.Singleton<TrackAssetManager>().GetInstance();
             var t = trackAssetManager.GetTrackAssets(eulynx);
 
-            TrackAsset[] pathTrackAssets = trackAssetManager.GetTrackAssets(eulynx, this.paintedPath.elements);
+            IEnumerable<TrackAsset> pathTrackAssets = trackAssetManager.GetTrackAssets(eulynx, this.paintedPath.elements);
 
             listbox_show(pathTrackAssets);
         }
 
         private void showDetails()
         {
-            if (this.paintedPath == null || this.paintedPath.elements.Length == 0) return;
+            if (this.paintedPath == null || this.paintedPath.elements.Count() == 0) return;
 
             List<string> contents = new List<string>();
 

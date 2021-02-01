@@ -18,7 +18,7 @@ namespace Services.Managers.NetEntity
 
             foreach (LocatedNetEntity netEntity in allNetEntities)
             {
-                tElementWithIDref[] netEntityLocationRefs = netEntity.locations;
+                IEnumerable<tElementWithIDref> netEntityLocationRefs = netEntity.locations;
                 BaseLocation[] netEntityLocations = BaseLocation.Find(allLocations, netEntityLocationRefs);
 
                 foreach(BaseLocation netEntityLocation in netEntityLocations)

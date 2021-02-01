@@ -27,11 +27,12 @@ namespace Services.Managers.Base
 
         public void Register(T t)
         {
+            if (t == null) return;
             if (SavedItems.Contains(t)) return;
             SavedItems.Add(t);
         }
 
-        public void Register(T[] ts)
+        public void Register(IEnumerable<T> ts)
         {
             foreach(T t in ts)
             {

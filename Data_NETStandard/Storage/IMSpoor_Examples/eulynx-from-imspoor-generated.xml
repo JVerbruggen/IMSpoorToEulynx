@@ -1,223 +1,331 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<eurtm:eulynx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:rtmNE="http://www.railtopomodel.org/schemas/NetEntity" xmlns:rtmSig="http://www.railtopomodel.org/schemas/Signalling" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" xmlns:eurtm="http://www.railtopomodel.org/schemas/EULYNX_XSD">
-  <eurtm:isReleaseVersion>
-    <eurtm:generatedByTool>
-      <eurtm:generatedByTool>IMSpoor-1.2.3 to EULYNX Converter tool</eurtm:generatedByTool>
-      <eurtm:generatedByToolVersion>0.1</eurtm:generatedByToolVersion>
-    </eurtm:generatedByTool>
-    <eurtm:hasBaseline>
-      <eurtm:editorial>0</eurtm:editorial>
-      <eurtm:major>0</eurtm:major>
-      <eurtm:minor>1</eurtm:minor>
-    </eurtm:hasBaseline>
-  </eurtm:isReleaseVersion>
-  <eurtm:ownsRtmEntities uuid="">
-    <eurtm:ownsSignal uuid="b16da8c1-31aa-0b83-f8f5-797b2b730a19">
-      <rtmNE:locations ref="c845df08-12d2-4b23-a0b0-a24f94be3505" />
-    </eurtm:ownsSignal>
-    <eurtm:usesCablingTopology />
-    <eurtm:usesPositioningSystem xsi:type="rtmCommon:GeometricPositioningSystem" uuid="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" crsDefinition="RD" />
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="d59128a2-4525-58e4-5f55-8bae824bcbaf" x="139500" y="497500">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="0778c5bd-314e-58ee-e101-d44f37eedbde" x="140000" y="497500">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="ddc68915-f44a-a5e3-3d38-c1b701cd61ca" x="42000" y="497500">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="fe5bcdff-5fc9-020a-5fc6-09bc1992898b" x="141000" y="497500">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="3d361435-6b36-cab6-e0ac-a712e935947f" x="141500" y="497000">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="2c66b5e1-5901-4ecc-1c5b-c72ed24d9746" x="140500" y="498000">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="1f1c8a8f-fca7-070f-6331-a727701c786d" x="141500" y="498000">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="cc553d6c-cd75-e094-cb93-ea3b6af2f595" x="142000" y="497500">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="906e5012-aa77-02bb-19ea-d438443120a5" x="7723057" y="43355608">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesPositioningSystemCoordinate xsi:type="rtmCommon:CartesianCoordinate" uuid="581d880e-4696-f2c1-d2a8-b45f33bc50d2" x="141000" y="497502">
-      <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-      <rtmCommon:z>0</rtmCommon:z>
-    </eurtm:usesPositioningSystemCoordinate>
-    <eurtm:usesSpotLocation xsi:type="rtmCommon:SpotLocationCoordinate" uuid="d72fecc9-be3b-640c-9236-4039948b5969">
-      <rtmCommon:appliesInDirection>undefined</rtmCommon:appliesInDirection>
-      <rtmCommon:isLocatedToSide>undefined</rtmCommon:isLocatedToSide>
-      <rtmCommon:netElement />
-      <rtmCommon:coordinate ref="906e5012-aa77-02bb-19ea-d438443120a5" />
-    </eurtm:usesSpotLocation>
-    <eurtm:usesSpotLocation xsi:type="rtmCommon:SpotLocationCoordinate" uuid="c845df08-12d2-4b23-a0b0-a24f94be3505">
-      <rtmCommon:appliesInDirection>undefined</rtmCommon:appliesInDirection>
-      <rtmCommon:isLocatedToSide>undefined</rtmCommon:isLocatedToSide>
-      <rtmCommon:netElement ref="4c61f54d-bfe3-4c09-a362-d8125428af84" />
-      <rtmCommon:coordinate ref="581d880e-4696-f2c1-d2a8-b45f33bc50d2" />
-    </eurtm:usesSpotLocation>
-    <eurtm:usesTrackTopology>
-      <eurtm:usesPositionedRelation uuid="74f29a74-10f1-39ba-d1a8-5fc052d298ee" name="-">
-        <rtmCommon:elementA ref="4c61f54d-bfe3-4c09-a362-d8125428af84" />
-        <rtmCommon:elementB ref="6244d378-9652-4af3-8ab7-bb1e141f6755" />
-        <rtmCommon:navigability>Both</rtmCommon:navigability>
-        <rtmCommon:positionOnA>end</rtmCommon:positionOnA>
-        <rtmCommon:positionOnB>start</rtmCommon:positionOnB>
-      </eurtm:usesPositionedRelation>
-      <eurtm:usesPositionedRelation uuid="75d77579-52c3-f2cb-5ce9-8741d96f94ee" name="-">
-        <rtmCommon:elementA ref="4c61f54d-bfe3-4c09-a362-d8125428af84" />
-        <rtmCommon:elementB ref="04a152db-f5f2-4d24-99e4-a8e844f5d79b" />
-        <rtmCommon:navigability>Both</rtmCommon:navigability>
-        <rtmCommon:positionOnA>end</rtmCommon:positionOnA>
-        <rtmCommon:positionOnB>start</rtmCommon:positionOnB>
-      </eurtm:usesPositionedRelation>
-      <eurtm:usesPositionedRelation uuid="dccd3303-68e1-fca5-f838-8c260666c8f4" name="-">
-        <rtmCommon:elementA ref="6244d378-9652-4af3-8ab7-bb1e141f6755" />
-        <rtmCommon:elementB ref="0fd0059b-58d1-4799-9001-881a3f9445e5" />
-        <rtmCommon:navigability>Both</rtmCommon:navigability>
-        <rtmCommon:positionOnA>end</rtmCommon:positionOnA>
-        <rtmCommon:positionOnB>end</rtmCommon:positionOnB>
-      </eurtm:usesPositionedRelation>
-      <eurtm:usesPositioningNetElement xsi:type="rtmCommon:LinearElement" uuid="4c61f54d-bfe3-4c09-a362-d8125428af84">
-        <rtmCommon:relation ref="74f29a74-10f1-39ba-d1a8-5fc052d298ee" />
-        <rtmCommon:relation ref="75d77579-52c3-f2cb-5ce9-8741d96f94ee" />
-        <rtmCommon:associatedPositioningSystems uuid="34e8142e-c3ec-490d-9264-914dad6326f6">
-          <rtmCommon:intrinsicCoordinates uuid="cd6fca71-0e06-709f-39d3-daf3bee17a2d" intrinsicCoord="0">
-            <rtmCommon:coordinates />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="aaf00714-25ce-0bd8-6043-2b0269fc3471" />
-        </rtmCommon:associatedPositioningSystems>
-        <rtmCommon:associatedPositioningSystems uuid="9d1795f2-9096-9fb5-50b7-871bbee3c9f4">
-          <rtmCommon:intrinsicCoordinates uuid="eb1692c5-7e83-dd60-22b5-8900ba611add" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="d59128a2-4525-58e4-5f55-8bae824bcbaf" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:intrinsicCoordinates uuid="a1de5d8b-513e-ba32-26e3-79ad41c73bdd" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="0778c5bd-314e-58ee-e101-d44f37eedbde" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-        </rtmCommon:associatedPositioningSystems>
-      </eurtm:usesPositioningNetElement>
-      <eurtm:usesPositioningNetElement xsi:type="rtmCommon:LinearElement" uuid="6244d378-9652-4af3-8ab7-bb1e141f6755">
-        <rtmCommon:relation ref="74f29a74-10f1-39ba-d1a8-5fc052d298ee" />
-        <rtmCommon:relation ref="dccd3303-68e1-fca5-f838-8c260666c8f4" />
-        <rtmCommon:associatedPositioningSystems uuid="34e8142e-c3ec-490d-9264-914dad6326f6">
-          <rtmCommon:intrinsicCoordinates uuid="cd6fca71-0e06-709f-39d3-daf3bee17a2d" intrinsicCoord="0">
-            <rtmCommon:coordinates />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="aaf00714-25ce-0bd8-6043-2b0269fc3471" />
-        </rtmCommon:associatedPositioningSystems>
-        <rtmCommon:associatedPositioningSystems uuid="9d1795f2-9096-9fb5-50b7-871bbee3c9f4">
-          <rtmCommon:intrinsicCoordinates uuid="eb1692c5-7e83-dd60-22b5-8900ba611add" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="d59128a2-4525-58e4-5f55-8bae824bcbaf" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:intrinsicCoordinates uuid="86909610-3ae1-cf60-4b78-4d497ef427e1" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="ddc68915-f44a-a5e3-3d38-c1b701cd61ca" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-        </rtmCommon:associatedPositioningSystems>
-      </eurtm:usesPositioningNetElement>
-      <eurtm:usesPositioningNetElement xsi:type="rtmCommon:LinearElement" uuid="04a152db-f5f2-4d24-99e4-a8e844f5d79b">
-        <rtmCommon:relation ref="75d77579-52c3-f2cb-5ce9-8741d96f94ee" />
-        <rtmCommon:associatedPositioningSystems uuid="34e8142e-c3ec-490d-9264-914dad6326f6">
-          <rtmCommon:intrinsicCoordinates uuid="cd6fca71-0e06-709f-39d3-daf3bee17a2d" intrinsicCoord="0">
-            <rtmCommon:coordinates />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="aaf00714-25ce-0bd8-6043-2b0269fc3471" />
-        </rtmCommon:associatedPositioningSystems>
-        <rtmCommon:associatedPositioningSystems uuid="9d1795f2-9096-9fb5-50b7-871bbee3c9f4">
-          <rtmCommon:intrinsicCoordinates uuid="8a0f9ca4-e356-4656-ac14-4404e5afc257" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="fe5bcdff-5fc9-020a-5fc6-09bc1992898b" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:intrinsicCoordinates uuid="52851808-8700-44f5-630a-34c510d28607" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="3d361435-6b36-cab6-e0ac-a712e935947f" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-        </rtmCommon:associatedPositioningSystems>
-      </eurtm:usesPositioningNetElement>
-      <eurtm:usesPositioningNetElement xsi:type="rtmCommon:LinearElement" uuid="0fd0059b-58d1-4799-9001-881a3f9445e5">
-        <rtmCommon:relation ref="dccd3303-68e1-fca5-f838-8c260666c8f4" />
-        <rtmCommon:associatedPositioningSystems uuid="34e8142e-c3ec-490d-9264-914dad6326f6">
-          <rtmCommon:intrinsicCoordinates uuid="cd6fca71-0e06-709f-39d3-daf3bee17a2d" intrinsicCoord="0">
-            <rtmCommon:coordinates />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="aaf00714-25ce-0bd8-6043-2b0269fc3471" />
-        </rtmCommon:associatedPositioningSystems>
-        <rtmCommon:associatedPositioningSystems uuid="9d1795f2-9096-9fb5-50b7-871bbee3c9f4">
-          <rtmCommon:intrinsicCoordinates uuid="a1de5d8b-513e-ba32-26e3-79ad41c73bdd" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="0778c5bd-314e-58ee-e101-d44f37eedbde" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:intrinsicCoordinates uuid="eb73addb-b419-75dd-ab71-97ae63217d7d" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="2c66b5e1-5901-4ecc-1c5b-c72ed24d9746" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:intrinsicCoordinates uuid="a40cce76-d565-457e-a694-cff042e64168" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="1f1c8a8f-fca7-070f-6331-a727701c786d" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:intrinsicCoordinates uuid="684b50e6-52be-1f15-5aef-9513ad685a04" intrinsicCoord="0">
-            <rtmCommon:coordinates ref="cc553d6c-cd75-e094-cb93-ea3b6af2f595" />
-          </rtmCommon:intrinsicCoordinates>
-          <rtmCommon:positioningSystem ref="f6161f6f-0738-d30b-5138-6ed16b9c5bc8" />
-        </rtmCommon:associatedPositioningSystems>
-      </eurtm:usesPositioningNetElement>
-    </eurtm:usesTrackTopology>
-  </eurtm:ownsRtmEntities>
-  <eurtm:ownsSignallingEntities>
-    <eurtm:ownsLevelCrossing xsi:type="signalling:MainSignalProtectedLevelCrossing" uuid="3c98ebe0-38b7-4e5b-ac30-e55d70a35296" dependsOnRoadTrafficLights="true" hasObstacleDetector="false">
-      <signalling:hasConfiguration>
-        <signalling:appliesToBaselineOfRuleSet />
-        <signalling:lastModifiedBy />
-        <signalling:refersToBaselineDocument />
-        <signalling:refersToOperationalLocality />
-        <signalling:refersToTimeFrame />
-      </signalling:hasConfiguration>
-      <signalling:protectsTrackCrossing ref="d1939084-309d-7d24-3360-193bb7904274" />
-    </eurtm:ownsLevelCrossing>
-    <eurtm:ownsSignal uuid="65ccaade-e1c7-43e8-975b-e377951ba621">
-      <signalling:hasConfiguration>
-        <signalling:appliesToBaselineOfRuleSet />
-        <signalling:lastModifiedBy />
-        <signalling:refersToBaselineDocument />
-        <signalling:refersToOperationalLocality />
-        <signalling:refersToTimeFrame />
-      </signalling:hasConfiguration>
-      <signalling:hasLocalDatum longitudinalMeasure="0" />
-      <signalling:hasLocation ref="c845df08-12d2-4b23-a0b0-a24f94be3505" />
-      <signalling:hasSignalFrame ref="8420b7b9-ed74-a931-ac80-bc4e97018338" />
-      <signalling:isOfFixingType>foundation</signalling:isOfFixingType>
-      <signalling:refersToRtmSignal ref="b16da8c1-31aa-0b83-f8f5-797b2b730a19" />
-      <signalling:showsDefaultMessage />
-    </eurtm:ownsSignal>
-    <eurtm:ownsSignalFrame uuid="8420b7b9-ed74-a931-ac80-bc4e97018338" fixed="false">
-      <signalling:hasConfiguration>
-        <signalling:appliesToBaselineOfRuleSet />
-        <signalling:lastModifiedBy />
-        <signalling:refersToBaselineDocument />
-        <signalling:refersToOperationalLocality />
-        <signalling:refersToTimeFrame />
-      </signalling:hasConfiguration>
-      <signalling:isOfSignalFrameType>main</signalling:isOfSignalFrameType>
-    </eurtm:ownsSignalFrame>
-    <eurtm:ownsTrackCrossing uuid="d1939084-309d-7d24-3360-193bb7904274" streetName="Spoorstraat" type="AHOB">
-      <signalling:hasConfiguration>
-        <signalling:appliesToBaselineOfRuleSet />
-        <signalling:lastModifiedBy />
-        <signalling:refersToBaselineDocument />
-        <signalling:refersToOperationalLocality />
-        <signalling:refersToTimeFrame />
-      </signalling:hasConfiguration>
-      <signalling:isLocatedAt ref="d72fecc9-be3b-640c-9236-4039948b5969" />
-    </eurtm:ownsTrackCrossing>
-  </eurtm:ownsSignallingEntities>
-</eurtm:eulynx>
+<LevelCrossingSystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rtmCommon="http://www.railtopomodel.org/schemas/Common" xmlns:rtmNE="http://www.railtopomodel.org/schemas/NetEntity" xmlns:rtmSig="http://www.railtopomodel.org/schemas/Signalling" xmlns:base="http://www.railtopomodel.org/schemas/EULYNX_XSD" xmlns:signalling="http://www.railtopomodel.org/schemas/EULYNX_Signalling" xmlns="http://dataprep.eulynx.eu/schema/DataPrep">
+  <isReleaseVersion>
+    <generatedByTool>
+      <generatedByTool>IMSpoor-1.2.3 to EULYNX Converter tool</generatedByTool>
+      <generatedByToolVersion>0.1</generatedByToolVersion>
+      <toolUri />
+    </generatedByTool>
+    <hasBaseline>
+      <applicability />
+      <editorial>0</editorial>
+      <major>0</major>
+      <minor>1</minor>
+    </hasBaseline>
+  </isReleaseVersion>
+  <ownsRtmEntities id="">
+    <ownsSignal id="99a14d52-b74e-537a-45c6-eb9856b9e123">
+      <longname xmlns="http://www.railtopomodel.org/schema/Common" />
+      <name xmlns="http://www.railtopomodel.org/schema/Common" />
+    </ownsSignal>
+    <usesCablingTopology />
+    <usesEtcsTopology />
+    <usesPositioningSystem xmlns:q1="http://www.railtopomodel.org/schema/Common" xsi:type="q1:GeometricPositioningSystem" id="f6161f6f-0738-d30b-5138-6ed16b9c5bc8">
+      <q1:longname />
+      <q1:name />
+      <q1:crsDefinition>RD</q1:crsDefinition>
+    </usesPositioningSystem>
+    <usesPositioningSystemCoordinate xmlns:q2="http://www.railtopomodel.org/schema/Common" xsi:type="q2:CartesianCoordinate" id="d59128a2-4525-58e4-5f55-8bae824bcbaf">
+      <q2:longname />
+      <q2:name />
+      <q2:positioningSystem>
+        <q2:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q2:ref>
+      </q2:positioningSystem>
+      <q2:x>139500</q2:x>
+      <q2:y>497500</q2:y>
+      <q2:z>0</q2:z>
+    </usesPositioningSystemCoordinate>
+    <usesPositioningSystemCoordinate xmlns:q3="http://www.railtopomodel.org/schema/Common" xsi:type="q3:CartesianCoordinate" id="0778c5bd-314e-58ee-e101-d44f37eedbde">
+      <q3:longname />
+      <q3:name />
+      <q3:positioningSystem>
+        <q3:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q3:ref>
+      </q3:positioningSystem>
+      <q3:x>140000</q3:x>
+      <q3:y>497500</q3:y>
+      <q3:z>0</q3:z>
+    </usesPositioningSystemCoordinate>
+    <usesPositioningSystemCoordinate xmlns:q4="http://www.railtopomodel.org/schema/Common" xsi:type="q4:CartesianCoordinate" id="ddc68915-f44a-a5e3-3d38-c1b701cd61ca">
+      <q4:longname />
+      <q4:name />
+      <q4:positioningSystem>
+        <q4:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q4:ref>
+      </q4:positioningSystem>
+      <q4:x>42000</q4:x>
+      <q4:y>497500</q4:y>
+      <q4:z>0</q4:z>
+    </usesPositioningSystemCoordinate>
+    <usesPositioningSystemCoordinate xmlns:q5="http://www.railtopomodel.org/schema/Common" xsi:type="q5:CartesianCoordinate" id="fe5bcdff-5fc9-020a-5fc6-09bc1992898b">
+      <q5:longname />
+      <q5:name />
+      <q5:positioningSystem>
+        <q5:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q5:ref>
+      </q5:positioningSystem>
+      <q5:x>141000</q5:x>
+      <q5:y>497500</q5:y>
+      <q5:z>0</q5:z>
+    </usesPositioningSystemCoordinate>
+    <usesPositioningSystemCoordinate xmlns:q6="http://www.railtopomodel.org/schema/Common" xsi:type="q6:CartesianCoordinate" id="3d361435-6b36-cab6-e0ac-a712e935947f">
+      <q6:longname />
+      <q6:name />
+      <q6:positioningSystem>
+        <q6:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q6:ref>
+      </q6:positioningSystem>
+      <q6:x>141500</q6:x>
+      <q6:y>497000</q6:y>
+      <q6:z>0</q6:z>
+    </usesPositioningSystemCoordinate>
+    <usesPositioningSystemCoordinate xmlns:q7="http://www.railtopomodel.org/schema/Common" xsi:type="q7:CartesianCoordinate" id="2c66b5e1-5901-4ecc-1c5b-c72ed24d9746">
+      <q7:longname />
+      <q7:name />
+      <q7:positioningSystem>
+        <q7:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q7:ref>
+      </q7:positioningSystem>
+      <q7:x>140500</q7:x>
+      <q7:y>498000</q7:y>
+      <q7:z>0</q7:z>
+    </usesPositioningSystemCoordinate>
+    <usesPositioningSystemCoordinate xmlns:q8="http://www.railtopomodel.org/schema/Common" xsi:type="q8:CartesianCoordinate" id="1f1c8a8f-fca7-070f-6331-a727701c786d">
+      <q8:longname />
+      <q8:name />
+      <q8:positioningSystem>
+        <q8:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q8:ref>
+      </q8:positioningSystem>
+      <q8:x>141500</q8:x>
+      <q8:y>498000</q8:y>
+      <q8:z>0</q8:z>
+    </usesPositioningSystemCoordinate>
+    <usesPositioningSystemCoordinate xmlns:q9="http://www.railtopomodel.org/schema/Common" xsi:type="q9:CartesianCoordinate" id="cc553d6c-cd75-e094-cb93-ea3b6af2f595">
+      <q9:longname />
+      <q9:name />
+      <q9:positioningSystem>
+        <q9:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q9:ref>
+      </q9:positioningSystem>
+      <q9:x>142000</q9:x>
+      <q9:y>497500</q9:y>
+      <q9:z>0</q9:z>
+    </usesPositioningSystemCoordinate>
+    <usesPositioningSystemCoordinate xmlns:q10="http://www.railtopomodel.org/schema/Common" xsi:type="q10:CartesianCoordinate" id="31b8b5b2-6168-152d-c852-49ff48d6022e">
+      <q10:longname />
+      <q10:name />
+      <q10:positioningSystem>
+        <q10:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q10:ref>
+      </q10:positioningSystem>
+      <q10:x>141000</q10:x>
+      <q10:y>497502</q10:y>
+      <q10:z>0</q10:z>
+    </usesPositioningSystemCoordinate>
+    <usesTrackTopology>
+      <usesPositionedRelation id="101546a6-622d-110e-0b32-93356eba32e8">
+        <longname xmlns="http://www.railtopomodel.org/schema/Common" />
+        <name xmlns="http://www.railtopomodel.org/schema/Common">-</name>
+        <elementA xmlns="http://www.railtopomodel.org/schema/Common">
+          <ref>4c61f54d-bfe3-4c09-a362-d8125428af84</ref>
+        </elementA>
+        <elementB xmlns="http://www.railtopomodel.org/schema/Common">
+          <ref>6244d378-9652-4af3-8ab7-bb1e141f6755</ref>
+        </elementB>
+        <navigability xmlns="http://www.railtopomodel.org/schema/Common">Both</navigability>
+        <positionOnA xmlns="http://www.railtopomodel.org/schema/Common">end</positionOnA>
+        <positionOnB xmlns="http://www.railtopomodel.org/schema/Common">start</positionOnB>
+      </usesPositionedRelation>
+      <usesPositionedRelation id="f77e8981-1293-58fe-879e-a8d6cd866c10">
+        <longname xmlns="http://www.railtopomodel.org/schema/Common" />
+        <name xmlns="http://www.railtopomodel.org/schema/Common">-</name>
+        <elementA xmlns="http://www.railtopomodel.org/schema/Common">
+          <ref>4c61f54d-bfe3-4c09-a362-d8125428af84</ref>
+        </elementA>
+        <elementB xmlns="http://www.railtopomodel.org/schema/Common">
+          <ref>04a152db-f5f2-4d24-99e4-a8e844f5d79b</ref>
+        </elementB>
+        <navigability xmlns="http://www.railtopomodel.org/schema/Common">Both</navigability>
+        <positionOnA xmlns="http://www.railtopomodel.org/schema/Common">end</positionOnA>
+        <positionOnB xmlns="http://www.railtopomodel.org/schema/Common">start</positionOnB>
+      </usesPositionedRelation>
+      <usesPositionedRelation id="07d9ebe6-b4ad-8f34-d13e-960de0f7fe65">
+        <longname xmlns="http://www.railtopomodel.org/schema/Common" />
+        <name xmlns="http://www.railtopomodel.org/schema/Common">-</name>
+        <elementA xmlns="http://www.railtopomodel.org/schema/Common">
+          <ref>6244d378-9652-4af3-8ab7-bb1e141f6755</ref>
+        </elementA>
+        <elementB xmlns="http://www.railtopomodel.org/schema/Common">
+          <ref>0fd0059b-58d1-4799-9001-881a3f9445e5</ref>
+        </elementB>
+        <navigability xmlns="http://www.railtopomodel.org/schema/Common">Both</navigability>
+        <positionOnA xmlns="http://www.railtopomodel.org/schema/Common">end</positionOnA>
+        <positionOnB xmlns="http://www.railtopomodel.org/schema/Common">end</positionOnB>
+      </usesPositionedRelation>
+      <usesPositioningNetElement xmlns:q11="http://www.railtopomodel.org/schema/Common" xsi:type="q11:LinearElement" id="4c61f54d-bfe3-4c09-a362-d8125428af84">
+        <q11:longname />
+        <q11:name />
+        <q11:relation>
+          <q11:ref>101546a6-622d-110e-0b32-93356eba32e8</q11:ref>
+        </q11:relation>
+        <q11:relation>
+          <q11:ref>f77e8981-1293-58fe-879e-a8d6cd866c10</q11:ref>
+        </q11:relation>
+        <q11:associatedPositioningSystems id="593d442b-8c16-07a8-871f-b209fa08ab95">
+          <q11:intrinsicCoordinates id="19ee29ee-6d6a-00c7-85bc-07f65d878e24">
+            <q11:coordinates>
+              <q11:ref />
+            </q11:coordinates>
+            <q11:value>0</q11:value>
+          </q11:intrinsicCoordinates>
+          <q11:positioningSystem>
+            <q11:ref>d7d39a78-51f7-a2c5-aa01-10baba22428a</q11:ref>
+          </q11:positioningSystem>
+        </q11:associatedPositioningSystems>
+        <q11:associatedPositioningSystems id="97b40744-182d-4f84-e550-b0dfe68aa973">
+          <q11:intrinsicCoordinates id="eb1692c5-7e83-dd60-22b5-8900ba611add">
+            <q11:coordinates>
+              <q11:ref>d59128a2-4525-58e4-5f55-8bae824bcbaf</q11:ref>
+            </q11:coordinates>
+            <q11:value>0</q11:value>
+          </q11:intrinsicCoordinates>
+          <q11:intrinsicCoordinates id="a1de5d8b-513e-ba32-26e3-79ad41c73bdd">
+            <q11:coordinates>
+              <q11:ref>0778c5bd-314e-58ee-e101-d44f37eedbde</q11:ref>
+            </q11:coordinates>
+            <q11:value>0</q11:value>
+          </q11:intrinsicCoordinates>
+          <q11:positioningSystem>
+            <q11:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q11:ref>
+          </q11:positioningSystem>
+        </q11:associatedPositioningSystems>
+      </usesPositioningNetElement>
+      <usesPositioningNetElement xmlns:q12="http://www.railtopomodel.org/schema/Common" xsi:type="q12:LinearElement" id="6244d378-9652-4af3-8ab7-bb1e141f6755">
+        <q12:longname />
+        <q12:name />
+        <q12:relation>
+          <q12:ref>101546a6-622d-110e-0b32-93356eba32e8</q12:ref>
+        </q12:relation>
+        <q12:relation>
+          <q12:ref>07d9ebe6-b4ad-8f34-d13e-960de0f7fe65</q12:ref>
+        </q12:relation>
+        <q12:associatedPositioningSystems id="593d442b-8c16-07a8-871f-b209fa08ab95">
+          <q12:intrinsicCoordinates id="19ee29ee-6d6a-00c7-85bc-07f65d878e24">
+            <q12:coordinates>
+              <q12:ref />
+            </q12:coordinates>
+            <q12:value>0</q12:value>
+          </q12:intrinsicCoordinates>
+          <q12:positioningSystem>
+            <q12:ref>d7d39a78-51f7-a2c5-aa01-10baba22428a</q12:ref>
+          </q12:positioningSystem>
+        </q12:associatedPositioningSystems>
+        <q12:associatedPositioningSystems id="97b40744-182d-4f84-e550-b0dfe68aa973">
+          <q12:intrinsicCoordinates id="eb1692c5-7e83-dd60-22b5-8900ba611add">
+            <q12:coordinates>
+              <q12:ref>d59128a2-4525-58e4-5f55-8bae824bcbaf</q12:ref>
+            </q12:coordinates>
+            <q12:value>0</q12:value>
+          </q12:intrinsicCoordinates>
+          <q12:intrinsicCoordinates id="86909610-3ae1-cf60-4b78-4d497ef427e1">
+            <q12:coordinates>
+              <q12:ref>ddc68915-f44a-a5e3-3d38-c1b701cd61ca</q12:ref>
+            </q12:coordinates>
+            <q12:value>0</q12:value>
+          </q12:intrinsicCoordinates>
+          <q12:positioningSystem>
+            <q12:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q12:ref>
+          </q12:positioningSystem>
+        </q12:associatedPositioningSystems>
+      </usesPositioningNetElement>
+      <usesPositioningNetElement xmlns:q13="http://www.railtopomodel.org/schema/Common" xsi:type="q13:LinearElement" id="04a152db-f5f2-4d24-99e4-a8e844f5d79b">
+        <q13:longname />
+        <q13:name />
+        <q13:relation>
+          <q13:ref>f77e8981-1293-58fe-879e-a8d6cd866c10</q13:ref>
+        </q13:relation>
+        <q13:associatedPositioningSystems id="593d442b-8c16-07a8-871f-b209fa08ab95">
+          <q13:intrinsicCoordinates id="19ee29ee-6d6a-00c7-85bc-07f65d878e24">
+            <q13:coordinates>
+              <q13:ref />
+            </q13:coordinates>
+            <q13:value>0</q13:value>
+          </q13:intrinsicCoordinates>
+          <q13:positioningSystem>
+            <q13:ref>d7d39a78-51f7-a2c5-aa01-10baba22428a</q13:ref>
+          </q13:positioningSystem>
+        </q13:associatedPositioningSystems>
+        <q13:associatedPositioningSystems id="97b40744-182d-4f84-e550-b0dfe68aa973">
+          <q13:intrinsicCoordinates id="8a0f9ca4-e356-4656-ac14-4404e5afc257">
+            <q13:coordinates>
+              <q13:ref>fe5bcdff-5fc9-020a-5fc6-09bc1992898b</q13:ref>
+            </q13:coordinates>
+            <q13:value>0</q13:value>
+          </q13:intrinsicCoordinates>
+          <q13:intrinsicCoordinates id="52851808-8700-44f5-630a-34c510d28607">
+            <q13:coordinates>
+              <q13:ref>3d361435-6b36-cab6-e0ac-a712e935947f</q13:ref>
+            </q13:coordinates>
+            <q13:value>0</q13:value>
+          </q13:intrinsicCoordinates>
+          <q13:positioningSystem>
+            <q13:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q13:ref>
+          </q13:positioningSystem>
+        </q13:associatedPositioningSystems>
+      </usesPositioningNetElement>
+      <usesPositioningNetElement xmlns:q14="http://www.railtopomodel.org/schema/Common" xsi:type="q14:LinearElement" id="0fd0059b-58d1-4799-9001-881a3f9445e5">
+        <q14:longname />
+        <q14:name />
+        <q14:relation>
+          <q14:ref>07d9ebe6-b4ad-8f34-d13e-960de0f7fe65</q14:ref>
+        </q14:relation>
+        <q14:associatedPositioningSystems id="593d442b-8c16-07a8-871f-b209fa08ab95">
+          <q14:intrinsicCoordinates id="19ee29ee-6d6a-00c7-85bc-07f65d878e24">
+            <q14:coordinates>
+              <q14:ref />
+            </q14:coordinates>
+            <q14:value>0</q14:value>
+          </q14:intrinsicCoordinates>
+          <q14:positioningSystem>
+            <q14:ref>d7d39a78-51f7-a2c5-aa01-10baba22428a</q14:ref>
+          </q14:positioningSystem>
+        </q14:associatedPositioningSystems>
+        <q14:associatedPositioningSystems id="97b40744-182d-4f84-e550-b0dfe68aa973">
+          <q14:intrinsicCoordinates id="a1de5d8b-513e-ba32-26e3-79ad41c73bdd">
+            <q14:coordinates>
+              <q14:ref>0778c5bd-314e-58ee-e101-d44f37eedbde</q14:ref>
+            </q14:coordinates>
+            <q14:value>0</q14:value>
+          </q14:intrinsicCoordinates>
+          <q14:intrinsicCoordinates id="eb73addb-b419-75dd-ab71-97ae63217d7d">
+            <q14:coordinates>
+              <q14:ref>2c66b5e1-5901-4ecc-1c5b-c72ed24d9746</q14:ref>
+            </q14:coordinates>
+            <q14:value>0</q14:value>
+          </q14:intrinsicCoordinates>
+          <q14:intrinsicCoordinates id="a40cce76-d565-457e-a694-cff042e64168">
+            <q14:coordinates>
+              <q14:ref>1f1c8a8f-fca7-070f-6331-a727701c786d</q14:ref>
+            </q14:coordinates>
+            <q14:value>0</q14:value>
+          </q14:intrinsicCoordinates>
+          <q14:intrinsicCoordinates id="684b50e6-52be-1f15-5aef-9513ad685a04">
+            <q14:coordinates>
+              <q14:ref>cc553d6c-cd75-e094-cb93-ea3b6af2f595</q14:ref>
+            </q14:coordinates>
+            <q14:value>0</q14:value>
+          </q14:intrinsicCoordinates>
+          <q14:positioningSystem>
+            <q14:ref>f6161f6f-0738-d30b-5138-6ed16b9c5bc8</q14:ref>
+          </q14:positioningSystem>
+        </q14:associatedPositioningSystems>
+      </usesPositioningNetElement>
+    </usesTrackTopology>
+  </ownsRtmEntities>
+  <ownsSignallingEntities id="">
+    <ownsSignalFrame id="55375a35-14c9-218e-13aa-efad4e0149eb">
+      <hasConfiguration id="" xmlns="http://dataprep.eulynx.eu/schema/Signalling">
+        <appliesToBaselineOfRuleSet />
+        <lastModifiedBy />
+        <refersToBaselineDocument />
+        <refersToOperationalLocality />
+        <refersToTimeFrame />
+      </hasConfiguration>
+      <isFixed xmlns="http://dataprep.eulynx.eu/schema/Signalling">false</isFixed>
+      <isOfSignalFrameType xmlns="http://dataprep.eulynx.eu/schema/Signalling">main</isOfSignalFrameType>
+    </ownsSignalFrame>
+  </ownsSignallingEntities>
+</LevelCrossingSystem>

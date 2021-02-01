@@ -11,7 +11,7 @@ namespace Models.TopoModels.EULYNX.sig
         {
 
         }
-        public TrackCrossing(tElementWithIDref[] isLocatedAt, string streetName, string type, string id)
+        public TrackCrossing(List<tElementWithIDref> isLocatedAt, string streetName, string type, string id)
         {
             this.isLocatedAt = isLocatedAt;
             this.streetName = streetName;
